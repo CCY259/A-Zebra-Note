@@ -1,0 +1,19 @@
+[0] Config.pm:307> INFO - This is Biber 2.19
+[0] Config.pm:310> INFO - Logfile is '00 main.blg'
+[91] biber-MSWIN64:340> INFO - === 
+[119] Biber.pm:419> INFO - Reading '00 main.bcf'
+[211] Biber.pm:979> INFO - Found 23 citekeys in bib section 0
+[224] Biber.pm:4419> INFO - Processing section 0
+[235] Biber.pm:4610> INFO - Looking for bibtex file 'References.bib' for section 0
+[277] bibtex.pm:1713> INFO - LaTeX decoding ...
+[343] bibtex.pm:1519> INFO - Found BibTeX data source 'References.bib'
+[465] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[465] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[465] Biber.pm:4239> INFO - Sorting list 'anyt/global//global/global' of type 'entry' with template 'anyt' and locale 'en-US'
+[465] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[482] bbl.pm:660> INFO - Writing '00 main.bbl' with encoding 'UTF-8'
+[489] bbl.pm:763> INFO - Output to 00 main.bbl
+[489] Biber.pm:131> WARN - ISBN '978-0-521-67506-2; 978-1-139-19400-6' in entry 'Praeger2018' is invalid - run biber with '--validate_datamodel' for details.
+[489] Biber.pm:131> WARN - ISBN '0-521-65378-9; 0-521-65302-9' in entry 'Cameron1999' is invalid - run biber with '--validate_datamodel' for details.
+[489] Biber.pm:131> WARN - ISBN '978-3-319-11477-4; 978-3-319-11478-1' in entry 'Bergman2015' is invalid - run biber with '--validate_datamodel' for details.
+[489] Biber.pm:133> INFO - WARNINGS: 3

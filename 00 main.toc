@@ -1,0 +1,90 @@
+\contentsline {part}{Preliminaries}{1}{part*.2}%
+\contentsline {part}{I\hspace {1em}Group Theory}{14}{part.1}%
+\contentsline {section}{\numberline {1}Symmetric Groups}{14}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Basic Definitions}{14}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Cycle Decomposition}{15}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Generators of Symmetric Groups}{16}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Sign of a Permutation}{17}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Alternating Group}{17}{subsection.1.5}%
+\contentsline {paragraph}{Main References.}{19}{section*.16}%
+\contentsline {section}{\numberline {2}Dihedral Groups and the Quaternion Group}{20}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Dihedral Groups}{20}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Presentations of Dihedral Groups}{20}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Subgroups of Dihedral Groups}{21}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Quaternion Group}{22}{subsection.2.4}%
+\contentsline {paragraph}{Main References.}{23}{section*.17}%
+\contentsline {section}{\numberline {3}Group Actions}{24}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Basic Definitions}{24}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Orbit-Stabilizer Theorem}{25}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Kernel of Group Actions}{27}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Transitive Actions}{27}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Conjugations}{28}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Translations}{30}{subsection.3.6}%
+\contentsline {paragraph}{Main References.}{31}{section*.18}%
+\contentsline {section}{\numberline {4}The Sylow Theorems}{32}{section.4}%
+\contentsline {paragraph}{Question.}{32}{section*.19}%
+\contentsline {subsection}{\numberline {4.1}$p$-groups}{32}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Sylow's Theorems}{34}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Applications}{35}{subsection.4.3}%
+\contentsline {paragraph}{Main References.}{37}{section*.20}%
+\contentsline {section}{\numberline {5}Series}{38}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Basic Definitions and Examples}{38}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Basic Properties}{40}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Schreier Refinement Theorem and Jordan--H\"older Theorem}{41}{subsection.5.3}%
+\contentsline {paragraph}{Main References.}{45}{section*.21}%
+\contentsline {section}{\numberline {6}Direct Products}{46}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Direct Products of Finitely Many Groups}{46}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Direct Products of Infinitely Many Groups}{50}{subsection.6.2}%
+\contentsline {paragraph}{Main References.}{52}{section*.22}%
+\contentsline {section}{\numberline {7}Structure Theorem for Finitely Generated Abelian Groups}{53}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Free Abelian Groups}{53}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Structure Theorem}{61}{subsection.7.2}%
+\contentsline {paragraph}{Main References.}{70}{section*.23}%
+\contentsline {section}{\numberline {8}Semidirect Products}{71}{section.8}%
+\contentsline {paragraph}{Important Note.}{71}{section*.24}%
+\contentsline {subsection}{\numberline {8.1}Definitions and Properties}{71}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Examples}{75}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Some Classifications of Groups}{77}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}Sylow Theorems for Groups with Operator Groups}{81}{subsection.8.4}%
+\contentsline {paragraph}{Main References.}{84}{section*.27}%
+\contentsline {section}{\numberline {9}Wreath Products}{85}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Construction and Basic Properties}{85}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Imprimitive Action}{86}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Product Action}{86}{subsection.9.3}%
+\contentsline {paragraph}{Main References.}{87}{section*.28}%
+\contentsline {section}{\numberline {10}Solvable and Nilpotent Groups}{88}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Solvable Groups}{88}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Nilpotent Groups}{89}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}Examples}{93}{subsection.10.3}%
+\contentsline {subsubsection}{\numberline {10.3.1}Triangular Matrices}{93}{subsubsection.10.3.1}%
+\contentsline {subsubsection}{\numberline {10.3.2}$p$-groups}{95}{subsubsection.10.3.2}%
+\contentsline {subsubsection}{\numberline {10.3.3}Symmetric Groups}{95}{subsubsection.10.3.3}%
+\contentsline {subsection}{\numberline {10.4}Characterization of Finite Nilpotent Groups}{96}{subsection.10.4}%
+\contentsline {section}{\numberline {11}Free Groups}{98}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Definition}{98}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}Three Ways of Constructing Free Groups}{99}{subsection.11.2}%
+\contentsline {subsubsection}{\numberline {11.2.1}Groups of Words: a Beginner's Favourite}{99}{subsubsection.11.2.1}%
+\contentsline {subsubsection}{\numberline {11.2.2}Construction from Equivalence Classes: a Logician's Favourite}{99}{subsubsection.11.2.2}%
+\contentsline {subsubsection}{\numberline {11.2.3}Crazy Construction from Direct Products: Only Serge Lang's Favourite}{100}{subsubsection.11.2.3}%
+\contentsline {subsection}{\numberline {11.3}Group Presentations}{100}{subsection.11.3}%
+\contentsline {subsection}{\numberline {11.4}Nielsen-Schreier Theorem}{100}{subsection.11.4}%
+\contentsline {paragraph}{Main References.}{100}{section*.43}%
+\contentsline {part}{II\hspace {1em}Ring Theory}{101}{part.2}%
+\contentsline {section}{\numberline {12}Ideals}{101}{section.12}%
+\contentsline {part}{III\hspace {1em}Miscellaneous}{102}{part.3}%
+\contentsline {section}{\numberline {0}Zabalang}{102}{section.0}%
+\contentsline {subsection}{\numberline {0.1}Freeeee}{102}{subsection.0.1}%
+\contentsline {subsection}{\numberline {0.2}ZORN'S LEMMA!!!!}{102}{subsection.0.2}%
+\contentsline {subsection}{\numberline {0.3}BILA NAK COUNTABLE OR UNCOUNTABLE, PENANG LIH}{103}{subsection.0.3}%
+\contentsline {subsubsection}{\numberline {0.3.1}How We Actually Define the ``Size" of a Set}{103}{subsubsection.0.3.1}%
+\contentsline {subsubsection}{\numberline {0.3.2}Tools to ``Compare the Size"}{104}{subsubsection.0.3.2}%
+\contentsline {subsubsection}{\numberline {0.3.3}Cardinal Arithmetic Is Strange but Not Weirdo}{104}{subsubsection.0.3.3}%
+\contentsline {subsubsection}{\numberline {0.3.4}All the Facts That Make You a Weirdo}{106}{subsubsection.0.3.4}%
+\contentsline {subsection}{\numberline {0.4}Ordinal was not invented by ordinary people}{106}{subsection.0.4}%
+\contentsline {subsubsection}{\numberline {0.4.1}How we actually ``order" elements}{106}{subsubsection.0.4.1}%
+\contentsline {subsubsection}{\numberline {0.4.2}Elements are always ordered nicely, not nicely, whatever}{107}{subsubsection.0.4.2}%
+\contentsline {subsubsection}{\numberline {0.4.3}One, two, three, $\dots $ OMEGA!}{107}{subsubsection.0.4.3}%
+\contentsline {subsubsection}{\numberline {0.4.4}Each well ordered set has a unique order type}{108}{subsubsection.0.4.4}%
+\contentsline {subsubsection}{\numberline {0.4.5}Playing Dominoes at The Edge of Universe}{108}{subsubsection.0.4.5}%
+\contentsline {paragraph}{Main References.}{108}{section*.44}%
+\contentsline {part}{References}{109}{section*.44}%
