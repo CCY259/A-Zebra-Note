@@ -1,0 +1,175 @@
+\section{The Sylow Theorems}
+The entire study of this section can be motivated by the following question:
+\paragraph{Question.} Lagrange's Theorem states that for every subgroup $H$ of a finite group $G$, we have $|H|$ divides $|G|$. Is the converse true? That is, if $d$ divides $|G|$, then  $G$ contain a subgroup of order $d$.\bigskip
+
+The following provides a counterexample.
+\begin{proposition}
+	The alternating group $A_4$ has order $12$ and does not contain a subgroup of order $6$.
+\end{proposition}
+\begin{sketch}
+	Let $H$ be a subgroup of $A_4$ with $|H| = 6$. Then $[A_4:H] = 2$.  We claim that $a^2\in H$ for all $a\in A_4$. If $a\in H$, then clearly $a^2\in H$. If $a\not\in H$, then $A_4 = H\cup aH$.  If $a^2H = aH$, then  $aH = H$, a
+	contradiction. Thus $a^2H = H$ and so $a^2\in H$.
+	
+	Note that every $3$-cycle $(abc)$ is a square, i.e., $(abc) = (abc)^4 = ((abc)^2)^2$ and thus they are contained in $H$. But there are more than six $3$-cycles, while $|H| = 6$.
+\end{sketch}
+\begin{remark}
+	In case you want to count the number of $r$-cycles in $S_n$, there are $\binom{n}{r}(r-1)!$ of them. It is found by choosing $r$ elements from $n$ elements and counting the number of cyclic permutations.
+	\end{remark}
+
+This motivates us to add some conditions so that the converse is true. It turns out that the result is true if the divisor is a power of prime.
+
+\subsection{$p$-groups}
+\begin{definition}
+	Let $p$ be a prime. A finite \textbf{$p$-group} is a finite group of order $p^k$ for some $k\geq 0$. A subgroup of $G$ is called \textbf{$p$-subgroup} if it is a $p$-group.
+\end{definition}
+\begin{lemma}[Fixed point lemma] \label{lemma-fixed-point-lemma}
+	Let $G$ be a $p$-group and let $X$ be a finite set. Suppose $G$ acts on $X$. Let $X_G = \{x\in X\,|\, gx =x \text{ for all }g\in G\}$. Then $|X| \equiv |X_G| \mod p$.
+\end{lemma}
+\begin{sketch}
+	Since $x\in X_G$ if and only if $|O_G(x)| = 1$, it follows from Lemma \ref{lemma-orbit-partition-and-bijection}.(i) that  $$X = \bigcup_{\substack{x \\ |O_G(x)|=1}} O_G(x) \cup \bigcup_{\substack{x \\ |O_G(x)|>1}} O_G(x) = X_G \cup \bigcup_{\substack{x \\ |O_G(x)|>1}} O_G(x).$$ If $|O_G(x)|>1$, then $p$ divides $|O_G(x)|$ by Theorem \ref{thm-orbit-stab}. This proves the lemma.
+\end{sketch}
+\begin{theorem}[Cauchy's Theorem] \label{thm-Cauchy}
+	If $G$ is a finite group whose order is divisible by a prime $p$, then $G$ contains an element of order $p$.
+\end{theorem}
+\begin{sketch}
+	(\textbf{McKay's Construction}) Define
+	\begin{equation*}
+		X = \{(a_1,a_2,\dots, a_p)\,|\, a_i\in G\text{ and }a_1a_2\cdots a_p=e\}.
+	\end{equation*}
+	Note that for every $k\in\mathbb{Z}_p$, $(a_{k+1},a_{k+2},\dots, a_p,a_1,\dots, a_k)\in X$ (use the fact that $ab = e$ implies $ba = e$). It can be verified that the following function
+	\begin{gather*}
+		\mathbb{Z}_p \times X\rightarrow X
+		\\
+		(k,(a_1,a_2\cdots,a_p)) \mapsto  (a_{k+1},a_{k+2},\dots, a_p,a_1,\dots, a_k)
+	\end{gather*}
+	is a well-defined action of $\mathbb{Z}_p$ on $X$.  
+	
+	Let $X_{\mathbb{Z}_p} = \{(a_1,\dots, a_p)\in X\,|\, k(a_1,\dots, a_p) =(a_1,\dots, a_p) \text{ for all }k\in \mathbb{Z}_p\}$. Then we can check that
+	$$X_{\mathbb{Z}_p} = \{(a,\dots, a)\,|\, a^p=e\}.$$
+	Note that the set $X_{\mathbb{Z}_p}$ is nonempty since $(e,\dots, e)\in X_{\mathbb{Z}_p}$.
+	
+	Since $\mathbb{Z}_p$ is a $p$-group, it follows from Lemma \ref{lemma-fixed-point-lemma} that $|X_{\mathbb{Z}_p}|\equiv |X| \mod p$. Now we claim that $|X| \equiv 0 \mod p$. In fact, we have $|X| = |G|^{p-1}$. This is established by observing that $a_p$ is uniquely determined by $(a_1a_2\cdots a_{p-1})^{-1}$. The claim follows since $p$ divides $|G|$.
+	
+	Consequently, since $|X_{\mathbb{Z}_p}|\equiv 0 \mod p$ and $X_{\mathbb{Z}_p}$ is nonempty, there must be at least $p$ elements in $X_{\mathbb{Z}_p}$. In particular, there exists $a\neq e$ such that $a^p = e$. Since $p$ is prime, the order of $a$ is $p$. 
+\end{sketch}
+\begin{remark}
+	The McKay's trick is famous that it has even appeared in Putnam 2007 A5: Suppose that a finite group has exactly $n$ elements of order $p$, where
+	$p$ is a prime. Prove that either $n=0$ or $p$ divides $n+1$.
+\end{remark}
+\begin{corollary}
+	A finite group $G$ is a $p$-group if and only if every element has order a power of the prime $p$.
+\end{corollary}
+\begin{sketch}
+	If $G$ is a $p$-group, then the result immediately follows by Lagrange's Theorem. 
+	
+	Suppose that every element has order a power of the prime $p$. Let $q$ be a prime such that $q||G|$. By Theorem \ref{thm-Cauchy}, $G$ contains an element of order $q$. So $q=p$, since $q$ is a power of the prime $p$. Hence $|G|$ is a power of $p$.
+\end{sketch}
+\begin{proposition} \label{prop-p-subgroup-and-normalizer}
+	Let $H$ be a $p$-subgroup of a finite group $G$.
+	\begin{enumerate}[(i)]
+		\item $[N_G(H):H] \equiv [G:H] \mod p$;
+		\item if $p|[G:H]$, then $N_G(H) \neq H$.
+	\end{enumerate}
+\end{proposition}
+\begin{sketch}
+	Let $X$ be the set of left cosets of $H$ in $G$. Let $H$ act on $X$ by left translation. By Lemma \ref{lemma-fixed-point-lemma}, $|X_H|\equiv |X|\mod p$. Since $|X| = [G:H]$ it suffices to show that $|X_H| = [N_G(H):H]$. To see this, 
+	$$xH\in X_H\iff hxH = xH \quad \forall h\in H\iff x^{-1}Hx = H\iff x\in N_G(H).$$ 
+	So $X_H$ contains $xH$ where $x\in N_G(H)$. This proves (i). 
+	
+	If $p|[G:H]$, then we have $[N_G(H):H]\equiv 0 \mod p$. Since $[N_G(H):H]\geq 1$, we must have $[N_G(H):H]>1$ and so $N_G(H)\neq H$.
+\end{sketch}
+
+\subsection{Sylow's Theorems}
+\begin{definition}
+Let $G$ be a group of order $p^k m$, where $p\nmid m$, then a subgroup of order $p^k$ is called a \textbf{Sylow $p$-subgroup} of $G$. The set of Sylow $p$-subgroups of $G$ will be denoted by $\operatorname{Syl}_p(G)$.
+\end{definition}
+\begin{theorem}[First Sylow Theorem] \label{thm-first-Sylow-theorem}
+	Let $G$ be a group of order $p^km$, where $k\geq 1$ and $p$ is a prime not dividing $m$. Then 
+	\begin{enumerate}[(i)]
+		\item for each $1\leq i\leq k$, the group $G$ contains a subgroup of order $p^i$;
+		\item for each $1\leq i<k$, every subgroup of $G$ of order $p^i$ is normal in some subgroup of order $p^{i+1}$.
+	\end{enumerate} In particular, Sylow $p$-subgroups of $G$ exists. 
+\end{theorem}
+\begin{sketch}
+	By Theorem \ref{thm-Cauchy}, $G$ contains an element $x$ of order $p$, and hence a subgroup of order $p$ (namely $\langle x \rangle$). 
+	
+	We proceed by induction. Assume that $H$ is a subgroup of order $p^i$ ($1\leq i<k$). Then $[G:H] = |G|/|H| = p^{k-i}m$. Since $k-i>1$, we have $p|[G:H]$. From the argument in Proposition \ref{prop-p-subgroup-and-normalizer}, we know that $H$ is normal in $N_G(H)$ and $|N_G(H)/H|\equiv 0\mod p$. Then $p$ divides $|N_G(H)/H|$. By Theorem \ref{thm-Cauchy}, $N_G(H)/H$ contains a subgroup of order $p$. By Correspondence Theorem, this subgroup of order $p$ is of the form $K/H$ where $K$ is a subgroup of $N_G(H)$ containing $H$. Note that $|K| = |K/H||H| = p\cdot p^i = p^{i+1}$. Hence $K$ is the desired subgroup. For (ii), recall that $H$ is normal in $N_G(H)$ and $H\leq K\leq N_G(H)$. Thus $H$ is normal in $K$.
+\end{sketch}
+
+\begin{theorem}[Second Sylow Theorem] \label{thm-second-sylow-thm}
+	Let $p$ be a prime. If $P$ is a Sylow $p$-subgroup of a finite group $G$, and $H$ is a $p$-subgroup of $G$, then $H$ is contained in some conjugate of $P$, i.e., there exists $x\in G$ such that $H\leq xPx^{-1}$. In particular, any two Sylow $p$-subgroups of $G$ are conjugate.
+\end{theorem}
+\begin{sketch}
+	%Let $G$ act on $P$ by conjugation. Let $X=O_G(P)= \{xPx^{-1}\,|\, x\in G\}$. Now we treat $X$ as a set and let $H$ act on $X$ by conjugation. By Lemma \ref{lemma-orbit-partition-and-bijection}.(i), we write $$X = \bigcup_{i=1}^s O_H(P_i)$$ where $P_1,\dots, P_s\in X$ and $s\geq 1$. Recall from Definition \ref{def-notions-of-orbits-and-stab} that the stabilizer of $P_i$ is $N_H(P_i)$. By Theorem \ref{thm-orbit-stab}, $|O_H(P_i)| = [H:N_H(P_i)]$. It can be verified that $N_H(P_i) = N_G(P_i)\cap H$.
+	Consider the set $X$ of left cosets of $P$ in $G$. Let $H$ act on $X$ by left translation. By Lemma \ref{lemma-fixed-point-lemma}, $|X_H|\equiv |X| \mod p$. Now we claim that $|X_H|\geq 1$. Since $|X| = [G:P]$, it suffices to show that $p$ does not divide $[G:P]$. To see this, note that $|G| = [G:P]|P|$ by Lagrange's Theorem. Let $|G| = p^k m$ where $p$ does not divide $m$. Then w e have $|P| = p^k$ and so $[G:P] = m$. Consequently, $|X_H|\geq 1$. Let $xP\in X_H$ where $x\in G$. By the definition of $X_H$, we have
+$hxP = xP$ for all $h\in H$. Hence $H\leq xPx^{-1}$.
+
+If $H$ is a Sylow $p$-subgroup, then $|H| = |P| = |xPx^{-1}|$. Since $H\leq xPx^{-1}$, we obtain $H = xPx^{-1}$.
+\end{sketch}
+
+\begin{theorem}[Third Sylow Theorem] \label{thm-third-sylow-thm}
+	Let $G$ be a finite group and let $p$ be a prime. If $n_p$ is the number of Sylow $p$-subgroups of $G$, then $n_p = [G:N_G(P)]$ for any Sylow $p$-subgroup $P$, and hence  $n_p $ divides $|G|$. Furthermore, $$n_p \equiv 1 \mod p.$$ In other words, $n_p$ is of the form $kp+1$ for some $k\geq 0$.
+\end{theorem}
+\begin{remark}
+	We also see that $\gcd(n_p, p) = 1$, will be useful later.
+\end{remark}
+\begin{sketch}
+	Since any two Sylow $p$-subgroups of $G$ are conjugate by Theorem \ref{thm-second-sylow-thm}, we can choose a Sylow $p$-subgroup $P$ and consider the action of $G$ on $\operatorname{Syl}_p(G)$ by conjugation to obtain $n_p = |O_G(P)|$. By Theorem \ref{thm-orbit-stab} and  Definition  \ref{def-notions-of-orbits-and-stab}, we have $n_p = [G:N_G(P)]$ and hence $n_p$ divides $|G|$.
+	
+	Let $P$ act on $\operatorname{Syl}_p(G)$ by conjugation. Let $X = \operatorname{Syl}_p(G)$. By Lemma \ref{lemma-fixed-point-lemma}, $n_p =|X| \equiv |X_P|\mod p$. We now claim that $X_P  =\{P\}$. Let $Q\in X_P$. Note that
+	$$Q\in X_P\iff xQx^{-1} = Q \quad\forall x\in P \iff P\leq N_G(Q).$$
+	Since $Q$ is also a subgroup in $N_G(Q)$, we can view $P$ and $Q$ as Sylow $p$-subgroups in $N_G(Q)$. By Theorem \ref{thm-second-sylow-thm}, there exists $x\in N_G(Q)$ such that $P = xQx^{-1}$. Since $Q$ is normal in $N_G(Q)$, we have $xQx^{-1}=Q$. Hence $P=Q$. This completes the proof.
+\end{sketch}
+
+
+
+\subsection{Applications}
+As an application, one thing we might do is to determine whether a group contains a normal Sylow subgroup, and so study its simplicity. However, this section is a total mess, as there are many variants of the problems, and some require more elegant approaches to solve. In this section, I will only focus on a few problems that use common arguments. It is good to explore more ideas through textbooks and their exercises.
+\begin{corollary} \label{cor-one-sylow-p-implies-normal}
+	Let $G$ be a group and let $p$ be a prime. Let $P$ be the Sylow $p$-subgroup of $G$. Then  $P$ is unique if and only if $P$ is normal in $G$.
+\end{corollary}
+\begin{sketch}
+	This follows from Theorem \ref{thm-second-sylow-thm}.
+\end{sketch}
+
+\begin{proposition}
+	Let $G$ be a group of order $pm$, where $p$ is a prime not dividing the integer $m\geq 1$. If the only factor of $m$, whose remainder is $1$ when divided by $p$, is $1$,  then $G$ is not simple.
+\end{proposition}
+\begin{sketch}
+By Theorem \ref{thm-third-sylow-thm},  $n_p \equiv 1\mod p$ and $n_p |m$. So $n_p\in \{\text{divisors of }m\}$. But the only factor $d$ of $m$ which satisfied $d\equiv 1 \mod p$ is $d=1$, and so $n_p = 1$. Therefore there is only one $p$-Sylow subgroup, which is therefore normal by Corollary \ref{cor-one-sylow-p-implies-normal}. Consequently, $G$ is not simple.
+\end{sketch}
+
+\begin{proposition} \label{prop-sylow-order-pq}
+	Let $G$ be a group of order
+	$pq$, where $p > q$ are primes. Then $G$ has a
+	normal Sylow $p$-subgroup. Also, if $G$ is nonabelian, then $q|(p-
+	1)$ and $n_q = p$. 
+\end{proposition}
+\begin{sketch}
+	By Theorem \ref{thm-third-sylow-thm}, we have two informations:
+	\begin{enumerate}[(i)]
+		\item $n_p$ divides $pq$;
+		\item $n_p\equiv 1 \mod p$.
+	\end{enumerate} 
+	From (i) and $\gcd(n_p,p)=1$, we have $n_p = 1$ or $q$.  Since $1<q<p$, it follows from (ii) that $n_p = 1$. So the results follows from Corollary \ref{cor-one-sylow-p-implies-normal}.
+	
+	Let $P$ be the only Sylow $p$-subgroup of $G$. Note that $G/P\cong \mathbb{Z}_q$ and hence $G/P$ is abelian. This implies that the commutator subgroup $[G,G]\leq P$.
+	
+	We claim that $n_q>1$. Suppose on the contrary that $n_q = 1$. Then there is a normal Sylow $q$-subgroup $Q$ of $G$. Hence $[G,G]\leq Q$. Therefore, $[G,G]\leq P\cap Q = \{e\}$, which means that $G$ is abelian, a contradiction. Hence $n_q>1$. Since $n_q = 1$ or $p$, we have $n_q=p$. By Theorem \ref{thm-third-sylow-thm}, we obtain $p = n_q\equiv 1\mod q$
+\end{sketch}
+
+
+
+\begin{proposition} \label{prop-group-of-order-p2q-has-normal-Sylow}
+	Let $G$ be a group of order $p^2q$, where $p$ and $q$ are distinct primes. Then $G$ has a normal Sylow subgroup (either $p$ or $q$).
+\end{proposition}
+\begin{sketch}
+	Let $P\in \operatorname{Syl}_p(G)$ and let $Q\in\operatorname{Syl}_q(G)$.
+	
+	When $p > q$, we have $n_p | q$ and $n_p \equiv 1\mod p$. Hence $n_p = 1$ and thus $P$ is normal in $G$.
+	
+	Consider now the case $p<q$. If $n_q=1$, then we are done. If $n_q>1$, Then $n_q  = 1+kq$ for some $k\geq 1$. Since $n_q$ divides $p^2$, we have $n_q=p$ or $p^2$. Since $q>p$, we see that $n_q = 1+kq > p $. So we must have $n_q  = p^2$.  We count the elements. Note that for distinct Sylow $q$-subgroups $Q_1$ and $Q_2$, we have $Q_1\cap Q_2 = 1$. So they do not share any nonidentity element. Since there are $p^2$ Sylow $q$-subgroups, each
+	containing $q -1$ nonidentity elements, we have a total of $p^2(q-1)$ nonidentity elements of order $q$. So there are $p^2$ elements which are not of order $q$. Then $P$ must contain these $p^2$ elements, since $P$ does not have an element of order $q$. Hence $P$ is unique and thus normal in $G$.
+\end{sketch}
+
+\paragraph{Main References.} \cite{Hungerford1974,DummitFoote2004,Isaacs2009}

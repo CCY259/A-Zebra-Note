@@ -1,0 +1,105 @@
+\section{Wreath Products}
+We will always consider right actions in this section. This is probably influenced by FAR-RIGHT mathematicians.
+\subsection{Construction and Basic Properties}
+Let $G$ be an arbitrary group and let $H$ be a group acting on a set $\Delta$. Let $G^\Delta$ be the group of all functions from $\Delta$ into $G$ with pointwise multiplication. In other words,  $G^\Delta$ is isomorphic to a direct product of copies of $G$ indexed by $\Delta$. Now we define an action of $H$ on  $G^\Delta$ by 
+\begin{equation*}
+	f^h(\delta) = f(\delta^{h^{-1}}).
+\end{equation*}
+\begin{definition}
+	The semidirect product $W = G^\Delta \rtimes H$ with respect to the action defined above  is called the \textbf{(complete) wreath product} of $G$ by $H$. This $W$ will be denoted by $G \Wr_{\Delta} H$. We can define the \textbf{restricted wreath product} $G \wr_{\Delta} H$ of $G$ by $H$, by using the same setting, but with $f\in G^{(\Delta)}$, where $G^{(\Delta)}$ is the set of all functions such that $f(y) = e$ for all but finitely many $y\in \Delta$. The wreath product is said to be \textbf{trivial} if either $G$ or $H$ is the trivial group. In $G\Wr_\Delta H$ (resp. $G\wr_\Delta H$), the subgroup $G^\Delta$ (resp. $G^{(\Delta)}$) is called the \textbf{base group}, $G$ is called the \textbf{bottom group} and $H$ is called the \textbf{top group}.
+\end{definition}
+
+
+\begin{definition}
+	The \textbf{standard wreath product} $G\Wr H$ (or $G\wr H$) of $G$ by $H$ is the wreath product $G\Wr_H H$ (or $G\wr_H H$) where $G$ and $H$ act on themselves by right translation.
+\end{definition}
+\begin{proposition}
+	There are basic properties of wreath products.
+	\begin{enumerate}[(i)]
+		\item If $K$ is a subgroup of $H$, then $G\Wr_\Delta K$ (resp. $G\wr_\Delta K$) is a subgroup of $G\Wr_\Delta H$ (resp. $G\wr_\Delta H$).
+		\item Let $\{\Delta_{\lambda}\,|\,\lambda\in\Lambda\}$ be the set of orbits of $H$ on $\Delta$. For $y\in \Delta$, let $G_y = \{(a,y)\,|\, a\in G\}$. For every $\lambda\in \Lambda$, choose a representative $y_\lambda\in \Delta_\lambda$.  Then $G\wr_\Delta H = \langle G_{y_\lambda},H\,|\, \lambda\in \Lambda\rangle$. In particular, if $H$ acts transitively on $\Delta$, then for each $y\in \Delta$, we have $G\wr_\Delta H = \langle G_y ,H\rangle$.
+	\end{enumerate}
+\end{proposition}
+
+
+\begin{proposition}
+	If $\Omega$ and $\Delta$ are transitive, then the nontrivial wreath product of $G$ by $H$ is imprimitive.
+\end{proposition}
+
+\subsection{Imprimitive Action}
+
+\begin{proposition} \label{prop-imprimitive-action-of-WP}
+	Let $(G,\Omega)$ and $(H,\Delta)$ be permutation groups. Then $G\Wr_\Delta H$ (resp. $G\wr_\Delta H$) acts on $\Omega\times \Delta$ via
+	\begin{equation*}
+		(\omega,\delta)^{(f,h)} = (\omega^{f(\delta)},\delta^h).
+	\end{equation*} 
+\end{proposition}
+\begin{sketch}
+	Let $(\omega,\delta)\in \Omega\times \Delta$. 
+	Clearly $(\omega,\delta)^{(1,1)} =  (\omega^{1(\delta)},\delta^1) = (\omega^{1},\delta) = (\omega,\delta)$. Let $f_1,f_2\in G^\Delta$ and $h_1,h_2\in H$. Then  
+\begin{align*}
+	((\omega,\delta)^{(f_1,h_1)})^{(f_2,h_2)} &= (\omega^{f_1(\delta)},\delta^{h_1})^{(f_2,h_2)} 
+	\\
+	&= ((\omega^{f_1(\delta)})^{f_2(\delta^{h_1})},(\delta^{h_1})^{h_2})
+	\\
+	&= (\omega^{f_1(\delta)f_2(\delta^{h_1})},\delta^{h_1h_2}),
+	\\
+	(\omega,\delta)^{(f_1,h_1)(f_2,h_2)} &= (\omega,\delta)^{(f_1f_2^{h_1^{-1}},h_1h_2)}
+	\\
+	&= (\omega^{(f_1f_2^{h_1^{-1}})(\delta)},\delta^{h_1h_2})
+	\\
+	&= (\omega^{f_1(\delta)f_2^{h_1^{-1}}(\delta)},\delta^{h_1h_2})
+	\\
+	&= (\omega^{f_1(\delta)f_2(\delta^{h_1})},\delta^{h_1h_2}).
+\end{align*}
+So $((\omega,\delta)^{(f_1,h_1)})^{(f_2,h_2)}  = (\omega,\delta)^{(f_1,h_1)(f_2,h_2)}$. This shows that $G\Wr_{\Delta} H$ acts on $\Omega\times \Delta$ with respect to this action.
+\end{sketch}
+\begin{definition}
+	The action defined in Proposition \ref{prop-imprimitive-action-of-WP} is called the \textbf{imprimitive action} of $G\Wr_{\Delta} H$.
+\end{definition}
+
+\begin{proposition}
+	Let $(G,\Omega)$ and $(H,\Delta)$ be permutation groups. The set $\Omega\times \Delta$ is a transitive $G\Wr_\Delta H$-set if and only if both $X$ and $\Delta$ are transitive sets.
+\end{proposition}
+
+\begin{theorem}[Embedding Theorem]
+	Let $(G,\Omega)$ be a transitive and imprimitive permutation group. Let $\mathcal{B} = \{\Omega_\lambda\mid \lambda\in\Lambda\}$ be a system of imprimitivity of $\Omega$. Fix a block $\Omega_\iota \in\mathcal{B}$. Then $(G,\Omega)$ is permutationally isomorphic to a subgroup of $(G_{\Omega_\iota} \Wr G, \Omega_\iota\times \mathcal{B})$.
+\end{theorem}
+
+\subsection{Product Action}
+\begin{proposition} \label{prop-product-action-of-WP}
+	Let $(G,\Omega)$ and $(H,\Delta)$ be permutation groups. Then $G\Wr_\Delta H$ (resp. $G\wr_\Delta H$) acts on $\Delta^\Omega$ via
+	\begin{equation*}
+	\varphi^{(f,h)}(\delta) = \varphi(\delta^{h^{-1}})^{f(\delta^{h^{-1}})}.
+	\end{equation*} 
+\end{proposition}
+\begin{sketch}
+	Let $\varphi\in \Delta^{\Omega}$ and let $\delta\in \Delta$. 
+	Clearly $\varphi^{(1,1)}(\delta) = \varphi(\delta^{1})^{1(\delta^{1})} = \varphi(\delta)^{1} = \varphi(\delta)$. Let $f_1,f_2\in G^\Delta$ and $h_1,h_2\in H$. Then  
+	\begin{align*}
+		(\varphi^{(f_1,h_1)})^{(f_2,h_2)}(\delta) &= \varphi^{(f_1,h_1)}(\delta^{h_2^{-1}})^{f_2(\delta^{h_2^{-1}})}
+		\\
+		&= (\varphi((\delta^{h_2^{-1}})^{h_1^{-1}})^{f_1((\delta^{h_2^{-1}})^{h_1^{-1}})})^{f_2(\delta^{h_2^{-1}})}
+		\\
+		&= (\varphi(\delta^{(h_1h_2)^{-1}})^{f_1(\delta^{(h_1h_2)^{-1}})})^{f_2(\delta^{h_2^{-1}})}
+		\\
+		&= \varphi(\delta^{(h_1h_2)^{-1}})^{f_1(\delta^{(h_1h_2)^{-1}})f_2(\delta^{h_2^{-1}})},
+		\\
+\varphi^{(f_1,h_1)(f_2,h_2)}(\delta)&= \varphi^{(f_1f_2^{h_1^{-1}},h_1h_2)}(\delta)
+\\
+&= \varphi(\delta^{(h_1h_2)^{-1}})^{(f_1f_2^{h_1^{-1}})(\delta^{(h_1h_2)^{-1}})}
+\\
+&= \varphi(\delta^{(h_1h_2)^{-1}})^{f_1(\delta^{(h_1h_2)^{-1}})f_2^{h_1^{-1}}(\delta^{(h_1h_2)^{-1}})}
+\\
+&= \varphi(\delta^{(h_1h_2)^{-1}})^{f_1(\delta^{(h_1h_2)^{-1}})f_2((\delta^{(h_1h_2)^{-1}})^{h_1})}
+\\
+&= \varphi(\delta^{(h_1h_2)^{-1}})^{f_1(\delta^{(h_1h_2)^{-1}})f_2((\delta^{h_2^{-1}})}.
+\end{align*}
+	So $(\varphi^{(f_1,h_1)})^{(f_2,h_2)}  =\varphi^{(f_1,h_1)(f_2,h_2)}$. This shows that $G\Wr_{\Delta} H$ acts on $\Delta^\Omega$ with respect to this action.
+\end{sketch}
+\begin{definition}
+	The action defined in Proposition \ref{prop-product-action-of-WP} is called the \textbf{product action} of $G\Wr_{\Delta} H$.
+\end{definition}
+
+
+\paragraph{Main References.} \cite{Meldrum1995,Praeger2018,Dixon1996}

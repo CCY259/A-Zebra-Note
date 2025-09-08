@@ -1,0 +1,36 @@
+\subsection*{Rings}
+\begin{enumerate}[(1)]
+	\item A set $R$ with two binary operations, \textbf{addition} $+$ and \textbf{multiplication} $\cdot$ is called a \textbf{ring} if 
+	\begin{enumerate}[(i)]
+		\item $(R,+)$ is an abelian group.
+		\item $(R,\cdot)$ is a semigroup.
+		\item (Distributive laws) Left (or right) multiplication distributes over addition, i.e., $a(b+c) = ab+ac$ and $(a+b)c = ac+bc$ for all $a,b,c\in R$.
+	\end{enumerate}
+	Remark that the properties given above is defined for convenience. The commutativity in $(R,+)$ is redundant because it can be deduced from other axioms.
+	\item Optional properties:
+	\begin{enumerate}[(a)]
+		\item If the multiplication in $R$ is commutative, then $R$ is called a \textbf{commutative ring}.
+		\item If $R$ has a multiplicative identity $1$, then $R$ is called a \textbf{ring with identity} (or \textbf{unital ring}).
+		\item If each nonzero element in a unital ring $R$ has a multiplicative inverse, then $R$ is called a \textbf{division ring.}
+		\item The properties (a), (b), (c) hold and $0\neq 1$ $\Rightarrow$ $R$ is a \textbf{field}.
+	\end{enumerate}
+	\item $1= 0 $ $\Leftrightarrow$ $R$ is the \textbf{zero ring} $\{0\}$. Due to this result, we often impose that $1\neq 0$ (meaning that $R$ is not the zero ring).
+	\item Usual properties: for all $a,b\in R$,
+	\begin{itemize}
+		\item $0a = a0 = 0$;
+		\item $(-a)b = a(-b) = -(ab)$;
+		\item $(-a)(-b) = ab$;
+	\item if $R$ has $1$, then $1$ is unique, $(-1)^2=1$ and $-a = (-1)a$.
+	\end{itemize}
+\end{enumerate}
+
+\subsection*{Subrings}
+\begin{enumerate}[(1)]
+	\item A \textbf{subring} of $R$ is a nonempty set that is
+	\begin{enumerate}[(i)]
+		\item an additive subgroup of $R$
+		\item and closed under multiplication.
+	\end{enumerate}
+	\item A subring of $R$ need not have a multiplicative identity. E.g. $2\mathbb{Z}$ is a subring of $\mathbb{Z}$ but does not contain $1$.
+	\item The intersection of a nonempty collection of subrings is also a subring.
+\end{enumerate}

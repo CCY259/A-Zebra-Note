@@ -1,0 +1,29 @@
+\subsection*{Cyclic groups}
+\begin{enumerate}[(1)]
+	\item Cyclic groups can be finite or infinite.
+	\item In finite case, say $x$ has order $k$. Then $\langle x\rangle$ consists of $k$ elements.  Note that
+	\begin{equation*}
+		x^m = x^n \Leftrightarrow m\equiv n\mod k.
+	\end{equation*}
+	\item In infinite case, say $x$ is such that $x^m\neq x^n$ whenever $m\neq n$. Then $\langle x\rangle$ has infinitely many elements, which are of the form $x^n$ ($n\in\mathbb{Z}$).
+	\item With both cases above, one can see that the map $\mathbb{Z}\rightarrow \langle x\rangle$ given by $n\mapsto x^n$ is a \textbf{surjective} homomorphism. If $x$ has \textbf{infinite order}, then
+	\begin{equation*}
+		\langle x\rangle\cong \mathbb{Z}.
+	\end{equation*}
+	If $x$ is has \textbf{finite order} $k$, then we see that the \textbf{kernel} of this map is $k\mathbb{Z}$ and we have (by the First Isomorphism Theorem)
+	\begin{equation*}
+		\langle x\rangle \cong \mathbb{Z}/k\mathbb{Z} \cong \mathbb{Z}_k.
+	\end{equation*}
+	%\item A nontrivial group with \textbf{no nontrivial subgroup} must be a finite cyclic group of prime order (a $p$-group). This is further discussed in Proposition \ref{prop-abelian-is-simple-iff-prime-order}.
+	\item The subgroups and quotient groups of a cyclic group is cyclic.
+	\item There are \textbf{only two generators} for an \textbf{infinite cyclic} group $\langle x\rangle$, namely $x$ and $x^{-1}$.
+	\item For finite cyclic group $\langle x\rangle$ (of order $k$), there are $\varphi(k)$ generators. More precisely, we have the following results:
+	\begin{itemize}
+		\item $x^n = \frac{k}{\gcd(n,k)}$;
+		\item the result above leads to $\langle x\rangle = \langle x^n \rangle \Leftrightarrow \gcd(n,k) =1$, that is why the generators can be counted via \textbf{Euler's Totient function}.
+	\end{itemize}
+	\item A cyclic group of order $k$
+	has a \textbf{unique subgroup} of order $d$ for \textbf{each divisor} $d$ of $k$.
+	\item Using (8), we have a stronger version of (7): For each divisor $d$ of $k$, we have $\varphi(d)$ elements of order $d$. This immediately leads to a result on Number Theory:
+	$$\sum_{d\mid k}\varphi(d) = k.$$
+\end{enumerate}

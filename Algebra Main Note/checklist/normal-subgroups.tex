@@ -1,0 +1,32 @@
+\subsection*{Normal subgroups}
+\begin{enumerate}[(1)]
+	\item A subgroup $H$ of $G$ is said to be \textbf{normal} if
+	\begin{equation*}
+		xH=Hx\text{ for all }x\in G.
+	\end{equation*}
+	Sometimes we denote it by $H\lhd G$. This condition can be also expressed as $xHx^{-1} = H$. So we can also define a normal subgroup as $H$ with property $N_G(H) = G$.
+	\item We have the following equivalent statements
+	\begin{equation*}
+		xHx^{-1} = H\text{ for all }x\in G\Leftrightarrow xHx^{-1}\subseteq H\text{ for all }x\in G. 
+	\end{equation*}
+	That is why sometimes proofs in some books only consider one direction.
+	\item If $N\lhd G$ and $K\leq G$, then
+	\begin{itemize}
+		\item $NK\leq G$ (and so $NK = KN$);
+		\item $NK = \langle N,K\rangle$;
+		\item $N\cap K\lhd K$;
+		\item $N\lhd NK$;
+		\item if $K\supseteq N$, then $N\lhd K$.
+		\item if $K\lhd G$, then $NK\lhd G$ and $N\cap K\lhd G$.  
+	\end{itemize}
+	\item $K\lhd H$ and $H\lhd G$ \textbf{do not imply} $K\lhd G$.
+	\item Every normal subgroup is the kernel of some homomorphisms (there is an obvious one $x\mapsto xN$ after we have discussed quotient groups).
+	\item A subgroup is normal in $G$ if and only if it is a union of conjugacy classes.
+	\item Some classical examples:
+	\begin{itemize}
+		\item $Z(G)\lhd G$;
+		\item  $C_G(S)\lhd N_G(S)$; in particular, if $N\lhd G$, then $C_G(N)\lhd G$;
+		\item the \textbf{commutator subgroup} $[G,G]\lhd G$.
+		\item The kernel of any homomorphism $G\rightarrow H$ is normal in $G$.
+	\end{itemize}  
+\end{enumerate}

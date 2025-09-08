@@ -1,0 +1,243 @@
+\section{Direct Products}
+\subsection{Direct Products of Finitely Many Groups}
+\begin{definition}
+	Let $H_1, H_2, \ldots, H_n$ be groups. The \textbf{direct product} of these groups is the cartesian product set $H_1 \times H_2 \times \cdots \times H_n$, equipped with the following binary operation
+	\begin{equation*}
+		(x_1, x_2, \ldots, x_n)(y_1, y_2, \ldots, y_n) = (x_1 y_1, x_2 y_2, \ldots, x_n y_n).
+	\end{equation*}
+	Sometimes we write $\prod_{i=1}^n H_i = H_1 \times H_2 \times \cdots \times H_n$.
+\end{definition}
+\begin{proposition}Let $H_1, H_2, \ldots, H_n$ be groups.
+	\begin{enumerate}[(i)]
+		\item The direct product $\prod_{i=1}^n H_i$ is a group. If $1_i$ denotes the identity of the group $H_i$, then the element $(1_1, 1_2, \ldots, 1_n)$ is the identity of $\prod_{i=1}^n H_i$. The inverse of $(x_1, x_2, \ldots, x_n)$ is $(x_1^{-1}, x_2^{-1}, \ldots, x_n^{-1})$. For each $(x_1,x_2,\cdots, x_n) \in\prod_{i=1}^n H_i$, $|(x_1,x_2,\cdots, x_n)| = \operatorname{lcm}(|x_1|,|x_2|,\dots, |x_n|)$.
+		\item $H_1 \times H_2 \times \cdots \times H_n \cong (H_1 \times \cdots \times H_m) \times (H_{m+1} \times \cdots \times H_n)$.
+		\item $H_1\times H_2 \cong H_2 \times H_1$.
+	\end{enumerate}
+\end{proposition}
+\begin{sketch}
+	(i) Trivial.
+	
+	(ii) and (iii) Construct appropriate isomorphisms.
+\end{sketch}
+\begin{definition}
+	The direct product above is called an \textbf{external direct product}. If the operations in $H_i$ are written additively, then we call $\prod_{i=1}^n H_i$ the \textbf{external direct sum} of these groups and write $H_1\oplus H_2 \oplus \cdots \oplus H_n$ or $\bigoplus_{i=1}^n H_i$.
+\end{definition}
+\begin{proposition} \label{prop-direct-prod-barH_i}
+	Let $G$ be the direct product of the groups $H_1, \ldots, H_n$. For each $i=1,\dots, n$,  let
+	\begin{equation*}
+		\overline{H}_i = \{(1_1, 1_2, \ldots, 1_{i-1}, x_i, 1_{i+1}, \ldots, 1_n)\,|\, x_i \in H_i\}.
+	\end{equation*}
+	In other words, $\overline{H}_i$ is the image of $H_i$ under canonical injection. Then the following propositions hold.
+	\begin{enumerate}[(i)]
+		\item The subgroup $\overline{H}_i$ is isomorphic to $H_i$.
+		\item The subgroup $\overline{H}_i$ is normal in $G$.
+		\item Each element in $\overline{H}_i$ commutes  with each element in $\overline{H}_j$ for $i\neq j$. In this case, we say that $\overline{H}_i$ and $\overline{H}_j$ \textbf{commute elementwise}.
+		\item $G = \overline{H}_1 \overline{H}_2 \cdots \overline{H}_n$ and every element of $G$ can be written uniquely as $x_1 x_2 \cdots x_n$ with $x_i \in \overline{H}_i$ for all $i$.
+		\item For each $k=1,\dots, n$, we have $\overline{H}_k \cap (\overline{H}_1\cdots \overline{H}_{k-1}\overline{H}_{k+1}\cdots \overline{H}_n )= \{1\}$.
+	\end{enumerate}
+\end{proposition}
+\begin{sketch}
+	Routine.
+\end{sketch}
+\begin{corollary}
+	Let $H_1, H_2, \ldots, H_n$ be groups. Then
+	\begin{equation*}
+		|H_1\times H_2\times \cdots \times H_n| = |H_1|\cdot |H_2| \cdots |H_n|.
+	\end{equation*}
+\end{corollary}
+\begin{sketch}
+	Note that $|XY| = |X|\cdot |Y|/|X\cap Y|$. Use induction.
+\end{sketch}
+Let $G$ be an arbitrary group. We wish to know the characterization of $G$ if we have normal subgroups satisfying the properties in Proposition \ref{prop-direct-prod-barH_i}. This leads to the definition of internal direct product.
+\begin{lemma} \label{lemma-indp-normal-subgrps-commute}
+	Let $H$ and $K$ be normal subgroups of a group $G$ such that $H\cap K = \{1\}$.  Then $hk = kh$ for every $h\in H$, $k\in K$.
+\end{lemma}
+\begin{sketch}
+	Let $h \in H$ and $k \in K$. Note that
+	\begin{equation*}
+		[h,k] = h(kh^{-1}k^{-1}) = (hkh^{-1})k. 
+	\end{equation*} Since $H,K \lhd G$, we get $[h,k]\in  H \cap K = \{1\}$. So we obtain $[h,k] = 1$ and thus $hk = kh$.
+\end{sketch}
+\begin{theorem} \label{thm-internal-direct-prod}
+	Let $H_1, H_2, \ldots, H_n$ be normal subgroups of a group $G$ such that $G = H_1 H_2 \cdots H_n$. Then the following  are equivalent.
+	\begin{enumerate}[(1)]
+		\item The subgroups $H_i$ and $H_j$ commute elementwise for $i\neq j$, and every element of $G$ can be written uniquely as $ x_1 x_2 \cdots x_n$ with $x_i\in H_i$ for all $i$.
+		\item For each $k=1,\dots, n$, we have $H_k \cap (H_1\cdots H_{k-1}H_{k+1}\cdots H_n )= \{1\}$.
+		\item For each $k = 2, \ldots, n$, we have $H_k \cap (H_1\cdots H_{k-1})  = \{1\}$.
+		\item There is an isomorphism $G \cong \prod_{i=1}^n H_i$ such that the subgroup $H_i$ of $G$ corresponds to the subgroup $\overline{H}_i$ of the direct product.
+	\end{enumerate}
+\end{theorem}
+\begin{definition}
+	The group $G = H_1 H_2 \cdots H_n$ is called the \textbf{internal direct product} of the normal subgroups $H_i$ if the conditions in Theorem \ref{thm-internal-direct-prod} are satisfied.
+	The normal subgroups $H_1,\dots, H_n$ of are said to be \textbf{independent} if they satisfy condition (2) in Theorem \ref{thm-internal-direct-prod}. 
+\end{definition}
+\begin{sketch}
+	(1) $\Rightarrow$ (2)  Fix $k$ and suppose $g \in H_k \cap (H_1\cdots H_{k-1}H_{k+1}\cdots H_n)$. Since $g \in H_1\cdots H_{k-1}H_{k+1}\cdots H_n $, we can write $g = x_1 x_2 \cdots x_n$ where $x_i \in H_i$ for all $i$ and $x_k = 1$. Since $g \in H_k$,  we can also write $g = y_1 y_2 \cdots y_n$, with $y_i \in H_i$, $y_k = g$ and $y_i = 1$ for $i \ne k$. The uniqueness of expression implies that $x_i = y_i$ for all $i$. In particular, $g = y_k = x_k = 1$.
+	
+	(2) $\Rightarrow$ (3) Since $H_k \cap (H_1\cdots H_{k-1}) \subseteq H_k \cap (H_1\cdots H_{k-1}H_{k+1}\cdots H_n )$, the result follows immediately.
+	
+	(3) $\Rightarrow$ (1) The first assertion follows from Lemma \ref{lemma-indp-normal-subgrps-commute}. Since $G = H_1 H_2 \cdots H_n$, every element of $G$ can be written as $x_1 x_2 \cdots x_n$ with $x_i \in H_i$ for all $i$. Suppose that $x_1 x_2 \cdots x_n = y_1 y_2 \cdots y_n$ where $x_i,y_i\in H_i$ for all $i$. Hence
+	\begin{equation*}
+		x_n y_n^{-1} = (x_1 x_2 \cdots x_{n-1})^{-1}y_1 y_2 \cdots y_{n-1} = (x_1^{-1}y_1)(x_2^{-1}y_2)\cdots (x_{n-1}^{-1}y_{n-1}).
+	\end{equation*} Let $w = x_n y_n^{-1}$. Then we see that $w\in H_{n}\cap H_1H_2\cdots H_{n-1}$. Since $H_n \cap   H_1 \cdots H_{n-1}= \{1\}$,  we have $w = 1$ and thus $x_n = y_n$. By repeating this argument, we prove the second assertion. 
+	
+	(1) $\Rightarrow$ (4)  Let $g$ be an element of $G$. We can write the element $g$ uniquely as $g = x_1 x_2 \cdots x_n$, where $x_i \in H_i$ for all $i$. Let the function $\psi: G \rightarrow \prod_{i=1}^n H_i$ be defined by
+	\begin{equation*}
+		\psi(g) = (x_1, x_2, \dots, x_n).
+	\end{equation*}
+	Let $h = y_1 \cdots y_n$ be another element of $G$ where $y_i\in H_i$ for all $i$. Since $H_i$ and $H_j$ commutes elementwise for $i\neq j$, we get
+	\begin{equation*}
+		gh = (x_1 y_1)(x_2 y_2) \cdots (x_n y_n).
+	\end{equation*}
+	Thus
+	\begin{equation*}
+		\psi(gh) = (x_1 y_1, x_2 y_2, \ldots, x_n y_n) = f(g)f(h)
+	\end{equation*}
+	and this proves that $\psi$ is a homomorphism. It is clear that $\psi$ is bijective and $\psi(H_i) = \overline{H}_i$ for all $i$.
+	
+	(4) $\Rightarrow$ (3) We can verify that $\overline{H}_k \cap (\overline{H}_1 \cdots \overline{H}_{k-1}) = \{1\}$ and then apply the isomorphism to obtain (3).
+\end{sketch}
+
+\begin{remark}
+	In view of Theorem \ref{thm-internal-direct-prod}.(4), we can omit the terms ``internal" and ``external" and simply write direct product when the context is clear. However, we need to be careful when dealing with some properties that are not stated in the discussion above. For example, let $G =HK = HL$ be two internal direct products. Then 
+	\begin{equation*}
+		G/H \cong HK/H \cong K/(H\cap K) \cong K
+	\end{equation*}
+	by the Second Isomorphism Theorem. Similarly, we obtain $G/H \cong L$. Hence we get $H\cong L$. This result is not true for external direct product. When we view the set of real numbers $\mathbb{R}$ as an additive group, we have
+	\begin{equation*}
+		\mathbb{R} \oplus \{0\} \cong \mathbb{R} \cong \mathbb{R} \oplus \mathbb{R}.
+	\end{equation*}
+	This provides a counterexample. Note that $\mathbb{R} \cong \mathbb{R} \oplus \mathbb{R}$ is a vector space isomorphism. It can be established by looking at the dimension of both vector spaces over $\mathbb{Q}$.
+\end{remark}
+
+\begin{corollary} \label{cor-direct-product-isom-to-product-subgrps}
+	Let $H_1, \dots, H_n$ be normal subgroups of a group such that $|H_i|$ is relatively prime to $|H_j|$ for $i \neq j$. Then \begin{equation*}
+		H_1H_2 \cdots H_n \cong H_1 \times H_2 \times \dots \times H_n.
+	\end{equation*} 
+\end{corollary}
+\begin{sketch}
+	Note that $|H_1 \cap H_2|$ divides both $|H_1|$ and $|H_2|$. So, we have $H_1 \cap H_2 = \{1\}$ because $|H_1 \cap H_2| = \gcd(|H_1|, |H_2|) = 1$. Therefore $|H_1 H_2| =|H_1| \cdot |H_2|/|H_1 \cap H_2| =   |H_1| \cdot |H_2|$. Suppose that $|H_1 \cdots H_{k}| = |H_1| \cdots |H_{k}|$ for some $1\leq k< n$. Then we see that 
+	\begin{align*}
+		|H_1 \cdots H_{k} \cap H_{k+1}| &= \gcd(|H_1 \cdots H_{k}| , |H_{k+1}|) 
+		\\
+		&= \gcd(|H_1| \cdots |H_{k}| , |H_{k+1}|)
+		\\
+		&= 1. 
+	\end{align*}
+	This implies that 
+	\begin{equation*}
+		H_1 \cdots H_{k} \cap H_{k+1} = \{1\}
+	\end{equation*}
+	for all $1\leq k\leq n-1$. This satisfies Theorem \ref{thm-internal-direct-prod}.(2). Therefore $H_1 \cdots H_n$ is isomorphic to the direct product by Theorem \ref{thm-internal-direct-prod}.(4).
+\end{sketch}
+\begin{corollary} \label{cor-center-of-direct-product}
+	Let $G$ be the direct product of the subgroups $H_1, H_2, \dots, H_m$. Then 
+	\begin{equation*}
+		Z(G) = Z(H_1) \times Z(H_2) \times \cdots \times Z(H_m).
+	\end{equation*}
+\end{corollary}
+\begin{sketch}
+	
+	Write $Z_i = Z(H_i)$. If $i \ne j$, then $H_i$ and $H_j$ commute elementwise by Lemma \ref{lemma-indp-normal-subgrps-commute}. Let $k$ be fixed. Then we see that $H_i \subseteq C_G(H_k) \subseteq C_G(Z_k)$ for all $i\neq k$. Clearly $H_k \subseteq C_G(Z_k)$. Thus
+	$G =  H_1H_2\cdots H_n \subseteq C_G(Z_k)$
+	and so $Z_k \subseteq Z(G)$ for each $k$. Thus $Z_1Z_2\cdots Z_n \subseteq Z(G)$.
+	
+	Now let $z \in Z(G)$ and write $z = z_1 z_2 \cdots z_n$ with $z_i \in H_i$ for all $i$. Let $g \in G$, then
+	$$z = gzg^{-1} = (gz_1g^{-1})(gz_2g^{-1}) \cdots (gz_ng^{-1}).$$
+	Since $H_i\lhd G$, we have $gz_ig^{-1} \in H_i$ for all $i$. By Theorem \ref{thm-internal-direct-prod}.(1), we get  $z_i = gz_ig^{-1}$ for all $i$, and thus $z_i \in Z(G)$. In particular, $z_i \in Z_i$. Therefore $z \in Z_1Z_2\cdots Z_n$ and we have $Z(G) = Z_1Z_2\cdots Z_n$. This product is direct  because uniqueness is inherited from the fact that $G = \prod H_i$.
+\end{sketch}
+\begin{proposition} \label{prop-direct-product-normal-subgrp}
+	Suppose that a group $G$ is the  direct product of the subgroups $H_1, \dots, H_n$. Let $N_i$ be a normal subgroup of $H_i$ for each $i$. Let $N = N_1 N_2 \dots N_n$. Then the following propositions hold.
+	\begin{enumerate}[(i)]
+		\item Each $N_i$ is a normal subgroup of $G$.
+		\item The group $N$ is the direct product of the subgroups $N_1, N_2, \dots, N_n$, i.e.,
+		\begin{equation*}
+			N_1N_2\cdots N_n \cong N_1\times N_2\times \cdots \times N_n.
+		\end{equation*}
+		\item The group $G/N$ is isomorphic to the direct product of the groups $H_1/N_1, \dots, H_n/N_n$, i.e.,
+		\begin{equation*}
+			\frac{H_1\times H_2\times \cdots \times H_n}{N_1N_2\cdots N_n} \cong H_1/N_1\times H_2/N_2\times  \cdots \times H_n/N_n.
+		\end{equation*}
+	\end{enumerate}
+\end{proposition}
+\begin{sketch}
+	(i) If $i \ne j$, then $H_i$ and $H_j$ commute elementwise by Lemma \ref{lemma-indp-normal-subgrps-commute}. Thus $N_k$ commutes elementwise with $H_i$ for $i\neq k$. Hence $N_G(N_k)$ contains all $H_i$ and so $N_G(N_k) = H_1H_2\cdots H_n = G$. Therefore we have $N_i \lhd G$.
+	
+	(ii) It follows from $N_k \cap (N_1\cdots N_{k-1}) = \{1\}$ for each $k=2,\dots, n$ and Theorem \ref{thm-internal-direct-prod}.
+	
+	(iii)  Let the function $\psi:G\rightarrow H_1/N_1\times H_2/N_2\times  \cdots \times H_n/N_n$ be defined by
+	\begin{equation*}
+		\psi(g) =  (x_1N_1, \ldots, x_nN_n)
+	\end{equation*}
+	where $g = x_1\cdots x_n$ and $x_i\in H_i$ for all $i$. Then $\psi$ is a surjective homomorphism. Clearly $\ker \psi = N$.
+\end{sketch}
+
+\subsection{Direct Products of Infinitely Many Groups}
+We have considered the direct product of a finite
+number of groups. The direct product of infinitely many groups may be
+defined similarly.
+\begin{definition}
+	Let $\{H_\lambda\,|\, \lambda\in \Lambda\}$ be a family of groups indexed by a set $\Lambda$. Consider the set $\prod_{\lambda\in \Lambda} H_\lambda$ of functions $f:\Lambda \rightarrow \bigcup_{\lambda\in \Lambda}H_\lambda$ defined on $\Lambda$ such that $f(\lambda) \in H_\lambda$ for all $\lambda \in \Lambda$, and define the product of two such functions $f$ and $g$ by the formula
+	$$(fg)(\lambda) = f(\lambda)g(\lambda).$$
+	Then $\prod_{\lambda\in \Lambda} H_\lambda$ equipped with the operation defined above forms a group, and is called the \textbf{unrestricted direct product} (or \textbf{complete direct product}) of the groups $H_\lambda$ ($\lambda \in \Lambda$). The subgroup $\prod_{\lambda\in \Lambda}^w H_\lambda$ of $\prod_{\lambda\in \Lambda} H_\lambda$ consisting of functions such that $f(\lambda)$ is the identity of $H_\lambda$ for all but a finite number of $\lambda$'s is called the \textbf{restricted direct product} (or \textbf{weak direct product}) of the groups $H_\lambda$ ($\lambda \in \Lambda$).
+\end{definition}
+
+\begin{remark} If we only mention direct product, it means the restricted direct product.
+	If $\Lambda = \{1,\dots, n\}$, then $\prod_{\lambda\in \Lambda}^w H_\lambda = H_1\times \cdots \times H_n$.
+\end{remark}
+
+\begin{theorem}
+	Let $\prod_{\lambda\in\Lambda} H_{\lambda}$ be the unrestricted direct product of the groups $H_\lambda$ ($\lambda \in \Lambda$). Then $\left(\prod_{\lambda\in\Lambda} H_{\lambda}, \{\pi_\lambda\,|\, \lambda\in\Lambda\}\right)$ is a product in the category of groups, where each $\pi_\mu: \prod_{\lambda\in\Lambda} H_\lambda \rightarrow H_\mu$ is the canonical projection.
+\end{theorem}
+\begin{sketch}
+	Let $(G, \{\varphi_\lambda: G\rightarrow H_\lambda\})$ be a pair of a group and homomorphisms. Then verify that the function
+	\begin{align*}
+		\varphi:G&\rightarrow\prod_{\lambda\in \Lambda} H_i
+		\\
+		g&\mapsto (\varphi_{\lambda}(g))_{\lambda\in\Lambda}
+	\end{align*} 
+	is a unique homomorphism such that $\pi_\lambda\circ \varphi = \varphi_\lambda$ for all $\lambda\in\Lambda$. 
+\end{sketch}
+
+\begin{proposition}
+	Let $G$ be the restricted direct product of a family of groups $\{H_\lambda\,|\, \lambda \in \Lambda\}$. For each $\lambda\in \Lambda$,  let $\overline{H}_i$ be the image of $H_i$ under canonical injection. Then the following propositions hold.
+	\begin{enumerate}[(i)]
+		\item The subgroup $\overline{H}_\lambda$ is isomorphic to $H_i$.
+		\item The subgroup $\overline{H}_\lambda$ is normal in $G$.
+		\item The subgroups $\overline{H}_\lambda$ and $\overline{H}_\mu$ commute elementwise.
+		\item $G = \langle \overline{H}_\lambda \,|\, \lambda\in\Lambda \rangle$, and for  every nonidentity element $g$ of $G$, there exists a unique finite subset $\{\lambda_1,\dots, \lambda_n\}$ of $\Lambda$ such that $g$ can be written uniquely as $x_1 x_2 \cdots x_n$ with $x_i \in \overline{H}_{\lambda_i}\setminus\{1\}$ for all $i$.
+	\end{enumerate}
+\end{proposition}
+\begin{sketch}
+	Routine.
+\end{sketch}
+We also have \textbf{internal direct product} of a family of normal subgroups as follows.
+\begin{theorem}
+	Let $\{H_\lambda\,|\, \lambda \in \Lambda\}$ be a family of normal subgroups a group $G$ such that $G = \langle H_\lambda\,|\, \lambda \in \Lambda \rangle$. Then the following  are equivalent.
+	\begin{enumerate}[(1)]
+		\item The subgroups $H_\lambda$ and $H_\mu$ commute elementwise for $\lambda\neq \mu$, and for  every nonidentity element $g$ of $G$, there exists a unique finite subset $\{\lambda_1,\dots, \lambda_n\}$ of $\Lambda$ such that $g$ can be written uniquely as $x_1 x_2 \cdots x_n$ with $x_i \in H_{\lambda_i}\setminus\{1\}$ for all $i$.
+		\item For each $\lambda\in\Lambda$, we have $H_\lambda \cap \langle H_\mu\,|\, \mu \neq \lambda \rangle= \{1\}$.
+		\item There is an isomorphism $G \cong \prod_{\lambda\in \Lambda}^w H_i$ such that the subgroup $H_\lambda$ of $G$ corresponds to the subgroup $\overline{H}_\lambda$ of the direct product.
+	\end{enumerate}
+\end{theorem}
+\begin{sketch}
+	(1) $\Rightarrow$ (2) We first show that for all finite subset $\{\lambda_1,\dots, \lambda_k\}$ ($k\geq 2$), if $n_{\lambda_1}n_{\lambda_2}\cdots n_{\lambda_k} = 1$ where $n_{\lambda_i}\in H_i$, then $n_{\lambda_i} = 1$ for all $i$. Assume that $n_{\lambda_1} \neq 1$. Then some $n_{\lambda_i}\neq 1$. But the expression $n_{\lambda_1} = n_{\lambda_k}^{-1} \cdots n_{\lambda_2}^{-1}$ is not unique.
+	
+	Fix $\lambda$ and suppose $g \in H_\lambda \cap \langle H_\mu\,|\, \mu \neq \lambda \rangle$. Since $g \in \langle H_\mu\,|\, \mu \neq \lambda \rangle $, we can write $g=x_{\lambda}  = x_{\mu_1} x_{\mu_2} \cdots x_{\mu_n}$ where $x_\lambda\in H_\lambda$ and  $x_{\mu_i} \in H_{\mu_i}$ for all $i$. So $1 = x_{\lambda}^{-1} x_{\mu_1} x_{\mu_2} \cdots x_{\mu_n}$. The first paragraph implies that $g = x_{\lambda} = 1$.
+	
+	
+	(2) $\Rightarrow$ (1) The first assertion follows from Lemma \ref{lemma-indp-normal-subgrps-commute}. Since $G = \langle H_\lambda\,|\, \lambda \in \Lambda \rangle$, we can write any element $x$ of $G$  as $x_{\lambda_1} x_{\lambda_2} \cdots x_{\lambda_n}$ where $\{\lambda_1,\dots, \lambda_n\}$ is a finite subset of $\Lambda$ and $x_{\lambda_i} \in H_i\setminus\{1\}$ for all $i$. Let $x_{\mu_1} x_{\mu_2} \cdots x_{\mu_\ell}$ be another expression for $x$. If $x_{\mu_i} \not\in\{\lambda_1,\dots, \lambda_n\}$, then we apply the first assertion to obtain $$x_{\mu_i} = (x_{\mu_2} \cdots x_{\mu_\ell})^{-1}x_{\lambda_1} x_{\lambda_2} \cdots x_{\lambda_n} \in H_{\mu_i} \cap \langle H_\lambda\,|\, \lambda \neq \mu_i \rangle = \{1\}.$$ Hence we have $\{\lambda_1,\dots, \lambda_n\} = \{\mu_1,\dots, \mu_\ell\}$. The first assertion allows us to reindex $\mu_i$ so that $x_{\lambda_i},x_{\mu_i}\in H_{\lambda_i}$ for all $i$. Then we can use the same argument as in the proof of Theorem \ref{thm-internal-direct-prod} to get (1). 
+	
+	(1) $\Rightarrow$ (3)  Let $g$ be an element of $G$. We can write the element $g$ uniquely as $g = x_{\lambda_1} x_{\lambda_2} \cdots x_{\lambda_n}$, where $x_i \in H_{\lambda_i}\setminus\{1\}$ for all $i$. Let the function $\psi: G \rightarrow \prod_{\lambda\in\Lambda} H_\lambda$ be defined by $\psi(g) = \psi_g$, where
+	\begin{equation*}
+		\psi_g(\lambda) =  \begin{cases}
+			x_i &\quad \text{if } \lambda = \lambda_i,
+			\\
+			1 &\quad \text{otherwise}.
+		\end{cases}
+	\end{equation*}Then we can check that $\psi$ is a bijective homomorphism.
+	
+	(3) $\Rightarrow$ (2) We can verify that $\overline{H}_\lambda \cap \langle \overline{H}_\mu\,|\, \mu \neq \lambda \rangle= \{1\}$ and then apply the isomorphism to obtain (2).
+\end{sketch}
+
+\paragraph{Main References.} \cite{Suzuki1982,Hungerford1974,Isaacs2009,Robinson1982}

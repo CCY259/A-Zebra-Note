@@ -1,0 +1,522 @@
+\section{Semidirect Products}
+\paragraph{Important Note.} Throughout this section, we will use \textbf{right action} $X\times G\rightarrow X$ where the image of $x\in X$ under $g\in G$ is denoted by $x^g$. Following the axioms of right action, we have $(x^g)^{g'} = x^{gg'}$ for all $g,g'\in G$. In accordance with this, function composition will be written as $fg$ to mean that $f$ is applied first, followed by $g$, i.e., $(fg)(x) = g(f(x))$. In conjugation by $g$ on $x$, we define $x\mapsto g^{-1}xg$ to make it consistent with the right actions.  To summarize, we can just ``switch" the side from the corresponding left actions and replace the symbols $s$ with $s^{-1}$.
+\subsection{Definitions and Properties}
+\begin{definition}
+	Let $G$ and $H$ be two groups. If a homomorphism $\varphi:G \to \operatorname{Aut} H$ is given, then we say that $G$ acts on $H$ via $\varphi$ and $G$ is an \textbf{operator group} on $H$. The homomorphism $\varphi$ is called an \textbf{action} of $G$ on $H$. We denote the image $\varphi(g)(h)$ of an element $h$ of $H$ simply by $h^g$.
+\end{definition}
+
+\begin{proposition}
+	Let $\varphi$ be a function from a group $G$ into the set of all functions on the subgroup $H$. Then $\varphi$ is an action of $G$ on $H$ if and only if for all $u, v \in H$ and $x, y \in G$,
+	\begin{gather*}
+		(uv)^x = u^x v^x,
+		\\
+		u^{xy} = (u^x)^y,
+		\\
+		u^1 = u
+	\end{gather*}
+	where $1$ is the identity of $G$.
+\end{proposition} 
+\begin{proposition} \label{prop-semidirect-prod}
+	Let $\varphi$ be an action of a group $G$ on another group $H$. Let $L$ be the cartesian product set of $H$ and $G$. Define the product of two elements of $L$ by
+	$$(h_1,g_1)(h_2,g_2) = (h_1h_2^{g_1^{-1}}, g_1g_2).$$
+	Then $L$ forms a group with respect to this operation. 
+\end{proposition}
+
+\begin{sketch}
+	Let $g, u, x \in H$ and $h, v, y \in G$ (The symbols are so misleading!). Then,
+	\begin{align*}
+		[(g, h)(u, v)](x, y) &= (gu^{h^{-1}},hv)(x, y) \\
+		&= (gu^{h^{-1}}x^{(hv)^{-1}},hvy)
+		\\
+		&= (gu^{h^{-1}}x^{v^{-1}h^{-1}},hvy)
+		\\
+		&= (g(ux^{v^{-1}})^{h^{-1}},hvy)
+		\\
+		&= (g,h)(ux^{v^{-1}},vy)
+		\\
+		&=  (g, h)[(u, v)(x, y)].
+	\end{align*}
+	This proves the associative law. Clearly $1 = (1, 1)$ is the identity and the inverse of $(h, g)$ is given by $((h^{-1})^{g}, g^{-1})$. So $L$ forms a group with respect to the operation defined above.
+\end{sketch}
+
+
+\begin{definition}
+	The group $L$ in Proposition \ref{prop-semidirect-prod} is called the \textbf{semidirect product} $H$ by $G$ with respect to the action $\varphi$ and is denoted by $H\rtimes_{\varphi} G$.
+\end{definition}
+ \begin{remark}
+ 	If there is no confusion, we simply write $H\rtimes G$. It is important to note that semidirect products with respect to different actions might not isomorphic. 
+ \end{remark}
+ We set
+$$\overline{H} = \{(h,1) \,|\, h \in H\},\quad\overline{G} = \{(g,1)\,|\, g \in G\}.$$
+Obviously they are just image sets under canonical injections.  We summarize all the properties in a proposition.
+\begin{proposition} \label{prop-semidirect-prod-properties}
+	Let $H \rtimes G$ be the semidirect product. Then the following propositions hold.
+	\begin{enumerate}[(i)]
+		\item $\overline{H} \cong H$ and $\overline{G}\cong G$.
+		\item $\overline{H} \lhd  H \rtimes G$.
+		\item $H \rtimes G= \overline{H}\,\overline{G}$.
+		\item $\overline{H} \cap \overline{G} = \{(1,1)\}$.
+		\item $|H \rtimes G| = |H|  |G|$ if $G$ and $H$ are finite.
+		\item For any $h \in H$ and $g \in G$, we have $(1,g)^{-1}(h,1)(1,g) = (h^g,1)$.
+	\end{enumerate}
+\end{proposition} 
+\begin{sketch}
+	Routine.
+\end{sketch}
+
+\begin{remark}
+	We may consider $G$ and $H$ as subgroups of $H \rtimes G$ by identifying $G$ and $H$ with $\overline{G}$ and $\overline{H}$ respectively.
+\end{remark}
+\begin{corollary}
+	Every element of $H \rtimes G$ can be written uniquely as $hg$ with $h\in H$ and $g\in G$.
+\end{corollary}
+\begin{sketch}
+	By Proposition \ref{prop-semidirect-prod-properties}.(iii) \& (iv).
+\end{sketch}
+\begin{proposition} \label{prop-semidirect-prod-isom}
+	Let $G$ act on another group $H$ via $\varphi$. Let $X$ and $Y$ be two groups such that $X\cong G$ and $Y\cong H$. Then $$ H\rtimes_{\varphi} G \cong Y\rtimes_{\theta} X$$ for some action $\theta$ of $X$ on $Y$.
+\end{proposition}
+\begin{sketch}
+	Let $\psi_{X,G}:X\rightarrow G$ and $\psi_{Y,H}:Y\rightarrow H$ be isomorphisms. 
+	Let $\theta(x)$ be the automorphism of $Y$ defined by 
+	\begin{equation*}
+		y^{x} = \psi_{Y,H}^{-1}(\psi_{Y,H}(y)^{\psi_{X,G}(x)}).
+	\end{equation*}
+	Then $\theta$ is an action of $X$ on $Y$. Now let $\phi: Y\rtimes_{\theta} X \to H\rtimes_{\varphi} G$ be defined by
+	\begin{equation*}
+		\phi(y,x) = (\psi_{Y,H}(y), \psi_{X,G}(x)).
+	\end{equation*}
+	Now we show that $\phi$ is a homomorphism. Let $y_1,y_2\in Y$ and $x_1,x_2\in X$. Then
+	\begin{align*}
+		\phi[(y_1,x_1)(y_2,x_2)] &= \phi(y_1y_2^{x_1^{-1}},x_1x_2) 
+		\\
+		&= \phi\left(y_1\psi_{Y,H}^{-1}(\psi_{Y,H}(y_2)^{\psi_{X,G}(x_1^{-1})}),x_1x_2\right) 
+		\\
+		&= \left(\psi_{Y,H}(y_1)\psi_{Y,H}(y_2)^{\psi_{X,G}(x_1^{-1})},\psi_{X,G}(x_1)\psi_{X,G}(x_2)\right),
+		\\
+		\phi(y_1,x_1)\phi(y_2,x_2) &=(\psi_{Y,H}(y_1),\psi_{X,G}(x_1))(\psi_{Y,H}(y_2),\psi_{X,G}(x_2))
+		\\
+		&= \left(\psi_{Y,H}(y_1)\psi_{Y,H}(y_2)^{\psi_{X,G}(x_1)^{-1}}, \psi_{X,G}(x_1)\psi_{X,G}(x_2)\right)
+		\\
+		&= \left(\psi_{Y,H}(y_1)\psi_{Y,H}(y_2)^{\psi_{X,G}(x_1^{-1})}, \psi_{X,G}(x_1)\psi_{X,G}(x_2)\right).
+	\end{align*}
+	So $\phi[(y_1,x_1)(y_2,x_2)] = \phi(y_1,x_1)\phi(y_2,x_2)$ for all $y_1,y_2\in Y$ and $x_1,x_2\in X$ and $\phi$ is a homomorphism. Clearly $\phi$ is bijective. This completes the proof.
+\end{sketch}
+\begin{definition}
+	A group $G$ is called an \textbf{internal semidirect product} of $H$ by $K$ (where $H,K$ are subgroups of $G$), if
+	$$G = HK,\quad H \lhd G, \quad H \cap K = \{1\}.$$
+\end{definition}
+Any internal semidirect product is 
+isomorphic to the semidirect product with respect to some action. For this
+reason, ``internal" is often omitted.
+\begin{proposition} \label{prop-internal-semidirect-prod-isom}
+	Let $G$ be an internal semidirect product of two subgroups $H$ and $K$ such that $H \lhd G = HK$ and $H \cap K = \{1\}$. Let $\varphi(k)$ be the automorphism of $H$ induced by the conjugation of $k \in K$, i.e., $h^k = k^{-1}hk$. Then $\varphi$ is an action of $K$ on $H$, and $H \rtimes K  \cong G$.
+\end{proposition}
+\begin{sketch}
+	It can be checked that $\varphi$ is an action of $K$ on $H$. Let $f:H \rtimes K \to G$ be the function defined by
+	$$f(h, k) = hk.$$
+	By assumption, $G = HK = KH$. So the function $f$ is surjective. Now we show that $f$ is a homomorphism. For any $h, v \in H$ and $k, u \in K$, we have
+	$$f[(h,k)(u, v)] = f(hu^{k^{-1}},kv) = hu^{k^{-1}}kv = hkuk^{-1}kv = hkuv = f(h,k)f(u,v).$$Hence the function $f$ is a homomorphism. Let $(k, h) \in\ker f$. Then we have $kh = 1$, or $k = h^{-1} \in K \cap H = \{1\}$. Thus the kernel of $f$ is $\{1\}$. Therefore $f$ is an isomorphism.
+\end{sketch}
+The definition of an internal semidirect product is not symmetric with respect to $H$ and $K$. So it should be stated clearly which subgroup is normal in $G$ when it is important to distinguish between them. In fact, if both subgroups are normal, then we recover  direct product. More specifically, we have the following result.
+\begin{proposition} \label{prop-semidirect-trivial-hom}
+	Let $\varphi$ be an action of a group $G$ on a group $H$. Then the following are equivalent.
+	\begin{enumerate}[(1)]
+		\item The identity  map between $H \rtimes G$ and $H \times G$ is a group isomorphism.
+		\item $\varphi$ is the trivial homomorphism from $G$ into $\operatorname{Aut}H$.
+		\item The subgroup $G$ is normal in $H \rtimes G$.
+	\end{enumerate}
+\end{proposition}
+\begin{sketch}
+	(1) $\Rightarrow$ (2) Let $\operatorname{Id}:H \rtimes G\to H \times G$ be the identity map. Let $h_1, h_2 \in H$ and $g_1, g_2 \in G$. Then we have
+	\begin{align*}
+		(h_1  h_2^{g_1^{-1}}, g_1 g_2) &= \operatorname{Id}(h_1  h_2^{g_1^{-1}}, g_1 g_2)
+		\\
+		&=\operatorname{Id}[(h_1, g_1)(h_2, g_2) ]
+		\\
+		&= (h_1, g_1)(h_2, g_2)
+		\\&=(h_1 h_2, g_1 g_2).
+	\end{align*}
+	So we obtain $h_2^{g_1^{-1}}= h_2$ for all $h_2 \in H$ and  $g_1 \in G$, i.e., $G$ acts trivially on $H$.
+	
+	(2) $\Rightarrow$ (1) The operation in the semidirect product is then the same as that in the direct product.
+	
+	(1) $\Rightarrow$ (3) Trivial.
+	
+	 (3) $\Rightarrow$ (2) Let $h\in H$ and $g\in G$. We have $[(h,1), (1,g)] \in H \cap G = \{1\}$. Thus $(1,g)^{-1}(h,1)(1,g) = (h,1)$. By Proposition \ref{prop-semidirect-prod-properties}.(vi), we have $(h^g,1) = (h,1)$. So $h^g =h$ for all $h\in H$ and $g\in G$.
+\end{sketch} 
+\begin{comment}
+	\subsection{Short Exact Sequences}
+	We can define semidirect products using short exact sequence.
+	\begin{definition}
+		An \textbf{exact sequence} is a sequence of groups and group homomorphisms
+		\[
+		\dots \longrightarrow G_{n-1} \xlongrightarrow{\varphi_{n-1}} G_n \xlongrightarrow{\varphi_n} G_{n+1} \longrightarrow \dots
+		\]
+		such that $\operatorname{im}\varphi_{n-1} = \operatorname{ker} \varphi_n$ for all $n$. A \textbf{short exact sequence} is an exact sequence of the form
+		\begin{equation*} 
+			\{1\} \longrightarrow N \xlongrightarrow{\varphi} G \xlongrightarrow{\psi} H \longrightarrow \{1\}.
+		\end{equation*}
+		In other words, $\varphi$ is an isomorphism from $N$ to a normal subgroup $N' \lhd G$ and $\psi$ descends to an isomorphism $G/N' \cong H$.
+	\end{definition}
+	\begin{definition}
+		A short exact sequence $\{1\} \rightarrow N \xrightarrow{\varphi} G \xrightarrow{\psi} H \rightarrow \{1\}$ \textbf{splits} if there exists a homomorphism $\sigma: H \to G$ called a \textbf{section} such that
+		\[
+		\psi \circ \sigma = \text{Id}.
+		\]
+		When the sequence splits we shall sometimes write it as
+		\[
+		\{1\} \longrightarrow N \longrightarrow G \xlongrightarrow{\curvearrowleft} H \longrightarrow \{1\}.
+		\]
+	\end{definition}
+	
+	\begin{proposition}
+		\begin{enumerate}[(i)]
+			\item Every split exact sequence  $\{1\} \rightarrow N \xrightarrow{\varphi} G \xrightarrow{\psi} H \rightarrow \{1\}$ determines a decomposition of $G$ as the semidirect product $\varphi(N) \rtimes \sigma(H)$, where $\sigma:H\rightarrow G$ is a section.
+			\item Every semidirect product $G = N \rtimes H$ defines a split exact sequence $\{1\} \rightarrow N \xrightarrow{\varphi} G \xrightarrow{\psi} H \rightarrow \{1\}$, where $\varphi$ is the inclusion map and $\psi: G \to H$ is the retraction.
+		\end{enumerate}
+	\end{proposition}
+\end{comment}
+
+\subsection{Examples}
+\begin{example}
+	By Proposition \ref{prop-group-of-order-p2q-has-normal-Sylow}, a group $G$ of order $p^2q$ ($p$ and $q$ are distinct prime) has a normal Sylow subgroup. Let $P\in\operatorname{Syl}_p(G)$ and $Q\in\operatorname{Syl}_q(G)$. Then we can check that $|PQ| = |G|$ and $P\cap Q = \{1\}$. If $P\lhd G$, then $G \cong P\rtimes Q$. If $Q\lhd G$, then $G \cong Q\rtimes P$.
+\end{example}
+\begin{example}
+	 Let $H$ be any abelian group and let $K = \langle k \rangle \cong \mathbb{Z}_2$ be the group of order $2$. Define $\varphi : K \rightarrow \operatorname{Aut}H$ by
+	 mapping $k$ to the automorphism of inversion on $H$, i.e.,  $h^k = h^{-1}$ for all $h \in H$. Then $H\rtimes K$ contains the subgroup $H$ of index $2$, since every element $g\in H\rtimes K$ is either in $H$ or in $kH$. Let $H = \langle h\rangle$. Then we have $$k^{-1}hk = h^{-1}.$$  If $H = \mathbb{Z}_n $, one recognizes $H\rtimes K$ as the dihedral group $D_{n}$. Since $D_n$ has presentation $$\langle r,s\,|\, r^n = s^2 = 1, s^{-1}rs= r^{-1}\rangle,$$ By  Van Dyck's Theorem (Theorem \ref{thm-Van-Dyck}), we get
+	$$D_n \cong \mathbb{Z}_n\rtimes \mathbb{Z}_2$$
+	since both groups have the same order.
+	
+	 If $H = \mathbb{Z}$, then we get a group  $D_{\infty}$ having the presentation
+	 \begin{equation*}
+	 	D_{\infty} = \langle r,s\,|\,  s^2 = 1, s^{-1}rs= r^{-1}\rangle  = \langle x,y \,|\, x^2 = y^2 = 1\rangle.
+	 \end{equation*} The group $D_{\infty}$  is called the \textbf{infinite dihedral group}. By  Van Dyck's Theorem, there is an epimorphism $\theta:D_n\rightarrow H\rtimes K$ in which $\theta(r) =  h$ and $\theta(s)= k$. Every element of $D_n$ is the form $s^m r^\ell$ where $m=0, 1$. Suppose that $s^m r^\ell \in\ker \theta$. Then  we have  $ k^m h^\ell = \theta(s^k r^\ell)= 1$, which implies that  $k=0=\ell$. Thus 
+	 \begin{equation*}
+	 	D_{\infty} \cong \mathbb{Z}\rtimes \mathbb{Z}_2.
+	 \end{equation*} 
+\end{example}
+
+
+
+
+	
+\begin{example}
+ Let $H$ be any abelian group and to let $K = \langle k \rangle \cong \mathbb{Z}_{2n}$ be cyclic of order $2n$. Define $\varphi$ again by mapping $k$ to inversion, i.e., $h^k = h^{-1}$, so that $k^2$ acts as the identity on $H$. In $H\rtimes K$, we have $k^{-1}hk = h^{-1}$ and $k^{-2}hk^2 = h$ for all $h \in H$. Thus $k^2 \in Z(H\rtimes K)$. For instances, set $H = \mathbb{Z}_3$ and $K = \mathbb{Z}_4$. Then $\mathbb{Z}_3 \rtimes \mathbb{Z}_4$ is a nonabelian group of order $12$ which is not isomorphic to $A_4$ or $D_{6}$, since its Sylow $2$-subgroup,  is cyclic of order $4$.
+ 
+ 
+\end{example}
+
+\begin{example}
+	Let $H = \langle h \rangle \cong \mathbb{Z}_{2^n}$ and let $K = \langle k \rangle \cong \mathbb{Z}_4$ with $k^{-1}hk = h^{-1}$ in $H\rtimes K$. As noted above, $k^2 \in Z(H\rtimes K)$. Since $k$ inverts $h$ (i.e., inverts $H$), $k$ inverts the unique subgroup $\langle z \rangle$ of order 2 in $H$, where $z = h^{2^{n-1}}$. Thus $k^{-1}zk = z^{-1} = z$, so $k$ centralizes $z$. It follows that $z \in Z(H\rtimes K)$. Thus $k^2z \in Z(H\rtimes K)$ and hence $\langle k^2z \rangle \lhd H\rtimes K$. Let $G = (H\rtimes K)/\langle k^2z \rangle$. Note that
+	\begin{equation*}
+		|k^2z| = \operatorname{lcm}(|k^2|,  |z|) = \operatorname{lcm}(2,2) =  2.
+	\end{equation*} So 
+	\begin{equation*}
+		|G| = \frac{|H\rtimes K|}{|\langle k^2z\rangle|} = \frac{2^{n+2}}{2} = 2^{n+1}.
+	\end{equation*}
+	Let $\bar{k}$ and $\bar{h}$ be images of $k$ and $h$ under canonical projections, respectively. Then we see that 
+	\begin{equation*}
+		\bar{k}^4 = 1,\quad \bar{h}^{2^n} =1,\quad \bar{k}^{-1}\bar{h}\bar{k} = \bar{h}^{-1},\quad  \bar{h}^{2^{n-1}} = \bar{k}^2.
+	\end{equation*}
+	The last equality follows from $\bar{k}^2 \bar{z} = 1$. Therefore, by Van Dyck's Theorem, we have
+	\begin{equation*}
+		Q_{2^{n+1}}\cong  \frac{H\rtimes K}{\langle k^2z \rangle} \cong \frac{\mathbb{Z}_{2^n} \rtimes \mathbb{Z}_4}{\langle (2^{n-1},2) \rangle} 
+	\end{equation*}
+	where the group $Q_{2^{n+1}}$ is called the \textbf{generalized quaternion group} of order $2^{n+1}$ which have the presentation
+	\begin{equation*}
+		Q_{2^{n+1}} = \langle x,y \,|\, x^4 = 1, y^{2^{n}} = 1, x^{-1}yx = y^{-1}, y^{2^{n-1}}=x^2\rangle.
+	\end{equation*}
+	In particular, when $n=2$, we obtain the quaternion group $Q_{8}$.
+\end{example}
+
+\begin{example}
+	Let $\operatorname{GL}(n,\mathbb{F})$ be the group of $n\times n$ invertible matrices over a field $\mathbb{F}$. Let $\operatorname{SL}(n,\mathbb{F})$ be the subgroup of $\operatorname{GL}(n,\mathbb{F})$ consisting of matrices with determinant $1$. Let $\mathbb{F}^* = \mathbb{F}\setminus \{0\}$ and let
+	\begin{equation*}
+		K = \left\{ \operatorname{diag}(a,1,1,\dots, 1)\in \operatorname{GL}(n,\mathbb{F}) \,|\, a\in\mathbb{F}^*\right\}.
+	\end{equation*}
+	We now claim that $\operatorname{GL}(n,\mathbb{F})$ is an internal semidirect product of $\operatorname{SL}(n,\mathbb{F})$ and $K$. Clearly $\operatorname{SL}(n,\mathbb{F})\cap K = \{I_n\}$ and $\operatorname{SL}(n,\mathbb{F}) \lhd \operatorname{GL}(n,\mathbb{F})$ (consider the kernel of determinant function). It remains to show that $\operatorname{GL}(n,\mathbb{F}) = \operatorname{SL}(n,\mathbb{F})K$. Let $A\in \operatorname{GL}(n,\mathbb{F})$ and $\det A = a$. Then we have 
+	\begin{equation*}
+		A = A\operatorname{diag}(a^{-1},1,\dots, 1)\operatorname{diag}(a,1,\dots, 1) \in \operatorname{SL}(n,\mathbb{F})K
+	\end{equation*}
+	since $\det [A\operatorname{diag}(a^{-1},1,\dots, 1)] = 1$. This proves the claim. By $K \cong \mathbb{F}^*$, Propositions \ref{prop-semidirect-prod-isom} and \ref{prop-internal-semidirect-prod-isom}, we obtain
+	\begin{equation*}
+		\operatorname{GL}(n,\mathbb{F}) \cong \operatorname{SL}(n,\mathbb{F})\rtimes K \cong \operatorname{SL}(n,\mathbb{F})\rtimes\mathbb{F}^*.
+	\end{equation*}
+	Note that $\operatorname{GL}(n,\mathbb{F}) \not\cong \operatorname{SL}(n,\mathbb{F})\times\mathbb{F}^*$ in general. Let $n = 2$ and $\mathbb{F} = \mathbb{R}$. Then $\operatorname{GL}(2,\mathbb{R})$ has infinitely many elements of order $2$, for example, each matrix of the form
+	\begin{equation*}
+		\begin{pmatrix}
+			0 & x\\
+			x^{-1} & 0
+		\end{pmatrix},\quad x\neq 0
+	\end{equation*}
+	is of order $2$. However, $\operatorname{SL}(2,\mathbb{R})\times\mathbb{R}^*$  contains only three elements of order $2$, namely $(-I_2,1)$, $(I_2, -1)$ and $(-I_2,-1)$.
+\end{example}
+
+\subsection{Some Classifications of Groups}
+\begin{comment}
+	\begin{lemma} \label{lemma-semidirect-kernel}
+		Let $L = H\rtimes G$ be a semidirect product of subgroups with respect to the action $\varphi: G\rightarrow \operatorname{Aut} H$. Then $C_L(H)\cap G = C_{G}(H) = \ker \varphi$.
+	\end{lemma}
+	\begin{sketch}
+		The first formula is trivial. The second formula follows from the fact that $ghg^{-1} = h^g = \varphi(g)(h)$ for all $g\in G$ and $h\in H$.
+	\end{sketch}
+	
+	\begin{proposition} \label{prop-semidirect-isom-ker}
+		Let $G$ and $H$ be arbitrary groups. Let $\varphi_1$ and $\varphi_2$ be homomorphisms from $G$ into $\operatorname{Aut}(H)$ such that $H\rtimes_{\varphi_1} G \cong H\rtimes_{\varphi_2} G$. Then $\ker \varphi_1 = \ker \varphi_2$.
+	\end{proposition}
+	\begin{sketch}
+		We identify $G$ and $H$ as subgroups of semidirect products. The restriction of $\varphi$ to $C_G^{(1)}(H)$ induces an isomorphism $C_G^{(1)}(H) \cong C_G^{(2)}(H)$, where we identity $C_G^{(i)}(H)$ as the subgroup $C_G(H)$ of the semidirect product with respect to $\varphi_i$. Then the result follows from Lemma \ref{lemma-semidirect-kernel}.
+	\end{sketch}
+\end{comment}
+	
+
+\begin{proposition} \label{prop-semidirect-useful-tool}
+	Let $C$ be a cyclic group and let $H$ be an arbitrary group. Let $\varphi_1$ and $\varphi_2$ be homomorphisms from $C$ into $\operatorname{Aut}(H)$ such that $\operatorname{im} \varphi_1$ and $\operatorname{im}\varphi_2$ are conjugate subgroups of $\operatorname{Aut}(H)$. Then the following propositions hold.
+	\begin{enumerate}[(i)]
+		\item If $C$ is finite, then $H\rtimes_{\varphi_1} C \cong H\rtimes_{\varphi_2} C$.
+		\item If $C$ is infinite,  $\varphi_1$ and $\varphi_2$ are injective, then $H \rtimes_{\varphi_1} C \cong H \rtimes_{\varphi_2} C$.
+	\end{enumerate} 
+\end{proposition}
+\begin{sketch}
+ 	There is an automorphism $\sigma\in \operatorname{Aut}(H)$ such that $\sigma^{-1} \operatorname{im} \varphi_1 \sigma = \operatorname{im} \varphi_2$. Let $x$ be a generator for $C$. Then there is some $k\in\mathbb{Z}$ such that $\sigma^{-1} \varphi_1(x) \sigma =  \varphi_2(x^k)$. For every $x^\ell\in C$, we see that $ \sigma^{-1} \varphi_1(x^\ell) \sigma = \varphi_2(x^{\ell k}) $. Hence $\sigma^{-1} \varphi_1(y) \sigma =  \varphi_2(y)^k$ for all $y\in C$. Hence we obtain
+ 	\begin{align}
+ 		\operatorname{im}\varphi_2 &= \sigma^{-1}\operatorname{im}\varphi_1 \sigma \notag
+ 		\\
+ 		&= \langle \sigma^{-1}\varphi_1(x) \sigma \rangle \notag
+ 		\\
+ 		&= \langle \varphi_2(x)^k\rangle. \tag{$*$} \label{eq-prop-8.16}
+ 	\end{align}  Let $\psi: H\rtimes_{\varphi_1} C \rightarrow H\rtimes_{\varphi_2} C$ be defined by 
+ 	\begin{equation*}
+ 		\psi(h,y) = (\sigma(h),y^k).
+ 	\end{equation*}
+ 	Let $h_1,h_2\in H$ and $y_1,y_2\in C$. Then
+ 	\begin{align*}
+ 	\psi[(h_1,y_1)(h_2,y_2)] &= \psi(h_1 \varphi_1(y_1^{-1})(h_2), y_1y_2)
+ 	\\
+ 	&= \left(\sigma(h_1) (\varphi_1(y_1^{-1})\sigma)(h_2), y_1^ky_2^k\right),
+ 	\\
+ 	\psi(h_1,y_1)\psi(h_2,y_2) &= \left(\sigma(h_1),y_1^k\right)\left(\sigma(h_2),y_2^k\right)
+ 	\\
+ 	&= \left(\sigma(h_1)\varphi_2(y_1^{-k})(\sigma(h_2)),y_1^ky_2^k\right)
+ 	\\
+ 	&= \left(\sigma(h_1)( \sigma\varphi_2(y_1^{-k}))(h_2),y_1^ky_2^k\right)
+ 	\\
+ 	&= \left(\sigma(h_1)(\varphi_1(y_1^{-1})\sigma )(h_2),y_1^ky_2^k\right).
+ 	\end{align*}
+ Hence $\psi$ is a homomorphism.  To show that it is bijective, we consider two cases:
+ 	
+ 	(i) If $C$ is of order $n$, then we have $|\varphi_1(x)| = |\operatorname{im}\varphi_1| = |\operatorname{im}\varphi_2|= |\varphi_2(x)|$. Write $m = |\varphi_2(x)|$.  Hence $k$ is coprime to $m$, because $|\varphi_2(x)^k| = |\sigma^{-1}\varphi_1(x)\sigma| = |\varphi_1(x)| = |\varphi_2(x)| = m$. If $k$ is not coprime to $n$, we let $k' = k + am$, where $a$ is the product of all primes dividing $n$ but not $k$. Then for every prime $p$ dividing $n$, $p\nmid k'$. Therefore $\gcd(k',n) = 1$. Note that $\varphi_2(x)^{k'} = \varphi_2(x)^k$. So we can without loss of generality assume that $\gcd(k,n)=1$.  Then there are integers $r,s$ for which $rk+sn = 1$. Then $\psi$ is bijective because we have a two-sided inverse 
+ 	\begin{equation*}
+ 		\psi^{-1}(h,y) = (\sigma^{-1}(h),y^r).
+ 	\end{equation*}
+ 	
+ 	(ii) Since $C$ is infinite cyclic and $\varphi_2$ is injective, the image $\operatorname{im} \varphi_2$ is infinite cyclic. By (\ref{eq-prop-8.16}), $\varphi_2(x)^k$ is also a generator for $\operatorname{im} \varphi_2$. Thus we must have $k = \pm 1$. Hence we have a two-sided inverse
+ 	\begin{equation*}
+ 		\psi^{-1}(h,y) = (\sigma^{-1}(h),y^k). \qedhere
+ 	\end{equation*}
+\end{sketch}
+\begin{remark}
+	If  $\operatorname{im}\varphi_1 = \operatorname{im}\varphi_2$, then the resulting semidirect products are isomorphic.
+\end{remark}
+\begin{example}
+	There are only two isomorphism types of groups of order $pq$, where $p>q$ are primes.
+	
+	Let $G$ be any group of order $pq$, let $P \in \text{Syl}_p(G)$ and $Q \in \text{Syl}_q(G)$. By Proposition \ref{prop-sylow-order-pq}, we have $G \cong P \rtimes_\varphi Q$ with respect to some action $\varphi$.
+	Clearly  $P \cong \mathbb{Z}_p$ and $Q \cong \mathbb{Z}_q$ are cyclic. The group $\text{Aut}(P)\cong \mathbb{Z}_{p-1}$ is also cyclic. 
+	
+	If $q$ does not divide $p-1$, then $G$ is abelian by Proposition \ref{prop-sylow-order-pq}. By Proposition \ref{prop-semidirect-trivial-hom},  the only homomorphism from $Q$ to $\operatorname{Aut}(P)$ is the trivial homomorphism, hence the only semidirect product in this case the direct product, i.e., $G \cong \mathbb{Z}_p\times \mathbb{Z}_q \cong \mathbb{Z}_{pq}$.
+	
+	Consider now the case when $q$ divides  $p-1$. Let $Q = \langle y \rangle$. Since $\text{Aut}(P)$ is cyclic it contains a unique subgroup of order $q$, say $\langle \gamma \rangle$. Hence any homomorphism $\varphi : Q \to \text{Aut}(P)$ must map $y$ to a power of $\gamma$. Therefore there are $q$ homomorphisms $\varphi_i : Q \to \text{Aut}(P)$ given by $\varphi_i(y) = \gamma^i$ where $0 \leq i \leq q-1$. Since $\varphi_0$ is the trivial homomorphism, $P \rtimes_{\varphi_0} Q \cong P \times Q$ as before. Each nontrivial homomorphism $\varphi_i$ ($i\neq 0$)  gives rise to a semidirect product  of order $pq$, which is a nonabelian group. It is straightforward to check that $\varphi_i(Q) = \langle \gamma \rangle$ for each  $i > 0$. So these groups are all isomorphic by Proposition \ref{prop-semidirect-useful-tool}.
+\end{example}
+
+\begin{lemma} \label{lemma-noob}
+	Let $G = PQ$ where $p$ and $q$ are distinct primes, $P \in \text{Syl}_p(G)$$P$ is a normal abelian subgroup in $G$ and $Q \in \text{Syl}_q(G)$. Let $\varphi_1$ and $\varphi_2$ be homomorphisms from $Q$ into $\operatorname{Aut}(P)$. If $P\rtimes_{\varphi_1} Q \cong P\rtimes_{\varphi_2} Q$,   then $\ker \varphi_1 \cong \ker \varphi_2$.
+\end{lemma}
+\begin{sketch}
+	Let $\theta: P\rtimes_{\varphi_1} Q \rightarrow P\rtimes_{\varphi_2} Q$ be an isomorphism. Let $G_1 = P\rtimes_{\varphi_1} Q$ and $G_2 = P\rtimes_{\varphi_2} Q$. Note that  $P$ in normal in $G_1$ and $G_2$, and hence unique  in both semidirect products. The uniqueness implies that $\theta(P) = P$. Since $\theta$ is an isomorphism, we have $C_{G_1}(P) \cong C_{G_2}(\theta(P)) = C_{G_2}(P)$. Now we verify that $C_{G_1}(P) = P\ker \varphi_1$ and $C_{G_2}(P) = P\ker \varphi_2$. Clearly $P\ker \varphi_i \subseteq C_{G_1}(P)$. Let $g\in C_{G_i}(P)$. Since $g\in G_i = P\rtimes_{\varphi_1} Q$,  it can be written uniquely as $g = pq$ where $p\in P$ and $q\in Q$. Hence $(pq)^{-1}xpq = x$ for all $x\in P$. Since $P$ is abelian, we get $q^{-1}xq = x$. Since $x^{q} = q^{-1}xq$, we obtain $x^q = x$ for all $x\in P$, and thus $q\in\ker \varphi_i$. This proves our claim. Note that $P\cap \ker\varphi_i =\{1\}$ for $i=1,2$. Hence we have 
+	\begin{equation*}
+	P\times \ker \varphi_1\cong	C_{G_1}(P) \cong  C_{G_2}(P) \cong P\times \ker \varphi_2.
+	\end{equation*}
+	Since $\ker \varphi_i$ is normal Sylow $q$-subgroup in $P\times \ker \varphi_i$, it is unique. Let $\psi:P\times \ker \varphi_1\rightarrow P\times \ker \varphi_2$ be an isomorphism. Then the restriction of $\psi$ to $\ker \varphi_1$ induces an isomorphism $\ker\varphi_1 \cong \ker\varphi_2$.
+\end{sketch} 
+
+\begin{example}
+	There are thirteen isomorphism types of groups of order $56 = 2^3\cdot 7$. Let $G$ be a group of order $56$. 
+	
+	
+Before proceed to the classification, we shall show that $G$ must contain a normal Sylow subgroup. If there is a normal Sylow $7$-subgroup, then we are done. If all Sylow $7$-subgroups are not normal, then Theorem \ref{thm-third-sylow-thm} and Corollary \ref{cor-one-sylow-p-implies-normal} show that there are eight Sylow $7$-subgroups. Then we count the number of elements of order $7$ in $G$. There  are $6\cdot 8  =48$ of them, leaving $56-48= 8$ elements that are not of order $7$. This eight elements must form a unique Sylow $2$-subgroup, which is normal in $G$. Remark that the argument was modified from Proposition \ref{prop-group-of-order-p2q-has-normal-Sylow}. For now, we let $P$ and $Q$ be a Sylow $7$-subgroup and a Sylow $2$-subgroup respectively. % Clearly $G = PQ$ and $P\cap Q = \{1\}$. By Proposition \ref{prop-internal-semidirect-prod-isom}, we have $G\cong  P\rtimes Q$ or $G\cong Q\rtimes P$.
+	
+If  $P$ is normal in $G$, then we want to construct nonisomorphic semidirect products $P\rtimes Q$. To do this, we consider all homomorphisms $\varphi:Q\rightarrow \operatorname{Aut}P$ and identify which isomorphic types the corresponding semidirect products belong to. By the First Isomorphism Theorem, we have
+	$
+	Q/\operatorname{ker} \varphi \cong \operatorname{im} \varphi
+	$.
+	Since $\operatorname{Aut} P\cong \mathbb{Z}_6$ and the order of $Q/\operatorname{ker}\varphi$ must be a power of $2$, we get $Q/\operatorname{ker}\varphi\cong \mathbb{Z}_1$ or $Q/\operatorname{ker}\varphi\cong \mathbb{Z}_2$.  Then the order of $\ker \varphi$ is either $4$ or $8$. Now we can find homomorphisms by determining all nonisomorphic normal subgroups of $Q$ with order $4$ or $8$. In view of Lemma \ref{lemma-noob}, the corresponding semidirect products are not isomorphic.
+	
+	 By Theorems \ref{thm-nonabelian-order-8} and  \ref{thm-decomposition-of-AG-elem-div}, there are only five nonisomorphic groups of order $8$: $\mathbb{Z}_2\times \mathbb{Z}_2\times \mathbb{Z}_2$, $\mathbb{Z}_4\times \mathbb{Z}_2$, $\mathbb{Z}_8$, $D_4$ and $Q_8$. So we obtain the following  isomorphism types.
+	\begin{itemize}
+		\item $\varphi$ is trivial (the kernel has order $8$):
+		\begin{itemize}
+			\item[(1)] $\mathbb{Z}_7\times \mathbb{Z}_2\times \mathbb{Z}_2\times \mathbb{Z}_2$;
+			\item[(2)] $\mathbb{Z}_7\times \mathbb{Z}_4\times \mathbb{Z}_2$;
+			\item[(3)] $\mathbb{Z}_7\times \mathbb{Z}_8$;
+			\item[(4)] $\mathbb{Z}_7\times D_4$;
+			\item[(5)] $\mathbb{Z}_7\times Q_8$.
+		\end{itemize}
+		\item $\varphi$ is nontrivial (the kernel has order $4$):
+		\begin{itemize}
+			\item[(6)] $\mathbb{Z}_7\rtimes_{\varphi} (\mathbb{Z}_2\times \mathbb{Z}_2\times \mathbb{Z}_2)$, $\ker\varphi \cong \langle 1\rangle \oplus \langle 1 \rangle$;
+			\item[(7)] $\mathbb{Z}_7\rtimes_{\varphi} (\mathbb{Z}_4\times \mathbb{Z}_2)$, $\ker\varphi \cong \langle (1,0)\rangle$;
+			\item[(8)] $\mathbb{Z}_7\rtimes_{\varphi} (\mathbb{Z}_4\times \mathbb{Z}_2)$, $\ker\varphi \cong \langle 2\rangle\oplus \langle 1\rangle$;
+			\item[(9)] $\mathbb{Z}_7\rtimes_{\varphi} \mathbb{Z}_8$, $\ker\varphi \cong \langle 2\rangle$;
+			\item[(10)] $\mathbb{Z}_7\rtimes_{\varphi} D_4$, $\ker\varphi \cong \langle r\,|\, r^4=1 \rangle$;
+			\item[(11)] $\mathbb{Z}_7\rtimes_{\varphi} D_4$, $\ker\varphi \cong \langle r^2,s\,|\, r^4=s^2=1 ,\, s^{-1}rs = r^{-1}\rangle$;
+			\item[(12)] $\mathbb{Z}_7\rtimes_{\varphi} Q_8$, $\ker\varphi \cong \langle i\,|\, i^4=1 \rangle$;
+		\end{itemize}
+	\end{itemize}
+	
+	If $P$ is not normal, then $Q$ is normal. By Proposition \ref{prop-internal-semidirect-prod-isom},  we have a semidirect product $Q\rtimes_{\theta} P$ where $\theta$ is the conjugation of $P$ on $Q$. We  claim that $Q\cong \mathbb{Z}_2\times\mathbb{Z}_2\times\mathbb{Z}_2$.  By Proposition \ref{prop-semidirect-trivial-hom},   the homomorphism $\theta$ must be nontrivial, whence $\ker \theta < P$.  Let $P = \langle x\rangle\cong\mathbb{Z}_7$. Since $P$ is cyclic, we have $\ker \theta = \{1\}$. Note that $S_P(y) = \{1\}$ or $P$ for all $y\in Q$. If $S_P(y) = P$ for all $y\in Q$, then $x^{-1}yx = y$ for all $x\in P$ and $y\in Q$. This implies $\operatorname{ker} \theta = P$, a contradiction. Hence there exists $y\in Q$ with $S_P(y) = \{1\}$. By Orbit-Stabilizer Theorem (Theorem \ref{thm-orbit-stab}), $|O_P(y)| = |P| = 7$. This means that every other nonidentity element in $Q$ can be expressed as a conjugate of $y$. These all have the same order as $y$. Since $Q$ is a $2$-subgroup, by Cauchy's theorem (Theorem \ref{thm-Cauchy}), there exists an element of order $2$ in $Q$. Therefore the argument above shows that $Q$ must be isomorphic to $\mathbb{Z}_2\times\mathbb{Z}_2\times\mathbb{Z}_2$. By Proposition \ref{prop-semidirect-prod-isom}, we can conclude that 
+	\begin{equation*}
+		Q\rtimes_{\theta} P \cong (\mathbb{Z}_2\times\mathbb{Z}_2\times\mathbb{Z}_2) \rtimes_{\varphi} \mathbb{Z}_7
+	\end{equation*}
+	for some  action $\varphi$.
+	
+	Finally, we show that every semidirect product  with respect to a nontrivial action $\varphi$ is isomorphic to $ Q\rtimes_{\theta} P$. Note that
+	\begin{align*}
+		|\text{Aut } Q| &=|\text{Aut} (\mathbb{Z}_2\times\mathbb{Z}_2\times\mathbb{Z}_2)| 
+		\\
+		&= |\text{GL}_3(\mathbb{Z}_2)| 
+		\\
+		&= (2^3-1)(2^3-2)(2^3-2^2) 
+		\\
+		&= 168 = 2^3\cdot 3\cdot 7.
+	\end{align*}  Since $P$ is cyclic of order $7$ and both $\varphi$ and $\theta$ are nontrivial, the images $\operatorname{im} \varphi$ and $\operatorname{im} \theta$ are of order $7$, whence they are Sylow $7$-subgroup of $\operatorname{Aut} Q$. By the Second Sylow Theorem (Theorem \ref{thm-second-sylow-thm}), there exists $\sigma\in \operatorname{Aut} Q$ such that $\sigma^{-1} \operatorname{im} \varphi \, \sigma=\operatorname{im} \theta$. By Proposition \ref{prop-semidirect-useful-tool}, we have $Q\times_{\varphi} P \cong Q\times_{\theta} P$. Therefore we have established the last isomorphism type.
+	\begin{itemize}
+		\item[(13)] $(\mathbb{Z}_2\times\mathbb{Z}_2\times\mathbb{Z}_2) \rtimes_{\varphi} \mathbb{Z}_7$, $\ker\varphi = \{1\}$.
+	\end{itemize}
+\end{example}
+
+
+
+
+\subsection{Sylow Theorems for Groups with Operator Groups}
+As an application of semidirect product, we generalize Sylow's Theorem to cover groups with operator groups. 
+ Throughout the section, unless otherwise stated, let $Q$ be an operator group on a group $H$. Let $L$ be the semidirect product of $Q$ and $H$ with respect to the given action $\varphi$. 
+\begin{definition}
+	A subgroup $U$ of $H$ is said to be \textbf{$Q$-invariant} if $\varphi(x)U = U$ for all $x\in Q$.
+\end{definition}
+\begin{proposition} \label{prop-Q-act-on-invariant-subgroup}
+	 Let $U$ be a $Q$-invariant subgroup of $H$. 
+	\begin{enumerate}[(i)]
+		\item The group $Q$ act on $U$ via  the restriction $\varphi(x)|_{U}$ of $\varphi(x)$ to $U$.
+		\item If $U$ is normal, then $Q$ acts on the quotient group $H/U$ via the action defined by $(Uh)^x = Uh^x$.
+	\end{enumerate}
+	\begin{sketch}
+		(i) Trivial.
+		
+		(ii) First we show that the action is well defined. If $Uh_1 = Uh_2$, then $h_1h_2^{-1} \in U$. Since $U$ is $Q$-invariant,
+		$$(h_1h_2^{-1})^x = h_1^x(h_2^{-1})^x = h_1^x(h_2^x)^{-1} \in U,$$
+		and we have $Uh_1^x = Uh_2^x$. %Also, \begin{equation*}(h_1Uh_2U)^x = (h_1h_2U)^x = (h_1h_2)^xU  =h_1^x h_2^xU = (h_1^xU)(h_2^xU). \end{equation*}
+		The rest is trivial.
+	\end{sketch}
+\end{proposition}
+\begin{lemma} \label{lemma-operator-group-invariant-eqv}
+	A subgroup $U$ of $H$ is $Q$-invariant if and only if $Q \subseteq N_L(U)$.
+\end{lemma}
+\begin{sketch}
+	Note that for any $x\in Q$, we have
+	\begin{align*}
+		\varphi(x) U = U &\iff u^x \in U \text{ for all } u\in U
+		\\
+		&\iff x^{-1}ux\in U \text{ for all } u\in U
+		\\
+		&\iff x\in N_L(U)
+	\end{align*}
+	which is the desired conclusion.
+\end{sketch}
+\begin{lemma} \label{lemma-invariant-implies-invariant-normalizer}
+	If $U$ is a $Q$-invariant subgroup of $H$, then $N_H(U)$ is a $Q$-invariant subgroup of $H$.
+\end{lemma}
+\begin{sketch}
+	We want to show that for all $q\in Q$, $N_H(U)^q = N_H(U)$. Let $x\in N_H(U)$.  Then $x^{-1}Ux = U$. We write  $
+		x = (x^{q^{-1}})^q$. To prove that $x\in N_H(U)^q$, it suffices to show that $x^{q^{-1}} \in N_H(U)$. Since $U$ is $Q$-invariant, we have $U^{q^{-1}} = U$. From $x^{-1}Ux = U$, we have $$(x^{-1})^{q^{-1}}U^{q^{-1}}x^{q^{-1}} = U^{q^{-1}}.$$
+		Since $U^{q^{-1}} = U$ and $(x^{-1})^{q^{-1}} = (x^{q^{-1}})^{-1}$, we get 
+		\begin{equation*}
+			(x^{q^{-1}})^{-1}Ux^{q^{-1}} = U.
+		\end{equation*}
+		Hence $x^{q^{-1}}\in N_H(U)$ and $N_H(U)\subseteq N_H(U)^q$. 
+		
+		Now let $x\in N_H(U)^q$. Then we have $x = y^q$ for some $y\in N_H(U)$. Since $U^q = U$, it follows that
+		\begin{equation*}
+			x^{-1}U x= (y^q)^{-1} U^qy^q= (y^{-1})^qU^qy^q = (y^{-1}Uy)^q = U^q = U.
+		\end{equation*}
+		So $N_H(U)^q\subseteq N_H(U)$. This completes the proof.
+\end{sketch}
+\begin{lemma}[Frattini's Argument] \label{lemma-G=N_G(S)H}
+	Let $H$ be a normal subgroup of a group $G$. If $S$ is a Sylow $p$-subgroup of $H$, then we have $G = N_G(S)H$.
+\end{lemma}
+\begin{sketch}
+	Let $g\in G$. Consider the conjugate $g^{-1}Sg$ by $g$. Since $S \subseteq H$ and $H\lhd G$, we have $g^{-1}Sg \leq g^{-1}Hg = H$. So $g^{-1}Sg$ is contained in $H$ and $g^{-1}Sg$ is a Sylow $p$-subgroup of $H$. By the Second Sylow's Theorem (Theorem \ref{thm-second-sylow-thm}), $g^{-1}Sg$ is conjugate to $S$ in $H$. Therefore there is an element $h$ of $G$ such that $g^{-1}Sg = h^{-1}Sh$. Let $n = gh^{-1}$. Then  $n \in N_G(S)$. Since $g = nh$, we get $g \in N_G(S)H$. So we have $G = N_G(S)H$.
+\end{sketch} 
+\begin{lemma} \label{lemma-Sylow-in-normalizer-implies-Sylow-in-G}
+	Let $P$ be a $p$-subgroup of a group $G$. If $P$ is a Sylow $p$-subgroup of $N_G(P)$, then $P$ is a Sylow $p$-subgroup of $G$.
+\end{lemma}
+\begin{sketch}
+	Suppose on the contrary that $P$ is not a Sylow $p$-subgroup of $G$. By the First Sylow Theorem (Theorem \ref{thm-first-Sylow-theorem}), there is a Sylow $p$-subgroup $S$ of $G$ which would contain $P$ as a proper subgroup. Hence $p$ divides $[S:P]$. By Proposition \ref{prop-p-subgroup-and-normalizer}.(ii), we have $N_S(P) \neq P$. Since $N_S(P)$ is a $p$-subgroup of $N_G(P)$ with order larger than $|P|$, this contradicts to the fact that $P$ is a Sylow $p$-subgroup of $N_G(P)$.
+\end{sketch}
+\begin{lemma} \label{lemma-semidirect-prod-C-and-N}
+	Let $G$ be an internal semidirect product of $H$ by $K$ (so that $H$ is normal in $G$). Then $N_G(K) \cap H$ commutes elementwise with $K$, and we have
+	$$N_G(K) \cap H = C_H(K), \quad N_G(K) = KC_H(K).$$
+\end{lemma}
+\begin{sketch}
+	Since $H \cap K = \{1\}$, we can use a commutator to show that $K$ and $N_G(K) \cap H$ commute elementwise. So, $N_G(K) \cap H \subseteq C_H(K)$. Clearly we have
+	$C_H(K) \subseteq N_G(K) \cap H$,
+	so the first formula holds.
+	
+	By Dedekind Law (Lemma \ref{lemma-dedekind-law}), we get
+	$$N_G(K) = G \cap N_G(K) = HK \cap N_G(K) = K(H \cap N_G(K)).$$
+	So the first formula implies the second.
+\end{sketch}
+
+\begin{lemma} \label{lemma-HK-and-conjugate}
+	Let $G = HK$ be a product of the subgroups $H$ and $K$. Then for any conjugate subgroup $x^{-1}Hx$ ($x\in G$), there exists an element $k$ of $K$ such that $x^{-1}Hx = k^{-1}Hk$.
+\end{lemma}
+\begin{sketch}
+	Since $G = HK$, the element $x$ of $G$ can be written as a product $x = hk$ with $h\in H$ and $k\in K$. So we have
+	$x^{-1}Hx = k^{-1}h^{-1}Hhk = k^{-1}Hk$.
+\end{sketch}
+
+\begin{theorem}
+	Let $q$ be a prime number. Assume that the operator group $Q$ is a $q$-group and that $q$ does not divide $|H|$. Then the following hold.
+	\begin{enumerate}[(i)]
+		\item There exists a $Q$-invariant Sylow $p$-subgroup of $H$.
+		\item Any $Q$-invariant $p$-subgroup is contained in a $Q$-invariant Sylow $p$-subgroup of $H$.
+		\item Two $Q$-invariant Sylow $p$-subgroups are conjugate by an element of $C_H(Q)$.
+	\end{enumerate}
+\end{theorem}
+\begin{sketch}
+	We note that, under the assumptions, the group $Q$ is a Sylow $q$-subgroup of $L$. Assume that $|Q| = q^k$.
+	
+		(i) Let $S$ be a Sylow $p$-subgroup of $H$. Since $H \lhd L$, it follows from Lemma \ref{lemma-G=N_G(S)H} that $L = N_L(S)H$. By the Second Isomorphism Theorem, we have
+		\begin{equation*}
+			\frac{L}{H} = \frac{N_L(S)H}{H} \cong \frac{N_L(S)}{N_L(S) \cap H} =\frac{N_L(S)}{N_H(S)} 
+		\end{equation*} and so $[N_L(S) : N_H(S)] = [L : H]$. Since $q$ does not divide $|H|$, it follows that $q^k$ must divides $[L:H]$ and hence divides $|N_L(S)|$. By the First Sylow Theorem (Theorem \ref{thm-first-Sylow-theorem}),  the subgroup $N_L(S)$ contains a Sylow $q$-subgroup $Q_1$ of $L$. By the Second Sylow Theorem (Theorem \ref{thm-second-sylow-thm}), we can find an element $x\in L$ such that $Q = x^{-1}Q_1x$. Then 
+		\begin{equation*}
+			Q = x^{-1}Q_1x \subseteq x^{-1}N_L(S)x = N_L(x^{-1}Sx).
+		\end{equation*} 
+		By Lemma \ref{lemma-operator-group-invariant-eqv}, $x^{-1}Sx$ is $Q$-invariant. Note that $x^{-1}Sx\subseteq x^{-1}Hx\subseteq H$  since $H\lhd L$. So $x^{-1}Sx$ is our desired Sylow $p$-subgroup of $H$. 
+		
+		
+		
+		(ii) Let $P$ be a $p$-subgroup of $H$ which is maximal among $Q$-invariant $p$-subgroups of $H$. We want to show that $P$ is Sylow $p$-subgroup of $H$. By definition, the subgroup $P$ is $Q$-invariant. So $N_H(P)$ is $Q$-invariant by Lemma \ref{lemma-invariant-implies-invariant-normalizer}. Hence $Q$ acts on $N_H(P)/P$ by Proposition \ref{prop-Q-act-on-invariant-subgroup}. By (i), $N_H(P)/P$ contains a $Q$-invariant Sylow $p$-subgroup $\bar{S}$. In view of the Correspondence Theorem, we let $S$ be the subgroup of $N_H(P)$ corresponding to $\bar{S}$. Then, for any $s \in S$ and $x \in Q$, we have $\bar{s}^x \in \bar{S}^x = \bar{S}$, whence $s^x \in S$. Hence $S$ is a $Q$-invariant $p$-subgroup of $H$ which contains $P$. By the maximality, we get $P=S$. This means that $P$ is a Sylow $p$-subgroup of $N_H(P)$. By Lemma \ref{lemma-Sylow-in-normalizer-implies-Sylow-in-G}, $P$ is a Sylow $p$-subgroup of $H$.
+		
+		(iii) Let $S_1$ and $S_2$ be two $Q$-invariant $S_p$-subgroups of $H$. By the Second Sylow Theorem (Theorem \ref{thm-second-sylow-thm}), there exists an element $x$ of $H$ such that $S_2 = x^{-1}S_1x$. Since both $S_1$ and $S_2$ are $Q$-invariant, we have $Q \subseteq N_L(S_i)$ for $i=1,2$ by Lemma \ref{lemma-operator-group-invariant-eqv}. Since
+		$$x^{-1}Qx \subseteq x^{-1}N_L(S_1)x = N_L(x^{-1}S_1x) = N_L(S_2),$$
+		both $Q$ and $x^{-1}Qx$ are $S_q$-subgroups of $N_L(S_2)$.  On the other hand, $L = QH$ and Dedekind Law (Lemma \ref{lemma-dedekind-law}) imply that
+		$$N_L(S_2) = L \cap N_L(S_2) = QH \cap N_L(S_2) = Q(H \cap N_L(S_2)).$$
+		By Lemma \ref{lemma-HK-and-conjugate}, there is an element $y$ in $H \cap N_L(S_2)$ such that $Q = y^{-1}x^{-1}Qxy$. Let $z = xy$. We verify that $z$ is an element of $C_H(Q)$. Since $z$ normalizes $Q$ and $x,y\in H$, we obtain $z \in N_L(Q) \cap H$. Since $N_L(Q) \cap H = C_H(Q)$ by Lemma \ref{lemma-semidirect-prod-C-and-N}, we have $z \in C_H(Q)$.  Therefore we get
+		$$z^{-1}S_1z = y^{-1}x^{-1}S_1xy =y^{-1}S_2y = S_2.$$
+		Thus $S_1$ and $S_2$ are conjugate by an element of $C_H(Q)$.
+\end{sketch} 
+
+\paragraph{Main References.} \cite{DummitFoote2004,Suzuki1982,Rotman1995,Alperin1995,Dixon1996}

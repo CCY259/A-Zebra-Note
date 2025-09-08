@@ -1,0 +1,83 @@
+\subsection*{Group homomorphisms}
+\begin{enumerate}[(1)]
+	\item A function $f:G\rightarrow H$ is called a \textbf{group homomorphism} if 
+	\begin{equation*}
+		f(xy) = f(x)f(y)\quad\text{for all }x,y\in G.
+	\end{equation*}
+	\item An injective (resp. surjective) homomorphism is called a \textbf{monomorphism} (resp. \textbf{epimorphism}). A bijective function is called an \textbf{isomorphism}. Technically, we should not use ``called" if we have already defined monomorphisms and epimorphisms in category. We can verify that the homomorphisms in group can satisfy the conditions in the sense of category if they are injective or surjective. This is also a reason why we write $f\in\operatorname{hom}(G,H)$ for a group homomorphism $f$.
+	\item Usual properties:
+	\begin{itemize}
+		\item $f(e) = e$;
+		\item $f(x^{-1})  =f(x)^{-1}$;
+		\item If two subsets $S$ and $T$ are conjugate in $G$, then $f(S)$ and $f(T)$ are conjugate in $H$;
+		\item $H\lhd G\Rightarrow f(H)\lhd f(G)$.
+	\end{itemize}Note that $f(e)=e$ can be deduced from the fact that $f$ is homomorphism: take $f(e)f(e) = f(e)$ and multiply by $f(e)^{-1}$. In the case of monoids, we cannot do that since not every element has an inverse. So the definition of homomorphisms between monoids are as follows: A function $g:M\rightarrow N$ is called a \textbf{monoid homomorphism} if
+	\begin{equation*}
+		g(xy) = g(x)g(y)\quad \text{for all }x,y\in M\quad \text{ and } \quad  g(1) = 1.
+	\end{equation*}
+	\item The common subgroups defined from a homomorphism $f:G\rightarrow H$ would be the \textbf{kernel} of $f$ and the \textbf{image} of $f$.
+	\begin{itemize}
+		\item The kernel of $f$ is a subgroup of $G$:
+		\begin{equation*}
+			\operatorname{ker} f = \{x\in G\,|\, f(x)=e\}.
+		\end{equation*}
+		\item The image of $f$ is a subgroup of $H$:
+		\begin{equation*}
+			\operatorname{im} f = \{f(x)\,|\, x\in G\}.
+		\end{equation*}
+	\end{itemize}
+	In fact, the kernel is a special case of the \textbf{preimage} of a fixed subgroup of $H$ under $f$. Let $U\leq H$. It can be checked that
+	\begin{equation*}
+		f^{-1}(U) = \{x\in G\,|\, f(x)\in U\}
+	\end{equation*}
+	is a subgroup of $G$.
+	\item Common homomorphisms defined from $f$ (the old one):
+	\begin{itemize}
+		\item The \textbf{restriction} of $f$ to $U$ ($U$ is a subgroup of the domain $G$);
+		\item composite mapping.
+	\end{itemize}
+	\item Common homomorphisms defined from subgroups and quotient groups:
+	\begin{itemize}
+		\item The \textbf{inclusion map} of $H$ into $G$ (where $H$ is a subgroup of $G$), usually denoted by $H\hookrightarrow G$.
+		\item The \textbf{canonical projection} of $G$ onto the quotient group $G/N$, usually denoted by $G \twoheadrightarrow G/N$.
+		\item  The \textbf{retraction} from $G$  to $H$ (where $H$ is a subgroup of $G$). This is a homomorphism $f:G\rightarrow H$ such that $f(h)=h$ for all $h\in H$.
+	\end{itemize}
+	\item The isomorphism theorems:
+	\begin{enumerate}[(i)]
+		\item \textbf{First Isomorphism Theorem.} For any $f:G\rightarrow H$,
+		\begin{align*}
+			G/\operatorname{ker} f &\stackrel{\sim}{\rightarrow} \operatorname{im} f,\\
+			x \operatorname{ker} f& \mapsto f(x).
+		\end{align*}
+		\item \textbf{Second Isomorphism Theorem.} If $H\leq G$ and $N\lhd G$, then $$H\hookrightarrow HN \twoheadrightarrow HN/N$$ induces an isomorphism
+		\begin{equation*}
+			\frac{H}{H\cap N} \cong \frac{HN}{N}.
+		\end{equation*}
+		\item \textbf{Third Isomorphism Theorem.} If $N\lhd G$ and $N\subseteq H\leq G$ (same as saying $\overline{H}\in G/N$), then $$G\twoheadrightarrow G/N \twoheadrightarrow (G/H)/\overline{H}$$ induces an isomorphism
+		\begin{equation*}
+			\frac{G}{H} \cong \frac{G/N}{H/N}.
+		\end{equation*}
+	\end{enumerate}
+	\item \textbf{Generalized version of Correspondence Theorem.} Let $f: G\rightarrow G'$ be a homomorphism. Then there is a one-to-one correspondence between the set of subgroups of $G'$ and the set of subgroups of $G$ which contain $\operatorname{ker}f$.
+	\begin{itemize}
+		\item More precisely, the function is given by
+		\begin{equation*}
+			H'\mapsto f^{-1}(H') = \{x\in G\,|\, f(x)\in H'\}.
+		\end{equation*}
+		The inverse function is given by
+		\begin{equation*}
+			H\mapsto f(H).
+		\end{equation*}
+		\item This one-to-one correspondence also gives the following properties (assume $S$ and $T$ are subgroups):
+		\begin{enumerate}[(i)]
+			\item $f(S)\subseteq f(T)\Leftrightarrow \operatorname{ker} f \subseteq S\subseteq T$; so we have $[f(T):f(S)] = [T:S]$;
+			\item $f(S)\lhd f(T) \Leftrightarrow S\lhd T$;
+			\item $f(S)$ and $f(T)$ are conjugate in $G'$ $\Leftrightarrow$ $S$ and $T$ are conjugate in $G$.
+			\item Let $N'\lhd G'$. Then
+			\begin{equation*}
+				\frac{G}{f^{-1}(N')} \cong \frac{G'}{N'}.
+			\end{equation*}
+			It provides another approach to show isomorphism theorems.
+		\end{enumerate}
+	\end{itemize}
+\end{enumerate}

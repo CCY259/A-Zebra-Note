@@ -1,0 +1,29 @@
+\subsection*{Quotient groups}
+\begin{enumerate}[(1)]
+	\item Let $G/H$ ($H\lhd G$) be the set of all cosets of $H$ in $G$. Define a binary operation on $G/H$ by
+	\begin{equation*}
+		aHbH = abH.
+	\end{equation*}
+	This forms a group and we call $G/H$ the \textbf{quotient group} of $G$ by $H$ (or modulo $H$). When one writes down $G/H$ without stating that $H$ is normal, we will assume $H$ is normal (otherwise it does not make sense; the binary operation is not well-defined for nonnormal subgroup).
+	\item The map $x\mapsto xH$ of $G$ into $G/H$ is called the \textbf{canonical projection}. Sometimes it is denoted by $\overline{G}$.
+	\item Some usual properties:
+	\begin{itemize}
+		\item $(xH)^{-1} = x^{-1}H$;
+		\item $|G/H| = [G:H] = |G|/|H|$.
+	\end{itemize}
+	
+	\item \textbf{Correspondence Theorem.} There is a one-to-one-correspondence (a bijective function) between the set of subgroups of $G/H$ and the set of subgroups of $G$ which contain $H$. 
+	\begin{itemize}
+		\item More precisely, For any subgroup $\overline{K}$ of $G/H$, there is a unique subgroup $K$ of $G$ such that 
+		\begin{equation*}
+			K\supseteq H\quad \text{and}\quad K/H =\overline{K}.
+		\end{equation*}
+		In fact, the construction is given by $K = \{x\in G\,|\, xH\in \overline{K}\}$.
+		\item This one-to-one correspondence also gives the following properties (assume $S$ and $T$ are subgroups):
+		\begin{enumerate}[(i)]
+			\item $\overline{S}\subseteq \overline{T} \Leftrightarrow H\subseteq S\subseteq T$; so we have $[\overline{T} ,\overline{S}] = [T:S]$;
+			\item $\overline{S}\lhd \overline{T}\Leftrightarrow S\lhd T$;
+			\item $\overline{S}$ and $\overline{T}$ are conjugate in $G/H$ $\Leftrightarrow$ $S$ and $T$ are conjugate in $G$.
+		\end{enumerate}
+	\end{itemize}
+\end{enumerate}

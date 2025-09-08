@@ -1,0 +1,91 @@
+\documentclass[english,10pt,a5paper]{article}
+%\usepackage[T1]{fontenc}
+%\usepackage[left=0.5cm, right=0.5cm, top=1cm, bottom=1.5cm]{geometry}
+\usepackage[top=1cm, bottom=1.5cm,left=0.8cm,right=0.8cm]{geometry}
+%\usepackage[left=0.2cm, right=6.2cm, top=2.5cm, bottom=2.5cm]{geometry}
+%\usepackage{lmodern}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{amsthm}
+%\usepackage{fontspec}
+%\defaultfontfeatures{Scale=MatchLowercase}
+\usepackage{mlmodern}
+%\usepackage{newtxtext,newtxmath}
+\usepackage{hyperref}
+\usepackage{enumerate}
+\usepackage{quiver}
+\usepackage{comment}
+
+\usepackage{setspace}
+
+\linespread{1.15}
+
+\usepackage[backend=biber, style=alphabetic, isbn=false, doi=false, url=false]{biblatex}
+%\usepackage{xurl} % after biblatex
+\addbibresource{References.bib}
+
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\Wr}{\operatorname{Wr}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\Sym}{\operatorname{Sym}}
+\newcommand{\Inn}{\operatorname{Inn}}
+\renewcommand{\wr}{\operatorname{wr}}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{problem}{Problem}
+\newtheorem{example}[theorem]{Example}
+\newtheorem*{remark}{Remark}
+\newenvironment{sketch}{\begin{proof}[\textbf{Proof}]}{\end{proof}}
+
+
+
+\begin{document}
+	\pagenumbering{roman}
+	\begin{center}
+	\Large \textbf{Algebra} \smallskip
+		\\
+	\large	Bruh
+	\end{center}
+    \tableofcontents 
+   \clearpage
+    \pagenumbering{arabic}
+    
+\begingroup
+\allowdisplaybreaks
+{
+ 
+\include{01 checklist.tex}
+
+
+\include{2025.03.22-Symmetric-Group.tex}
+\include{2025.04.05-Group-Action-Writing}
+\include{2025.04.26-Sylow-Theorem.tex}
+\include{2025.05.22-Series.tex}
+\include{2025.07.26-Direct-Products.tex}
+\include{2025.07.27-Finitely-Generated-Abelian-Groups.tex}
+\include{2025.07.23-Semidirect-Products.tex}
+\include{2025.09.04-blocks-and-imprimitive-groups.tex}
+\include{2025.08.23-Wreath-Product.tex}
+\include{2025.07.21-Nilpotent-and-Solvable-Groups.tex}
+\include{2025.08.20-Free-Groups.tex}
+
+\include{2025.08.15-Ideals.tex}
+
+
+\include{zabalang.tex}
+
+}\endgroup
+
+
+\printbibliography
+
+\end{document}

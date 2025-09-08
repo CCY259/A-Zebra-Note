@@ -1,0 +1,312 @@
+\section{Group Actions}
+\subsection{Basic Definitions}
+\begin{definition}
+	Let $G$ be a group and let $X$ be a set. The \textbf{left action} of $G$ on $X$ is a function $\rho: G\times X\rightarrow X$ such that
+	\begin{enumerate}[(i)]
+		\item $\rho(g,\rho(g',x)) = \rho(gg',x)$ for all $g,g'\in G$ and $x\in X$;
+		\item $\rho(e,x) =x$ for all $x\in X$.
+	\end{enumerate}
+\end{definition}
+\begin{remark}
+	To emphasize the set $X$, we can talk about an action without explicitly mentioning $\rho$. In this case, (i) and (ii) can be rewritten as 
+\begin{enumerate}[(i)]
+	\item $g(g'x) = (gg')x$ for all $g,g'\in G$ and $x\in X$;
+	\item $ex =x$ for all $x\in X$.
+\end{enumerate}
+Sometimes, we say that $G$ \textbf{acts} on $X$, and $X$ is a $G$-\textbf{set}. Note that the action of $G$ is implicitly given so as to make $X$ a $G$-set. Also, the action is also called a \textbf{left action}. A right action $X\times G\rightarrow X$ is defined analogously. Based on (i) and (ii), we can define \textbf{semigroup action} and \textbf{monoid action} accordingly, but these are not our main focus.
+
+
+\begin{proposition} \label{prop-eq.-def-of-group-action} Let $G$ be a group and let $X$ be a set.
+	\begin{enumerate}[(i)]
+		\item A group action $G\times X\rightarrow X$ induces a group homomorphism $G\rightarrow \operatorname{Sym}(X)$.
+		\item A group homomorphism $G\rightarrow \operatorname{Sym}(X)$ induces a group action $G\times X\rightarrow X$.
+	\end{enumerate}
+\end{proposition}
+\begin{sketch}
+	\begin{enumerate}[(i)]
+		\item For each $g\in G$, the map $\pi_g:X\rightarrow X$; $x\mapsto gx$ is bijective (a permutation of $X$). So $g\mapsto \pi_g$ is a homomorphism of $G$ into $\operatorname{Sym}(X)$.
+		\item Let $g\mapsto \pi_g$ be such group homomorphism. Then the mapping $G\times X\rightarrow X$; $(g,x) \mapsto \pi_g(x)$ is a group action. \qedhere
+	\end{enumerate}
+\end{sketch}
+Based on Proposition \ref{prop-eq.-def-of-group-action}, (ii) is another way to define a group action. One can use both definitions interchangeably. For example, we can view $gx$ $(g\in G,x\in X)$ as an element $\rho(g)(x)$ when we emphasize the homomorphism $\rho:G\rightarrow \operatorname{Sym}(X)$. In fact, we have the following definition.
+\begin{definition}
+	Let $G$ be a group and let $X$ be a set.  A \textbf{permutation representation} of $G$ is a group homomorphism  $\rho:G\rightarrow \operatorname{Sym}(X)$ where $X$ is a nonempty set.
+\end{definition}
+
+\begin{remark}
+Left action and \textbf{right action} are not the same. In right action $X\rightarrow G\rightarrow X$, we need 
+	\begin{enumerate}[(i)]
+		\item $(xg)g' = x(gg')$ for all  $g,g'\in G$ and $x\in X$;
+		\item $xe =x$ for all $x\in X$.
+	\end{enumerate}
+	When we have a left action (denoted $\cdot$),  the action is not a right action because it does not satisfy (i) in the sense of right action. However, we can induce a right action by defining $xg = g^{-1}\cdot x$.
+	\end{remark}
+\end{remark}
+
+\subsection{Orbit-Stabilizer Theorem}
+\begin{definition}
+	Let $G$ act on $X$. A subset \begin{equation*}
+		O_G(x) = \{gx\,|\, g\in G\}
+	\end{equation*}
+	is called an \textbf{orbit} containing $x\in X$. The number of elements in $O_G(x)$ is called the \textbf{length} of the orbit $O_G(x)$. 
+\end{definition}
+\begin{proposition} \label{prop-orbits-are-eqv-classes}
+	$O_G(x)$ $(x\in X)$ are equivalence classes with respect to the relation defined by $x\sim y$ if and only if $y=gx$ for some $g\in G$.
+\end{proposition}
+\begin{sketch}
+	Routine.
+\end{sketch}
+\begin{definition}
+	Let $x\in X$. The set $S_G(x) = \{g\in G\,|\, gx = x\}$ is called the \textbf{stabilizer} of $x$. An element $g\in G$ is said to \textbf{stabilize} or \textbf{fix} $x$ if $g\in Gx$.
+\end{definition}
+\begin{proposition}  \label{prop-stabilizer}
+	Let $G$ act on $X$. Then
+	\begin{enumerate}[(i)]
+		\item the stabilizer of $x\in X$ is a subgroup of $G$. Hence it is also called the \textbf{isotropy group};
+		\item for all $g\in G$ and $x\in X$, we have
+		\begin{equation*}
+			S_G(gx) = gS_G(x)g^{-1}.
+		\end{equation*}
+	\end{enumerate}
+\end{proposition}
+\begin{sketch}
+	Routine.
+\end{sketch}
+\begin{lemma} \label{lemma-orbit-partition-and-bijection}
+	Let $G$  act on $X$. Then
+	\begin{enumerate}[(i)]
+		\item the set of orbits partitions $X$, i.e., $X = \bigcup_x O_G(x)$ where $x$ is a representative for each orbit;
+		\item for each $x\in X$, the function $O_G(x) \rightarrow \{gS_G(x)\,|\, g\in G\}; gx\mapsto gS_G(x)$ is bijective.
+	\end{enumerate}
+\end{lemma}
+\begin{sketch}
+	\begin{enumerate}[(i)]
+		\item By Proposition \ref{prop-orbits-are-eqv-classes}.
+		\item Routine. \qedhere
+	\end{enumerate}
+\end{sketch}
+\begin{theorem}[Orbit-Stabilizer Theorem] \label{thm-orbit-stab}
+	Let $G$ act on a \textbf{finite} set $X$. Then for all $x\in X$,
+	\begin{equation*}
+		|O_G(x)| = [G:S_G(x)] = \frac{|G|}{|S_G(x)|}.
+	\end{equation*}
+\end{theorem}
+\begin{sketch}
+	By Lemma \ref{lemma-orbit-partition-and-bijection}.(ii).
+\end{sketch}
+\begin{corollary}[Orbit decomposition] \label{cor-|X|=sum_[G:S_G(x_i)]}
+	Let $G$ act on a finite set $X$. Let $n$ be the total number of disjoint orbits. If $x_i$ is a representative of $O_G(x_i)$ for $i=1,\dots, n$, then
+	\begin{equation*}
+		|X| = \sum_{i=1}^n [G:S_G(x_i)].
+	\end{equation*}
+\end{corollary}
+\begin{sketch}
+	By  Lemma \ref{lemma-orbit-partition-and-bijection}.(i) and Theorem \ref{thm-orbit-stab}.
+\end{sketch}
+
+We end this section by counting the total number of orbits in a group action with both group and set being finite.
+\begin{definition}
+	Let $G$ act on a finite set $X$. The \textbf{character} of a permutation representation of $G$ is the function $\chi:G\rightarrow \mathbb{Z}_{\geq 0}$ defined by
+	\begin{equation*}
+		\chi(g) = |\{x\in X\,|\, gx = x\}|.
+	\end{equation*}
+	In other words, $\chi(g)$ is the number of points of $X$ fixed by $g$.
+\end{definition}
+\begin{theorem}[Burnside's Lemma] \label{thm-burnside-lemma}
+	Let $G$ act on $X$. If both $G$ and $X$ are finite, then the total number of orbits is given by
+	\begin{equation*}
+		\frac{1}{|G|}\sum_{g\in G}\chi(g).
+	\end{equation*}
+\end{theorem}
+\begin{sketch}
+	We use double counting argument on the set 
+	$$\mathcal{S} = \{(x,g)\,|\, x\in X,g\in G,gx = x\}.$$
+	
+	Fix $x\in X$, we see that there are $|S_G(x)|$ elements in $G$ that fixes $x$, and so $|\mathcal{S}| = \sum_{x\in X}|S_G(x)|$. On the other hand, fix $g\in G$, we see that there are $\chi(g)$ elements in $X$ fixed by $g$, and so 
+	$|\mathcal{S}| = \sum_{g\in G}\chi(g)$.
+	
+	By Theorem \ref{thm-orbit-stab}, 
+	\begin{equation*}
+		\frac{1}{|G|} \sum_{g\in G}\chi(g) = \frac{1}{|G|} \sum_{x\in X}|S_G(x)| =  \sum_{x\in X} \frac{1}{|O_G(x)|}.
+	\end{equation*}
+	
+To calculate $ \sum_{x\in X} \frac{1}{|O_G(x)|}$, choose representatives $x_1,\dots, x_m$ of orbits so that
+\begin{equation*}
+	\sum_{x\in X} \frac{1}{|O_G(x)|} = \sum_{i=1}^m\sum_{y\in O_G(x_i)} \frac{1}{|O_G(x_i)|}.
+\end{equation*} Fix $i$. The number of elements in $O_G(x_i)$ is $|O_G(x_i)|$. Each element $y\in O_G(x_i)$ contributes $\frac{1}{|O_G(x_i)|}$ to the sum $\sum_{y\in O_G(x_i)} \frac{1}{|O_G(x_i)|}$. Hence $\sum_{y\in O_G(x_i)} \frac{1}{|O_G(x_i)|} = 1$ and thus $\sum_{x\in X} \frac{1}{|O_G(x)|} = m$. Note that $m$ is the total number of orbits.
+\end{sketch}
+
+\subsection{Kernel of Group Actions}
+\begin{definition}
+	Let $G$ act on $X$ and let $\rho:G\rightarrow \operatorname{Sym}(X)$ be the associated homomorphism (discussed in Proposition \ref{prop-eq.-def-of-group-action}). We say that the action is \textbf{faithful} if $\operatorname{Ker} \rho = \{e\}$.
+\end{definition}
+\begin{proposition} \label{prop-kernel-of-action-is-intersection}
+	Let $G$ act on $X$. Then the kernel of the action is the intersection of all the stabilizers $\bigcap_{x\in X}S_G(x)$.
+\end{proposition}
+\begin{sketch}
+	Note that 
+	\begin{center}
+		$g\in \operatorname{Ker} \rho \iff \rho(g) = \text{Id} \iff gx = x$ for all $x\in X\iff g\in S_G(x)$ for all $x\in X$.
+	\end{center} 
+\end{sketch}
+
+\subsection{Transitive Actions}
+\begin{definition}
+	Let $G$ act on $X$. The action (or the $G$-set) is said to be \textbf{transitive} (or $G$ is \textbf{transitive} on $X$) if there is only one orbit, i.e., for all $x,y\in X$, there exists $g\in G$ such that $y = gx$; otherwise, it is \textbf{intransitive}.
+\end{definition}
+\begin{proposition} \label{prop-kernel-of-transitive-action}
+	Let $G$ act transitively on $X$. Then the kernel of the action is 
+	\begin{equation*}
+		\bigcap_{g\in G} gS_G(x)g^{-1}
+	\end{equation*}
+	for some $x\in X$.
+\end{proposition}
+\begin{sketch}
+	Choose a representative $x\in X$ so we can write $X=\{gx\,|\, g\in G\}$. Then for each $gx\in X$, we have  $S_G(gx) = gS_G(x)g^{-1}$ by Proposition \ref{prop-stabilizer}.(ii). Hence the result follows from Proposition \ref{prop-kernel-of-action-is-intersection}.
+\end{sketch}
+
+\begin{proposition}
+	Let $G$ act transitively on $X$. If $G$ is finite and $|X|>1$, then there exists $g\in G$ fixing no points of $X$.
+\end{proposition}
+\begin{sketch}
+	We use Theorem \ref{thm-burnside-lemma}. Since $\chi(e) = |X|>1$, it follows that there exists $g\in G$ such that $\chi(g) = 0$, otherwise the sum $\sum_{h\in G}\chi(h)$ will exceed $|G|$.
+\end{sketch}
+
+
+
+\subsection{Conjugations}
+\begin{definition}
+	Two subsets $S$ and $T$ of a group $G$ are said to be \textbf{conjugate} in $G$ if there exists $g \in G$ such that $T =
+	gSg^{-1}$.
+\end{definition}
+\begin{definition}
+	We say that a group $G$ act on a set $X$ by \textbf{conjugation} if the action of $G$ is given by $(g,x)\mapsto gxg^{-1}$.
+\end{definition}
+\begin{remark}
+	We require that $gxg^{-1}$ makes sense for all $x\in X$. So the set $X$ cannot be arbitrary chosen. The next definition presents some typical sets involved.
+\end{remark}
+
+\begin{definition} \label{def-notions-of-orbits-and-stab}
+	Let $G$ be a group and let $H$ be a subgroup of $G$. The following table shows the notions used for orbits and stabilizers of  group actions by conjugation.
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			Group & Set & Orbit & Stabilizer   \\
+			\hline\hline
+			$G$ & $G$ & Conjugacy class of $x$ & Centralizer of $x$ \\
+			\hline
+			$H$ & $G$ & - & Centralizer of $x$ in $H$ \\
+			\hline
+			$H$ & Subsets of $G$ & - & Normalizer of $K$ in $H$ \\
+			\hline
+		\end{tabular}
+	\end{center}
+\end{definition}
+\begin{proposition}
+	The number of conjugates of a subset $S$ in a group $G$ is the index of the
+	normalizer of $S$. In particular, the number of conjugates of an element $x$
+	of $G$ is the index of the centralizer of  $x$.
+\end{proposition}
+\begin{sketch}
+	Trivial.
+\end{sketch}
+\begin{definition}
+	Consider a finite group $G$ act on itself by conjugation. The equation
+	\begin{equation*}
+		|G| = \sum_{i=1}^n [G:C_G(g_i)]
+	\end{equation*}
+	which follows from Corollary \ref{cor-|X|=sum_[G:S_G(x_i)]}, is called the \textbf{class equation} of $G$.
+\end{definition}
+\begin{proposition}
+	Let $G$ be a finite group. Then 
+	\begin{equation*}
+		|G| = |Z(G)| + \sum_{i=1}^m [G:C_G(x_i)]
+	\end{equation*}
+	where $x_1,\dots, x_m$ are representatives of distinct conjugacy classes such that $[G:C_G(x_i)]>1$.
+\end{proposition}
+\begin{sketch}
+	Note that 
+	\begin{equation*}
+		[G:C_G(x)]=1\overset{\text{Theorem } \ref{thm-orbit-stab}}{\iff} O_G(x) = \{x\} \iff x\in Z(G). \qedhere
+	\end{equation*}
+\end{sketch}
+\begin{corollary}
+	Let $H$ be a subgroup of a finite group $G$. If $\bigcup_{g\in G}gHg^{-1} = G$, then $H = G$.
+\end{corollary}
+\begin{sketch}
+	Consider the action of $G$ on the set of subsets of $G$ by conjugation. Then there are $|O_G(H)| = [G:N_G(H)]$ distinct conjugates of $H$. Since $|gHg^{-1}| = |H|$ for all $g\in G$, we have the bound
+	$$|G|-1\leq [G:N_G(H)](|H|-1)$$
+	which can be obtained by counting the nonidentity elements in $G$. Note that $H$ is a subgroup of $N_G(H)$ and so $[G:N_G(H)]\leq [G:H]$. Hence we get $|G|-1\leq |G| - [G:H]$ and thus $[G:H]\leq 1$.
+\end{sketch}
+
+\begin{theorem}[Landau] \label{thm-Landau}
+	For each positive integer $k$, there exists a bound $B(k)$ such that a finite group $G$ having exactly $k$ conjugacy classes satisfies $|G|\leq B(k)$.
+\end{theorem}
+We start with a lemma.
+\begin{lemma}
+	Given a positive integer $k$ and a number $M$, there exist at most finitely many solutions in positive integers $x_i$ for the equation
+	$$\frac{1}{x_1}+ \frac{1}{x_2} + \cdots + \frac{1}{x_k} = M.$$
+\end{lemma}
+\begin{sketch}
+	When $M<0$, there is no solutions (still considered at most finitely many solutions).
+	
+	Assume that $M>0$. We rearrange $x_i$'s so that $x_k$ is the smallest among $x_1,\dots, x_k$. Then $\frac{k}{x_k}\geq M$. This restricts the choices of $x_k$ because $1\leq x_k \leq k/M$. If $k =1$, then we are done. If $k>1$, we write $\frac{1}{x_1} + \cdots + \frac{1}{x_{k-1}} = M - \frac{1}{x_k}$ and apply induction on $k$.
+\end{sketch}
+\begin{proof}[\textbf{Proof of Theorem \ref{thm-Landau}}]
+	Suppose $G$ has $k$ conjugacy classes. Multiply the class equation of $G$ of $1/|G|$. By the lemma above, there are finitely many solutions (we treat $|C_G(x_i)|$ as positive integers in the lemma). So there exists a bound $B(k)$ such that $|C_G(x_i)|\leq B(k)$ for all $i = 1,\dots, k$. In particular, one element $x_j$ of the $x_i$'s is the identity element and so $|G| = |C_G(x_j)|\leq B(k)$.
+\end{proof}
+
+\subsection{Translations}
+\begin{definition}
+	Let $G$ be a group and let $H$ be a subgroup of $G$. We say that $G$ act on the set of all left cosets of $H$ in $G$ by \textbf{left translation} (or \textbf{left multiplication}) if the action of $G$ is given by $(g,aH) \mapsto gaH$. When $H = \{e\}$, we say that $G$ \textbf{acts on itself by left translation} since we can identify each coset $\{a\}$ as the element $a$.
+\end{definition}
+\begin{theorem} \label{thm-statement-of-kernel-of-left-translation}
+	Let $G$ act on the set $X$ of left cosets of $H$ in $G$ by left translation. Let $\rho:G\rightarrow \operatorname{Sym}(X)$ be the associated homomorphism. Then
+	\begin{enumerate}[(i)]
+		\item $G$ acts transitively on $X$;
+		\item $S_G(H) = H$;
+		\item $\operatorname{Ker} \rho  = \bigcap_{g\in G} gHg^{-1}$;
+		\item $\operatorname{Ker} \rho$ is the largest normal subgroup of $G$ contained in $H$.
+	\end{enumerate}
+\end{theorem}
+\begin{sketch}
+	\begin{enumerate}[(i)]
+		\item Let $aH,bH\in X$. Then we see that $aH= (ab^{-1})bH$. Hence $aH$ and $bH$ lie in the same orbit.
+		\item $S_{G}(H) = \{g\in G\,|\, gH = H\} = \{g\in G\,|\, g\in H\} = H$.
+		\item By (i), (ii) and Proposition \ref{prop-kernel-of-transitive-action}.
+		\item Let $N$ be a normal subgroup of $G$ such that $N\leq H$. Then $N = gNg^{-1}\leq gHg^{-1}$ for all $g\in G$. So $N\leq \bigcap_{g\in G} gHg^{-1} = \operatorname{Ker}\rho$. \qedhere
+	\end{enumerate}
+\end{sketch}
+In the situation of Theorem \ref{thm-statement-of-kernel-of-left-translation}, the largest normal subgroup of $G$ contained in $H$ is called the \textbf{core} of $H$ in $G$, and we write $N = \operatorname{Core}_G(H)$. 
+\begin{corollary}\label{cor-action-on-itself-by-trans-is-faithful}
+	The action of a group on itself by left translation is faithful.
+\end{corollary}
+\begin{sketch}
+	By Proposition \ref{thm-statement-of-kernel-of-left-translation}.(iii).
+\end{sketch}
+\begin{theorem}[Cayley's Theorem] \label{thm-Cayley's-Theorem}
+	Every group is isomorphic to a subgroup of some permutation group. If $G$ is a group of order $n$, then $G$ is isomorphic to a subgroup of $S_n$.
+\end{theorem}
+\begin{sketch}
+	Let $G$ act on itself by left translation and let $\rho:G\rightarrow \operatorname{Sym}(G)$ be the associated homomorphism. By Corollary \ref{cor-action-on-itself-by-trans-is-faithful}, we see that $\rho$ is a monomorphism. Hence $G\cong \operatorname{Im}\rho \leq \operatorname{Sym}(G)$. To prove the second assertion, note that $\operatorname{Sym}(G) \cong S_n$.
+\end{sketch}
+\begin{definition}
+	The isomorphism $\rho$ defined above is called the \textbf{left regular representation}. The \textbf{right regular representation} is defined similarly by $\rho_g(x) = xg^{-1}$ (inverse is needed in order to satisfy axioms). 
+\end{definition}
+\begin{corollary}\label{cor-normal-subgroup of-H}
+	Let $G$ be a group and let $H$ be a subgroup of $G$ with finite index $n$. Then there exists a normal subgroup $N$ in $G$ such that $N$ is a subgroup of $H$ and $[G:N]$ divides $n!$.
+\end{corollary}
+\begin{sketch}
+	Consider the action of $G$ on the set of left cosets of $H$ in $G$ by left translation and use Theorem \ref{thm-Cayley's-Theorem}.
+\end{sketch}
+\begin{corollary}
+	If $G$ is a finite group of order $n$ and $p$ is the smallest prime dividing $|G|$,
+	then any subgroup of index $p$ is normal.
+\end{corollary}
+\begin{sketch}
+	Let $H$ be a subgroup of index $p$. By Corollary \ref{cor-normal-subgroup of-H}, we take a normal subgroup $N$ of $H$ such that $[G:N]$ divides $p!$ and consider $[G:N] = [G:H][H:N]$.
+\end{sketch}
+
+\paragraph{Main References.} \cite{DummitFoote2004,Rotman1995,Hungerford1974,Isaacs2009}
+
+

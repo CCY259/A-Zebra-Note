@@ -1,0 +1,45 @@
+\subsection*{Group automorphisms}
+\begin{enumerate}[(1)]
+	\item An isomorphism $G\rightarrow G$ is called an \textbf{automorphism} of $G$.
+	\item An automorphism $\sigma: G\rightarrow G$ preserves a lot of properties in group:
+	\begin{itemize}
+		\item $\sigma(H) = H$ for all $H\leq G$;
+		\item $[\sigma(H),\sigma(K)] = [H:K]$ for all $K\leq H\leq G$;
+		\item $K\lhd H\Leftrightarrow \sigma(K)\lhd \sigma(H)$;
+		\item $H/K \cong \sigma(H)/\sigma(K)$ for all $K\lhd H$;
+		\item $\langle \sigma(S)\rangle =\sigma(\langle S\rangle)$;
+		\item $N_G(\sigma(H)) = \sigma(N_G(H))$;
+		\item $C_G(\sigma(H)) = \sigma(C_G(H))$.
+	\end{itemize}
+	\item The set of automorphisms of $G$ forms a \textbf{group under composition}. It is denoted by $\operatorname{Aut}G$.
+	\item We are interested in a special kind of automophisms: The automorphism of $G$ defined by $x\mapsto gxg^{-1}$ ($g\in G$ is fixed) is called an \textbf{inner automorphism} by $g$. This is also called the \textbf{conjugation} by $g$. 
+	\begin{itemize}
+		\item The set of all inner automorphisms of $G$ is a subgroup of $\operatorname{Aut}G$, and is denoted by $\operatorname{Inn} G$. 
+		\item $\operatorname{Inn} G \cong G/Z(G)$.
+		\item In fact $\operatorname{Inn} G\lhd \operatorname{Aut}G$. The quotient group   $\operatorname{Aut}G / \operatorname{Inn} G$ is called the group of \textbf{outer automorphisms} of $G$.
+	\end{itemize}
+
+	\item \textbf{Characteristic subgroup.} This is a subgroup of $G$ for which every automorphism of $G$ maps $H$ onto itself, i.e., $\sigma(H) = H$ for all $\sigma \in \operatorname{Aut}G$. Sometimes we write $H\operatorname{char} G$.
+	\begin{itemize}
+		\item $H\operatorname{char}G \Rightarrow H\lhd G$ (look at the inner automorphisms). The converse is not true.
+		\item $H\operatorname{char} G \Leftrightarrow \sigma(H)\subseteq H$ for all $\sigma \in H$(an analogous result to normal subgroups).
+		\item $H\operatorname{char} G\Rightarrow C_G(H)\operatorname{char} G$.
+		\item If $H$ is the unique subgroup of its order, then $H\operatorname{char} G$.
+		\item $H\operatorname{char}K$ and $K\operatorname{char} G\Rightarrow H\operatorname{char}G$.
+		\item $H\operatorname{char}K$ and $K\lhd G\Rightarrow H\lhd G$.
+		\item Common examples: Trivial subgroups and $Z(G)$.
+	\end{itemize}
+
+\item Studies of automorphisms of cyclic groups (say $C$):
+\begin{itemize}
+	\item $\operatorname{Aut} C$ is abelian.
+	\item If $\sigma$ is an automorphism of $C$, then $\sigma$ must \textbf{send generators to generators}.
+	\item As a consequence, we get (by  counting the number of generators) $$|\text{Aut} ~\mathbb{Z}| = 2\quad \text{and}\quad  |\text{Aut} ~\mathbb{Z}_k| = \varphi(k).$$ 
+	We also have
+	\begin{equation*}
+		\operatorname{Aut}\mathbb{Z}_k \cong (\mathbb{Z}_k)^{\times}.
+	\end{equation*}
+	\item In particular, if $k$ is a power of a prime, say $p^m$, then $$|\text{Aut} ~\mathbb{Z}_{p^m}| = p^{m-1}(p-1).$$
+	\item Every subgroup of $C$ is a characteristic of $C$.
+\end{itemize}
+\end{enumerate}

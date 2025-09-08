@@ -1,0 +1,187 @@
+\section{Introduction to Permutation Group Theory}
+\subsection{Notations}
+A \textbf{permutation group} of a set $\Omega$ is a subgroup of $\Sym\Omega$. If $G$ is a permutation group on $\Omega$, then $G$ acts on $\Omega$ via the canonical injection and this is a faithful action.  Conversely, if $G$ is a faithful action on $\Omega$, then $G$ can be identified as a permutation group of $\Omega$. For simplicity, we reintroduce notations for notions in group actions. Let $G$ act on $\Omega$.  
+\begin{align*}
+	\omega^G &= O_G(\omega) =\{\omega^g\mid g\in G\}, \tag{\textbf{Orbit} of $\omega \in \Omega$}
+	\\
+	G_{\omega} &= \operatorname{Stab}_G(\omega) = \{g\in G\mid \omega^g = \omega\}, \tag{\textbf{Point stabilizer} of $\omega\in \Omega$}
+	\\
+	G_{X} &=  \{g\in G\mid X^g = X\}, \tag{\textbf{Setwise stabilizer} of $X\subseteq \Omega$}
+	\\
+	G_{(X)} &=  \{g\in G\mid x^g = x\text{ for all }x\in X\}. \tag{\textbf{Elementwise stabilizer} of $X\subseteq \Omega$}
+\end{align*}
+\subsection{Isomorphic actions}
+\begin{definition}
+	Let $G$ and $H$ be groups acting on the sets $\Omega$ and $\Delta$, respectively. The two actions are said to be \textbf{permutationally isomorphic} if there exist a bijection $\vartheta: \Omega \to \Delta$ and an isomorphism $\chi: G \to H$ such that
+	\[ \vartheta(\omega^g) = \vartheta(\omega)^{\chi(g)} \quad \text{for all } \omega \in \Omega, g \in G. \]
+	If such conditions hold, the pair $(\vartheta, \chi)$ is said to be a \textbf{permutational isomorphism}. Similarly, the pair $(\vartheta, \chi)$ is a \textbf{permutational embedding} of the permutation group $G$ on $\Omega$ into the permutation group $H$ on $\Delta$, if $\chi: G \to H$ is a monomorphism and $(\vartheta, \hat{\chi})$ is a permutational isomorphism, where $\hat{\chi}: G \to \operatorname{im}\chi$ is obtained from $\chi$ by simply restricting the range of $\chi$.
+\end{definition}
+
+
+\begin{proposition}
+	Let $G$ act on a set $\Omega$. Let $\Delta$ be a set and let $\vartheta: \Omega \to \Delta$ be a bijection. Define an action of $G$ on $\Delta$ by $\delta^g = \delta_1$, where  $\delta_1$ satisfies $\vartheta^{-1}(\delta_1)  = (\vartheta^{-1}(\delta_1))^g$. Then $(\vartheta, \operatorname{Id}_G)$ is a permutational isomorphism from the $G$-action on $\Omega$ to the $G$-action on $\Delta$.
+\end{proposition}
+
+\begin{sketch}
+	Note, for $\omega_1, \omega_2 \in \Omega$ and $g \in G$ that $\omega_1^g = \omega_2$ if and only if $(\vartheta(\omega_1) )^g = \vartheta(\omega_2)$. This implies that the $G$-action on $\Delta$ is well defined and is permutationally isomorphic to the $G$-action on $\Omega$. 
+\end{sketch}
+
+\begin{comment}
+	\begin{proposition}
+		Let $G_1$ and $G_2$ be groups acting transitively on $\Omega_1$ and $\Omega_2$, respectively. Then the following are equivalent.
+		\begin{enumerate}[(1)]
+			\item The actions of $G_1$ and $G_2$ on $\Omega_1$ and $\Omega_2$, respectively, are permutationally isomorphic.
+			\item There exist $\omega_1 \in \Omega_1$ and $\omega_2 \in \Omega_2$ and an isomorphism $\alpha: G_1 \to G_2$ such that $\alpha(G_1)_{\omega_1} = (G_2)_{\omega_2}$.
+			\item For all $\omega_1 \in \Omega_1$ and $\omega_2 \in \Omega_2$, there exists an isomorphism $\alpha: G_1 \to G_2$ such that $\alpha(G_1)_{\omega_1} = (G_2)_{\omega_2}$.
+		\end{enumerate}
+	\end{proposition}
+	
+	\begin{sketch}
+		(1) $\Rightarrow$ (2) Let $(\gamma: \Omega_1 \to \Omega_2, \alpha: G_1 \to G_2)$ be a permutational isomorphism. Let $\omega_1 \in \Omega_1$ and $g \in (G_1)_{\omega_1}$. Then $\gamma(\omega_1) ^{\alpha (g)} = \gamma(\omega_1^g) = \gamma(\omega_1)$, and so $\alpha(g) \in (G_2)_{\gamma(\omega_1)}$. Therefore $\alpha(G_1)_{\omega_1} \le (G_2)_{\omega_1\gamma}$. 
+		
+		On the other hand if $g_2 \in (G_2)_{\omega_1\gamma}$ then there is some $g_1 \in G_1$ such that $g_1\alpha = g_2$. Then $\omega_1\gamma = (\omega_1\gamma)g_2 = (\omega_1\gamma)(g_1\alpha) = (\omega_1 g_1)\gamma$. Applying $\gamma^{-1}$ we obtain $\omega_1 = \omega_1 g_1$. Therefore $g_1 \in (G_1)_{\omega_1}$, and hence $g_2 = g_1\alpha \in (G_1)_{\omega_1}\alpha$. This shows that $(G_1)_{\omega_1}\alpha = (G_2)_{\omega_1\gamma}$, and assertion (ii) is valid.
+		
+		Next we show that (ii) implies (iii). Since both $G_1$ and $G_2$ are transitive, $\{(G_1)_{\omega'_1} \mid \omega'_1 \in \Omega_1\}$ and $\{(G_2)_{\omega'_2} \mid \omega'_2 \in \Omega_2\}$ are conjugacy classes in $G_1$ and $G_2$, respectively, by Lemma 2.1. Let $\alpha: G_1 \to G_2$ be an isomorphism, and $\omega_1 \in \Omega_1, \omega_2 \in \Omega_2$ such that $(G_1)_{\omega_1}\alpha = (G_2)_{\omega_2}$, and let $\omega'_1 \in \Omega_1$ and $\omega'_2 \in \Omega_2$. Then there are $\sigma_1 \in \Inn(G_1)$ and $\sigma_2 \in \Inn(G_2)$ such that $(G_1)_{\omega'_1} = (G_1)_{\omega_1}\sigma_1$ and $(G_2)_{\omega_2}\sigma_2 = (G_2)_{\omega'_2}$. If $\phi = \sigma_1\alpha\sigma_2$ then clearly $(G_1)_{\omega'_1}\phi = (G_2)_{\omega'_2}$.
+		
+		Finally we show that (iii) implies (i). Let $\omega_1 \in \Omega_1, \omega_2 \in \Omega_2$, and $\alpha: G_1 \to G_2$ be an isomorphism such that $(G_1)_{\omega_1}\alpha = (G_2)_{\omega_2}$. Then define $\gamma: \Omega_1 \to \Omega_2$ by $(\omega_1 g)\gamma = \omega_2(g\alpha)$ for $g \in G_1$. Let us show that $\gamma$ is well defined. Since $G_1$ is transitive, $\omega_1 g$ runs through all elements of $\Omega_1$ as $g$ runs through the elements of $G_1$. If $\omega_1 g_1 = \omega_1 g_2$ for some $g_1, g_2 \in G_1$, then, $g_1g_2^{-1} \in (G_1)_{\omega_1}$, and so $(g_1g_2^{-1})\alpha = (g_1\alpha)(g_2\alpha)^{-1} \in (G_2)_{\omega_2}$. Hence $\omega_2(g_1\alpha) = \omega_2(g_2\alpha)$, and $\gamma$ is well defined. Since $G_2 = G_1\alpha$ is transitive, $\gamma$ is onto. If $(\omega_1 g_1)\gamma = (\omega_1 g_2)\gamma$ for some $g_1, g_2 \in G_1$, then, by the definition of $\gamma$, we have $\omega_2(g_1\alpha) = \omega_2(g_2\alpha)$ and so $(g_1\alpha)(g_2\alpha)^{-1} = (g_1g_2^{-1})\alpha \in (G_2)_{\omega_2}$. Thus $g_1g_2^{-1} \in (G_1)_{\omega_1}$, and so $\omega_1 g_1 = \omega_1 g_2$. Therefore $\gamma$ is one-to-one, and hence $\gamma$ is a bijection. If $\omega \in \Omega_1$ and $g \in G_1$ then there is a $g_1 \in G_1$ such that $\omega = \omega_1 g_1$. Then
+		\[ (\omega g)\gamma = ((\omega_1 g_1)g)\gamma = \omega_2((g_1g)\alpha) = \omega_2(g_1\alpha)(g\alpha) = (\omega_1 g_1)\gamma (g\alpha) = (\omega\gamma)(g\alpha). \]
+		Thus $(\gamma, \alpha)$ is a permutational isomorphism.
+	\end{sketch}
+
+\begin{proposition}
+	Let $G $ and $H$ be groups acting transitively on $\Omega $ and $\Delta $, respectively. Then the following are equivalent.
+	\begin{enumerate}[(1)]
+		\item The actions of $G $ and $H$ on $\Omega $ and $\Delta $, respectively, are permutationally isomorphic.
+		\item There exist $\omega_1 \in \Omega $ and $\omega_2 \in \Delta $ and an isomorphism $\varphi: G  \to H$ such that $\varphi(G_{\omega_1}) = H_{\omega_2}$.
+		\item For all $\omega_1 \in \Omega $ and $\omega_2 \in \Delta $, there exists an isomorphism $\varphi: G  \to H$ such that $\varphi(G_{\omega_1}) = H_{\omega_2}$.
+	\end{enumerate}
+\end{proposition}
+
+\begin{sketch}
+	(1) $\Rightarrow$ (2) Let $(\vartheta: \Omega  \to \Delta , \varphi: G  \to H)$ be a permutational isomorphism. Let $\omega_1 \in \Omega $ and $g \in G_{\omega_1}$. Then $\vartheta(\omega_1) ^{\varphi (g)} = \vartheta(\omega_1^g) = \vartheta(\omega_1)$, and so $\varphi(g) \in H_{\vartheta(\omega_1)}$. Therefore $\varphi (G_{\omega_1}) \leq H_{\vartheta(\omega_1)}$. 
+	
+	On the other hand if $g_2 \in H_{\vartheta(\omega_1)}$ then there is some $g_1 \in G $ such that $\varphi(g_1) = g_2$. Then $\vartheta(\omega_1) = \vartheta(\omega_1)^{g_2} = \vartheta(\omega_1)^{\varphi(g_1)} = \vartheta(\omega_1^{g_1})$. Applying $\vartheta^{-1}$ we obtain $\omega_1 = \omega_1^{g_1}$. Therefore $g_1 \in G_{\omega_1}$, and hence $g_2 = \varphi(g_1) \in \varphi(G_{\omega_1})$. This shows that $\varphi(G_{\omega_1} ) = H_{\vartheta(\omega_1)}$.
+	
+	(2) $\Rightarrow$ (3) Since both $G$ and $H$ are transitive, $\{G_{\omega'_1} \mid \omega'_1 \in \Omega \}$ and $\{H_{\omega'_2} \mid \omega'_2 \in \Delta \}$ are conjugacy classes in $G$ and $H$, respectively, by Proposition \ref{prop-stabilizer}.(ii). Let $\varphi: G  \to H$ be an isomorphism, and $\omega_1 \in \Omega , \omega_2 \in \Delta$ such that $\varphi(G_{\omega_1}) = H_{\omega_2}$, and let $\omega'_1 \in \Omega $ and $\omega'_2 \in \Delta $. Then there are $\sigma_1 \in \Inn G$ and $\sigma_2 \in \Inn H$ such that $\sigma_1(G_{\omega'_1}) = G_{\omega_1}$ and $\sigma_2(H_{\omega_2}) = H_{\omega'_2}$. If $\phi = \sigma_1\varphi\sigma_2$ then clearly $\phi(G_{\omega'_1} ) = H_{\omega'_2}$.
+	
+	(3) $\Rightarrow$ (2) Let $\omega_1 \in \Omega , \omega_2 \in \Delta $, and $\varphi: G  \to H$ be an isomorphism such that $\varphi(G_{\omega_1} ) = H_{\omega_2}$. Then define $\vartheta: \Omega  \to \Delta $ by $\vartheta (\omega_1^g)= \omega_2^{\varphi(g)}$ for $g \in G $. We show that $\vartheta$ is well defined. Since $G $ is transitive, we have $\Omega = \{\omega_1^g\mid g\in G\}$. If $\omega_1^{g_1} = \omega_1^{g_2}$ for some $g_1, g_2 \in G $, then, $g_1g_2^{-1} \in G_{\omega_1}$, and so $\varphi(g_1g_2^{-1}) = \varphi(g_1)\varphi(g_2)^{-1} \in H_{\omega_2}$. Hence $\omega_2^{\varphi(g_1)} = \omega_2^{\varphi(g_2)}$, and so $\vartheta$ is well defined.  Since $H = \varphi(G)$ is transitive, $\vartheta$ is surjective. For injectivity, suppose that $\vartheta(\omega_1^{g_1} ) = \vartheta(\omega_1^{g_2} )$ for some $g_1, g_2 \in G$, then, by the definition of $\vartheta$, we have $\omega_2^{\varphi(g_1)} = \omega_2^{\varphi(g_2)}$ and so $\varphi(g_1)\varphi(g_2)^{-1} = \varphi(g_1g_2^{-1}) \in H_{\omega_2}$. Thus $g_1g_2^{-1} \in G_{\omega_1}$, and so $\omega_1^{g_1} = \omega_1^{g_2}$. Therefore $\vartheta$ is injective, and hence $\vartheta$ is a bijection. 
+	
+	If $\omega \in \Omega $ and $g \in G $ then there is a $g_1 \in G $ such that $\omega = \omega_1^{g_1}$. Then
+	\begin{equation*}
+		\vartheta(\omega^g) = \vartheta((\omega_1^{g_1} )^g) = \omega_2^{\varphi(g_1g)} = \omega_2^{\varphi(g_1)\varphi(g)} = \vartheta(\omega_1^{g_1} )^{\varphi(g)} = \vartheta(\omega)^{\varphi(g)}.
+	\end{equation*}
+	Thus $(\vartheta, \varphi)$ is a permutational isomorphism.
+\end{sketch}
+\end{comment}
+\begin{proposition}
+	Let $G $ and $H$ be groups acting transitively on $\Omega $ and $\Delta $, respectively. Then the following are equivalent.
+	\begin{enumerate}[(1)]
+		\item The actions of $G $ and $H$ on $\Omega $ and $\Delta $, respectively, are permutationally isomorphic.
+		\item There exist $\omega \in \Omega $ and $\delta \in \Delta $ and an isomorphism $\varphi: G  \to H$ such that $\varphi(G_{\omega}) = H_{\delta}$.
+		\item For all $\omega \in \Omega $ and $\delta \in \Delta $, there exists an isomorphism $\varphi: G  \to H$ such that $\varphi(G_{\omega}) = H_{\delta}$.
+	\end{enumerate}
+\end{proposition}
+
+\begin{sketch}
+	(1) $\Rightarrow$ (2) Let $(\vartheta: \Omega  \to \Delta , \varphi: G  \to H)$ be a permutational isomorphism. Let $\omega \in \Omega $ and $g \in G_{\omega}$. Then $\vartheta(\omega) ^{\varphi (g)} = \vartheta(\omega^g) = \vartheta(\omega)$, and so $\varphi(g) \in H_{\vartheta(\omega)}$. Therefore $\varphi (G_{\omega}) \leq H_{\vartheta(\omega)}$. 
+	
+	On the other hand if $g_2 \in H_{\vartheta(\omega)}$ then there is some $g_1 \in G $ such that $\varphi(g_1) = g_2$. Then $\vartheta(\omega) = \vartheta(\omega)^{g_2} = \vartheta(\omega)^{\varphi(g_1)} = \vartheta(\omega^{g_1})$. Applying $\vartheta^{-1}$ we obtain $\omega = \omega^{g_1}$. Therefore $g_1 \in G_{\omega}$, and hence $g_2 = \varphi(g_1) \in \varphi(G_{\omega})$. This shows that $\varphi(G_{\omega} ) = H_{\vartheta(\omega)}$.
+	
+	(2) $\Rightarrow$ (3) Since both $G$ and $H$ are transitive, $\{G_{\omega'} \mid \omega' \in \Omega \}$ and $\{H_{\delta'} \mid \delta' \in \Delta \}$ are conjugacy classes in $G$ and $H$, respectively, by Proposition \ref{prop-stabilizer}.(ii). Let $\varphi: G  \to H$ be an isomorphism, and $\omega \in \Omega , \delta \in \Delta$ such that $\varphi(G_{\omega}) = H_{\delta}$, and let $\omega' \in \Omega $ and $\delta' \in \Delta $. Then there are $\sigma_1 \in \Inn G$ and $\sigma_2 \in \Inn H$ such that $\sigma_1(G_{\omega'}) = G_{\omega}$ and $\sigma_2(H_{\delta}) = H_{\delta'}$. If $\phi = \sigma_1\varphi\sigma_2$ then clearly $\phi(G_{\omega'} ) = H_{\delta'}$.
+	
+	(3) $\Rightarrow$ (2) Let $\omega \in \Omega , \delta \in \Delta $, and $\varphi: G  \to H$ be an isomorphism such that $\varphi(G_{\omega} ) = H_{\delta}$. Then define $\vartheta: \Omega  \to \Delta $ by $\vartheta (\omega^g)= \delta^{\varphi(g)}$ for $g \in G $. We show that $\vartheta$ is well defined. Since $G $ is transitive, we have $\Omega = \{\omega^g\mid g\in G\}$. If $\omega^{g_1} = \omega^{g_2}$ for some $g_1, g_2 \in G $, then, $g_1g_2^{-1} \in G_{\omega}$, and so $\varphi(g_1g_2^{-1}) = \varphi(g_1)\varphi(g_2)^{-1} \in H_{\delta}$. Hence $\delta^{\varphi(g_1)} = \delta^{\varphi(g_2)}$, and so $\vartheta$ is well defined.  Since $H = \varphi(G)$ is transitive, $\vartheta$ is surjective. For injectivity, suppose that $\vartheta(\omega^{g_1} ) = \vartheta(\omega^{g_2} )$ for some $g_1, g_2 \in G$, then, by the definition of $\vartheta$, we have $\delta^{\varphi(g_1)} = \delta^{\varphi(g_2)}$ and so $\varphi(g_1)\varphi(g_2)^{-1} = \varphi(g_1g_2^{-1}) \in H_{\delta}$. Thus $g_1g_2^{-1} \in G_{\omega}$, and so $\omega^{g_1} = \omega^{g_2}$. Therefore $\vartheta$ is injective, and hence $\vartheta$ is a bijection. 
+	
+	If $\omega \in \Omega $ and $g \in G $ then there is a $g_1 \in G $ such that $\omega = \omega^{g_1}$. Then
+	\begin{equation*}
+		\vartheta(\omega^g) = \vartheta((\omega^{g_1} )^g) = \delta^{\varphi(g_1g)} = \delta^{\varphi(g_1)\varphi(g)} = \vartheta(\omega^{g_1} )^{\varphi(g)} = \vartheta(\omega)^{\varphi(g)}.
+	\end{equation*}
+	Thus $(\vartheta, \varphi)$ is a permutational isomorphism.
+\end{sketch}
+
+\begin{comment}
+	\begin{proposition}
+		Let $\Omega$ be a set and let $G_1, G_2 \le \Sym\Omega$. Then $G_1$ and $G_2$ are permutationally isomorphic if and only if $G_1$ and $G_2$ are conjugate subgroups of $\Sym\Omega$. Moreover, if $(\gamma, \alpha)$ is a permutational isomorphism, then $\gamma \in \Sym\Omega$ and $g\alpha = \gamma^{-1}g\gamma$, for all $g \in G_1$.
+	\end{proposition}
+	
+	\begin{sketch}
+		Assume first that $G_1$ and $G_2$ are permutationally isomorphic, and let $(\gamma, \alpha)$ be a permutational isomorphism. Then, for all $g \in G_1$ and $\omega \in \Omega$, we have $(\omega g)\gamma = (\omega\gamma)(g\alpha)$; that is $\omega g = (\omega\gamma)(g\alpha)\gamma^{-1}$. This shows that $\gamma^{-1}g\gamma = g\alpha$, and so $G_1$ is conjugate to $G_1\alpha = G_2$.
+		
+		Suppose conversely that $\gamma \in \Sym\Omega$ such that $\gamma^{-1}G_1\gamma = G_2$ and let $\alpha: G_1 \to G_2$ denote the isomorphism induced by conjugating by $\gamma$; that is, for $g \in G_1$, we define $g\alpha = \gamma^{-1}g\gamma$. Then, for $g \in G$ and $\omega \in \Omega$, $(\omega\gamma)(g\alpha) = \omega\gamma\gamma^{-1}g\gamma = \omega g\gamma$. Hence $(\gamma, \alpha)$ is a permutational isomorphism.
+	\end{sketch}
+\end{comment}
+
+
+\begin{proposition}
+	Let $\Omega$ be a set and let $G_1, G_2 \le \Sym\Omega$. Then $G_1$ and $G_2$ are permutationally isomorphic if and only if $G_1$ and $G_2$ are conjugate subgroups of $\Sym\Omega$. Moreover, if $(\vartheta, \varphi)$ is a permutational isomorphism, then $\vartheta \in \Sym\Omega$ and $\varphi(g) = \vartheta^{-1}g\vartheta$, for all $g \in G_1$.
+\end{proposition}
+
+\begin{sketch}
+	Assume that $G_1$ and $G_2$ are permutationally isomorphic, and let $(\vartheta:\Omega\to \Omega, \varphi:G_1\rightarrow G_2)$ be a permutational isomorphism. Then we have $\vartheta(\omega^g) = \vartheta(\omega)^{\varphi(g)}$ for all $g \in G_1$ and $\omega \in \Omega$, i.e., $\omega^g = \vartheta^{-1}(\vartheta(\omega)^{\varphi(g)})$. This shows that $\vartheta^{-1}g\vartheta = \varphi(g)$, and so $G_1$ is conjugate to $\varphi(G_1) = G_2$.
+	
+	Suppose conversely that $\vartheta \in \Sym\Omega$ such that $\vartheta^{-1}G_1\vartheta = G_2$ and let $\varphi: G_1 \to G_2$ be the isomorphism defined by  $\varphi(g) = \vartheta^{-1}g\vartheta$. Then  $\vartheta(\omega)^{\varphi(g)} = \vartheta(\omega)^{\vartheta^{-1}g\vartheta} = \vartheta((\vartheta^{-1}(\vartheta(\omega)))^{g}) = \vartheta(\omega^g)$ for $g \in G$ and $\omega \in \Omega$. Hence $(\vartheta, \varphi)$ is a permutational isomorphism.
+\end{sketch}
+
+
+
+\subsection{Blocks}
+\begin{definition}
+	Let $G$ act transitively on $X$. The nonempty subset $B$ of $X$ is called a \textbf{block} if for every $g\in G$, either $B^g=B$ or $B^g \cap B = \emptyset$. All the singletons of $X$ and the set $X$ itself are blocks, and so they are said to be \textbf{trivial}.
+\end{definition}
+\begin{comment}
+	\begin{proposition} \label{prop-block-and-stab}
+		Let $G$ acts transitively on $X$. Let $x\in X$ be fixed. Then there is a one-to-one correspondence between the set of blocks of $X$ containing $x$ and the set of subgroups which contains the stabilizer $G_x$ of $x$. 
+	\end{proposition}
+	\begin{sketch}
+		Let $B$ be a block containing $x \in X$, and consider the set $H_B = \{g \in G \mid gx \in B\}$. We claim that $H_B$ is a subgroup of  $G$. Clearly, $e \in H_B$. Let $g,g' \in H_B$. Since $x$ and $gx$ both lie in $B$, we see that $gB \cap B\neq \emptyset$  and hence that $gB = B$. Now we have $(gg')x = g(g'x) \in gB = B$ and hence $gg' \in H_B$. Also, for $g \in H_B$ we have $gx \in B$ and $g^{-1}(gx) = x \in B$. Thus $g^{-1}B \cap B \neq \emptyset$, which forces $g^{-1}B = B$. In particular,   $g^{-1}x \in B$ and hence  $g^{-1} \in H_B$. Therefore $H_B$ is a subgroup of $G$. 
+		
+		Observe that $G_x \le H_B$ since $x \in B$. Fix $x\in X$. Let $\mathcal{B}$ be the set of blocks of $X$ containing $x$ and let $\mathcal{H}$ be the set of subgroups containing $G_x$. Let $\theta:\mathcal{B}\rightarrow \mathcal{H}$ be the function defined by $\theta(B)=H_B$. We claim that $\theta$ is bijective. 
+		
+		Let $B$ and $B'$ be distinct blocks in $\mathcal{B}$. Without loss of generality assume that $B'\not\subseteq B$. Then there exists some  $y \in B'$ with $y \notin B$. Since $G$ acts transitively on $X$, there exists some $g \in G$ such that $gx = y$. So $g \in H_{B'}$. Since $y\not\in B$, we have $g \notin H_B$, and hence $H_B \ne H_{B'}$. This shows that $\theta$ is injective.
+		
+		Let $H\in\mathcal{H}$. Consider the subset $C = \{hx \mid h \in H\}$ of $X$. We show that $C$ is a block. Clearly $C$ is non-empty and  $gC = C$ for each $g\in H$. Let $g \in G$ be such that $gC \cap C\neq \emptyset$. Then there exist $h_1, h_2 \in H$ such that $gh_1x = h_2x$. This gives $h_2^{-1}gh_1x = x$ and hence $h_2^{-1}gh_1 \in G_x \le H$, and thus $g \in H$. Consequently $gC  = C$. Therefore $C$ is a block. Note that $\theta(C) = H_C = \{g \in G \mid gx \in C\}$. Clearly $H \le H_C$. Let $g \in H_C$. Then $gx = hx$ for some $h \in H$. Hence $h^{-1}gx = x$ and thus $h^{-1}g  \in H$, giving $g \in H$. So $\theta(C) = H$, which shows that $\theta$ is surjective.
+	\end{sketch}
+\end{comment}
+\begin{proposition} \label{prop-block-and-stab}
+	Let $G$ acts transitively on $X$. Let $x\in X$ be fixed. Then there is a one-to-one correspondence between the set of blocks of $X$ containing $x$ and the set of subgroups which contains the stabilizer $G_x$ of $x$.
+\end{proposition}
+\begin{sketch}
+	Let $B$ be a block containing $x \in X$, and consider the set $H_B = \{g \in G \mid x^g \in B\}$. We claim that $H_B$ is a subgroup of  $G$. Clearly, $e \in H_B$. Let $g,g' \in H_B$. Since $x$ and $x^g$ both lie in $B$, we see that $B^g \cap B\neq \emptyset$ and hence that $B^g = B$. Now we have $x^{gg'} = (x^g)^{g'} \in B^{g'} = B$ and hence $gg' \in H_B$. Also, for $g \in H_B$ we have $x^g \in B$. Since $x$ is also in $B$, this means $B \cap B^g \neq \emptyset$, which implies $B^g = B$. Acting on both sides by $g^{-1}$, we get $B^{g^{-1}} = (B^g)^{g^{-1}} = B$. Since $x \in B$, it follows that $x^{g^{-1}} \in B^{g^{-1}} = B$, and hence $g^{-1} \in H_B$. Therefore $H_B$ is a subgroup of $G$.
+	
+	Observe that $G_x \le H_B$ since for any $s \in G_x$, we have $x^s=x \in B$.  Let $\mathcal{B}$ be the set of blocks of $X$ containing $x$ and let $\mathcal{H}$ be the set of subgroups containing $G_x$. Let $\theta:\mathcal{B}\rightarrow \mathcal{H}$ be the function defined by $\theta(B)=H_B$. We claim that $\theta$ is bijective.
+	
+	Let $B$ and $B'$ be distinct blocks in $\mathcal{B}$. Without loss of generality assume that $B'\not\subseteq B$. Then there exists some  $y \in B'$ with $y \notin B$. Since $G$ acts transitively on $X$, there exists some $g \in G$ such that $x^g = y$. So $g \in H_{B'}$. Since $y\not\in B$, we have $g \notin H_B$, and hence $H_B \ne H_{B'}$. This shows that $\theta$ is injective.
+	
+	Let $H\in\mathcal{H}$. Consider the subset $C = \{x^h \mid h \in H\}$ of $X$. We show that $C$ is a block. Clearly $C$ is non-empty and $C^g = C$ for each $g\in H$. Let $g \in G$ be such that $C^g \cap C\neq \emptyset$. Then there exist $h_1, h_2 \in H$ such that $(x^{h_1})^g = x^{h_2}$. This gives $x^{h_1g} = x^{h_2}$, so $x^{h_1gh_2^{-1}} = x$. Hence $h_1gh_2^{-1} \in G_x \le H$, and thus $g \in H$. Consequently $C^g = C$. Therefore $C$ is a block. Note that $\theta(C) = H_C = \{g \in G \mid x^g \in C\}$. Clearly $H \le H_C$. Let $g \in H_C$. Then $x^g = x^h$ for some $h \in H$. Hence $x^{gh^{-1}} = x$ and thus $gh^{-1} \in G_x \le H$, giving $g \in H$. So $\theta(C) = H$, which shows that $\theta$ is surjective.
+\end{sketch}
+\begin{remark}
+	This correspondence is order-preserving, i.e., if $B_1,B_2$ are blocks of $X$ containing $x$, then $B_1\subseteq B_2$ if and only if $\theta(B_1)\subseteq \theta(B_2)$. Indeed $B_1\subseteq B_2$ implies that $x^g \in B_1\subseteq B_2$ for all $g\in H_{B_1}$. Conversely, suppose that $H_{B_1}\leq H_{B_2}$. Let $y\in B_1$. So there exists $g\in G$ such that $y = x^g$. This implies $g\in H_{B_1}\subseteq H_{B_2}$. So $y = x^g \in B_2$. This shows that $\theta$ is order-preserving.
+\end{remark}
+\begin{definition}
+	Let $G$ act transitively on $X$. A partition $\mathcal{B}$ of $X$ is called a \textbf{system of blocks} (or a \textbf{system of imprimitivity}) if each $B\in \mathcal{B}$ is a block.
+\end{definition}
+\begin{proposition}
+	Let $G$ act transitively on $X$. Let $\mathcal{B}$ be a system of imprimitivity. Then for any given $B\in \mathcal{B}$,  we have
+	$
+		\mathcal{B}  = \{B^x\,|\, x\in G\}$.
+\end{proposition}
+\begin{sketch}
+	
+\end{sketch}
+
+\subsection{Primitive Actions}
+
+\begin{definition}
+	Let $G$ act transitively on $X$. The action (or $G$-set) is said to be \textbf{primitive} (or $G$ is \textbf{primitive} on $X$) if $G$ has no nontrivial blocks; otherwise, it is \textbf{imprimitive}.
+\end{definition}
+
+\begin{corollary}
+	Let $G$ act transitively on a set $X$. Then $G$ is primitive if and only
+	if the stabilizers are maximal subgroups.
+\end{corollary}
+\begin{sketch}
+	Suppose $G$ is primitive on $X$. Let $x \in X$.  Since $G$ is primitive, there are  two  blocks containing $x$, namely $\{x\}$ and $X$.  By Proposition \ref{prop-block-and-stab}, there are only two subgroups of $G$ containing $G_x$, namely $G_x$ and $G$. So there is no proper subgroup of $G$ which properly contains $G_x$. Therefore $G_x$ is maximal in $G$.
+	
+	Conversely, suppose that every stabilizer is a maximal subgroup. Fix $x\in X$. Then there are only two subgroups of $G$ containing $G_x$, namely $G_x$ and $G$. By Proposition \ref{prop-block-and-stab}, we only have two such blocks $\{x\}$ and $X$.  Consequently, $X$ can have no other blocks besides itself and its singletons, and so $X$ is primitive.
+\end{sketch}
+
+\paragraph{Main References.} \cite{Praeger2018,Dixon1996,Cameron1999}
