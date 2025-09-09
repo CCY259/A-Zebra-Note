@@ -2394,17 +2394,20 @@
     <bcf:citekey order="8" intorder="3">Rotman1995</bcf:citekey>
     <bcf:citekey order="8" intorder="4">Alperin1995</bcf:citekey>
     <bcf:citekey order="8" intorder="5">Dixon1996</bcf:citekey>
-    <bcf:citekey order="9" intorder="1">Meldrum1995</bcf:citekey>
-    <bcf:citekey order="9" intorder="2">Praeger2018</bcf:citekey>
-    <bcf:citekey order="9" intorder="3">Dixon1996</bcf:citekey>
-    <bcf:citekey order="10" intorder="1">Lang2002</bcf:citekey>
-    <bcf:citekey order="10" intorder="2">Bergman2015</bcf:citekey>
-    <bcf:citekey order="10" intorder="3">Ribes2010</bcf:citekey>
-    <bcf:citekey order="11" intorder="1">Roman2008</bcf:citekey>
-    <bcf:citekey order="11" intorder="2">Halmos1974</bcf:citekey>
-    <bcf:citekey order="11" intorder="3">Jech2003</bcf:citekey>
-    <bcf:citekey order="11" intorder="4">Osborne2000</bcf:citekey>
-    <bcf:citekey order="11" intorder="5">Hungerford1974</bcf:citekey>
+    <bcf:citekey order="9" intorder="1">Praeger2018</bcf:citekey>
+    <bcf:citekey order="9" intorder="2">Dixon1996</bcf:citekey>
+    <bcf:citekey order="9" intorder="3">Cameron1999</bcf:citekey>
+    <bcf:citekey order="10" intorder="1">Meldrum1995</bcf:citekey>
+    <bcf:citekey order="10" intorder="2">Praeger2018</bcf:citekey>
+    <bcf:citekey order="10" intorder="3">Dixon1996</bcf:citekey>
+    <bcf:citekey order="11" intorder="1">Lang2002</bcf:citekey>
+    <bcf:citekey order="11" intorder="2">Bergman2015</bcf:citekey>
+    <bcf:citekey order="11" intorder="3">Ribes2010</bcf:citekey>
+    <bcf:citekey order="12" intorder="1">Roman2008</bcf:citekey>
+    <bcf:citekey order="12" intorder="2">Halmos1974</bcf:citekey>
+    <bcf:citekey order="12" intorder="3">Jech2003</bcf:citekey>
+    <bcf:citekey order="12" intorder="4">Osborne2000</bcf:citekey>
+    <bcf:citekey order="12" intorder="5">Hungerford1974</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="anyt">

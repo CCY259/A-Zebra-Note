@@ -13,17 +13,27 @@ A \textbf{permutation group} of a set $\Omega$ is a subgroup of $\Sym\Omega$. If
 \subsection{Isomorphic actions}
 \begin{definition}
 	Let $G$ and $H$ be groups acting on the sets $\Omega$ and $\Delta$, respectively. The two actions are said to be \textbf{permutationally isomorphic} if there exist a bijection $\vartheta: \Omega \to \Delta$ and an isomorphism $\chi: G \to H$ such that
-	\[ \vartheta(\omega^g) = \vartheta(\omega)^{\chi(g)} \quad \text{for all } \omega \in \Omega, g \in G. \]
+	\[ \vartheta(\omega^g) = \vartheta(\omega)^{\chi(g)} \quad \text{for all } \omega \in \Omega, g \in G. \] In other words, for every $g\in G$ the following diagram commutes.
+	% https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXE9tZWdhIl0sWzIsMCwiXFxPbWVnYSJdLFswLDIsIlxcRGVsdGEiXSxbMiwyLCJcXERlbHRhIl0sWzAsMSwiZyJdLFsxLDMsIlxcdmFydGhldGEiXSxbMCwyLCJcXHZhcnRoZXRhIiwyXSxbMiwzLCJcXGNoaShnKSIsMl1d
+	\[\begin{tikzcd}
+		\Omega && \Omega \\
+		\\
+		\Delta && \Delta
+		\arrow["g", from=1-1, to=1-3]
+		\arrow["\vartheta"', from=1-1, to=3-1]
+		\arrow["\vartheta", from=1-3, to=3-3]
+		\arrow["{\chi(g)}"', from=3-1, to=3-3]
+	\end{tikzcd}\]
 	If such conditions hold, the pair $(\vartheta, \chi)$ is said to be a \textbf{permutational isomorphism}. Similarly, the pair $(\vartheta, \chi)$ is a \textbf{permutational embedding} of the permutation group $G$ on $\Omega$ into the permutation group $H$ on $\Delta$, if $\chi: G \to H$ is a monomorphism and $(\vartheta, \hat{\chi})$ is a permutational isomorphism, where $\hat{\chi}: G \to \operatorname{im}\chi$ is obtained from $\chi$ by simply restricting the range of $\chi$.
 \end{definition}
 
 
 \begin{proposition}
-	Let $G$ act on a set $\Omega$. Let $\Delta$ be a set and let $\vartheta: \Omega \to \Delta$ be a bijection. Define an action of $G$ on $\Delta$ by $\delta^g = \delta_1$, where  $\delta_1$ satisfies $\vartheta^{-1}(\delta_1)  = (\vartheta^{-1}(\delta_1))^g$. Then $(\vartheta, \operatorname{Id}_G)$ is a permutational isomorphism from the $G$-action on $\Omega$ to the $G$-action on $\Delta$.
+	Let $G$ act on a set $\Omega$. Let $\Delta$ be a set and let $\vartheta: \Omega \to \Delta$ be a bijection. Define a $G$-action on $\Delta$ by $\delta^g = \vartheta((\vartheta^{-1}(\delta))^g)$. Then $(\vartheta, \operatorname{Id}_G)$ is a permutational isomorphism from the $G$-action on $\Omega$ to the $G$-action on $\Delta$.
 \end{proposition}
 
 \begin{sketch}
-	Note, for $\omega_1, \omega_2 \in \Omega$ and $g \in G$ that $\omega_1^g = \omega_2$ if and only if $(\vartheta(\omega_1) )^g = \vartheta(\omega_2)$. This implies that the $G$-action on $\Delta$ is well defined and is permutationally isomorphic to the $G$-action on $\Omega$. 
+	It is easy to see that the $G$-action on $\Delta$ is well defined and is permutationally isomorphic to the $G$-action on $\Omega$. 
 \end{sketch}
 
 \begin{comment}
@@ -112,7 +122,7 @@ A \textbf{permutation group} of a set $\Omega$ is a subgroup of $\Sym\Omega$. If
 
 
 \begin{proposition}
-	Let $\Omega$ be a set and let $G_1, G_2 \le \Sym\Omega$. Then $G_1$ and $G_2$ are permutationally isomorphic if and only if $G_1$ and $G_2$ are conjugate subgroups of $\Sym\Omega$. Moreover, if $(\vartheta, \varphi)$ is a permutational isomorphism, then $\vartheta \in \Sym\Omega$ and $\varphi(g) = \vartheta^{-1}g\vartheta$, for all $g \in G_1$.
+	Let $\Omega$ be a set and let $G_1, G_2 \le \Sym\Omega$. Then $G_1$ and $G_2$ are permutationally isomorphic if and only if they are conjugate in $\Sym\Omega$. Moreover, if $(\vartheta, \varphi)$ is a permutational isomorphism, then $\vartheta \in \Sym\Omega$ and $\varphi(g) = \vartheta^{-1}g\vartheta$, for all $g \in G_1$.
 \end{proposition}
 
 \begin{sketch}
@@ -121,11 +131,26 @@ A \textbf{permutation group} of a set $\Omega$ is a subgroup of $\Sym\Omega$. If
 	Suppose conversely that $\vartheta \in \Sym\Omega$ such that $\vartheta^{-1}G_1\vartheta = G_2$ and let $\varphi: G_1 \to G_2$ be the isomorphism defined by  $\varphi(g) = \vartheta^{-1}g\vartheta$. Then  $\vartheta(\omega)^{\varphi(g)} = \vartheta(\omega)^{\vartheta^{-1}g\vartheta} = \vartheta((\vartheta^{-1}(\vartheta(\omega)))^{g}) = \vartheta(\omega^g)$ for $g \in G$ and $\omega \in \Omega$. Hence $(\vartheta, \varphi)$ is a permutational isomorphism.
 \end{sketch}
 
+ Recall that if $H$ is a subgroup of  a group $G$, then the right coset action of $G$ on the set $G/H$ of right cosets of $H$ (we are abusing the notation $G/H$) is defined by $(Hh)^g  = Hhg$ for $h,g\in G$. In view of Theorem \ref{thm-statement-of-kernel-of-left-translation}, this action is transitive. In fact, every transitive action is permutationally isomorphic to a coset action. 
+\begin{proposition} \label{prop-transitive-action-perm-isom}
+	Let $G$ act transitively on $\Omega$ and let $\omega\in \Omega$. Then the $G$-action on $\Omega$ is permutationally isomorphic to the $G$-action on $G/G_\omega$.
+\end{proposition}
+\begin{sketch}
+	Define the function $\vartheta: G/G_\omega\to \Omega$ by $\vartheta(G_\omega g) = \omega^g$. It is well-defined and bijective. Furthermore, $\varphi((G_\omega g)^h) = \varphi(G_\omega gh) = \omega^{gh} = (\omega^{g})^h = \varphi(G_\omega g)^h$. This shows that $(\vartheta,\operatorname{Id}_G)$ is a permutational isomorphism.
+\end{sketch}
 
+\begin{corollary}
+	Let $G$ act transitively on $\Omega$ and let $\omega\in\Omega$. Then a subgroup $H$ of $G$ is transitive if and only if $G = G_\omega H$.
+\end{corollary}
+\begin{sketch}
+	($\Rightarrow$) Since $H$ is transitive, for every $g\in G$, there exists $h\in H$ such that $\omega^g = \omega^h$. By Proposition \ref{prop-transitive-action-perm-isom}, we get $G_\omega g = G_\omega h$. Hence we can write $gh^{-1} = g'\in G$ and thus $g = g'h\in G_\omega H$.
+	
+	($\Leftarrow$) Reverse the argument in the previous paragraph.
+\end{sketch}
 
 \subsection{Blocks}
 \begin{definition}
-	Let $G$ act transitively on $X$. The nonempty subset $B$ of $X$ is called a \textbf{block} if for every $g\in G$, either $B^g=B$ or $B^g \cap B = \emptyset$. All the singletons of $X$ and the set $X$ itself are blocks, and so they are said to be \textbf{trivial}.
+	Let $G$ act transitively on $\Omega$. The nonempty subset $\Delta$ of $\Omega$ is called a \textbf{block} if for every $g\in G$, either $\Delta^g=\Delta$ or $\Delta^g \cap \Delta = \emptyset$. All the singletons of $\Omega$ and the set $\Omega$ itself are blocks, and so they are said to be \textbf{trivial}.
 \end{definition}
 \begin{comment}
 	\begin{proposition} \label{prop-block-and-stab}
@@ -141,28 +166,32 @@ A \textbf{permutation group} of a set $\Omega$ is a subgroup of $\Sym\Omega$. If
 		Let $H\in\mathcal{H}$. Consider the subset $C = \{hx \mid h \in H\}$ of $X$. We show that $C$ is a block. Clearly $C$ is non-empty and  $gC = C$ for each $g\in H$. Let $g \in G$ be such that $gC \cap C\neq \emptyset$. Then there exist $h_1, h_2 \in H$ such that $gh_1x = h_2x$. This gives $h_2^{-1}gh_1x = x$ and hence $h_2^{-1}gh_1 \in G_x \le H$, and thus $g \in H$. Consequently $gC  = C$. Therefore $C$ is a block. Note that $\theta(C) = H_C = \{g \in G \mid gx \in C\}$. Clearly $H \le H_C$. Let $g \in H_C$. Then $gx = hx$ for some $h \in H$. Hence $h^{-1}gx = x$ and thus $h^{-1}g  \in H$, giving $g \in H$. So $\theta(C) = H$, which shows that $\theta$ is surjective.
 	\end{sketch}
 \end{comment}
-\begin{proposition} \label{prop-block-and-stab}
-	Let $G$ acts transitively on $X$. Let $x\in X$ be fixed. Then there is a one-to-one correspondence between the set of blocks of $X$ containing $x$ and the set of subgroups which contains the stabilizer $G_x$ of $x$.
-\end{proposition}
-\begin{sketch}
-	Let $B$ be a block containing $x \in X$, and consider the set $H_B = \{g \in G \mid x^g \in B\}$. We claim that $H_B$ is a subgroup of  $G$. Clearly, $e \in H_B$. Let $g,g' \in H_B$. Since $x$ and $x^g$ both lie in $B$, we see that $B^g \cap B\neq \emptyset$ and hence that $B^g = B$. Now we have $x^{gg'} = (x^g)^{g'} \in B^{g'} = B$ and hence $gg' \in H_B$. Also, for $g \in H_B$ we have $x^g \in B$. Since $x$ is also in $B$, this means $B \cap B^g \neq \emptyset$, which implies $B^g = B$. Acting on both sides by $g^{-1}$, we get $B^{g^{-1}} = (B^g)^{g^{-1}} = B$. Since $x \in B$, it follows that $x^{g^{-1}} \in B^{g^{-1}} = B$, and hence $g^{-1} \in H_B$. Therefore $H_B$ is a subgroup of $G$.
-	
-	Observe that $G_x \le H_B$ since for any $s \in G_x$, we have $x^s=x \in B$.  Let $\mathcal{B}$ be the set of blocks of $X$ containing $x$ and let $\mathcal{H}$ be the set of subgroups containing $G_x$. Let $\theta:\mathcal{B}\rightarrow \mathcal{H}$ be the function defined by $\theta(B)=H_B$. We claim that $\theta$ is bijective.
-	
-	Let $B$ and $B'$ be distinct blocks in $\mathcal{B}$. Without loss of generality assume that $B'\not\subseteq B$. Then there exists some  $y \in B'$ with $y \notin B$. Since $G$ acts transitively on $X$, there exists some $g \in G$ such that $x^g = y$. So $g \in H_{B'}$. Since $y\not\in B$, we have $g \notin H_B$, and hence $H_B \ne H_{B'}$. This shows that $\theta$ is injective.
-	
-	Let $H\in\mathcal{H}$. Consider the subset $C = \{x^h \mid h \in H\}$ of $X$. We show that $C$ is a block. Clearly $C$ is non-empty and $C^g = C$ for each $g\in H$. Let $g \in G$ be such that $C^g \cap C\neq \emptyset$. Then there exist $h_1, h_2 \in H$ such that $(x^{h_1})^g = x^{h_2}$. This gives $x^{h_1g} = x^{h_2}$, so $x^{h_1gh_2^{-1}} = x$. Hence $h_1gh_2^{-1} \in G_x \le H$, and thus $g \in H$. Consequently $C^g = C$. Therefore $C$ is a block. Note that $\theta(C) = H_C = \{g \in G \mid x^g \in C\}$. Clearly $H \le H_C$. Let $g \in H_C$. Then $x^g = x^h$ for some $h \in H$. Hence $x^{gh^{-1}} = x$ and thus $gh^{-1} \in G_x \le H$, giving $g \in H$. So $\theta(C) = H$, which shows that $\theta$ is surjective.
-\end{sketch}
-\begin{remark}
-	This correspondence is order-preserving, i.e., if $B_1,B_2$ are blocks of $X$ containing $x$, then $B_1\subseteq B_2$ if and only if $\theta(B_1)\subseteq \theta(B_2)$. Indeed $B_1\subseteq B_2$ implies that $x^g \in B_1\subseteq B_2$ for all $g\in H_{B_1}$. Conversely, suppose that $H_{B_1}\leq H_{B_2}$. Let $y\in B_1$. So there exists $g\in G$ such that $y = x^g$. This implies $g\in H_{B_1}\subseteq H_{B_2}$. So $y = x^g \in B_2$. This shows that $\theta$ is order-preserving.
-\end{remark}
+
 \begin{definition}
-	Let $G$ act transitively on $X$. A partition $\mathcal{B}$ of $X$ is called a \textbf{system of blocks} (or a \textbf{system of imprimitivity}) if each $B\in \mathcal{B}$ is a block.
+	Let $G$ act transitively on $\Omega$. A partition $\Sigma$ of $\Omega$ is called a \textbf{system of blocks} (or a \textbf{system of imprimitivity}) if each $\Delta\in \Sigma$ is a block.
 \end{definition}
 \begin{proposition}
-	Let $G$ act transitively on $X$. Let $\mathcal{B}$ be a system of imprimitivity. Then for any given $B\in \mathcal{B}$,  we have
-	$
-		\mathcal{B}  = \{B^x\,|\, x\in G\}$.
+	Let $G$ act transitively on $\Omega$.  Then the following propositions hold.
+	\begin{enumerate}[(i)]
+		\item If $\Delta$ is a block of $\Omega$, then $G_{\Delta}$ acts transitively on $\Delta$. 
+		\item Let $\Sigma$ be a system of imprimitivity and let $\Delta\in \Sigma$. Then
+		$\Sigma  = \{\Delta^g\mid g\in G\}$. In particular, $|\Delta^g| = |\Delta|$.
+		\item If $\Delta$ is a subset of $\Omega$, then $\Delta$ is a block if and only if $\{\Delta^g\mid g\in G\}$ forms a partition of $\Omega$.
+	\end{enumerate}  
+\end{proposition}
+\begin{sketch}
+	
+\end{sketch}
+
+\begin{definition}
+	Let $G$ act on $\Omega$. A partition $\mathcal{P}$ of $\Omega$ is said to be $G$-\textbf{invariant} if $\Delta^g \in\mathcal{P}$ for all $g\in G$ and $\Delta\in\mathcal{P}$.
+\end{definition}
+\begin{proposition}
+	Let $G$ act transitively on $\Omega$.
+	\begin{enumerate}[(i)]
+		\item  If  $\Delta$ is a block, then $\Sigma = \{\Delta^g\mid g\in G\}$ is a $G$-invariant partition of $\Omega$. Hence $G$ acts on $\Sigma$.
+		\item If $\mathcal{P}$ is a $G$-invariant partition of $\Omega$, then each $\Delta\in \mathcal{P}$ is a block of $\Omega$.
+	\end{enumerate}
 \end{proposition}
 \begin{sketch}
 	
@@ -171,17 +200,33 @@ A \textbf{permutation group} of a set $\Omega$ is a subgroup of $\Sym\Omega$. If
 \subsection{Primitive Actions}
 
 \begin{definition}
-	Let $G$ act transitively on $X$. The action (or $G$-set) is said to be \textbf{primitive} (or $G$ is \textbf{primitive} on $X$) if $G$ has no nontrivial blocks; otherwise, it is \textbf{imprimitive}.
+	Let $G$ act transitively on $\Omega$. The action (or $G$-set) is said to be \textbf{primitive} (or $G$ is \textbf{primitive} on $\Omega$) if $G$ has no nontrivial blocks; otherwise, it is \textbf{imprimitive}.
 \end{definition}
 
+\begin{proposition} \label{prop-block-and-stab}
+	Let $G$ acts transitively on $\Omega$. Let $\omega\in \Omega$ be fixed. Then there is a one-to-one correspondence between the set of blocks of $\Omega$ containing $\omega$ and the set of subgroups which contains the stabilizer $G_\omega$ of $\omega$.
+\end{proposition}
+\begin{sketch}
+	Let $\Delta$ be a block containing $\omega \in \Omega$, and consider the set $H_\Delta = \{g \in G \mid \omega^g \in \Delta\}$. We claim that $H_\Delta$ is a subgroup of  $G$. Clearly, $e \in H_\Delta$. Let $g,g' \in H_\Delta$. Since $\omega$ and $\omega^g$ both lie in $\Delta$, we see that $\Delta^g \cap \Delta\neq \emptyset$ and hence that $\Delta^g = \Delta$. Now we have $\omega^{gg'} = (\omega^g)^{g'} \in \Delta^{g'} = \Delta$ and hence $gg' \in H_\Delta$. Also, for $g \in H_\Delta$ we have $\omega^g \in \Delta$. Since $\omega$ is also in $\Delta$, this means $\Delta \cap \Delta^g \neq \emptyset$, which implies $\Delta^g = \Delta$. Acting on both sides by $g^{-1}$, we get $\Delta^{g^{-1}} = (\Delta^g)^{g^{-1}} = \Delta$. Since $\omega \in \Delta$, it follows that $\omega^{g^{-1}} \in \Delta^{g^{-1}} = \Delta$, and hence $g^{-1} \in H_\Delta$. Therefore $H_\Delta$ is a subgroup of $G$.
+	
+	Observe that $G_\omega \le H_\Delta$ since for any $s \in G_\omega$, we have $\omega^s=\omega \in \Delta$.  Let $\Sigma$ be the set of blocks of $\Omega$ containing $\omega$ and let $\mathcal{H}$ be the set of subgroups containing $G_\omega$. Let $\theta:\Sigma\rightarrow \mathcal{H}$ be the function defined by $\theta(\Delta)=H_\Delta$. We claim that $\theta$ is bijective.
+	
+	Let $\Delta$ and $\Delta'$ be distinct blocks in $\Sigma$. Without loss of generality assume that $\Delta'\not\subseteq \Delta$. Then there exists some  $\delta \in \Delta'$ with $\delta \notin \Delta$. Since $G$ acts transitively on $\Omega$, there exists some $g \in G$ such that $\omega^g = \delta$. So $g \in H_{\Delta'}$. Since $\delta\not\in \Delta$, we have $g \notin H_\Delta$, and hence $H_\Delta \ne H_{\Delta'}$. This shows that $\theta$ is injective.
+	
+	Let $H\in\mathcal{H}$. Consider the subset $C = \{\omega^h \mid h \in H\}$ of $\Omega$. We show that $C$ is a block. Clearly $C$ is non-empty and $C^g = C$ for each $g\in H$. Let $g \in G$ be such that $C^g \cap C\neq \emptyset$. Then there exist $h_1, h_2 \in H$ such that $(\omega^{h_1})^g = \omega^{h_2}$. This gives $\omega^{h_1g} = \omega^{h_2}$, so $\omega^{h_1gh_2^{-1}} = \omega$. Hence $h_1gh_2^{-1} \in G_\omega \le H$, and thus $g \in H$. Consequently $C^g = C$. Therefore $C$ is a block. Note that $\theta(C) = H_C = \{g \in G \mid \omega^g \in C\}$. Clearly $H \le H_C$. Let $g \in H_C$. Then $\omega^g = \omega^h$ for some $h \in H$. Hence $\omega^{gh^{-1}} = \omega$ and thus $gh^{-1} \in G_\omega \le H$, giving $g \in H$. So $\theta(C) = H$, which shows that $\theta$ is surjective.
+\end{sketch}
+\begin{remark}
+	This correspondence is order-preserving, i.e., if $\Delta_1,\Delta_2$ are blocks of $\Omega$ containing $\omega$, then $\Delta_1\subseteq \Delta_2$ if and only if $\theta(\Delta_1)\subseteq \theta(\Delta_2)$. Indeed $\Delta_1\subseteq \Delta_2$ implies that $\omega^g \in \Delta_1\subseteq \Delta_2$ for all $g\in H_{\Delta_1}$. Conversely, suppose that $H_{\Delta_1}\leq H_{\Delta_2}$. Let $\delta\in \Delta_1$. So there exists $g\in G$ such that $\delta = \omega^g$. This implies $g\in H_{\Delta_1}\subseteq H_{\Delta_2}$. So $\delta = \omega^g \in \Delta_2$. This shows that $\theta$ is order-preserving.
+\end{remark}
+
 \begin{corollary}
-	Let $G$ act transitively on a set $X$. Then $G$ is primitive if and only
+	Let $G$ act transitively on a set $\Omega$. Then $G$ is primitive if and only
 	if the stabilizers are maximal subgroups.
 \end{corollary}
 \begin{sketch}
-	Suppose $G$ is primitive on $X$. Let $x \in X$.  Since $G$ is primitive, there are  two  blocks containing $x$, namely $\{x\}$ and $X$.  By Proposition \ref{prop-block-and-stab}, there are only two subgroups of $G$ containing $G_x$, namely $G_x$ and $G$. So there is no proper subgroup of $G$ which properly contains $G_x$. Therefore $G_x$ is maximal in $G$.
+	Suppose $G$ is primitive on $\Omega$. Let $\omega \in \Omega$.  Since $G$ is primitive, there are  two  blocks containing $\omega$, namely $\{\omega\}$ and $\Omega$.  By Proposition \ref{prop-block-and-stab}, there are only two subgroups of $G$ containing $G_\omega$, namely $G_\omega$ and $G$. So there is no proper subgroup of $G$ which properly contains $G_\omega$. Therefore $G_\omega$ is maximal in $G$.
 	
-	Conversely, suppose that every stabilizer is a maximal subgroup. Fix $x\in X$. Then there are only two subgroups of $G$ containing $G_x$, namely $G_x$ and $G$. By Proposition \ref{prop-block-and-stab}, we only have two such blocks $\{x\}$ and $X$.  Consequently, $X$ can have no other blocks besides itself and its singletons, and so $X$ is primitive.
+	Conversely, suppose that every stabilizer is a maximal subgroup. Fix $\omega\in \Omega$. Then there are only two subgroups of $G$ containing $G_\omega$, namely $G_\omega$ and $G$. By Proposition \ref{prop-block-and-stab}, we only have two such blocks $\{\omega\}$ and $\Omega$.  Consequently, $\Omega$ can have no other blocks besides itself and its singletons, and so $\Omega$ is primitive.
 \end{sketch}
 
 \paragraph{Main References.} \cite{Praeger2018,Dixon1996,Cameron1999}

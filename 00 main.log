@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.8.25)  8 SEP 2025 17:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.8.25)  9 SEP 2025 14:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1030,10 +1030,9 @@ File: ot1mlmr.fd 2021/01/11 v1.0 Font defs for mlmodern
 (2025.04.05-Group-Action-Writing.aux) (2025.04.26-Sylow-Theorem.aux)
 (2025.05.22-Series.aux) (2025.07.26-Direct-Products.aux)
 (2025.07.27-Finitely-Generated-Abelian-Groups.aux)
-(2025.07.23-Semidirect-Products.aux)
-(2025.09.04-2025.09.04-permutation-groups.aux) (2025.08.23-Wreath-Product.aux)
-(2025.07.21-Nilpotent-and-Solvable-Groups.aux) (2025.08.20-Free-Groups.aux)
-(2025.08.15-Ideals.aux) (zabalang.aux))
+(2025.07.23-Semidirect-Products.aux) (2025.09.04-permutation-groups.aux)
+(2025.08.23-Wreath-Product.aux) (2025.07.21-Nilpotent-and-Solvable-Groups.aux)
+(2025.08.20-Free-Groups.aux) (2025.08.15-Ideals.aux) (zabalang.aux))
 \openout1 = `"00 main.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
@@ -1242,15 +1241,15 @@ m/it/10 x[]; ^^[x[]; ^^[[]x[]; [] ; ^^[[]x[]\OMS/mlmsy/m/n/10 g$
 
 
 
-] [25] [26] [27]
-Overfull \hbox (8.95387pt too wide) in paragraph at lines 224--226
+] [25] [26] [27] [28]
+Overfull \hbox (8.95387pt too wide) in paragraph at lines 229--231
 \OT1/mlmr/m/it/10 where $\OML/mlmm/m/it/10 x[]; [] ; x[]$ \OT1/mlmr/m/it/10 are
  rep-re-sen-ta-tives of dis-tinct con-ju-gacy classes such that $\OT1/mlmr/m/n/
 10 [\OML/mlmm/m/it/10 G \OT1/mlmr/m/n/10 : \OML/mlmm/m/it/10 C[]\OT1/mlmr/m/n/1
 0 (\OML/mlmm/m/it/10 x[]\OT1/mlmr/m/n/10 )] \OML/mlmm/m/it/10 >
  []
 
-[28] [29] [30]) [31]
+[29] [30]) [31]
 \openout2 = `2025.04.26-Sylow-Theorem.aux'.
 
  (2025.04.26-Sylow-Theorem.tex
@@ -1336,29 +1335,31 @@ mlmsy/m/n/10 j [] j\OML/mlmm/m/it/10 m[]$
 ] [72] [73] [74]
 Excluding 'comment' comment. [75] [76] Excluding 'comment' comment. [77]
 [78] [79] [80] [81] [82] [83]) [84]
-\openout2 = `2025.09.04-2025.09.04-permutation-groups.aux'.
+\openout2 = `2025.09.04-permutation-groups.aux'.
+
+ (2025.09.04-permutation-groups.tex [85
 
 
-No file 2025.09.04-2025.09.04-permutation-groups.tex.
+
+]
+Excluding 'comment' comment. Excluding 'comment' comment. [86]
+Excluding 'comment' comment. [87] [88]) [89]
 \openout2 = `2025.08.23-Wreath-Product.aux'.
 
-(2025.08.23-Wreath-Product.tex [85
+ (2025.08.23-Wreath-Product.tex
+[90
 
 
 
-
-
-
-] [86]) [87]
+] [91]) [92]
 \openout2 = `2025.07.21-Nilpotent-and-Solvable-Groups.aux'.
 
-
-(2025.07.21-Nilpotent-and-Solvable-Groups.tex [88
-
+ (2025.07.21-Nilpotent-and-Solvable-Groups.tex [93
 
 
-] [89] [90] [91] [92] [93]
-[94]
+
+] [94]
+[95] [96] [97] [98] [99]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 279.
@@ -1377,31 +1378,31 @@ Overfull \hbox (116.42241pt too wide) in paragraph at lines 314--315
 429 / prove-[]that-[]s-[]3-[]and-[]s-[]4-[]are-[]solvable-[]groups$[]
  []
 
-[95{C:/Users/chuac/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rmtt.enc
-}] [96]) [97]
+[100{C:/Users/chuac/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rmtt.en
+c}] [101]) [102]
 \openout2 = `2025.08.20-Free-Groups.aux'.
 
- (2025.08.20-Free-Groups.tex [98
+ (2025.08.20-Free-Groups.tex [103
 
 
 
-] [99]
+] [104]
 Overfull \hbox (18.12123pt too wide) in paragraph at lines 89--89
 []\OT1/mlmr/bx/n/10 Crazy Con-struc-tion from Di-rect Prod-ucts: Only Serge Lan
 g's Favourite 
  []
 
-) [100]
+) [105]
 \openout2 = `2025.08.15-Ideals.aux'.
 
- (2025.08.15-Ideals.tex) [101
+ (2025.08.15-Ideals.tex) [106
 
 
 
 ]
 \openout2 = `zabalang.aux'.
 
- (zabalang.tex [102
+ (zabalang.tex [107
 
 
 
@@ -1411,7 +1412,7 @@ Overfull \hbox (10.99442pt too wide) in paragraph at lines 56--56
 []\OT1/mlmr/bx/n/12 BILA NAK COUNT-ABLE OR UN-COUNT-ABLE, PENANG
  []
 
-[103] [104] [105] [106]
+[108] [109] [110] [111]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 212.
@@ -1420,7 +1421,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 212.
 
-[107]) [108]
+[112]) [113]
 Overfull \hbox (8.4505pt too wide) in paragraph at lines 91--91
 []\OT1/mlmr/m/n/10 Thomas W. Hunger-ford. \OT1/mlmr/m/it/10 Al-ge-bra\OT1/mlmr/
 m/n/10 . En-glish. Vol. 73. Grad. Texts Math. Springer,
@@ -1432,18 +1433,17 @@ Overfull \hbox (3.00395pt too wide) in paragraph at lines 91--91
 ups and semi-groups\OT1/mlmr/m/n/10 . En-glish. Vol. 74.
  []
 
-[109
+[114
 
 
 
-] [110] (00 main.aux (01 checklist.aux) (2025.03.22-Symmetric-Group.aux)
+] [115] (00 main.aux (01 checklist.aux) (2025.03.22-Symmetric-Group.aux)
 (2025.04.05-Group-Action-Writing.aux) (2025.04.26-Sylow-Theorem.aux)
 (2025.05.22-Series.aux) (2025.07.26-Direct-Products.aux)
 (2025.07.27-Finitely-Generated-Abelian-Groups.aux)
-(2025.07.23-Semidirect-Products.aux)
-(2025.09.04-2025.09.04-permutation-groups.aux) (2025.08.23-Wreath-Product.aux)
-(2025.07.21-Nilpotent-and-Solvable-Groups.aux) (2025.08.20-Free-Groups.aux)
-(2025.08.15-Ideals.aux) (zabalang.aux))
+(2025.07.23-Semidirect-Products.aux) (2025.09.04-permutation-groups.aux)
+(2025.08.23-Wreath-Product.aux) (2025.07.21-Nilpotent-and-Solvable-Groups.aux)
+(2025.08.20-Free-Groups.aux) (2025.08.15-Ideals.aux) (zabalang.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
@@ -1453,7 +1453,7 @@ L3 programming layer <2024-01-04>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `"00 main".out' has not changed.
-(rerunfilecheck)             Checksum: 5D9B0CA5B3E2F90BCBF4C4FD830E7CBF;14494.
+(rerunfilecheck)             Checksum: AF456BB3ABFAE3FCD55D9A3C92EC41DC;15251.
 
 Package biblatex Warning: Please (re)run Biber on the file:
 (biblatex)                "00 main"
@@ -1464,13 +1464,13 @@ Package logreq Info: Writing requests to '"00 main".run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 33551 strings out of 474486
- 679749 string characters out of 5743755
+ 33641 strings out of 474486
+ 682355 string characters out of 5743755
  1943542 words of memory out of 5000000
- 54436 multiletter control sequences out of 15000+600000
+ 54487 multiletter control sequences out of 15000+600000
  623494 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 131i,16n,135p,1372b,1623s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 131i,16n,135p,1372b,1625s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/chuac/AppData/Local/Programs/MiKTeX/fonts/type1/public/mlmodern/mlm
 bx10.pfb><C:/Users/chuac/AppData/Local/Programs/MiKTeX/fonts/type1/public/mlmod
 ern/mlmbx12.pfb><C:/Users/chuac/AppData/Local/Programs/MiKTeX/fonts/type1/publi
@@ -1495,9 +1495,9 @@ iKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/chuac/AppData/Lo
 cal/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/ch
 uac/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7.pfb
 >
-Output written on "00 main.pdf" (113 pages, 898183 bytes).
+Output written on "00 main.pdf" (118 pages, 929686 bytes).
 PDF statistics:
- 1973 PDF objects out of 2073 (max. 8388607)
- 773 named destinations out of 1000 (max. 500000)
- 629 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2061 PDF objects out of 2073 (max. 8388607)
+ 810 named destinations out of 1000 (max. 500000)
+ 669 words of extra memory for PDF output out of 10000 (max. 10000000)
 
