@@ -131,12 +131,12 @@ A \textbf{permutation group} of a set $\Omega$ is a subgroup of $\Sym\Omega$. If
 	Suppose conversely that $\vartheta \in \Sym\Omega$ such that $\vartheta^{-1}G_1\vartheta = G_2$ and let $\varphi: G_1 \to G_2$ be the isomorphism defined by  $\varphi(g) = \vartheta^{-1}g\vartheta$. Then  $\vartheta(\omega)^{\varphi(g)} = \vartheta(\omega)^{\vartheta^{-1}g\vartheta} = \vartheta((\vartheta^{-1}(\vartheta(\omega)))^{g}) = \vartheta(\omega^g)$ for $g \in G$ and $\omega \in \Omega$. Hence $(\vartheta, \varphi)$ is a permutational isomorphism.
 \end{sketch}
 
- Recall that if $H$ is a subgroup of  a group $G$, then the right coset action of $G$ on the set $G/H$ of right cosets of $H$ (we are abusing the notation $G/H$) is defined by $(Hh)^g  = Hhg$ for $h,g\in G$. In view of Theorem \ref{thm-statement-of-kernel-of-left-translation}, this action is transitive. In fact, every transitive action is permutationally isomorphic to a coset action. 
+ Recall that if $H$ is a subgroup of  a group $G$, then the right coset action of $G$ on the set $\Gamma_H$ of right cosets of $H$  is defined by $(Hh)^g  = Hhg$ for $h,g\in G$. In view of Theorem \ref{thm-statement-of-kernel-of-left-translation}, this action is transitive. In fact, every transitive action is permutationally isomorphic to a coset action. 
 \begin{proposition} \label{prop-transitive-action-perm-isom}
-	Let $G$ act transitively on $\Omega$ and let $\omega\in \Omega$. Then the $G$-action on $\Omega$ is permutationally isomorphic to the $G$-action on $G/G_\omega$.
+	Let $G$ act transitively on $\Omega$ and let $\omega\in \Omega$. Then the $G$-action on $\Omega$ is permutationally isomorphic to the $G$-action on $\Gamma_{G_\omega}$.
 \end{proposition}
 \begin{sketch}
-	Define the function $\vartheta: G/G_\omega\to \Omega$ by $\vartheta(G_\omega g) = \omega^g$. It is well-defined and bijective. Furthermore, $\varphi((G_\omega g)^h) = \varphi(G_\omega gh) = \omega^{gh} = (\omega^{g})^h = \varphi(G_\omega g)^h$. This shows that $(\vartheta,\operatorname{Id}_G)$ is a permutational isomorphism.
+	Define the function $\vartheta: \Gamma_{G_\omega}\to \Omega$ by $\vartheta(G_\omega g) = \omega^g$. It is well-defined and bijective. Furthermore, $\varphi((G_\omega g)^h) = \varphi(G_\omega gh) = \omega^{gh} = (\omega^{g})^h = \varphi(G_\omega g)^h$. This shows that $(\vartheta,\operatorname{Id}_G)$ is a permutational isomorphism.
 \end{sketch}
 
 \begin{corollary}
@@ -228,5 +228,54 @@ A \textbf{permutation group} of a set $\Omega$ is a subgroup of $\Sym\Omega$. If
 	
 	Conversely, suppose that every stabilizer is a maximal subgroup. Fix $\omega\in \Omega$. Then there are only two subgroups of $G$ containing $G_\omega$, namely $G_\omega$ and $G$. By Proposition \ref{prop-block-and-stab}, we only have two such blocks $\{\omega\}$ and $\Omega$.  Consequently, $\Omega$ can have no other blocks besides itself and its singletons, and so $\Omega$ is primitive.
 \end{sketch}
+
+\subsection{Centralizers and Normalizers of Transitive Permutation \break Groups}
+\begin{lemma}
+	Let $G$ be a group with a subgroup $H$, and put $K := N_G(H)$. Let $\Gamma_H$ denote the set of right cosets of $H$ in $G$, and let $\rho$ and $\lambda$ denote the right and left actions of $G$ and $K$, respectively, on $\Gamma_H$ as defined above. Then the following hold.
+\begin{enumerate}[(i)]
+\item $\ker \lambda = H$ and $\lambda(K)$ is semiregular.
+\item The centralizer $C$ of $\rho(G)$ in $\Sym\Gamma_H$ equals $\lambda(K)$.
+\item $H \in \Gamma_H$ has the same orbit under $\lambda(K)$ as under $\rho(K)$.
+\item If $\lambda(K)$ is transitive, then $K = G$, and $\lambda(G)$ and $\rho(G)$ are conjugate in $\Sym\Gamma_H$.
+\end{enumerate}
+\end{lemma}
+\begin{sketch}
+	
+\end{sketch}
+
+\begin{theorem}
+	Let $G$ be a transitive subgroup of $\Sym\Omega$, and $\alpha$ a point in $\Omega$. Let $C$ be the centralizer of $G$ in $\Sym\Omega$. Then the following hold.
+	\begin{enumerate}[(i)]
+		\item $C$ is semiregular, and $C \cong N_G(G_\alpha)/G_\alpha$. In particular, $|C| = |\text{fix}(G_\alpha)|$.
+		\item $C$ is transitive if and only if $G$ is regular.
+		\item If $C$ is transitive, then it is conjugate to $G$ in $\Sym\Omega$ and hence $C$ is regular.
+		\item $C = 1$ if and only if $G_\alpha$ is self-normalizing in $G$, i.e., $N_G(G_\alpha) = G_\alpha$.
+		\item If $G$ is abelian, then $C = G$.
+		\item If $G$ is primitive and nonabelian, then $C = 1$.
+	\end{enumerate}
+\end{theorem}
+\begin{sketch}
+	
+\end{sketch}
+
+
+\begin{theorem}
+	Let $G$ be a transitive subgroup of $\Sym\Omega$, let $N$ be the normalizer of $G$ in $\Sym \Omega$ and let $\alpha \in \Omega$. If $\Psi:N\to \Aut G$ is the homomorphism defined by conjugation, and $\sigma \in \Aut G$, then
+	$ \sigma \in \operatorname{im} \Psi$ if and only if $(G_\alpha)^\sigma$ is a point stabilizer for $G$, i.e., $(G_\alpha)^\sigma = G_\beta$ for some $\beta\in\Omega$.
+\end{theorem}
+\begin{sketch}
+	Let $\sigma \in\operatorname{im} \Psi$, so $\sigma = \Psi(x)$ for some $x \in N$. Then $(G_\alpha)^\sigma = x^{-1}G_\alpha x = G_\beta$ where $\beta = \alpha^x$. Conversely, suppose that $(G_\alpha)^\sigma = G_\beta$ for some $\beta \in \Omega$. Then the two transitive permutation representations of $G$ into $\Sym\Omega$ given by $x \mapsto x$ and $x \mapsto x^\sigma$ are equivalent because $G_\beta$ is a point stabilizer for each of them. This means that for some $t \in \Sym\Omega$ we have $xt = tx^\sigma$ for all $x \in G$. Clearly $t \in N$. Hence $\sigma = \Psi(t) \in\operatorname{im} \Psi$ as required.
+\end{sketch}
+
+\begin{definition}
+	Let $G$ be a group. The \textbf{holomorph} of $G$, denoted by $\operatorname{Hol} G$, is the semidirect product $G \rtimes \Aut G$ with respect to the natural action of $\Aut G$ on $G$.
+\end{definition}
+In the case where $G$ is regular,  the normalizer of $G$ in the symmetric group is the holomorph of $G$.
+\begin{corollary}
+	Let $G$ be a transitive subgroup of $\Sym\Omega$ and let $N$ be the normalizer of $G$ in $\Sym \Omega$. If $G$ is regular, then $\operatorname{im} \Psi = \Aut G$. In this case $N_\alpha \cong \Aut G$, and $N$ is isomorphic to $\operatorname{Hol}G$.
+\end{corollary}
+\begin{sketch}
+	Since $G$ is regular, therefore $G_\alpha = 1$, and so $\operatorname{im} \Psi = \Aut G$ by theorem xxx. The centralizer $C$ of $G$ in $\text{Sym}(\Omega)$ is regular and isomorphic to $G$ by Theorem 4.2A, and therefore $N = CN_\alpha$ with $C \triangleleft N$ and $C \cap N_\alpha = 1$. Hence $\Aut G =\operatorname{im} \Psi \cong N/\ker \Psi = N/C \cong N_\alpha$. Finally, because $G$ is regular and normal in $N$, therefore $G \cap N_\alpha = 1$ and $N = GN_\alpha \cong G \rtimes \Aut G$.
+\end{sketch} 
 
 \paragraph{Main References.} \cite{Praeger2018,Dixon1996,Cameron1999}

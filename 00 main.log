@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.8.25)  9 SEP 2025 14:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.8.25)  9 SEP 2025 18:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1175,15 +1175,20 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 {C:/Users/chuac/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/chua
 c/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/chuac/Ap
-pData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}] [2])
+pData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}]
+Underfull \hbox (badness 10000) in paragraph at lines 55--55
+ [][] [][]\OT1/mlmr/m/n/10 Centralizers and Nor-mal-iz-ers of Tran-si-tive Per-
+mu-ta-tion  
+ []
+
+[2])
 \tf@toc=\write7
 \openout7 = `"00 main.toc"'.
 
  [3]
 \openout2 = `"01 checklist.aux"'.
 
-
-(01 checklist.tex (checklist/group.tex
+ (01 checklist.tex (checklist/group.tex
 LaTeX Font Info:    Trying to load font information for TS1+mlmr on input line 
 5.
 
@@ -1343,23 +1348,24 @@ Excluding 'comment' comment. [75] [76] Excluding 'comment' comment. [77]
 
 ]
 Excluding 'comment' comment. Excluding 'comment' comment. [86]
-Excluding 'comment' comment. [87] [88]) [89]
+Excluding 'comment' comment. [87] [88] [89] [90]) [91]
 \openout2 = `2025.08.23-Wreath-Product.aux'.
 
- (2025.08.23-Wreath-Product.tex
-[90
+
+(2025.08.23-Wreath-Product.tex [92
 
 
 
-] [91]) [92]
+] [93]) [94]
 \openout2 = `2025.07.21-Nilpotent-and-Solvable-Groups.aux'.
 
- (2025.07.21-Nilpotent-and-Solvable-Groups.tex [93
+
+(2025.07.21-Nilpotent-and-Solvable-Groups.tex [95
 
 
 
-] [94]
-[95] [96] [97] [98] [99]
+] [96] [97] [98] [99] [100]
+[101]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 279.
@@ -1378,31 +1384,31 @@ Overfull \hbox (116.42241pt too wide) in paragraph at lines 314--315
 429 / prove-[]that-[]s-[]3-[]and-[]s-[]4-[]are-[]solvable-[]groups$[]
  []
 
-[100{C:/Users/chuac/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rmtt.en
-c}] [101]) [102]
+[102{C:/Users/chuac/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rmtt.en
+c}] [103]) [104]
 \openout2 = `2025.08.20-Free-Groups.aux'.
 
- (2025.08.20-Free-Groups.tex [103
+ (2025.08.20-Free-Groups.tex [105
 
 
 
-] [104]
+] [106]
 Overfull \hbox (18.12123pt too wide) in paragraph at lines 89--89
 []\OT1/mlmr/bx/n/10 Crazy Con-struc-tion from Di-rect Prod-ucts: Only Serge Lan
 g's Favourite 
  []
 
-) [105]
+) [107]
 \openout2 = `2025.08.15-Ideals.aux'.
 
- (2025.08.15-Ideals.tex) [106
+ (2025.08.15-Ideals.tex) [108
 
 
 
 ]
 \openout2 = `zabalang.aux'.
 
- (zabalang.tex [107
+ (zabalang.tex [109
 
 
 
@@ -1412,7 +1418,7 @@ Overfull \hbox (10.99442pt too wide) in paragraph at lines 56--56
 []\OT1/mlmr/bx/n/12 BILA NAK COUNT-ABLE OR UN-COUNT-ABLE, PENANG
  []
 
-[108] [109] [110] [111]
+[110] [111] [112] [113]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 212.
@@ -1421,7 +1427,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 212.
 
-[112]) [113]
+[114]) [115]
 Overfull \hbox (8.4505pt too wide) in paragraph at lines 91--91
 []\OT1/mlmr/m/n/10 Thomas W. Hunger-ford. \OT1/mlmr/m/it/10 Al-ge-bra\OT1/mlmr/
 m/n/10 . En-glish. Vol. 73. Grad. Texts Math. Springer,
@@ -1433,11 +1439,11 @@ Overfull \hbox (3.00395pt too wide) in paragraph at lines 91--91
 ups and semi-groups\OT1/mlmr/m/n/10 . En-glish. Vol. 74.
  []
 
-[114
+[116
 
 
 
-] [115] (00 main.aux (01 checklist.aux) (2025.03.22-Symmetric-Group.aux)
+] [117] (00 main.aux (01 checklist.aux) (2025.03.22-Symmetric-Group.aux)
 (2025.04.05-Group-Action-Writing.aux) (2025.04.26-Sylow-Theorem.aux)
 (2025.05.22-Series.aux) (2025.07.26-Direct-Products.aux)
 (2025.07.27-Finitely-Generated-Abelian-Groups.aux)
@@ -1453,7 +1459,7 @@ L3 programming layer <2024-01-04>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `"00 main".out' has not changed.
-(rerunfilecheck)             Checksum: AF456BB3ABFAE3FCD55D9A3C92EC41DC;15251.
+(rerunfilecheck)             Checksum: 4231E2C35D2C961B327247244939306D;15632.
 
 Package biblatex Warning: Please (re)run Biber on the file:
 (biblatex)                "00 main"
@@ -1464,10 +1470,10 @@ Package logreq Info: Writing requests to '"00 main".run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 33641 strings out of 474486
- 682355 string characters out of 5743755
+ 33660 strings out of 474486
+ 682541 string characters out of 5743755
  1943542 words of memory out of 5000000
- 54487 multiletter control sequences out of 15000+600000
+ 54488 multiletter control sequences out of 15000+600000
  623494 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  131i,16n,135p,1372b,1625s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1495,9 +1501,9 @@ iKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/chuac/AppData/Lo
 cal/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/ch
 uac/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7.pfb
 >
-Output written on "00 main.pdf" (118 pages, 929686 bytes).
+Output written on "00 main.pdf" (120 pages, 939193 bytes).
 PDF statistics:
- 2061 PDF objects out of 2073 (max. 8388607)
- 810 named destinations out of 1000 (max. 500000)
- 669 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2093 PDF objects out of 2487 (max. 8388607)
+ 828 named destinations out of 1000 (max. 500000)
+ 677 words of extra memory for PDF output out of 10000 (max. 10000000)
 
