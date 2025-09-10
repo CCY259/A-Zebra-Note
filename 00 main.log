@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.8.25)  9 SEP 2025 18:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.8.25)  10 SEP 2025 16:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1031,8 +1031,9 @@ File: ot1mlmr.fd 2021/01/11 v1.0 Font defs for mlmodern
 (2025.05.22-Series.aux) (2025.07.26-Direct-Products.aux)
 (2025.07.27-Finitely-Generated-Abelian-Groups.aux)
 (2025.07.23-Semidirect-Products.aux) (2025.09.04-permutation-groups.aux)
-(2025.08.23-Wreath-Product.aux) (2025.07.21-Nilpotent-and-Solvable-Groups.aux)
-(2025.08.20-Free-Groups.aux) (2025.08.15-Ideals.aux) (zabalang.aux))
+(2025.08.23-Wreath-Product.aux) (2025.09.10-O'Nan-Scott-Theorem.aux)
+(2025.07.21-Nilpotent-and-Solvable-Groups.aux) (2025.08.20-Free-Groups.aux)
+(2025.08.15-Ideals.aux) (zabalang.aux))
 \openout1 = `"00 main.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
@@ -1175,15 +1176,15 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 {C:/Users/chuac/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/chua
 c/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/chuac/Ap
-pData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}] [2])
+pData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}] [2] [3])
 \tf@toc=\write7
 \openout7 = `"00 main.toc"'.
 
- [3]
+
+[4]
 \openout2 = `"01 checklist.aux"'.
 
-
-(01 checklist.tex (checklist/group.tex
+ (01 checklist.tex (checklist/group.tex
 LaTeX Font Info:    Trying to load font information for TS1+mlmr on input line 
 5.
 
@@ -1322,15 +1323,27 @@ Excluding 'comment' comment. [88] [89] [90] [91]) [92]
 
 
 ] [94]) [95]
+\openout2 = `2025.09.10-O'Nan-Scott-Theorem.aux'.
+
+
+(2025.09.10-O'Nan-Scott-Theorem.tex
+Overfull \hbox (10.71968pt too wide) in paragraph at lines 1--1
+[]\OT1/mlmr/bx/n/14.4 O'Nan-Scott The-o-rem: The Clas-si-fi-ca-tion of Max-
+ []
+
+) [96
+
+
+
+]
 \openout2 = `2025.07.21-Nilpotent-and-Solvable-Groups.aux'.
 
-
-(2025.07.21-Nilpotent-and-Solvable-Groups.tex [96
-
+ (2025.07.21-Nilpotent-and-Solvable-Groups.tex [97
 
 
-] [97] [98] [99] [100]
-[101] [102]
+
+] [98] [99] [100]
+[101] [102] [103]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 279.
@@ -1349,26 +1362,26 @@ Overfull \hbox (122.11244pt too wide) in paragraph at lines 314--315
 429 / prove-[]that-[]s-[]3-[]and-[]s-[]4-[]are-[]solvable-[]groups$[]
  []
 
-[103{C:/Users/chuac/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rmtt.en
-c}] [104]) [105]
+[104{C:/Users/chuac/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rmtt.en
+c}] [105]) [106]
 \openout2 = `2025.08.20-Free-Groups.aux'.
 
- (2025.08.20-Free-Groups.tex [106
+ (2025.08.20-Free-Groups.tex [107
 
 
 
-] [107]) [108]
+] [108]) [109]
 \openout2 = `2025.08.15-Ideals.aux'.
 
 
-(2025.08.15-Ideals.tex) [109
+(2025.08.15-Ideals.tex) [110
 
 
 
 ]
 \openout2 = `zabalang.aux'.
 
- (zabalang.tex [110
+ (zabalang.tex [111
 
 
 
@@ -1377,7 +1390,7 @@ Overfull \hbox (16.68445pt too wide) in paragraph at lines 56--56
 []\OT1/mlmr/bx/n/12 BILA NAK COUNT-ABLE OR UN-COUNT-ABLE, PENANG
  []
 
-[111] [112] [113] [114]
+[112] [113] [114] [115]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 212.
@@ -1386,45 +1399,37 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 212.
 
-[115]) [116] [117
+[116]) [117] [118
 
 
 
-] [118] (00 main.aux (01 checklist.aux)
+] [119] (00 main.aux (01 checklist.aux)
 (2025.03.22-Symmetric-Group.aux) (2025.04.05-Group-Action-Writing.aux)
 (2025.04.26-Sylow-Theorem.aux) (2025.05.22-Series.aux)
 (2025.07.26-Direct-Products.aux)
 (2025.07.27-Finitely-Generated-Abelian-Groups.aux)
 (2025.07.23-Semidirect-Products.aux) (2025.09.04-permutation-groups.aux)
-(2025.08.23-Wreath-Product.aux) (2025.07.21-Nilpotent-and-Solvable-Groups.aux)
-(2025.08.20-Free-Groups.aux) (2025.08.15-Ideals.aux) (zabalang.aux))
+(2025.08.23-Wreath-Product.aux) (2025.09.10-O'Nan-Scott-Theorem.aux)
+(2025.07.21-Nilpotent-and-Solvable-Groups.aux) (2025.08.20-Free-Groups.aux)
+(2025.08.15-Ideals.aux) (zabalang.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `"00 main".out' has not changed.
-(rerunfilecheck)             Checksum: 4231E2C35D2C961B327247244939306D;15632.
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                "00 main"
-(biblatex)                and rerun LaTeX afterwards.
-
+(rerunfilecheck)             Checksum: 8B05E97DB84A616B2A75AB171AF5A1C4;17431.
 Package logreq Info: Writing requests to '"00 main".run.xml'.
 \openout1 = `"00 main.run.xml"'.
 
  ) 
 Here is how much of TeX's memory you used:
- 33662 strings out of 474486
- 682561 string characters out of 5743755
+ 33737 strings out of 474486
+ 685039 string characters out of 5743755
  1943542 words of memory out of 5000000
- 54488 multiletter control sequences out of 15000+600000
+ 54533 multiletter control sequences out of 15000+600000
  623494 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 131i,16n,135p,1372b,1625s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 131i,16n,135p,1372b,1643s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/chuac/AppData/Local/Programs/MiKTeX/fonts/type1/public/mlmodern/mlm
 bx10.pfb><C:/Users/chuac/AppData/Local/Programs/MiKTeX/fonts/type1/public/mlmod
 ern/mlmbx12.pfb><C:/Users/chuac/AppData/Local/Programs/MiKTeX/fonts/type1/publi
@@ -1449,9 +1454,9 @@ iKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/chuac/AppData/Lo
 cal/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/ch
 uac/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7.pfb
 >
-Output written on "00 main.pdf" (121 pages, 942107 bytes).
+Output written on "00 main.pdf" (123 pages, 956286 bytes).
 PDF statistics:
- 2100 PDF objects out of 2487 (max. 8388607)
- 830 named destinations out of 1000 (max. 500000)
- 677 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2175 PDF objects out of 2487 (max. 8388607)
+ 853 named destinations out of 1000 (max. 500000)
+ 749 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -87,6 +87,45 @@
       \field{year}{1991}
       \keyw{00A05,00-01,20-01,14-01,15-01,12-01}
     \endentry
+    \entry{Aschbacher1985}{article}{}
+      \name{author}{2}{}{%
+        {{hash=2f6f74806e4e1867abb585e1e4d9d02b}{%
+           family={Aschbacher},
+           familyi={A\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=07b7760714a0fed508f28f59d2c52c1f}{%
+           family={Scott},
+           familyi={S\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {English}%
+      }
+      \strng{namehash}{df22d43700cf4d5407aea87ab1cd293c}
+      \strng{fullhash}{df22d43700cf4d5407aea87ab1cd293c}
+      \strng{bibnamehash}{df22d43700cf4d5407aea87ab1cd293c}
+      \strng{authorbibnamehash}{df22d43700cf4d5407aea87ab1cd293c}
+      \strng{authornamehash}{df22d43700cf4d5407aea87ab1cd293c}
+      \strng{authorfullhash}{df22d43700cf4d5407aea87ab1cd293c}
+      \field{labelalpha}{AS85}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0021-8693}
+      \field{journaltitle}{J. Algebra}
+      \field{title}{Maximal subgroups of finite groups}
+      \field{volume}{92}
+      \field{year}{1985}
+      \field{pages}{44\bibrangedash 80}
+      \range{pages}{37}
+      \verb{doi}
+      \verb 10.1016/0021-8693(85)90145-0
+      \endverb
+      \keyw{20D05,20D25,20D30,20J05}
+    \endentry
     \entry{Bergman2015}{book}{}
       \name{author}{1}{}{%
         {{hash=4639fa29e4c5a9aa9fe66614b81f222b}{%
@@ -485,6 +524,48 @@
       \field{title}{Methods of algebra: Volume 1 (in Chinese)}
       \field{year}{2025}
     \endentry
+    \entry{Liebeck1988}{article}{}
+      \name{author}{3}{}{%
+        {{hash=0a2158e431ceb1903b5d28918f66d290}{%
+           family={Liebeck},
+           familyi={L\bibinitperiod},
+           given={Martin\bibnamedelima W.},
+           giveni={M\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=9221ddb383bad70c737523b6b44af8c4}{%
+           family={Praeger},
+           familyi={P\bibinitperiod},
+           given={Cheryl\bibnamedelima E.},
+           giveni={C\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=4c2ba0ca56cb7fc14c70b02d3796ec0c}{%
+           family={Saxl},
+           familyi={S\bibinitperiod},
+           given={Jan},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {English}%
+      }
+      \strng{namehash}{282ce2a147b9b7867f00259bd734726d}
+      \strng{fullhash}{282ce2a147b9b7867f00259bd734726d}
+      \strng{bibnamehash}{282ce2a147b9b7867f00259bd734726d}
+      \strng{authorbibnamehash}{282ce2a147b9b7867f00259bd734726d}
+      \strng{authornamehash}{282ce2a147b9b7867f00259bd734726d}
+      \strng{authorfullhash}{282ce2a147b9b7867f00259bd734726d}
+      \field{labelalpha}{LPS88}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0263-6115}
+      \field{journaltitle}{J. Aust. Math. Soc., Ser. A}
+      \field{number}{3}
+      \field{title}{On the {O}'{Nan}-{Scott} theorem for finite primitive permutation groups}
+      \field{volume}{44}
+      \field{year}{1988}
+      \field{pages}{389\bibrangedash 396}
+      \range{pages}{8}
+      \keyw{20B15,20B05}
+    \endentry
     \entry{Meldrum1995}{book}{}
       \name{author}{1}{}{%
         {{hash=b6ff43632305e2dac51eb192091126d3}{%
@@ -774,6 +855,42 @@
       \endverb
       \keyw{20E07,20E22,20E05,20E06,20E18}
     \endentry
+    \entry{Smith2018}{book}{}
+      \name{author}{1}{}{%
+        {{hash=4d2d3039a45fb1e7b0e1b4ddad04ac22}{%
+           family={Smith},
+           familyi={S\bibinitperiod},
+           given={Stephen\bibnamedelima D.},
+           giveni={S\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {English}%
+      }
+      \list{publisher}{1}{%
+        {Providence, RI: American Mathematical Society (AMS)}%
+      }
+      \strng{namehash}{4d2d3039a45fb1e7b0e1b4ddad04ac22}
+      \strng{fullhash}{4d2d3039a45fb1e7b0e1b4ddad04ac22}
+      \strng{bibnamehash}{4d2d3039a45fb1e7b0e1b4ddad04ac22}
+      \strng{authorbibnamehash}{4d2d3039a45fb1e7b0e1b4ddad04ac22}
+      \strng{authornamehash}{4d2d3039a45fb1e7b0e1b4ddad04ac22}
+      \strng{authorfullhash}{4d2d3039a45fb1e7b0e1b4ddad04ac22}
+      \field{labelalpha}{Smi18}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-1-4704-4291-0; 978-1-4704-4682-6}
+      \field{issn}{0076-5376}
+      \field{series}{Math. Surv. Monogr.}
+      \field{title}{Applying the classification of finite simple groups. {A} user's guide}
+      \field{volume}{230}
+      \field{year}{2018}
+      \verb{doi}
+      \verb 10.1090/surv/230
+      \endverb
+      \keyw{20-02,20D05,20Bxx,20Cxx,20E32}
+    \endentry
     \entry{Suzuki1982}{book}{}
       \name{author}{1}{}{%
         {{hash=288d85a39c25545829650984997ae34a}{%
@@ -798,6 +915,37 @@
       \field{labeltitlesource}{title}
       \field{title}{Group Theory {I}}
       \field{year}{1982}
+    \endentry
+    \entry{Wilson2009}{book}{}
+      \name{author}{1}{}{%
+        {{hash=7c4305f745f363491b5c437f71566d65}{%
+           family={Wilson},
+           familyi={W\bibinitperiod},
+           given={Robert\bibnamedelima A.},
+           giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer London}%
+      }
+      \strng{namehash}{7c4305f745f363491b5c437f71566d65}
+      \strng{fullhash}{7c4305f745f363491b5c437f71566d65}
+      \strng{bibnamehash}{7c4305f745f363491b5c437f71566d65}
+      \strng{authorbibnamehash}{7c4305f745f363491b5c437f71566d65}
+      \strng{authornamehash}{7c4305f745f363491b5c437f71566d65}
+      \strng{authorfullhash}{7c4305f745f363491b5c437f71566d65}
+      \field{labelalpha}{Wil09}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9781848009882}
+      \field{issn}{0072-5285}
+      \field{journaltitle}{Graduate Texts in Mathematics}
+      \field{title}{The Finite Simple Groups}
+      \field{year}{2009}
+      \verb{doi}
+      \verb 10.1007/978-1-84800-988-2
+      \endverb
     \endentry
   \enddatalist
 \endrefsection
