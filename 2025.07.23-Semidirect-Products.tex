@@ -331,7 +331,7 @@ The definition of an internal semidirect product is not symmetric with respect t
 \end{example}
 
 \begin{lemma} \label{lemma-noob}
-	Let $G = PQ$ where $p$ and $q$ are distinct primes, $P \in \text{Syl}_p(G)$$P$ is a normal abelian subgroup in $G$ and $Q \in \text{Syl}_q(G)$. Let $\varphi_1$ and $\varphi_2$ be homomorphisms from $Q$ into $\operatorname{Aut}(P)$. If $P\rtimes_{\varphi_1} Q \cong P\rtimes_{\varphi_2} Q$,   then $\ker \varphi_1 \cong \ker \varphi_2$.
+	Let $G = PQ$ where $p$ and $q$ are distinct primes, $P \in \text{Syl}_p(G)$ is a normal abelian subgroup in $G$ and $Q \in \text{Syl}_q(G)$. Let $\varphi_1$ and $\varphi_2$ be homomorphisms from $Q$ into $\operatorname{Aut}(P)$. If $P\rtimes_{\varphi_1} Q \cong P\rtimes_{\varphi_2} Q$,   then $\ker \varphi_1 \cong \ker \varphi_2$.
 \end{lemma}
 \begin{sketch}
 	Let $\theta: P\rtimes_{\varphi_1} Q \rightarrow P\rtimes_{\varphi_2} Q$ be an isomorphism. Let $G_1 = P\rtimes_{\varphi_1} Q$ and $G_2 = P\rtimes_{\varphi_2} Q$. Note that  $P$ in normal in $G_1$ and $G_2$, and hence unique  in both semidirect products. The uniqueness implies that $\theta(P) = P$. Since $\theta$ is an isomorphism, we have $C_{G_1}(P) \cong C_{G_2}(\theta(P)) = C_{G_2}(P)$. Now we verify that $C_{G_1}(P) = P\ker \varphi_1$ and $C_{G_2}(P) = P\ker \varphi_2$. Clearly $P\ker \varphi_i \subseteq C_{G_1}(P)$. Let $g\in C_{G_i}(P)$. Since $g\in G_i = P\rtimes_{\varphi_1} Q$,  it can be written uniquely as $g = pq$ where $p\in P$ and $q\in Q$. Hence $(pq)^{-1}xpq = x$ for all $x\in P$. Since $P$ is abelian, we get $q^{-1}xq = x$. Since $x^{q} = q^{-1}xq$, we obtain $x^q = x$ for all $x\in P$, and thus $q\in\ker \varphi_i$. This proves our claim. Note that $P\cap \ker\varphi_i =\{1\}$ for $i=1,2$. Hence we have 
