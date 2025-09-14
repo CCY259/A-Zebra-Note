@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.8.25)  14 SEP 2025 00:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.8.25)  14 SEP 2025 14:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1322,28 +1322,28 @@ Excluding 'comment' comment. [88] [89] [90] [91]) [92]
 
 
 
-] [94]) [95]
+] [94] Excluding 'comment' comment. [95])
+[96]
 \openout2 = `2025.09.10-O'Nan-Scott-Theorem.aux'.
 
-
-(2025.09.10-O'Nan-Scott-Theorem.tex
+ (2025.09.10-O'Nan-Scott-Theorem.tex
 Overfull \hbox (10.71968pt too wide) in paragraph at lines 1--1
 []\OT1/mlmr/bx/n/14.4 O'Nan-Scott The-o-rem: The Clas-si-fi-ca-tion of Max-
  []
 
-) [96
+) [97
 
 
 
 ]
 \openout2 = `2025.07.21-Nilpotent-and-Solvable-Groups.aux'.
 
- (2025.07.21-Nilpotent-and-Solvable-Groups.tex [97
+ (2025.07.21-Nilpotent-and-Solvable-Groups.tex [98
 
 
 
-] [98] [99] [100]
-[101] [102] [103]
+] [99] [100] [101]
+[102] [103] [104]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 279.
@@ -1362,26 +1362,26 @@ Overfull \hbox (122.11244pt too wide) in paragraph at lines 314--315
 429 / prove-[]that-[]s-[]3-[]and-[]s-[]4-[]are-[]solvable-[]groups$[]
  []
 
-[104{C:/Users/chuac/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rmtt.en
-c}] [105]) [106]
+[105{C:/Users/chuac/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rmtt.en
+c}] [106]) [107]
 \openout2 = `2025.08.20-Free-Groups.aux'.
 
- (2025.08.20-Free-Groups.tex [107
+ (2025.08.20-Free-Groups.tex [108
 
 
 
-] [108]) [109]
+] [109]) [110]
 \openout2 = `2025.08.15-Ideals.aux'.
 
 
-(2025.08.15-Ideals.tex) [110
+(2025.08.15-Ideals.tex) [111
 
 
 
 ]
 \openout2 = `zabalang.aux'.
 
- (zabalang.tex [111
+ (zabalang.tex [112
 
 
 
@@ -1390,7 +1390,7 @@ Overfull \hbox (16.68445pt too wide) in paragraph at lines 56--56
 []\OT1/mlmr/bx/n/12 BILA NAK COUNT-ABLE OR UN-COUNT-ABLE, PENANG
  []
 
-[112] [113] [114] [115]
+[113] [114] [115] [116]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 212.
@@ -1399,11 +1399,11 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 212.
 
-[116]) [117] [118
+[117]) [118] [119
 
 
 
-] [119] (00 main.aux (01 checklist.aux)
+] [120] (00 main.aux (01 checklist.aux)
 (2025.03.22-Symmetric-Group.aux) (2025.04.05-Group-Action-Writing.aux)
 (2025.04.26-Sylow-Theorem.aux) (2025.05.22-Series.aux)
 (2025.07.26-Direct-Products.aux)
@@ -1417,14 +1417,14 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
 Package rerunfilecheck Info: File `"00 main".out' has not changed.
-(rerunfilecheck)             Checksum: 8B05E97DB84A616B2A75AB171AF5A1C4;17431.
+(rerunfilecheck)             Checksum: 83591DC11DC6BAB3D5B7EC9A829D373C;17431.
 Package logreq Info: Writing requests to '"00 main".run.xml'.
 \openout1 = `"00 main.run.xml"'.
 
  ) 
 Here is how much of TeX's memory you used:
- 33737 strings out of 474486
- 685039 string characters out of 5743755
+ 33739 strings out of 474486
+ 685053 string characters out of 5743755
  1943542 words of memory out of 5000000
  54533 multiletter control sequences out of 15000+600000
  623494 words of font info for 81 fonts, out of 8000000 for 9000
@@ -1454,9 +1454,9 @@ iKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/chuac/AppData/Lo
 cal/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/ch
 uac/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7.pfb
 >
-Output written on "00 main.pdf" (123 pages, 956318 bytes).
+Output written on "00 main.pdf" (124 pages, 959471 bytes).
 PDF statistics:
- 2175 PDF objects out of 2487 (max. 8388607)
- 853 named destinations out of 1000 (max. 500000)
+ 2181 PDF objects out of 2487 (max. 8388607)
+ 855 named destinations out of 1000 (max. 500000)
  749 words of extra memory for PDF output out of 10000 (max. 10000000)
 

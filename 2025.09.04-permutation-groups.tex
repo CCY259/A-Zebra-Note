@@ -12,7 +12,7 @@ A \textbf{permutation group} of a set $\Omega$ is a subgroup of $\Sym\Omega$. If
 \end{align*}
 \subsection{Isomorphic actions}
 \begin{definition}
-	Let $G$ and $H$ be groups acting on the sets $\Omega$ and $\Delta$, respectively. The two actions are said to be \textbf{permutationally isomorphic} if there exist a bijection $\vartheta: \Omega \to \Delta$ and an isomorphism $\chi: G \to H$ such that
+	Let $G$ and $H$ be groups acting on the sets $\Omega$ and $\Delta$, respectively. The two actions (or the pairs $(G,\Omega)$ and $(H,\Delta)$) are said to be \textbf{permutationally isomorphic} if there exist a bijection $\vartheta: \Omega \to \Delta$ and an isomorphism $\chi: G \to H$ such that
 	\[ \vartheta(\omega^g) = \vartheta(\omega)^{\chi(g)} \quad \text{for all } \omega \in \Omega, g \in G. \] In other words, for every $g\in G$ the following diagram commutes.
 	% https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXE9tZWdhIl0sWzIsMCwiXFxPbWVnYSJdLFswLDIsIlxcRGVsdGEiXSxbMiwyLCJcXERlbHRhIl0sWzAsMSwiZyJdLFsxLDMsIlxcdmFydGhldGEiXSxbMCwyLCJcXHZhcnRoZXRhIiwyXSxbMiwzLCJcXGNoaShnKSIsMl1d
 	\[\begin{tikzcd}
@@ -136,7 +136,7 @@ A \textbf{permutation group} of a set $\Omega$ is a subgroup of $\Sym\Omega$. If
 	Let $G$ act transitively on $\Omega$ and let $\omega\in \Omega$. Then the $G$-action on $\Omega$ is permutationally isomorphic to the $G$-action on $\Gamma_{G_\omega}$.
 \end{proposition}
 \begin{sketch}
-	Define the function $\vartheta: \Gamma_{G_\omega}\to \Omega$ by $\vartheta(G_\omega g) = \omega^g$. It is well-defined and bijective. Furthermore, $\varphi((G_\omega g)^h) = \varphi(G_\omega gh) = \omega^{gh} = (\omega^{g})^h = \varphi(G_\omega g)^h$. This shows that $(\vartheta,\operatorname{Id}_G)$ is a permutational isomorphism.
+	Since $G$ is transitive, we have $\omega^G = \Omega$. Let $\vartheta:\Omega \rightarrow \Gamma_{G_\omega}$ be the bijective function as defined in Lemma \ref{lemma-orbit-partition-and-bijection}.(ii). Then $\vartheta((\omega^g)^h) = \vartheta(\omega^{gh}) = G_\omega gh = (G_\omega g)^h = \vartheta(\omega^g)^h$. This shows that $(\vartheta,\operatorname{Id}_G)$ is a permutational isomorphism.
 \end{sketch}
 
 \begin{corollary}
@@ -184,13 +184,14 @@ A \textbf{permutation group} of a set $\Omega$ is a subgroup of $\Sym\Omega$. If
 \end{sketch}
 
 \begin{definition}
-	Let $G$ act on $\Omega$. A partition $\mathcal{P}$ of $\Omega$ is said to be $G$-\textbf{invariant} if $\Delta^g \in\mathcal{P}$ for all $g\in G$ and $\Delta\in\mathcal{P}$.
+	Let $G$ act on $\Omega$. An equivalence relation $\sim$ on $\Omega$ is called a $G$-\textbf{congruence} if  $$\omega_1 \sim \omega_2 \iff \omega_1^g \sim \omega_2^g$$ 
+	for all $\omega_1,\omega_2\in \Omega$ and $g\in G$. We also say that $G$ preserves the relation.
 \end{definition}
 \begin{proposition}
 	Let $G$ act transitively on $\Omega$.
 	\begin{enumerate}[(i)]
-		\item  If  $\Delta$ is a block, then $\Sigma = \{\Delta^g\mid g\in G\}$ is a $G$-invariant partition of $\Omega$. Hence $G$ acts transitively on $\Sigma$.
-		\item If $\mathcal{P}$ is a $G$-invariant partition of $\Omega$, then each $\Delta\in \mathcal{P}$ is a block of $\Omega$.
+		\item If $\sim$ is a $G$-congruence on $\Omega$, then each equivalence class is a block of $\Omega$.
+		\item  If  $\Delta$ is a block, then $\Sigma = \{\Delta^g\mid g\in G\}$ is the set of equivalence classes of a $G$-congruence on $\Omega$. Hence $G$ acts transitively on $\Sigma$.
 	\end{enumerate}
 \end{proposition}
 \begin{sketch}

@@ -9,6 +9,15 @@ Let $G$ be an arbitrary group and let $H$ be a group acting on a set $\Delta$. L
 	The semidirect product $W = G^\Delta \rtimes H$ with respect to the action defined above  is called the \textbf{(complete) wreath product} of $G$ by $H$. This $W$ will be denoted by $G \Wr_{\Delta} H$. We can define the \textbf{restricted wreath product} $G \wr_{\Delta} H$ of $G$ by $H$, by using the same setting, but with $f\in G^{(\Delta)}$, where $G^{(\Delta)}$ is the set of all functions such that $f(y) = e$ for all but finitely many $y\in \Delta$. The wreath product is said to be \textbf{trivial} if either $G$ or $H$ is the trivial group. In $G\Wr_\Delta H$ (resp. $G\wr_\Delta H$), the subgroup $G^\Delta$ (resp. $G^{(\Delta)}$) is called the \textbf{base group}, $G$ is called the \textbf{bottom group} and $H$ is called the \textbf{top group}.
 \end{definition}
 
+\begin{remark}
+	Let us restrict to the case where $\Delta$ is a finite set. If $\Delta = \{1,\dots,n\}$, then we can think of the base group as $$G^\Delta = \underbrace{G\times \cdots \times G}_{n\text{ times}}.$$
+	So the elements of the base group are just an $n$-tuples of elements in $G$. Now the action of $H$ on the base group corresponds to permuting coordinates of elements in $G$ as follows.
+	\begin{equation*}
+		(g_1,g_2,\dots, g_n)^h = (g_{1^{h^{-1}}},g_{2^{h^{-1}}},\dots, g_{n^{h^{-1}}}).
+	\end{equation*}
+	Note that it is necessary to introduce $h^{-1}$ rather than $h$ since we are considering right action.
+\end{remark}
+
 
 \begin{definition}
 	The \textbf{standard wreath product} $G\Wr H$ (or $G\wr H$) of $G$ by $H$ is the wreath product $G\Wr_H H$ (or $G\wr_H H$) where $G$ and $H$ act on themselves by right translation.
@@ -63,8 +72,35 @@ So $((\omega,\delta)^{(f_1,h_1)})^{(f_2,h_2)}  = (\omega,\delta)^{(f_1,h_1)(f_2,
 \end{proposition}
 
 \begin{theorem}[Embedding Theorem]
-	Let $(G,\Omega)$ be a transitive and imprimitive permutation group. Let $\mathcal{B} = \{\Omega_\lambda\mid \lambda\in\Lambda\}$ be a system of imprimitivity of $\Omega$. Fix a block $\Omega_\iota \in\mathcal{B}$. Then $(G,\Omega)$ is permutationally isomorphic to a subgroup of $(G_{\Omega_\iota} \Wr G, \Omega_\iota\times \mathcal{B})$.
+	Let $G$ act transitively and imprimitively on $\Omega$. Let $\mathcal{B} = \{\Omega_\lambda\mid \lambda\in\Lambda\}$ be a system of imprimitivity of $\Omega$. Fix a block $\Omega_\iota \in\mathcal{B}$. Then $(G,\Omega)$ is permutationally isomorphic to a subgroup of $(G_{\Omega_\iota} \Wr G, \Omega_\iota\times \mathcal{B})$.
 \end{theorem}
+\begin{sketch}
+	Since $G$ acts transitively on $\mathcal{B}$, for each $\Omega_\lambda\in \mathcal{B}$ we choose an element $g_\lambda\in G$ such that $\Omega_\lambda = \Omega_\iota^{g_{\lambda}}$. Define $\vartheta: \Omega \to \Omega_\iota \times \mathcal{B}$ by
+	\begin{equation*}
+		\vartheta(\omega) = (\omega^{g_{\lambda}^{-1}},\Omega_\lambda) \tag{2.7}
+	\end{equation*}
+	where $\omega \in \Omega_\lambda$. Clearly $\vartheta$ is well-defined. We claim that $\vartheta$ is a bijection. Suppose that $\vartheta(\omega_1) = \vartheta(\omega_2)$ for some $\omega_1,\omega_2\in\Omega$. Then $\omega_1,\omega_2\in \Omega_\lambda$ for some $\Omega_\lambda\in\mathcal{B}$ and $\omega_1^{g_{\lambda}^{-1}}=\omega_2^{g_{\lambda}^{-1}}$. Thus we get $\omega_1 = \omega_2$ and $\vartheta$ is injective. Let $(\omega,\Omega_\lambda)\in \Omega_\iota \times \mathcal{B}$. Take the unique element $\delta\in \Omega$ such that $\delta^{g_\lambda} = \omega$. Then, by definition, $\vartheta$ is surjective.
+	
+\begin{comment}
+	Let $\psi:G \to G_{\Omega_\iota} \Wr_{\mathcal{B}} G$ be defined by
+	\begin{equation*}
+		\psi(g) = (f,g)\tag{2.8}
+	\end{equation*}
+	$k = g\theta$ and $f(\Omega_\lambda) = g_{\Omega_\lambda}gg_{\Omega_\lambda k}^{-1}$. Note that this definition of $\psi$ is forced on us once $\theta$ is defined, and $\vartheta$ is defined in a natural way. We need to prove
+	\begin{equation}
+		(t\vartheta)(g\psi) = (tg)\vartheta \tag{2.9}
+	\end{equation}
+	for all $t \in T, g \in G$. Using (2.7) and (2.8), we have
+	\begin{align*}
+		(t\vartheta)(g\psi) &= (s,\lambda)(fk) \\
+		&= (sf(\lambda),\lambda k).
+	\end{align*}
+	Also $(tg)\vartheta = (s',\Omega_\lambda')$ where $tg \in T_{\Omega_\lambda'} = T_{\Omega_\lambda g} = T_{\lambda k}$, by the definition of $\theta$, and $s' = tg_{\Omega_\lambda'}^{-1} = tgg_{\Omega_\lambda k}^{-1} = sg_{\Omega_\lambda}gg_{\lambda k}^{-1} = sf(\lambda)$. This shows that (2.9) holds for all $t \in T, g \in G$. To finish we need to show that $\psi$ is a monomorphism of groups.
+	
+	This follows from (2.9), as we now see. Let $g_i \in G, i=1,2$. Then $(t\vartheta)(g_1g_2)\psi = (t(g_1g_2))\vartheta = ((tg_1)g_2)\vartheta = (t\vartheta(g_1\psi))(g_2\psi) = (t\vartheta(g_1\psi))(g_2\psi)$. This holds for all $t \in T$, hence for all $(s,\Omega_\lambda) \in S \times \mathcal{B}$, since $\vartheta$ is a 1-1 correspondence between $T$ and $S \times \mathcal{B}$. Thus $(g_1g_2)\psi = (g_1\psi)(g_2\psi)$. Finally $g\psi$ is the identity map on $S \times \mathcal{B}$ if and only if $(t\vartheta)(g\psi) = t\vartheta$ for all $t \in T$, and then $(tg)\vartheta = t\vartheta$ for all $t \in T$. As $\vartheta$ is 1-1, this forces $tg = t$ for all $t \in T$, i.e. $g=e$. 
+\end{comment}
+	
+\end{sketch}
 
 \subsection{Product Action}
 \begin{proposition} \label{prop-product-action-of-WP}
