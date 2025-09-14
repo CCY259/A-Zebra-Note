@@ -71,36 +71,59 @@ So $((\omega,\delta)^{(f_1,h_1)})^{(f_2,h_2)}  = (\omega,\delta)^{(f_1,h_1)(f_2,
 	Let $(G,\Omega)$ and $(H,\Delta)$ be permutation groups. The set $\Omega\times \Delta$ is a transitive $G\Wr_\Delta H$-set if and only if both $X$ and $\Delta$ are transitive sets.
 \end{proposition}
 
-\begin{theorem}[Embedding Theorem]
-	Let $G$ act transitively and imprimitively on $\Omega$. Let $\mathcal{B} = \{\Omega_\lambda\mid \lambda\in\Lambda\}$ be a system of imprimitivity of $\Omega$. Fix a block $\Omega_\iota \in\mathcal{B}$. Then $(G,\Omega)$ is permutationally isomorphic to a subgroup of $(G_{\Omega_\iota} \Wr G, \Omega_\iota\times \mathcal{B})$.
+\begin{theorem}[Embedding Theorem] \label{thm-embedding}
+	Let $G$ act transitively and imprimitively on $\Omega$. Let $\mathcal{B} = \{\Omega_\lambda\mid \lambda\in\Lambda\}$ be a system of imprimitivity of $\Omega$. Fix a block $\Omega_\iota \in\mathcal{B}$. Then $(G,\Omega)$ is permutationally isomorphic to a subgroup of $(G_{\Omega_\iota} \Wr_\mathcal{B} G, \Omega_\iota\times \mathcal{B})$.
 \end{theorem}
 \begin{sketch}
 	Since $G$ acts transitively on $\mathcal{B}$, for each $\Omega_\lambda\in \mathcal{B}$ we choose an element $g_\lambda\in G$ such that $\Omega_\lambda = \Omega_\iota^{g_{\lambda}}$. Define $\vartheta: \Omega \to \Omega_\iota \times \mathcal{B}$ by
 	\begin{equation*}
-		\vartheta(\omega) = (\omega^{g_{\lambda}^{-1}},\Omega_\lambda) \tag{2.7}
+		\vartheta(\omega) = (\omega^{g_{\lambda}^{-1}},\Omega_\lambda) 
 	\end{equation*}
 	where $\omega \in \Omega_\lambda$. Clearly $\vartheta$ is well-defined. We claim that $\vartheta$ is a bijection. Suppose that $\vartheta(\omega_1) = \vartheta(\omega_2)$ for some $\omega_1,\omega_2\in\Omega$. Then $\omega_1,\omega_2\in \Omega_\lambda$ for some $\Omega_\lambda\in\mathcal{B}$ and $\omega_1^{g_{\lambda}^{-1}}=\omega_2^{g_{\lambda}^{-1}}$. Thus we get $\omega_1 = \omega_2$ and $\vartheta$ is injective. Let $(\omega,\Omega_\lambda)\in \Omega_\iota \times \mathcal{B}$. Take the unique element $\delta\in \Omega$ such that $\delta^{g_\lambda} = \omega$. Then, by definition, $\vartheta$ is surjective.
 	
-\begin{comment}
 	Let $\psi:G \to G_{\Omega_\iota} \Wr_{\mathcal{B}} G$ be defined by
 	\begin{equation*}
-		\psi(g) = (f,g)\tag{2.8}
+		\psi(x) = (f_x,x)
 	\end{equation*}
-	$k = g\theta$ and $f(\Omega_\lambda) = g_{\Omega_\lambda}gg_{\Omega_\lambda k}^{-1}$. Note that this definition of $\psi$ is forced on us once $\theta$ is defined, and $\vartheta$ is defined in a natural way. We need to prove
-	\begin{equation}
-		(t\vartheta)(g\psi) = (tg)\vartheta \tag{2.9}
-	\end{equation}
-	for all $t \in T, g \in G$. Using (2.7) and (2.8), we have
-	\begin{align*}
-		(t\vartheta)(g\psi) &= (s,\lambda)(fk) \\
-		&= (sf(\lambda),\lambda k).
-	\end{align*}
-	Also $(tg)\vartheta = (s',\Omega_\lambda')$ where $tg \in T_{\Omega_\lambda'} = T_{\Omega_\lambda g} = T_{\lambda k}$, by the definition of $\theta$, and $s' = tg_{\Omega_\lambda'}^{-1} = tgg_{\Omega_\lambda k}^{-1} = sg_{\Omega_\lambda}gg_{\lambda k}^{-1} = sf(\lambda)$. This shows that (2.9) holds for all $t \in T, g \in G$. To finish we need to show that $\psi$ is a monomorphism of groups.
-	
-	This follows from (2.9), as we now see. Let $g_i \in G, i=1,2$. Then $(t\vartheta)(g_1g_2)\psi = (t(g_1g_2))\vartheta = ((tg_1)g_2)\vartheta = (t\vartheta(g_1\psi))(g_2\psi) = (t\vartheta(g_1\psi))(g_2\psi)$. This holds for all $t \in T$, hence for all $(s,\Omega_\lambda) \in S \times \mathcal{B}$, since $\vartheta$ is a 1-1 correspondence between $T$ and $S \times \mathcal{B}$. Thus $(g_1g_2)\psi = (g_1\psi)(g_2\psi)$. Finally $g\psi$ is the identity map on $S \times \mathcal{B}$ if and only if $(t\vartheta)(g\psi) = t\vartheta$ for all $t \in T$, and then $(tg)\vartheta = t\vartheta$ for all $t \in T$. As $\vartheta$ is 1-1, this forces $tg = t$ for all $t \in T$, i.e. $g=e$. 
-\end{comment}
-	
+	where $f_x$ is a function from $\mathcal{B}$ into $G_{\Omega_\iota}$ with $f_x(\Omega_\lambda) = g_{\lambda}xg_{\lambda^x}^{-1}$ where $g_{\lambda^x}$ is the element corresponding to $\Omega_\lambda^x$ It can be checked that $\Omega_\iota^{g_\lambda xg_{\lambda^x}^{-1}} = \Omega_\iota$ and so $g\lambda xg_{\lambda^x}^{-1}\in G_{\Omega_\iota}$. We claim that $\psi$ is a monomorphism. Clearly $\psi$ is injective (in case we view $G$ as a permutation group on $\mathcal{B}$, we will get in particular $x =g_\iota^{-1} 1 g_{\iota^x} =1$, what am I doing!). Now we show that $\psi$ is a homomorphism. Let $x,y\in G$. Then $
+		\psi(x)\psi(y) = (f_x,x)(f_y,y) = (f_xf_y^{x^{-1}},xy)$. Note that for all $\Omega_\lambda \in \mathcal{B}$, 
+\begin{align*}
+	(f_xf_y^{x^{-1}})(\Omega_\lambda) &= f_x(\Omega_\lambda)f_y^{x^{-1}}(\Omega_\lambda) 
+	\\
+	&= f_x(\Omega_\lambda)f_y(\Omega_\lambda^x) 
+	\\
+	&= g_{\lambda}xg_{\lambda^x}^{-1}g_{\lambda^x}yg_{(\lambda^{x})^y}^{-1} 
+	\\
+	&= g_\lambda xy g_{\lambda^{xy}}^{-1} 
+	\\
+	&= f_{xy}(\Omega_\lambda).
+\end{align*}
+So $\psi(x)\psi(y) = \psi(xy)$. Next, we want to prove
+\begin{equation*}
+	\vartheta(\omega^x) = \vartheta(\omega)^{\psi(x)}
+\end{equation*}
+for all $\omega\in\Omega$ and $x\in G$.
+\begin{align*}
+	\vartheta(\omega)^{\psi(x)} &= (\omega^{g_\lambda^{-1}},\Omega_\lambda)^{(f_x,x)} 
+	\\
+	&= ((\omega^{g_\lambda^{-1}})^{f_x(\Omega_\lambda)},\Omega_\lambda^x) 
+	\\
+	&= ((\omega^{g_\lambda^{-1}})^{g_\lambda x g_{\lambda^x}^{-1}},\Omega_\lambda^x) 
+	\\
+	&= ((\omega^x)^{g_{\lambda^x}^{-1}},\Omega_\lambda^x) 
+	\\
+	&= \vartheta(\omega^x).
+\end{align*}
+This shows that $(\vartheta,\psi)$ is a permutational embedding.
 \end{sketch}
+
+\begin{corollary}
+	Let $G$ be a group and let $N$ be a normal subgroup of $G$. Then $G$ is embedded in $N \Wr G/N$.
+\end{corollary}
+\begin{sketch}
+	Apply Theorem \ref{thm-embedding} using the right regular action. 
+\end{sketch}
+
 
 \subsection{Product Action}
 \begin{proposition} \label{prop-product-action-of-WP}
