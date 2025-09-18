@@ -22,6 +22,8 @@ Let $G$ be an arbitrary group and let $H$ be a group acting on a set $\Delta$. L
 \begin{definition}
 	The \textbf{standard wreath product} $G\Wr H$ (or $G\wr H$) of $G$ by $H$ is the wreath product $G\Wr_H H$ (or $G\wr_H H$) where $G$ and $H$ act on themselves by right translation.
 \end{definition}
+\begin{comment}
+	
 \begin{proposition}
 	There are basic properties of wreath products.
 	\begin{enumerate}[(i)]
@@ -34,6 +36,7 @@ Let $G$ be an arbitrary group and let $H$ be a group acting on a set $\Delta$. L
 \begin{proposition}
 	If $\Omega$ and $\Delta$ are transitive, then the nontrivial wreath product of $G$ by $H$ is imprimitive.
 \end{proposition}
+\end{comment}
 
 \subsection{Imprimitive Action}
 
@@ -68,24 +71,34 @@ So $((\omega,\delta)^{(f_1,h_1)})^{(f_2,h_2)}  = (\omega,\delta)^{(f_1,h_1)(f_2,
 \end{definition}
 
 \begin{proposition}
-	Let $(G,\Omega)$ and $(H,\Delta)$ be permutation groups. The set $\Omega\times \Delta$ is a transitive $G\Wr_\Delta H$-set if and only if both $X$ and $\Delta$ are transitive sets.
+	Let $G$ and $H$ act on $\Omega$ and $\Delta$ respectively. 
+	\begin{enumerate}[(i)]
+		\item The set $\Omega\times \Delta$ is a transitive $G\Wr_\Delta H$-set if and only if both $X$ and $\Delta$ are transitive sets.
+		\item  $G\Wr_\Delta H$ acts faithfully on $\Omega\times \Delta$ if and only if both actions are faithful.
+		\item If $|\Omega|,|\Delta|\geq 2$, then the action of $G\Wr_\Delta H$ on $\Omega\times \Delta$ is imprimitive.
+		\item In this form the wreath product is associative in the sense that, if $K$ acts on $\Gamma$, then the action of $(G\Wr_\Delta H) \Wr_\Gamma K$ on $\Omega\times \Delta \times \Gamma$  is permutationally isomorphic to the action of $G\Wr_{\Delta\times \Gamma} (H \Wr_\Gamma K)$ on $\Omega\times \Delta \times \Gamma$.
+	\end{enumerate}
 \end{proposition}
 
+\begin{sketch}
+	
+\end{sketch}
+
 \begin{theorem}[Embedding Theorem] \label{thm-embedding}
-	Let $G$ act transitively and imprimitively on $\Omega$. Let $\mathcal{B} = \{\Omega_\lambda\mid \lambda\in\Lambda\}$ be a system of imprimitivity of $\Omega$. Fix a block $\Omega_\iota \in\mathcal{B}$. Then $(G,\Omega)$ is permutationally isomorphic to a subgroup of $(G_{\Omega_\iota} \Wr_\mathcal{B} G, \Omega_\iota\times \mathcal{B})$.
+	Let $G$ act transitively on $\Omega$. Let $\mathcal{B} = \{\Omega_\lambda\mid \lambda\in\Lambda\}$ be a system of imprimitivity of $\Omega$. Fix a block $\Omega_\iota \in\mathcal{B}$ and let $\phi:G\rightarrow \Sym\mathcal{B}$ be the induced representation of $G$ on $\mathcal{B}$. Then $(G,\Omega)$ is permutationally embedded into $(G_{\Omega_\iota} \Wr_\mathcal{B} \phi(G), \Omega_\iota\times \mathcal{B})$.
 \end{theorem}
 \begin{sketch}
 	Since $G$ acts transitively on $\mathcal{B}$, for each $\Omega_\lambda\in \mathcal{B}$ we choose an element $g_\lambda\in G$ such that $\Omega_\lambda = \Omega_\iota^{g_{\lambda}}$. Define $\vartheta: \Omega \to \Omega_\iota \times \mathcal{B}$ by
 	\begin{equation*}
 		\vartheta(\omega) = (\omega^{g_{\lambda}^{-1}},\Omega_\lambda) 
 	\end{equation*}
-	where $\omega \in \Omega_\lambda$. Clearly $\vartheta$ is well-defined. We claim that $\vartheta$ is a bijection. Suppose that $\vartheta(\omega_1) = \vartheta(\omega_2)$ for some $\omega_1,\omega_2\in\Omega$. Then $\omega_1,\omega_2\in \Omega_\lambda$ for some $\Omega_\lambda\in\mathcal{B}$ and $\omega_1^{g_{\lambda}^{-1}}=\omega_2^{g_{\lambda}^{-1}}$. Thus we get $\omega_1 = \omega_2$ and $\vartheta$ is injective. Let $(\omega,\Omega_\lambda)\in \Omega_\iota \times \mathcal{B}$. Take the unique element $\delta\in \Omega$ such that $\delta^{g_\lambda} = \omega$. Then, by definition, $\vartheta$ is surjective.
+	where $\omega \in \Omega_\lambda$. Clearly $\vartheta$ is well-defined. We claim that $\vartheta$ is a bijection. Suppose that $\vartheta(\omega_1) = \vartheta(\omega_2)$ for some $\omega_1,\omega_2\in\Omega$. Then $\omega_1,\omega_2\in \Omega_\lambda$ for some $\Omega_\lambda\in\mathcal{B}$ and $\omega_1^{g_{\lambda}^{-1}}=\omega_2^{g_{\lambda}^{-1}}$. Thus we get $\omega_1 = \omega_2$ and $\vartheta$ is injective. Let $(\omega,\Omega_\lambda)\in \Omega_\iota \times \mathcal{B}$. Take the unique element $\delta\in \Omega$ such that $\delta = \omega^{g_\lambda}$. Then, by definition, $\vartheta$ is surjective.
 	
-	Let $\psi:G \to G_{\Omega_\iota} \Wr_{\mathcal{B}} G$ be defined by
+	Let $\psi:G \to G_{\Omega_\iota} \Wr_{\mathcal{B}} \phi(G)$ be defined by
 	\begin{equation*}
-		\psi(x) = (f_x,x)
+		\psi(x) = (f_x,\phi(x))
 	\end{equation*}
-	where $f_x$ is a function from $\mathcal{B}$ into $G_{\Omega_\iota}$ with $f_x(\Omega_\lambda) = g_{\lambda}xg_{\lambda^x}^{-1}$ where $g_{\lambda^x}$ is the element corresponding to $\Omega_\lambda^x$ It can be checked that $\Omega_\iota^{g_\lambda xg_{\lambda^x}^{-1}} = \Omega_\iota$ and so $g\lambda xg_{\lambda^x}^{-1}\in G_{\Omega_\iota}$. We claim that $\psi$ is a monomorphism. Clearly $\psi$ is injective (in case we view $G$ as a permutation group on $\mathcal{B}$, we will get in particular $x =g_\iota^{-1} 1 g_{\iota^x} =1$, what am I doing!). Now we show that $\psi$ is a homomorphism. Let $x,y\in G$. Then $
+	where $f_x$ is a function from $\mathcal{B}$ into $G_{\Omega_\iota}$ with $f_x(\Omega_\lambda) = g_{\lambda}xg_{\lambda^x}^{-1}$ where $g_{\lambda^x}$ is the element corresponding to $\Omega_\lambda^x$ It can be checked that $\Omega_\iota^{g_\lambda xg_{\lambda^x}^{-1}} = \Omega_\iota$ and so $g_\lambda xg_{\lambda^x}^{-1}\in G_{\Omega_\iota}$. We claim that $\psi$ is a monomorphism. Clearly $\psi$ is injective, because $x\in \ker \psi$ implies that  $x =g_\iota^{-1} 1 g_{\iota^x} = g_\iota^{-1} 1 g_{\iota} =1$. Now we show that $\psi$ is a homomorphism. Let $x,y\in G$. Then $
 		\psi(x)\psi(y) = (f_x,x)(f_y,y) = (f_xf_y^{x^{-1}},xy)$. Note that for all $\Omega_\lambda \in \mathcal{B}$, 
 \begin{align*}
 	(f_xf_y^{x^{-1}})(\Omega_\lambda) &= f_x(\Omega_\lambda)f_y^{x^{-1}}(\Omega_\lambda) 
@@ -117,8 +130,8 @@ for all $\omega\in\Omega$ and $x\in G$.
 This shows that $(\vartheta,\psi)$ is a permutational embedding.
 \end{sketch}
 
-\begin{corollary}
-	Let $G$ be a group and let $N$ be a normal subgroup of $G$. Then $G$ is embedded in $N \Wr G/N$.
+\begin{corollary}[Kaluzhnin–Krasner Embedding Theorem]
+	Let $G$ be a group and let $N$ be a subgroup of $G$. Let $H$ be the permutation group induced by $G$ on the set of right cosets. Then $G$ is embedded into $N \Wr H$. If $N$ is normal in $G$, then $G$ is embedded into $N\Wr G/N$.
 \end{corollary}
 \begin{sketch}
 	Apply Theorem \ref{thm-embedding} using the right regular action. 
