@@ -20,7 +20,7 @@ Let $G$ be an arbitrary group and let $H$ be a group acting on a set $\Delta$. L
 
 
 \begin{definition}
-	The \textbf{standard wreath product} $G\Wr H$ (or $G\wr H$) of $G$ by $H$ is the wreath product $G\Wr_H H$ (or $G\wr_H H$) where $G$ and $H$ act on themselves by right translation.
+	The \textbf{standard wreath product} $G\Wr H$ (or $G\wr H$) of $G$ by $H$ is the wreath product $G\Wr_H H$ (or $G\wr_H H$) where $G$ and $H$ act on themselves by right regular action.
 \end{definition}
 \begin{comment}
 	
@@ -39,9 +39,8 @@ Let $G$ be an arbitrary group and let $H$ be a group acting on a set $\Delta$. L
 \end{comment}
 
 \subsection{Imprimitive Action}
-
 \begin{proposition} \label{prop-imprimitive-action-of-WP}
-	Let $(G,\Omega)$ and $(H,\Delta)$ be permutation groups. Then $G\Wr_\Delta H$ (resp. $G\wr_\Delta H$) acts on $\Omega\times \Delta$ via
+	Let $G$ and $H$ act on $\Omega$ and $\Delta$ respectively. Then $G\Wr_\Delta H$  acts on $\Omega\times \Delta$ via
 	\begin{equation*}
 		(\omega,\delta)^{(f,h)} = (\omega^{f(\delta)},\delta^h).
 	\end{equation*} 
@@ -83,6 +82,10 @@ So $((\omega,\delta)^{(f_1,h_1)})^{(f_2,h_2)}  = (\omega,\delta)^{(f_1,h_1)(f_2,
 \begin{sketch}
 	
 \end{sketch}
+
+\begin{remark}
+	
+\end{remark}
 
 \begin{theorem}[Embedding Theorem] \label{thm-embedding}
 	Let $G$ act transitively on $\Omega$. Let $\mathcal{B} = \{\Omega_\lambda\mid \lambda\in\Lambda\}$ be a system of imprimitivity of $\Omega$. Fix a block $\Omega_\iota \in\mathcal{B}$ and let $\phi:G\rightarrow \Sym\mathcal{B}$ be the induced representation of $G$ on $\mathcal{B}$. Then $(G,\Omega)$ is permutationally embedded into $(G_{\Omega_\iota} \Wr_\mathcal{B} \phi(G), \Omega_\iota\times \mathcal{B})$.

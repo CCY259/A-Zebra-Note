@@ -1,22 +1,61 @@
 \section{O'Nan-Scott Theorem: The Classification of Maximal Subgroups of Symmetric Groups}
-\subsection{Classes of Groups}
+\begin{definition}
+	Let $G$ be a group. A normal subgroup $N$ of $G$ is said to be \textbf{minimal} if $N\neq 1$ and there is no normal subgroup $M$ of $G$ such that $1<M< N$.
+\end{definition}
+\begin{remark}
+	In a  finite group, every nontrivial normal subgroup contains a minimal normal subgroup, but it is not necessarily true for infinite group ($\mathbb{Z}$ is a counterexample). The argument is similar to Proposition \ref{prop-maximal-grp-exist}.
+\end{remark}
+\begin{proposition} 
+	Every minimal normal subgroup of a finite group is a direct product of isomorphic simple groups.
+\end{proposition}
+
+\begin{definition}
+	Let $G$ be a group. The product of all minimal normal subgroups of $G$ is called the \textbf{socle} of $G$ and is denoted by $\operatorname{soc}(G)$.
+\end{definition}
+\subsection{Classes of Groups} \label{sec-classes-of-grps}
 \subsubsection{Intransitive Groups}
+\begin{proposition}
+	Let $G$ be a intransitive permutation group on $\Omega$ of degree $n$. Then $G$ is permutationally isomorphic to a subgroup of $S_k\times S_{n-k}$ for some $1<k< n$.
+\end{proposition}
 \subsubsection{Transitive Imprimitive Groups}
-\subsubsection{Primitive Wreath Products}
+\begin{proposition}
+	Let $G$ be a transitive and imprimitive permutation group on $\Omega$ of degree $n$. Then $G$ is permutationally isomorphic to a subgroup of $S_k \wr S_m$, where $1<k,m<n$ and $n = km$.
+\end{proposition}
+
+
 \subsubsection{Affine Groups}
-\subsubsection{Diagonal Groups}
+
+Type (A)
+
+
+\begin{proposition}
+	Let $ G $ be a primitive permutation group on $ \Omega $ of degree $ n $ with an abelian normal subgroup $ A \neq 1 $. Then $ A = C_G(A) $ is the unique minimal normal subgroup of $ G $ and $ n = |A| = p^m $ for some prime number $ p $. Furthermore, $G$ is the internal direct sum of $A$ by $G_\omega$ for $\omega\in\Omega$ and $G$ is permutationally isomorphic to a subgroup of $\operatorname{Aff}(m,p) $ containing $ \mathbb{F}_p^m$ for $ \omega \in \Omega $.
+\end{proposition}
 \subsubsection{Almost Simple Groups}
+Type (S)
+\begin{definition}
+	A group $G$ is said to be \textbf{almost simple} if there exists a nonabelian simple group $S$ such that $S\leq G\leq \Aut S$.
+\end{definition}
+\begin{proposition} 
+	Let $G$ be a finite primitive group with a nonabelian simple socle. Then $G$ is almost simple.
+\end{proposition}
+
+\subsubsection{Groups of Diagonal Type}
+Type (D)
+
+\subsubsection{Groups of Product Type}
+Type (P)
+
+\subsubsection{Twisted Wreath Products}
+Type (T)
 
 \subsection{Main Result}
-\begin{theorem}[O'Nan-Scott Theorem]
-	 If $H$ is any proper subgroup of $S_n$ other than $A_n$, then $H$ is a subgroup of one or more of the following subgroups:
+\begin{theorem}[Aschbacher-O'Nan-Scott Theorem]
+	 Let $H$ be a subgroup of $S_n$. Then one of the following holds.
 	\begin{enumerate}[(i)]
-		\item an intransitive group $S_k \times S_m$, where $n = k + m$;
-		\item a transitive imprimitive group $S_k \wr S_m$, where $n = km$;
-		\item a primitive wreath product, $S_k \wr S_m$, where $n = k^m$;
-		\item an affine group $\text{AGL}_d(p) \cong p^d : \text{GL}_d(p)$, where $n = p^d$;
-		\item a group of shape $T^m.(\text{Out}(T) \times S_m)$, where $T$ is a non-abelian simple group, acting on the cosets of a subgroup $\text{Aut}(T) \times S_m$, where $n = |T|^{m-1}$;
-		\item an almost simple group acting on the cosets of a maximal subgroup of index $n$.
+		\item $H$ is a subgroup of $S_k \times S_{n-k}$, where $1<k<n$;
+		\item $H$ is a subgroup of $S_k \wr S_m$, where $n = km$;
+		\item $H$ is one of the types (A), (S), (D), (P) and (T) described in Section \ref{sec-classes-of-grps}.
 	\end{enumerate}
 \end{theorem}
 
