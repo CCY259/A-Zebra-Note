@@ -1,6 +1,6 @@
 \section{Introduction to Permutation Group Theory}
 \subsection{Notations}
-A \textbf{permutation group} of a set $\Omega$ is a subgroup of $\Sym\Omega$. If $G$ is a permutation group on $\Omega$, then $G$ acts on $\Omega$ via the canonical injection and this is a faithful action.  Conversely, if $G$ is a faithful action on $\Omega$, then $G$ can be identified as a permutation group of $\Omega$. For simplicity, we reintroduce notations for notions in group actions. Let $G$ act on $\Omega$.  
+A \textbf{permutation group} of a set $\Omega$ is a subgroup of $\Sym\Omega$. If $G$ is a permutation group on $\Omega$, then $G$ acts on $\Omega$ via the canonical injection and this is a faithful action. The \textbf{degree} of such an action is $|\Omega|$.  Conversely, if $G$ is a faithful action on $\Omega$, then $G$ can be identified as a permutation group of $\Omega$. For simplicity, we reintroduce notations for notions in group actions. Let $G$ act on $\Omega$.  
 \begin{align*}
 	\omega^G &= O_G(\omega) =\{\omega^g\mid g\in G\}, \tag{\textbf{Orbit} of $\omega \in \Omega$}
 	\\
@@ -88,9 +88,9 @@ A \textbf{permutation group} of a set $\Omega$ is a subgroup of $\Sym\Omega$. If
 	Let $G$ act transitively on $\Omega$ and let $\omega\in\Omega$. Then a subgroup $H$ of $G$ is transitive if and only if $G = G_\omega H$.
 \end{corollary}
 \begin{sketch}
-	($\Rightarrow$) Since $H$ is transitive, for every $g\in G$, there exists $h\in H$ such that $\omega^g = \omega^h$. By Proposition \ref{prop-transitive-action-perm-isom}, we get $G_\omega g = G_\omega h$. Hence we can write $gh^{-1} = g'\in G$ and thus $g = g'h\in G_\omega H$.
+If $H$ is transitive, then for every $g\in G$, there exists $h\in H$ such that $\omega^g = \omega^h$. By Proposition \ref{prop-transitive-action-perm-isom}, we get $G_\omega g = G_\omega h$. Hence we can write $gh^{-1} = g'\in G$ and thus $g = g'h\in G_\omega H$.
 	
-	($\Leftarrow$) Reverse the argument in the previous paragraph.
+For the converse, reverse the argument in the previous paragraph.
 \end{sketch}
 
 \subsection{Blocks}
