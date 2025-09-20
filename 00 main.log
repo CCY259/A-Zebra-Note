@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.8.25)  19 SEP 2025 19:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.8.25)  20 SEP 2025 14:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1313,20 +1313,19 @@ Excluding 'comment' comment. [75] [76] Excluding 'comment' comment. [77]
 
 
 
-] Excluding 'comment' comment. Excluding 'comment' comment. [87]
-Excluding 'comment' comment. [88] [89] [90] [91]) [92]
+] [87] [88] [89] [90] [91]) [92]
 \openout2 = `2025.08.23-Wreath-Product.aux'.
 
+ (2025.08.23-Wreath-Product.tex
+Excluding 'comment' comment. [93
 
-(2025.08.23-Wreath-Product.tex Excluding 'comment' comment. [93
 
 
-
-] [94] [95]
-[96]) [97]
+] [94] [95] [96]) [97]
 \openout2 = `2025.09.10-O'Nan-Scott-Theorem.aux'.
 
- (2025.09.10-O'Nan-Scott-Theorem.tex
+
+(2025.09.10-O'Nan-Scott-Theorem.tex
 Overfull \hbox (10.71968pt too wide) in paragraph at lines 1--1
 []\OT1/mlmr/bx/n/14.4 O'Nan-Scott The-o-rem: The Clas-si-fi-ca-tion of Max-
  []
@@ -1454,7 +1453,7 @@ iKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/chuac/AppData/Lo
 cal/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/ch
 uac/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7.pfb
 >
-Output written on "00 main.pdf" (126 pages, 967592 bytes).
+Output written on "00 main.pdf" (126 pages, 970930 bytes).
 PDF statistics:
  2203 PDF objects out of 2487 (max. 8388607)
  863 named destinations out of 1000 (max. 500000)

@@ -51,8 +51,8 @@
 \contentsline {subsection}{\numberline {9.1}Notations}{86}{subsection.9.1}%
 \contentsline {subsection}{\numberline {9.2}Isomorphic actions}{86}{subsection.9.2}%
 \contentsline {subsection}{\numberline {9.3}Blocks}{88}{subsection.9.3}%
-\contentsline {subsection}{\numberline {9.4}Primitive Actions}{89}{subsection.9.4}%
-\contentsline {subsection}{\numberline {9.5}Centralizers and Normalizers of Transitive Permutation Groups}{90}{subsection.9.5}%
+\contentsline {subsection}{\numberline {9.4}Primitive Actions}{90}{subsection.9.4}%
+\contentsline {subsection}{\numberline {9.5}Centralizers and Normalizers of Transitive Permutation Groups}{91}{subsection.9.5}%
 \contentsline {paragraph}{Main References.}{92}{section*.36}%
 \contentsline {section}{\numberline {10}Wreath Products}{93}{section.10}%
 \contentsline {subsection}{\numberline {10.1}Construction and Basic Properties}{93}{subsection.10.1}%
