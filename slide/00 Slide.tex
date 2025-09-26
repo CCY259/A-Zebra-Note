@@ -1,0 +1,91 @@
+\documentclass[20pt]{extarticle} % or another class like 'report', 'book'
+\usepackage[
+paperwidth=32cm,
+paperheight=14.6cm, left=1.0cm, right=6cm, top=0.3cm, bottom=0.3cm
+]{geometry}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mlmodern}
+\usepackage{hyperref}
+\usepackage{enumerate}
+\usepackage{quiver}
+\usepackage{comment}
+\usepackage{xcolor}
+
+%\usepackage{titlesec}
+
+\usepackage[pages=all]{background}
+\usepackage{graphicx}
+
+\backgroundsetup{
+	scale=1,
+	angle=0,
+	opacity=1,
+	contents={\includegraphics[width=\paperwidth,height=\paperheight]{background-2.pdf}}
+}
+
+\pagestyle{empty}
+
+\usepackage[backend=biber, style=alphabetic, isbn=false, doi=false, url=false]{biblatex}
+%\usepackage{xurl} % after biblatex
+\addbibresource{References.bib}
+
+%&&&&&& Commands
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\Wr}{\operatorname{Wr}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\Sym}{\operatorname{Sym}}
+\newcommand{\Inn}{\operatorname{Inn}}
+\renewcommand{\wr}{\operatorname{wr}}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{problem}{Problem}
+\newtheorem{example}[theorem]{Example}
+%\newtheorem*{remark}{Remark}
+
+%\newenvironment{sketch}{\begin{proof}}{\end{proof}} 
+
+\excludecomment{sketch}
+\excludecomment{remark}
+\excludecomment{proof}
+
+\usepackage{etoolbox}
+\AfterEndEnvironment{theorem}{\clearpage}
+\AfterEndEnvironment{definition}{\clearpage}
+\AfterEndEnvironment{lemma}{\clearpage}
+\AfterEndEnvironment{proposition}{\clearpage}
+\AfterEndEnvironment{corollary}{\clearpage}
+\AfterEndEnvironment{example}{\clearpage}
+%\AfterEndEnvironment{sketch}{\clearpage}
+
+
+%\definecolor{darkmode}{HTML}{2B2A2A}
+%\pagecolor{darkmode}
+\color{white}
+
+
+
+\begin{document}
+\tableofcontents
+
+\include{2025.03.22-Symmetric-Group.tex}
+\include{2025.04.05-Group-Action-Writing}
+\include{2025.04.26-Sylow-Theorem.tex}
+\include{2025.05.22-Series.tex}
+\include{2025.07.26-Direct-Products.tex}
+\include{2025.07.27-Finitely-Generated-Abelian-Groups.tex}
+\include{2025.07.23-Semidirect-Products.tex}
+\include{2025.09.04-permutation-groups.tex}
+
+\end{document}

@@ -46,63 +46,64 @@
 \contentsline {subsection}{\numberline {8.2}Examples}{75}{subsection.8.2}%
 \contentsline {subsection}{\numberline {8.3}Some Classifications of Groups}{77}{subsection.8.3}%
 \contentsline {subsection}{\numberline {8.4}Sylow Theorems for Groups with Operator Groups}{81}{subsection.8.4}%
-\contentsline {paragraph}{Main References.}{85}{section*.27}%
-\contentsline {section}{\numberline {9}Introduction to Permutation Group Theory}{86}{section.9}%
-\contentsline {subsection}{\numberline {9.1}Notations}{86}{subsection.9.1}%
-\contentsline {subsection}{\numberline {9.2}Isomorphic actions}{86}{subsection.9.2}%
+\contentsline {paragraph}{Main References.}{84}{section*.27}%
+\contentsline {section}{\numberline {9}Introduction to Permutation Group Theory}{85}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Notations}{85}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Isomorphic Actions}{85}{subsection.9.2}%
 \contentsline {subsection}{\numberline {9.3}Blocks}{88}{subsection.9.3}%
-\contentsline {subsection}{\numberline {9.4}Primitive Actions}{90}{subsection.9.4}%
-\contentsline {subsection}{\numberline {9.5}Centralizers and Normalizers of Transitive Permutation Groups}{91}{subsection.9.5}%
-\contentsline {paragraph}{Main References.}{92}{section*.36}%
-\contentsline {section}{\numberline {10}Wreath Products}{93}{section.10}%
-\contentsline {subsection}{\numberline {10.1}Construction and Basic Properties}{93}{subsection.10.1}%
-\contentsline {subsection}{\numberline {10.2}Imprimitive Action}{94}{subsection.10.2}%
-\contentsline {subsection}{\numberline {10.3}Product Action}{96}{subsection.10.3}%
-\contentsline {paragraph}{Main References.}{97}{section*.37}%
-\contentsline {section}{\numberline {11}O'Nan-Scott Theorem: The Classification of Maximal Subgroups of Symmetric Groups}{98}{section.11}%
-\contentsline {subsection}{\numberline {11.1}Classes of Groups}{98}{subsection.11.1}%
-\contentsline {subsubsection}{\numberline {11.1.1}Intransitive Groups}{98}{subsubsection.11.1.1}%
-\contentsline {subsubsection}{\numberline {11.1.2}Transitive Imprimitive Groups}{98}{subsubsection.11.1.2}%
-\contentsline {subsubsection}{\numberline {11.1.3}Affine Groups}{98}{subsubsection.11.1.3}%
-\contentsline {subsubsection}{\numberline {11.1.4}Almost Simple Groups}{98}{subsubsection.11.1.4}%
-\contentsline {subsubsection}{\numberline {11.1.5}Groups of Diagonal Type}{99}{subsubsection.11.1.5}%
-\contentsline {subsubsection}{\numberline {11.1.6}Groups of Product Type}{99}{subsubsection.11.1.6}%
-\contentsline {subsubsection}{\numberline {11.1.7}Twisted Wreath Products}{99}{subsubsection.11.1.7}%
-\contentsline {subsection}{\numberline {11.2}Main Result}{99}{subsection.11.2}%
-\contentsline {paragraph}{Main References.}{99}{section*.38}%
-\contentsline {section}{\numberline {12}Solvable and Nilpotent Groups}{100}{section.12}%
-\contentsline {subsection}{\numberline {12.1}Solvable Groups}{100}{subsection.12.1}%
-\contentsline {subsection}{\numberline {12.2}Nilpotent Groups}{101}{subsection.12.2}%
-\contentsline {subsection}{\numberline {12.3}Examples}{105}{subsection.12.3}%
-\contentsline {subsubsection}{\numberline {12.3.1}Triangular Matrices}{105}{subsubsection.12.3.1}%
-\contentsline {subsubsection}{\numberline {12.3.2}$p$-groups}{107}{subsubsection.12.3.2}%
-\contentsline {subsubsection}{\numberline {12.3.3}Symmetric Groups}{107}{subsubsection.12.3.3}%
-\contentsline {subsection}{\numberline {12.4}Characterization of Finite Nilpotent Groups}{108}{subsection.12.4}%
-\contentsline {section}{\numberline {13}Free Groups}{110}{section.13}%
-\contentsline {subsection}{\numberline {13.1}Definition}{110}{subsection.13.1}%
-\contentsline {subsection}{\numberline {13.2}Three Ways of Constructing Free Groups}{111}{subsection.13.2}%
-\contentsline {subsubsection}{\numberline {13.2.1}Groups of Words: a Beginner's Favourite}{111}{subsubsection.13.2.1}%
-\contentsline {subsubsection}{\numberline {13.2.2}Construction from Equivalence Classes: a Logician's Favourite}{111}{subsubsection.13.2.2}%
-\contentsline {subsubsection}{\numberline {13.2.3}Crazy Construction from Direct Products: Only Serge Lang's Favourite}{112}{subsubsection.13.2.3}%
-\contentsline {subsection}{\numberline {13.3}Group Presentations}{112}{subsection.13.3}%
-\contentsline {subsection}{\numberline {13.4}Nielsen-Schreier Theorem}{112}{subsection.13.4}%
-\contentsline {paragraph}{Main References.}{112}{section*.53}%
-\contentsline {part}{II\hspace {1em}Ring Theory}{113}{part.2}%
-\contentsline {section}{\numberline {14}Ideals}{113}{section.14}%
-\contentsline {part}{III\hspace {1em}Miscellaneous}{114}{part.3}%
-\contentsline {section}{\numberline {0}Zabalang}{114}{section.0}%
-\contentsline {subsection}{\numberline {0.1}Freeeee}{114}{subsection.0.1}%
-\contentsline {subsection}{\numberline {0.2}ZORN'S LEMMA!!!!}{114}{subsection.0.2}%
-\contentsline {subsection}{\numberline {0.3}BILA NAK COUNTABLE OR UNCOUNTABLE, PENANG LIH}{115}{subsection.0.3}%
-\contentsline {subsubsection}{\numberline {0.3.1}How We Actually Define the ``Size" of a Set}{115}{subsubsection.0.3.1}%
-\contentsline {subsubsection}{\numberline {0.3.2}Tools to ``Compare the Size"}{116}{subsubsection.0.3.2}%
-\contentsline {subsubsection}{\numberline {0.3.3}Cardinal Arithmetic Is Strange but Not Weirdo}{116}{subsubsection.0.3.3}%
-\contentsline {subsubsection}{\numberline {0.3.4}All the Facts That Make You a Weirdo}{118}{subsubsection.0.3.4}%
-\contentsline {subsection}{\numberline {0.4}Ordinal was not invented by ordinary people}{118}{subsection.0.4}%
-\contentsline {subsubsection}{\numberline {0.4.1}How we actually ``order" elements}{118}{subsubsection.0.4.1}%
-\contentsline {subsubsection}{\numberline {0.4.2}Elements are always ordered nicely, not nicely, whatever}{119}{subsubsection.0.4.2}%
-\contentsline {subsubsection}{\numberline {0.4.3}One, two, three, $\dots $ OMEGA!}{119}{subsubsection.0.4.3}%
-\contentsline {subsubsection}{\numberline {0.4.4}Each well ordered set has a unique order type}{120}{subsubsection.0.4.4}%
-\contentsline {subsubsection}{\numberline {0.4.5}Playing Dominoes at The Edge of Universe}{120}{subsubsection.0.4.5}%
-\contentsline {paragraph}{Main References.}{120}{section*.54}%
-\contentsline {part}{References}{121}{section*.54}%
+\contentsline {subsection}{\numberline {9.4}Primitive Actions}{89}{subsection.9.4}%
+\contentsline {subsection}{\numberline {9.5}Centralizers and Normalizers of Transitive Permutation Groups}{90}{subsection.9.5}%
+\contentsline {paragraph}{Main References.}{94}{section*.36}%
+\contentsline {section}{\numberline {10}Wreath Products}{95}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Construction and Basic Properties}{95}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Imprimitive Action}{96}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}Product Action}{99}{subsection.10.3}%
+\contentsline {paragraph}{Main References.}{99}{section*.37}%
+\contentsline {section}{\numberline {11}O'Nan-Scott Theorem: The Classification of Subgroups of Symmetric Groups}{100}{section.11}%
+\contentsline {subsection}{\numberline {11.1}The Socle}{100}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}Classes of Finite Primitive Groups}{101}{subsection.11.2}%
+\contentsline {subsubsection}{\numberline {11.2.1}Groups of Affine Type}{101}{subsubsection.11.2.1}%
+\contentsline {subsubsection}{\numberline {11.2.2}Almost Simple Groups}{103}{subsubsection.11.2.2}%
+\contentsline {subsubsection}{\numberline {11.2.3}Groups of Diagonal Type}{103}{subsubsection.11.2.3}%
+\contentsline {subsubsection}{\numberline {11.2.4}Groups of Product Type}{104}{subsubsection.11.2.4}%
+\contentsline {subsubsection}{\numberline {11.2.5}Twisted Wreath Product}{104}{subsubsection.11.2.5}%
+\contentsline {subsection}{\numberline {11.3}Main Result}{105}{subsection.11.3}%
+\contentsline {subsection}{\numberline {11.4}Kilang}{106}{subsection.11.4}%
+\contentsline {subsection}{\numberline {11.5}Tempat Untuk Edit}{110}{subsection.11.5}%
+\contentsline {paragraph}{Main References.}{113}{section*.38}%
+\contentsline {section}{\numberline {12}Solvable and Nilpotent Groups}{114}{section.12}%
+\contentsline {subsection}{\numberline {12.1}Solvable Groups}{114}{subsection.12.1}%
+\contentsline {subsection}{\numberline {12.2}Nilpotent Groups}{115}{subsection.12.2}%
+\contentsline {subsection}{\numberline {12.3}Examples}{119}{subsection.12.3}%
+\contentsline {subsubsection}{\numberline {12.3.1}Triangular Matrices}{119}{subsubsection.12.3.1}%
+\contentsline {subsubsection}{\numberline {12.3.2}$p$-groups}{121}{subsubsection.12.3.2}%
+\contentsline {subsubsection}{\numberline {12.3.3}Symmetric Groups}{121}{subsubsection.12.3.3}%
+\contentsline {subsection}{\numberline {12.4}Characterization of Finite Nilpotent Groups}{122}{subsection.12.4}%
+\contentsline {section}{\numberline {13}Free Groups}{124}{section.13}%
+\contentsline {subsection}{\numberline {13.1}Definition}{124}{subsection.13.1}%
+\contentsline {subsection}{\numberline {13.2}Three Ways of Constructing Free Groups}{125}{subsection.13.2}%
+\contentsline {subsubsection}{\numberline {13.2.1}Groups of Words: a Beginner's Favourite}{125}{subsubsection.13.2.1}%
+\contentsline {subsubsection}{\numberline {13.2.2}Construction from Equivalence Classes: a Logician's Favourite}{125}{subsubsection.13.2.2}%
+\contentsline {subsubsection}{\numberline {13.2.3}Crazy Construction from Direct Products: Only Serge Lang's Favourite}{126}{subsubsection.13.2.3}%
+\contentsline {subsection}{\numberline {13.3}Group Presentations}{126}{subsection.13.3}%
+\contentsline {subsection}{\numberline {13.4}Nielsen-Schreier Theorem}{126}{subsection.13.4}%
+\contentsline {paragraph}{Main References.}{126}{section*.53}%
+\contentsline {part}{II\hspace {1em}Ring Theory}{127}{part.2}%
+\contentsline {section}{\numberline {14}Ideals}{127}{section.14}%
+\contentsline {part}{III\hspace {1em}Miscellaneous}{128}{part.3}%
+\contentsline {section}{\numberline {0}Zabalang}{128}{section.0}%
+\contentsline {subsection}{\numberline {0.1}Freeeee}{128}{subsection.0.1}%
+\contentsline {subsection}{\numberline {0.2}ZORN'S LEMMA!!!!}{128}{subsection.0.2}%
+\contentsline {subsection}{\numberline {0.3}BILA NAK COUNTABLE OR UNCOUNTABLE, PENANG LIH}{129}{subsection.0.3}%
+\contentsline {subsubsection}{\numberline {0.3.1}How We Actually Define the ``Size" of a Set}{129}{subsubsection.0.3.1}%
+\contentsline {subsubsection}{\numberline {0.3.2}Tools to ``Compare the Size"}{130}{subsubsection.0.3.2}%
+\contentsline {subsubsection}{\numberline {0.3.3}Cardinal Arithmetic Is Strange but Not Weirdo}{130}{subsubsection.0.3.3}%
+\contentsline {subsubsection}{\numberline {0.3.4}All the Facts That Make You a Weirdo}{132}{subsubsection.0.3.4}%
+\contentsline {subsection}{\numberline {0.4}Ordinal was not invented by ordinary people}{132}{subsection.0.4}%
+\contentsline {subsubsection}{\numberline {0.4.1}How we actually ``order" elements}{132}{subsubsection.0.4.1}%
+\contentsline {subsubsection}{\numberline {0.4.2}Elements are always ordered nicely, not nicely, whatever}{133}{subsubsection.0.4.2}%
+\contentsline {subsubsection}{\numberline {0.4.3}One, two, three, $\dots $ OMEGA!}{133}{subsubsection.0.4.3}%
+\contentsline {subsubsection}{\numberline {0.4.4}Each well ordered set has a unique order type}{134}{subsubsection.0.4.4}%
+\contentsline {subsubsection}{\numberline {0.4.5}Playing Dominoes at The Edge of Universe}{134}{subsubsection.0.4.5}%
+\contentsline {paragraph}{Main References.}{134}{section*.54}%
+\contentsline {part}{References}{135}{section*.54}%

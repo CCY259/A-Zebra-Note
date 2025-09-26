@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.8.25)  20 SEP 2025 14:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.8.25)  26 SEP 2025 18:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1021,7 +1021,7 @@ Package: blx-case-expl3 2023/03/05 v3.19 expl3 case changing code for biblatex
 \@quotelevel=\count448
 \@quotereset=\count449
 LaTeX Font Info:    Trying to load font information for OT1+mlmr on input line 
-51.
+60.
 
 (C:\Users\chuac\AppData\Local\Programs\MiKTeX\tex/latex/mlmodern\ot1mlmr.fd
 File: ot1mlmr.fd 2021/01/11 v1.0 Font defs for mlmodern
@@ -1036,24 +1036,24 @@ File: ot1mlmr.fd 2021/01/11 v1.0 Font defs for mlmodern
 (2025.08.15-Ideals.aux) (zabalang.aux))
 \openout1 = `"00 main.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1089,7 +1089,7 @@ LaTeX Font Info:    ... okay on input line 51.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 51.
+Package hyperref Info: Link coloring OFF on input line 60.
 (00 main.out) (00 main.out)
 \@outlinefile=\write6
 \openout6 = `"00 main.out"'.
@@ -1135,8 +1135,8 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file '"00 main".bbl' found.
  (00 main.bbl)
-Package biblatex Info: Reference section=0 on input line 51.
-Package biblatex Info: Reference segment=0 on input line 51.
+Package biblatex Info: Reference section=0 on input line 60.
+Package biblatex Info: Reference segment=0 on input line 60.
  (00 main.toc
 LaTeX Font Info:    Trying to load font information for OML+mlmm on input line 
 4.
@@ -1303,46 +1303,60 @@ mlmsy/m/n/10 j [] j\OML/mlmm/m/it/10 m[]$
 
 
 
-] [72] [73] [74]
-Excluding 'comment' comment. [75] [76] Excluding 'comment' comment. [77]
-[78] [79] [80] [81] [82] [83] [84]) [85]
+] [72] [73]
+Excluding 'comment' comment. [74] [75] [76] Excluding 'comment' comment.
+[77] [78] [79] [80] [81] [82] [83]) [84]
 \openout2 = `2025.09.04-permutation-groups.aux'.
 
  (2025.09.04-permutation-groups.tex
-[86
+[85
 
 
 
-] [87] [88] [89] [90] [91]) [92]
+] [86] [87] [88] [89] [90]
+Overfull \hbox (1.13821pt too wide) in paragraph at lines 192--193
+[]\OT1/mlmr/m/it/10 If $\OML/mlmm/m/it/10 ^^U\OT1/mlmr/m/n/10 (\OML/mlmm/m/it/1
+0 K\OT1/mlmr/m/n/10 )$ \OT1/mlmr/m/it/10 is tran-si-tive, then $\OML/mlmm/m/it/
+10 K \OT1/mlmr/m/n/10 = \OML/mlmm/m/it/10 G$\OT1/mlmr/m/it/10 , and $\OML/mlmm/
+m/it/10 ^^U\OT1/mlmr/m/n/10 (\OML/mlmm/m/it/10 G\OT1/mlmr/m/n/10 )$ \OT1/mlmr/m
+/it/10 and $\OML/mlmm/m/it/10 ^^Z\OT1/mlmr/m/n/10 (\OML/mlmm/m/it/10 G\OT1/mlmr
+/m/n/10 )$ \OT1/mlmr/m/it/10 are con-ju-gate in $[]\OT1/mlmr/m/n/10 (^^@[])$\OT
+1/mlmr/m/it/10 . 
+ []
+
+[91] [92] [93]) [94]
 \openout2 = `2025.08.23-Wreath-Product.aux'.
 
  (2025.08.23-Wreath-Product.tex
-Excluding 'comment' comment. [93
+Excluding 'comment' comment. [95
 
 
 
-] [94] [95] [96]) [97]
+] [96] [97] [98]) [99]
 \openout2 = `2025.09.10-O'Nan-Scott-Theorem.aux'.
 
 
 (2025.09.10-O'Nan-Scott-Theorem.tex
-Overfull \hbox (10.71968pt too wide) in paragraph at lines 1--1
-[]\OT1/mlmr/bx/n/14.4 O'Nan-Scott The-o-rem: The Clas-si-fi-ca-tion of Max-
+Overfull \hbox (5.92747pt too wide) in paragraph at lines 1--1
+[]\OT1/mlmr/bx/n/14.4 O'Nan-Scott The-o-rem: The Clas-si-fi-ca-tion of Sub-
  []
 
-[98
+[100
 
 
 
-]) [99]
+] [101] [102] [103] [104] [105] [106] [107] [108] [109] [110
+
+] [111]
+[112]) [113]
 \openout2 = `2025.07.21-Nilpotent-and-Solvable-Groups.aux'.
 
- (2025.07.21-Nilpotent-and-Solvable-Groups.tex [100
+ (2025.07.21-Nilpotent-and-Solvable-Groups.tex [114
 
 
 
-] [101] [102]
-[103] [104] [105] [106]
+] [115] [116]
+[117] [118] [119] [120]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 279.
@@ -1361,26 +1375,26 @@ Overfull \hbox (122.11244pt too wide) in paragraph at lines 314--315
 429 / prove-[]that-[]s-[]3-[]and-[]s-[]4-[]are-[]solvable-[]groups$[]
  []
 
-[107{C:/Users/chuac/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rmtt.en
-c}] [108]) [109]
+[121{C:/Users/chuac/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rmtt.en
+c}] [122]) [123]
 \openout2 = `2025.08.20-Free-Groups.aux'.
 
- (2025.08.20-Free-Groups.tex [110
+ (2025.08.20-Free-Groups.tex [124
 
 
 
-] [111]) [112]
+] [125]) [126]
 \openout2 = `2025.08.15-Ideals.aux'.
 
 
-(2025.08.15-Ideals.tex) [113
+(2025.08.15-Ideals.tex) [127
 
 
 
 ]
 \openout2 = `zabalang.aux'.
 
- (zabalang.tex [114
+ (zabalang.tex [128
 
 
 
@@ -1389,7 +1403,7 @@ Overfull \hbox (16.68445pt too wide) in paragraph at lines 56--56
 []\OT1/mlmr/bx/n/12 BILA NAK COUNT-ABLE OR UN-COUNT-ABLE, PENANG
  []
 
-[115] [116] [117] [118]
+[129] [130] [131] [132]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 212.
@@ -1398,11 +1412,11 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 212.
 
-[119]) [120] [121
+[133]) [134] [135
 
 
 
-] [122] (00 main.aux (01 checklist.aux)
+] [136] (00 main.aux (01 checklist.aux)
 (2025.03.22-Symmetric-Group.aux) (2025.04.05-Group-Action-Writing.aux)
 (2025.04.26-Sylow-Theorem.aux) (2025.05.22-Series.aux)
 (2025.07.26-Direct-Products.aux)
@@ -1416,19 +1430,19 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
 Package rerunfilecheck Info: File `"00 main".out' has not changed.
-(rerunfilecheck)             Checksum: 2F00C9CEB5C48ABF9E4BD7B54505381A;17656.
+(rerunfilecheck)             Checksum: 094F3BB06C6002DD2C885206A72454DC;17705.
 Package logreq Info: Writing requests to '"00 main".run.xml'.
 \openout1 = `"00 main.run.xml"'.
 
  ) 
 Here is how much of TeX's memory you used:
- 33750 strings out of 474486
- 685216 string characters out of 5743755
- 1943542 words of memory out of 5000000
- 54536 multiletter control sequences out of 15000+600000
+ 33818 strings out of 474486
+ 686176 string characters out of 5743755
+ 1946542 words of memory out of 5000000
+ 54564 multiletter control sequences out of 15000+600000
  623494 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 131i,16n,135p,1372b,1643s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 131i,16n,135p,1359b,1643s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/chuac/AppData/Local/Programs/MiKTeX/fonts/type1/public/mlmodern/mlm
 bx10.pfb><C:/Users/chuac/AppData/Local/Programs/MiKTeX/fonts/type1/public/mlmod
 ern/mlmbx12.pfb><C:/Users/chuac/AppData/Local/Programs/MiKTeX/fonts/type1/publi
@@ -1453,9 +1467,9 @@ iKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/chuac/AppData/Lo
 cal/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/ch
 uac/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7.pfb
 >
-Output written on "00 main.pdf" (126 pages, 971019 bytes).
+Output written on "00 main.pdf" (140 pages, 1053902 bytes).
 PDF statistics:
- 2203 PDF objects out of 2487 (max. 8388607)
- 863 named destinations out of 1000 (max. 500000)
- 757 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2339 PDF objects out of 2487 (max. 8388607)
+ 903 named destinations out of 1000 (max. 500000)
+ 765 words of extra memory for PDF output out of 10000 (max. 10000000)
 

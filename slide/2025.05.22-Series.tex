@@ -1,0 +1,296 @@
+\section{Series}
+This series is not the series in analysis okay. One approach to studying the structure of groups is by breaking them down using composition series. It turns out that any two composition series of a group have the same of composition factors (Jordan–Hölder Theorem). These composition factors thus form an invariant of the group.
+\subsection{Basic Definitions and Examples}
+\begin{definition}
+	Let $G$ be a group. A finite sequence of subgroups
+	$$G = G_0 \geq G_1\geq \cdots \geq G_n=\{e\}$$
+	is called a \textbf{series} of $G$. The \textbf{length} of the series is the number of strict inclusions. Furthermore, we say that it is 
+	\begin{enumerate}[(i)]
+		\item \textbf{proper} if $G_i\neq G_{i+1}$ for all $i = 0,1,\dots, n-1$;
+		\item \textbf{subnormal} if $G_i\lhd G_{i-1}$ for all $i = 1,2,\dots, n$;
+		\item \textbf{normal} if $G_i\lhd G$ for all $i= 0,1,\dots, n$.
+	\end{enumerate}
+	When the series is subnormal, the quotient groups $G_i/G_{i+1}$ are called the \textbf{factors} of the series. In this case, the length of the series can be defined as the number of nontrivial factors. 
+\end{definition}
+Note that we are not concerned with series without any additional properties. Instead, we focus on certain types of series which involve the concept of normality, simplicity and abelian group.
+\begin{definition}
+	Given a subnormal series $G = G_0 \geq G_1\geq \cdots \geq G_n = \{e\}$. We say that the series is a \textbf{composition series}  if each factor $G_i/G_{i+1}$ is simple. In this case, we may write $G_0 >G_1> \cdots > G_n$ and the factors are called \textbf{composition factors}.
+\end{definition}
+
+\begin{definition}
+	Let 
+	\begin{equation*}
+		S: \quad G = G_0 \geq G_1\geq \cdots \geq G_n = \{e\}
+	\end{equation*} be a subnormal series of a group $G$.  A \textbf{refinement} of $S$ is a subnormal series $S'$ of $G$ such that $G_i$ is a term in $S'$ for each $i$. A refinement of $S$ is said to be \textbf{proper} if its length is larger than the length of $S$; otherwise it is said to be \textbf{trivial}.
+\end{definition}
+Simply speaking, refinement is just another subnormal series obtained by inserting a subgroup into the given subnormal series, and it is trivial if we insert a subgroup that already appears in the subnormal series. We do not define refinement for a series because it becomes redundant in this context.
+
+Let us first characterize simple abelian groups before showing examples.
+\begin{proposition} \label{prop-abelian-is-simple-iff-prime-order}
+	Every abelian group is simple if and only if it is of prime order.
+\end{proposition}
+\begin{sketch}
+	Let $G$ be a group with $|G| = p$ where $p$ is a prime number. Then Lagrange's Theorem shows that $G$ has no subgroups other than $\{e\}$ and $G$. So $G$ is simple.
+	
+	Conversely, let $G$ be a simple group. Since $G$ is abelian, every subgroup is normal. Since $G$ is simple,  it follows that $G$ has no subgroups other than $\{e\}$ and $G$. If $G \neq \{e\}$, choose $x \in G$ with $x \neq e$ and consider the subgroup $\langle x \rangle$ of $G$. We see immediately that $\langle x \rangle = G$. Now we claim that $G$ is finite. If $x$ has infinite order, then all the powers of $x$ are distinct, and so $\langle x^2 \rangle \subset \langle x \rangle$ is a proper  nontrivial subgroup of $\langle x \rangle$, a contradiction. Therefore $G$ has finite order. If $|G|$ is  not a prime, then $|G| = mn$ with $m,n>1$ and $\langle x^m \rangle$ is a proper nontrivial subgroup of $G$, a contradiction. Consequently, $|G|$ is a prime number.
+\end{sketch}
+
+\begin{example} \label{exp-simple-implies-has-comp-series}
+	Let $G$ be a simple group. Then $G>\{e\}$ is a composition series.
+\end{example}
+\begin{example}
+	Let $C$ be a cyclic group of order $p^k$, where $p$ is a prime and $k\geq 1$. Let $x$ be a generator of $C$. Then
+	\begin{equation*}
+		C = \langle  x\rangle > \langle x^p \rangle > \langle x^{p^2} \rangle > \cdots > \langle x^{p^k}\rangle = \{e\}
+	\end{equation*}
+	is a composition series. Note that every composition factor in this series is isomorphic to $\mathbb{Z}_p$.
+\end{example}
+\begin{example}
+	Let $n\geq 2$ be an integer. Let the prime factorization of  $n$
+	be $p_1^{k_1}p_2^{k_2}\cdots p_\ell^{k_\ell}$. Then the following
+	\begin{equation*}
+		\mathbb{Z}_n > \langle q_1 \rangle > \langle q_1q_2 \rangle >\cdots > \langle q_1q_2\cdots q_m \rangle = \langle n \rangle = \{0\}.
+	\end{equation*}
+	is a composition series, where $q_1,\dots, q_m$ is any ordering of prime factors of $n$ and $m = k_1+\cdots+ k_\ell$. In fact, the number of composition series for $\mathbb{Z}_n$ is given by $ \frac{m!}{k_1!k_2!\cdots k_\ell!}$. For example, let $n=2025$. Then
+	\begin{equation*}
+		\mathbb{Z}_{2025} > \langle 3 \rangle > \langle 9 \rangle > \langle 45 \rangle > \langle 135 \rangle > \langle 675 \rangle > \{0\}
+	\end{equation*}
+	is a composition series.
+\end{example}
+\begin{example}
+	As discussed in Section \ref{sec-symmetric-groups}, we obtain composition series for $S_n$, where $n\geq 2$.
+	\begin{gather*}
+		S_2> \{e\},
+		\\
+		S_3 > A_3 > \{e\},
+		\\
+		S_4 > A_4 > \langle(1,2),(3,4),(1,3),(2,4)\rangle > \langle(1,2),(3,4)\rangle > \{e\},
+		\\
+		S_n > A_n> \{e\} ,\quad n\geq 5.
+	\end{gather*}
+\end{example}
+\begin{example}
+	In view of Theorem \ref{thm-normal-subgrp-of-Dn}, we can determine composition series for $D_4$ as follows.
+	\begin{gather*}
+		D_4 > \langle r \rangle > \langle r^2 \rangle > \{1\}, \\
+		D_4 > \langle s, r^2 \rangle > \langle s \rangle > \{1\}, \\
+		D_4 > \langle s, r^2 \rangle > \langle r^2 \rangle > \{1\}, \\
+		D_4 > \langle s, r^2 \rangle > \langle sr^2 \rangle > \{1\}, \\
+		D_4 > \langle r^2, rs \rangle > \langle r^3s \rangle > \{1\}, \\
+		D_4 > \langle r^2, rs \rangle > \langle rs \rangle > \{1\}, \\
+		D_4 > \langle r^2, rs \rangle > \langle r^2 \rangle > \{1\}.
+	\end{gather*}
+\end{example}
+\begin{example}
+	In view of Theorem \ref{thm-subgrp-of-Q8-are-normal}, we can determine composition series for $Q_8$ as follows.
+	\begin{gather*}
+		Q_8 > \langle i \rangle > \langle -1\rangle > \{1\},
+		\\
+		Q_8 > \langle j \rangle > \langle -1\rangle > \{1\},
+		\\
+		Q_8 > \langle ij \rangle > \langle -1\rangle > \{1\}.
+	\end{gather*}
+\end{example}
+
+\subsection{Basic Properties}
+Before we begin to study the properties of composition series, let us recall some definitions and their basic results that will be used later.
+\begin{definition} \label{def-maximal-subgrp}
+	Let $M$ be a proper subgroup of a group $G$ is said to be \textbf{maximal} (resp. \textbf{maximal normal}) if   $M\leq H\leq G$ (resp. $M\lhd H\lhd G$) implies $H=M$ or $H = G$. 
+\end{definition}
+\begin{proposition} \label{prop-maximal-grp-exist}
+	Let $G$ be a finite group. Then a maximal (resp. maximal normal) subgroup of $G$ exists.
+\end{proposition}
+\begin{sketch}
+	Let $H$ be a proper subgroup of $G$. If $H$ is a maximal normal subgroup, then we are done. If not, there exists a subgroup $H_1$ with $H< H_1< G$. Continuing this process, we can obtain a chain of subgroups $H<H_1<H_2<\cdots $. Since $G$ is finite, the chain must terminate at $H_k$, that is, $H_k$ is maximal.
+\end{sketch}
+\begin{proposition} \label{prop-max-normal-iff-simple}
+	Let $G$ be a group. Then $H$ is a maximal normal subgroup of $G$ if and only if $G/H$ is simple.
+\end{proposition}
+\begin{sketch} 
+	Suppose $H$ is a maximal normal subgroup of $G$. Let $K'=K/H$ be a normal subgroup of $G/H$. Then $H\lhd K\lhd G$. This implies $K = H$ or $K = G$, equivalently, $K' = H/H = \{H\}$ or $K' = G/H$.
+	
+	Conversely, suppose that $G/H$ is simple. Let $K$ be such that $H\lhd K\lhd G$. Then $\{H\}\lhd K/H\lhd G/H$.   Therefore $K/H = \{H\}$ or $K/H = G/H$, equivalently, $K = H$ or $K = G$.
+\end{sketch}
+
+\begin{proposition} \label{prop-finite-grp-has-comp-srs}
+	Every finite group has a composition series.
+\end{proposition}
+\begin{sketch}
+	Let $G$ be a finite group. We prove by contradiction. If $G$ is a group having the smallest order that does not have a composition series, then $G$ is not simple by Example \ref{exp-simple-implies-has-comp-series}.  Since $G$ is finite, we can find a maximal normal subgroup $H$ of $G$. Since $|H|<|G|$ and $G$ was assumed to be a counterexample with the smallest order, $H$ must have a composition series. Let this series be $H>H_1>\cdots >H_k >\{e\}$. However, $G/H$ is simple by Proposition \ref{prop-max-normal-iff-simple}. This implies $G>H>H_1>\cdots >H_k >\{e\}$ is a composition series of $G$, a contradiction.
+\end{sketch}
+Proposition \ref{prop-finite-grp-has-comp-srs} is not true for infinite group. For example, $\mathbb{Z}$ has no composition series because every nontrivial proper subgroup of $\mathbb{Z}$ (which is of the form $m\mathbb{Z}$, $m>1$) is not simple.
+
+\begin{proposition} \label{prop-composition-srs-has-no-proper-refinement}
+	Every composition series has no proper refinement.
+\end{proposition}
+\begin{sketch}
+	If it does, then there is a subgroup $H$ such that $G_{i+1}\underset{\neq}{\lhd} H \underset{\neq}{\lhd} G_i$ for some $i$. By Correspondence Theorem, $H/G_{i+1}$ is a proper normal subgroup of $G_{i}/G_{i+1}$, which contradicts the fact that $G_{i}/G_{i+1}$ is simple.
+\end{sketch} 
+
+\subsection{Schreier Refinement Theorem and Jordan--H\"older Theorem}
+%To improve readability, we first present the following results in a simplified version without including the complete proofs.   We will consider the generalizations of the Jordan--H\"older Theorem in the next section.
+\begin{definition}
+	Two subnormal series of a group $G$
+	\begin{gather*}
+		H_0 = G \geq H_1 \geq \cdots \geq H_s = \{e\},
+		\\
+		K_0 = G \geq K_1 \geq \cdots \geq K_t = \{e\}
+	\end{gather*}
+	are said to be \textbf{isomorphic} if there exists a one-to-one correspondence between the set of factors $\{H_0/H_1,H_1/H_2,\dots, H_{s-1}/H_s\}$ and $\{K_0/K_1,K_1/K_2,\dots, K_{t-1}/K_t\}$ such that the corresponding factors are isomorphic.
+\end{definition}
+\begin{remark}
+	Some authors consider only nontrivial factors to be isomorphic, and they simply say that the series are equivalence (Definition \ref{def-equivalent-series}). It is important to note that our definition allows for trivial factors.
+\end{remark}
+\begin{lemma}[Dedekind Law] \label{lemma-dedekind-law}
+	Let $U$ and $V$ be two subsets of a group $G$ and let $L$ be a subgroup of $G$. If $U$ is a subset of $L$, then
+	\begin{equation*}
+		U(V\cap L) = UV \cap L.
+	\end{equation*}
+\end{lemma}
+\begin{sketch}
+	We want to show that $U(V\cap L) \subseteq UV \cap L$ and $U(V\cap L) \supseteq UV \cap L$.
+	
+	Let $x\in U(V\cap L)$. Then $x = uv$ where $u\in U$ and $v\in V\cap L$. Clearly $x\in UV$. Since $U\subset L$, we have $x = uv\in L$. Hence $U(V\cap L) \subseteq UV \cap L$.
+	
+	Let $x \in  UV \cap L$. Then $x\in L$ and $x = uv$ where $u\in U$ and $v\in V$. We show that $v\in L$. To see this, note that $u\in L$ and thus $v = u^{-1}x\in L$. Hence $UV \cap L  \subseteq U(V\cap L)$. 
+\end{sketch}
+\begin{lemma}[Zassenhaus Lemma / Butterfly Lemma] \label{lemma-zassenhaus}
+	Let $U,V$ be subgroups of a group. Let $u,v$ be normal subgroups of $U$ and $V$, respectively. Then 
+	\begin{equation*}
+		u(U\cap v)\lhd u(U\cap V) \quad \text{ and }\quad (u\cap V)v \lhd (U\cap V)v.
+	\end{equation*}
+	Moreover, 
+	\begin{equation*}
+		\frac{u(U\cap V)}{u(U\cap v)} \cong \frac{(U\cap V)v}{(u\cap V)v}.
+	\end{equation*}
+\end{lemma}
+\begin{sketch}
+	\begin{comment}
+		
+	We recall some properties and results of normal subgroups that will be used latter.
+	
+ 	Let $G$ be a group. Let $N$ be a normal subgroup and let $K$ be subgroups of $G$. Then
+ 	\begin{enumerate}[(i)]
+ 		\item $N\cap K$ is a normal subgroup of $K$.
+ 		\item $NK=KN$ is a subgroup of $G$.
+ 		\item If $H$ is a normal subgroup of $K$, then $NH$ is a normal subgroup of $NK$.
+ 	\end{enumerate}
+	\end{comment}
+	
+	Since $u \lhd U$, the sets $u(U\cap v)$ and $u(U\cap V)$ are subgroups. Since $v\lhd V$, we have $U\cap v = (U\cap V) \cap v\lhd U\cap V$. Hence $u(U\cap v)\lhd u(U\cap V)$. Similarly, we obtain $(u\cap V)v \lhd (U\cap V)v$.
+	
+Set $H = u(U\cap v)$ and $K = U \cap V$. By the Second Isomorphism Theorem, we have $HK/H \cong  K/(H\cap K)$. Now we simply $HK$ and $H\cap K$. By Lemma \ref{lemma-dedekind-law}, we see that
+\begin{align*}
+	HK &= u(U\cap v) (U \cap V)
+	\\
+	&= u((U\cap v)U \cap V)
+	\\
+	&= u(U\cap V),
+	\\
+	H \cap K  &= u(U\cap v) \cap (U \cap V)\\
+	&=  (U\cap v)u \cap (U \cap V)
+	\\
+	&= (U\cap v)(u \cap (U\cap V))
+	\\
+	&= (U \cap v)(u \cap V).
+\end{align*}
+Hence we obtain
+\begin{equation*}
+	\frac{u(U\cap V)}{u(U\cap v)}\cong \frac{U\cap V}{(U\cap v)(u\cap V)}.
+\end{equation*}
+A similar isomorphism involving the terms in the right hand side of the formula above can be obtained by exchanging $U$ and $V$. This completes the proof.
+\end{sketch}
+\begin{theorem}[Schreier Refinement Theorem] \label{thm-schreier-refinement}
+	Let $G$ be a group. Then any two subnormal  series of $G$ have isomorphic subnormal  refinements.
+\end{theorem}
+\begin{sketch}
+	Let \begin{gather*}
+		S: \quad H_0 = G \geq H_1 \geq \cdots \geq H_s = \{e\},
+		\\
+		T: \quad K_0 = G \geq K_1 \geq \cdots \geq K_t = \{e\}
+	\end{gather*}
+	be two subnormal series. Let $H_{ij} = H_{i} (H_{i-1}\cap K_j)$ for $i\in \{1,2\dots, s\}$ and $j\in\{0,1,\dots, t\}$. We first claim that $\{H_{ij}\}$ is a refinement of $S$. Let $i\in\{1,\dots, s\}$ be a fixed integer. Since $H_{i}\lhd H_{i-1}$ and $K_j \lhd K_{j-1}$, it follows from Lemma \ref{lemma-zassenhaus} that $H_{i} (H_{i-1}\cap K_j) \lhd H_{i} (H_{i-1}\cap K_{j-1})$ for $j\in\{1,\dots, t\}$. This implies
+	\begin{equation*}
+		H_{it}\lhd H_{i,t-1} \lhd \cdots \lhd H_{i1} \lhd H_{i0}.
+	\end{equation*}
+	Recall that $K_t = \{e\}$ and $K_0 = G$. So we have $H_{it} = H_i (H_{i-1}\cap K_t) = H_i (H_{i-1}\cap \{e\}) = H_i$ and $H_{i0} = H_i (H_{i-1}\cap K_0) =  H_i (H_{i-1}\cap G) = H_iH_{i-1} = H_{i-1}$. This proves the first claim. 
+	
+	Let $K_{ji} = K_{j}(K_{j-1}\cap H_i)$ for  $j\in \{1,2\dots, t\}$ and $k\in\{0,1,\dots, s\}$. By using a similar argument, one can immediately see that $\{K_{ji}\}$ is a refinement of $T$. 
+	
+	There are $st$ factors (not necessarily distinct) in both refinements when we regard $H_{i0} = H_{i-1} = H_{i-1,t}$ (resp. $K_{j0} = K_{j-1} = K_{js}$) as a single term. Also, Lemma \ref{lemma-zassenhaus} shows that
+	\begin{equation*}
+		\frac{H_{i,j-1}}{H_{ij}} \cong \frac{K_{j,i-1}}{K_{ji}}
+	\end{equation*}
+	for all $i\in \{1\dots, s\}$ and $j\in \{1,\dots, t\}$. Thus two refinements are isomorphic.
+\end{sketch}
+\begin{definition} \label{def-equivalent-series}
+	Let $S$ and $T$ be subnormal series of a group $G$. We say that $S$ and $T$ are \textbf{equivalent} if 
+		there is a one-to-one correspondence between the nontrivial factors of $S$ and
+		the nontrivial factors of $T$ such that the corresponding factors are
+		isomorphic.
+\end{definition}
+
+\begin{theorem}[Jordan--H\"older Theorem] \label{thm-Jordan-Holder}
+	Any two composition series of a group $G$ are equivalent.
+\end{theorem}
+\begin{sketch}
+		Let \begin{gather*}
+		S: \quad H_0 = G > H_1 > \cdots > H_s = \{e\},
+		\\
+		T: \quad K_0 = G > K_1 > \cdots > K_t = \{e\}
+	\end{gather*}
+	be two composition series.	By Proposition \ref{prop-composition-srs-has-no-proper-refinement},  any composition series has no proper refinement. Consequently, there is exactly one nontrivial factor in a refinement between $H_{i-1}$ and $H_i$ (resp. $K_{i-1}$ and $K_i$), and this factor is isomorphic to $H_{i-1}/H_i$ (resp. $K_{i-1}/K_i$). Clearly there are exactly $s$ nontrivial factors in $S$ and $t$ nontrivial factors in $T$. By Theorem \ref{thm-schreier-refinement}, $S$ and $T$ have isomorphic refinements. In particular, they have the same number of nontrivial factor groups, since the nontrivial factors of the two series can be paired up  such that the factors in each pair are isomorphic. This proves the theorem.
+\end{sketch}
+By Theorem \ref{thm-Jordan-Holder}, we can conclude that composition factors of a group are unique determined up to isomorphism.
+
+\begin{corollary} \label{cor-subnormal-srs-refined-to-composition-srs}
+	If a group $G$ possesses a composition series, then any subnormal series of $G$ can be refined to a composition series.
+\end{corollary}
+\begin{sketch}
+	Let $S$ be a composition series and let $T$ be a subnormal series. By Theorem \ref{thm-schreier-refinement}, $S$ has a refinement $S'$ which is isomorphic to a refinement $T'$ of $T$. Since $T$ and $T'$ are equivalent, $S'$ becomes a composition series after removing repeated terms.
+\end{sketch}
+
+\begin{corollary}
+	Let $H$ be a normal subgroup of a group $G$ which has  a composition series. Then both $H$ and $G/H$ have a composition series.
+\end{corollary}
+\begin{sketch}
+	In view of Corollary \ref{cor-subnormal-srs-refined-to-composition-srs}, the subnormal series $G\geq H\geq \{e\}$ can be refined to a composition series $G > G_1> \cdots > G_k =  H> H_1> \cdots > H_n = \{e\}$. Omitting terms before $H$ giving a composition series of $H$. Omitting terms after $H$ and consider the series $G/H> G_1/H> \cdots > G_k/H$. By the Third Isomorphism Theorem, it can be verified that this is a composition series of $G/H$.
+\end{sketch}
+
+We end the section by giving a new fancy  proof of Fundamental Theorem of Arithmetic.
+\begin{corollary}[Fundamental Theorem of Arithmetic]
+	Every integer $n \geq 2$ can be represented uniquely as a product of prime numbers, up to the order of the factors.
+\end{corollary}
+
+\begin{sketch}
+	Since the group $\mathbb{Z}_n$ is finite, it follows from Proposition \ref{prop-finite-grp-has-comp-srs} that $\mathbb{Z}_n$ has a composition series. Let $S_1, \dots, S_t$ be the factor groups.  Moreover, since $|\mathbb{Z}_n| = |S_1| |S_2| \cdots |S_t|$, together with Proposition \ref{prop-abelian-is-simple-iff-prime-order} we see that $n$ is a product of primes. Then Theorem \ref{thm-Jordan-Holder}  gives the uniqueness of the prime orders of the factor groups and their multiplicities.
+\end{sketch}
+
+\begin{comment}
+	
+\subsection{Jordan-Holder Theorem for Operator Groups}
+
+	\begin{definition}
+		A pair $(\Omega, G)$ consisting of a set $\Omega$ and a group $G$ is called a \textbf{group with an operator domain $\Omega$} if there is a function $\theta$ from $\Omega$ into $\operatorname{End} G$, the set of endomorphisms of $G$. The function $\theta$ is said to be an \textbf{action} of $\Omega$ on $G$; each element of $\Omega$ is called an \textbf{operator}.
+	\end{definition}
+	
+
+	A group with an operator domain $\Omega$ is often simply called an \textbf{$\Omega$-group}. If $\sigma \in \Omega$, $\theta(\sigma)$ is an endomorphism of $G$; we write $\theta(\sigma)x = \sigma x$. Sometimes, the action $\theta$ is not explicitly mentioned.
+	
+	\begin{example}
+		If a group $Q$ is an operator group on $G$, then the pair $(Q, G)$ is a group with the operator domain $Q$.
+	\end{example}
+	
+	In general, an operator domain $\Omega$ need not be a group. Even if $\Omega$ has some structure, the action $\theta$ need not transport this structure into $\text{End } G$.
+	
+	
+	\begin{definition}
+		Let $G$ be an $\Omega$-group. A subgroup $H$ of $G$ is said to be \textbf{$\Omega$-invariant}, or an \textbf{$\Omega$-subgroup}, if $\sigma H \in H$ for all $\sigma \in \Omega$.
+	\end{definition} 
+
+
+\end{comment}
+
+\paragraph{Main References.} \cite{Lang2002,Suzuki1982,DummitFoote2004,Li2025,Rotman2015}
+
+

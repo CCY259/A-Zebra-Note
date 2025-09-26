@@ -19,11 +19,11 @@
 	\begin{itemize}
 		\item The kernel of $f$ is a subgroup of $G$:
 		\begin{equation*}
-			\operatorname{ker} f = \{x\in G\,|\, f(x)=e\}.
+			\Ker f = \{x\in G\,|\, f(x)=e\}.
 		\end{equation*}
 		\item The image of $f$ is a subgroup of $H$:
 		\begin{equation*}
-			\operatorname{im} f = \{f(x)\,|\, x\in G\}.
+			\Im  f = \{f(x)\,|\, x\in G\}.
 		\end{equation*}
 	\end{itemize}
 	In fact, the kernel is a special case of the \textbf{preimage} of a fixed subgroup of $H$ under $f$. Let $U\leq H$. It can be checked that
@@ -46,8 +46,8 @@
 	\begin{enumerate}[(i)]
 		\item \textbf{First Isomorphism Theorem.} For any $f:G\rightarrow H$,
 		\begin{align*}
-			G/\operatorname{ker} f &\stackrel{\sim}{\rightarrow} \operatorname{im} f,\\
-			x \operatorname{ker} f& \mapsto f(x).
+			G/\Ker f &\stackrel{\sim}{\rightarrow} \Im  f,\\
+			x \Ker f& \mapsto f(x).
 		\end{align*}
 		\item \textbf{Second Isomorphism Theorem.} If $H\leq G$ and $N\lhd G$, then $$H\hookrightarrow HN \twoheadrightarrow HN/N$$ induces an isomorphism
 		\begin{equation*}
@@ -58,7 +58,7 @@
 			\frac{G}{H} \cong \frac{G/N}{H/N}.
 		\end{equation*}
 	\end{enumerate}
-	\item \textbf{Generalized version of Correspondence Theorem.} Let $f: G\rightarrow G'$ be a homomorphism. Then there is a one-to-one correspondence between the set of subgroups of $G'$ and the set of subgroups of $G$ which contain $\operatorname{ker}f$.
+	\item \textbf{Generalized version of Correspondence Theorem.} Let $f: G\rightarrow G'$ be a homomorphism. Then there is a one-to-one correspondence between the set of subgroups of $G'$ and the set of subgroups of $G$ which contain $\Ker f$.
 	\begin{itemize}
 		\item More precisely, the function is given by
 		\begin{equation*}
@@ -70,7 +70,7 @@
 		\end{equation*}
 		\item This one-to-one correspondence also gives the following properties (assume $S$ and $T$ are subgroups):
 		\begin{enumerate}[(i)]
-			\item $f(S)\subseteq f(T)\Leftrightarrow \operatorname{ker} f \subseteq S\subseteq T$; so we have $[f(T):f(S)] = [T:S]$;
+			\item $f(S)\subseteq f(T)\Leftrightarrow \Ker f \subseteq S\subseteq T$; so we have $[f(T):f(S)] = [T:S]$;
 			\item $f(S)\lhd f(T) \Leftrightarrow S\lhd T$;
 			\item $f(S)$ and $f(T)$ are conjugate in $G'$ $\Leftrightarrow$ $S$ and $T$ are conjugate in $G$.
 			\item Let $N'\lhd G'$. Then

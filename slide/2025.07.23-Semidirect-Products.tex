@@ -2,16 +2,18 @@
 \paragraph{Important Note.} Throughout this section, we will use \textbf{right action} $X\times G\rightarrow X$ where the image of $x\in X$ under $g\in G$ is denoted by $x^g$. Following the axioms of right action, we have $(x^g)^{g'} = x^{gg'}$ for all $g,g'\in G$. In accordance with this, function composition will be written as $fg$ to mean that $f$ is applied first, followed by $g$, i.e., $(fg)(x) = g(f(x))$. In conjugation by $g$ on $x$, we define $x\mapsto g^{-1}xg$ to make it consistent with the right actions.  To summarize, we can just ``switch" the side from the corresponding left actions and replace the symbols $s$ with $s^{-1}$.
 \subsection{Definitions and Properties}
 \begin{definition}
-	Let $G$ and $H$ be two groups. If a homomorphism $\varphi:G \to \Aut  H$ is given, then we say that $G$ acts on $H$ via $\varphi$ and $G$ is an \textbf{operator group} on $H$. The homomorphism $\varphi$ is called an \textbf{action} of $G$ on $H$. We denote the image $\varphi(g)(h)$ of an element $h$ of $H$ simply by $h^g$.
+	Let $G$ and $H$ be two groups. If a homomorphism $\varphi:G \to \operatorname{Aut} H$ is given, then we say that $G$ acts on $H$ via $\varphi$ and $G$ is an \textbf{operator group} on $H$. The homomorphism $\varphi$ is called an \textbf{action} of $G$ on $H$. We denote the image $\varphi(g)(h)$ of an element $h$ of $H$ simply by $h^g$.
 \end{definition}
 
-\begin{proposition} \label{prop-action-criterion-for-groups}
+\begin{proposition}
 	Let $\varphi$ be a function from a group $G$ into the set of all functions on the subgroup $H$. Then $\varphi$ is an action of $G$ on $H$ if and only if for all $u, v \in H$ and $x, y \in G$,
-	\begin{equation*}
-		(uv)^x = u^x v^x, \quad
-		u^{xy} = (u^x)^y,\quad
+	\begin{gather*}
+		(uv)^x = u^x v^x,
+		\\
+		u^{xy} = (u^x)^y,
+		\\
 		u^1 = u
-	\end{equation*}
+	\end{gather*}
 	where $1$ is the identity of $G$.
 \end{proposition} 
 \begin{proposition} \label{prop-semidirect-prod}
@@ -41,9 +43,6 @@
 \begin{definition}
 	The group $L$ in Proposition \ref{prop-semidirect-prod} is called the \textbf{semidirect product} $H$ by $G$ with respect to the action $\varphi$ and is denoted by $H\rtimes_{\varphi} G$.
 \end{definition}
- \begin{remark}
- 	If there is no confusion, we simply write $H\rtimes G$. It is important to note that semidirect products with respect to different actions might not isomorphic. 
- \end{remark}
  
  We set
 $$\overline{H} = \{(h,1) \,|\, h \in H\},\quad\overline{G} = \{(g,1)\,|\, g \in G\}.$$
@@ -66,7 +65,6 @@ Obviously they are just image sets under canonical injections.  We summarize all
 \begin{remark}
 	We may consider $G$ and $H$ as subgroups of $H \rtimes G$ by identifying $G$ and $H$ with $\overline{G}$ and $\overline{H}$ respectively.
 \end{remark}
-
 \begin{corollary}
 	Every element of $H \rtimes G$ can be written uniquely as $hg$ with $h\in H$ and $g\in G$.
 \end{corollary}
@@ -74,13 +72,15 @@ Obviously they are just image sets under canonical injections.  We summarize all
 	By Proposition \ref{prop-semidirect-prod-properties}.(iii) \& (iv).
 \end{sketch}
 \begin{proposition} \label{prop-semidirect-prod-isom}
-	Let $G$ act on another group $H$ via $\varphi$. Let $X$ and $Y$ be two groups such that $X\cong G$ and $Y\cong H$. Let $\psi_{X,G}:X\rightarrow G$ and $\psi_{Y,H}:Y\rightarrow H$ be isomorphisms. Then $$H\rtimes_{\varphi} G \cong Y\rtimes_{\theta} X$$ where $\theta$ is an action of $X$ on $Y$ defined by 
- \begin{equation*}
-		y^{x} = \psi_{Y,H}^{-1}(\psi_{Y,H}(y)^{\psi_{X,G}(x)}).
-	\end{equation*}
+	Let $G$ act on another group $H$ via $\varphi$. Let $X$ and $Y$ be two groups such that $X\cong G$ and $Y\cong H$. Then $$ H\rtimes_{\varphi} G \cong Y\rtimes_{\theta} X$$ for some action $\theta$ of $X$ on $Y$.
 \end{proposition}
 \begin{sketch}
-Let $\phi: Y\rtimes_{\theta} X \to H\rtimes_{\varphi} G$ be defined by
+	Let $\psi_{X,G}:X\rightarrow G$ and $\psi_{Y,H}:Y\rightarrow H$ be isomorphisms. 
+	Let $\theta(x)$ be the automorphism of $Y$ defined by 
+	\begin{equation*}
+		y^{x} = \psi_{Y,H}^{-1}(\psi_{Y,H}(y)^{\psi_{X,G}(x)}).
+	\end{equation*}
+	Then $\theta$ is an action of $X$ on $Y$. Now let $\phi: Y\rtimes_{\theta} X \to H\rtimes_{\varphi} G$ be defined by
 	\begin{equation*}
 		\phi(y,x) = (\psi_{Y,H}(y), \psi_{X,G}(x)).
 	\end{equation*}
@@ -100,21 +100,13 @@ Let $\phi: Y\rtimes_{\theta} X \to H\rtimes_{\varphi} G$ be defined by
 	\end{align*}
 	So $\phi[(y_1,x_1)(y_2,x_2)] = \phi(y_1,x_1)\phi(y_2,x_2)$ for all $y_1,y_2\in Y$ and $x_1,x_2\in X$ and $\phi$ is a homomorphism. Clearly $\phi$ is bijective. This completes the proof.
 \end{sketch}
-\begin{remark}
-	Alternatively, the action defined above can be written as
-	\begin{equation*}
-		\theta(x) = \psi_{Y,H}\varphi(\psi_{X,G}(x))\psi_{Y,H}^{-1}.
-	\end{equation*}
-\end{remark}
 \begin{definition}
 	A group $G$ is called an \textbf{internal semidirect product} of $H$ by $K$ (where $H,K$ are subgroups of $G$), if
 	$$G = HK,\quad H \lhd G, \quad H \cap K = \{1\}.$$
 \end{definition}
-\begin{remark}
-	Any internal semidirect product is 
-	isomorphic to the semidirect product with respect to some action. For this
-	reason, ``internal" is often omitted. In some cases, we shall also write $H\rtimes K$ for an internal semidirect product.
-\end{remark}
+Any internal semidirect product is 
+isomorphic to the semidirect product with respect to some action. For this
+reason, ``internal" is often omitted.
 \begin{proposition} \label{prop-internal-semidirect-prod-isom}
 	Let $G$ be an internal semidirect product of two subgroups $H$ and $K$ such that $H \lhd G = HK$ and $H \cap K = \{1\}$. Let $\varphi(k)$ be the automorphism of $H$ induced by the conjugation of $k \in K$, i.e., $h^k = k^{-1}hk$. Then $\varphi$ is an action of $K$ on $H$, and $H \rtimes K  \cong G$.
 \end{proposition}
@@ -122,14 +114,14 @@ Let $\phi: Y\rtimes_{\theta} X \to H\rtimes_{\varphi} G$ be defined by
 	It can be checked that $\varphi$ is an action of $K$ on $H$. Let $f:H \rtimes K \to G$ be the function defined by
 	$$f(h, k) = hk.$$
 	By assumption, $G = HK = KH$. So the function $f$ is surjective. Now we show that $f$ is a homomorphism. For any $h, v \in H$ and $k, u \in K$, we have
-	$$f[(h,k)(u, v)] = f(hu^{k^{-1}},kv) = hu^{k^{-1}}kv = hkuk^{-1}kv = hkuv = f(h,k)f(u,v).$$Hence the function $f$ is a homomorphism. Let $(k, h) \in\Ker f$. Then we have $kh = 1$, or $k = h^{-1} \in K \cap H = \{1\}$. Thus the kernel of $f$ is $\{1\}$. Therefore $f$ is an isomorphism.
+	$$f[(h,k)(u, v)] = f(hu^{k^{-1}},kv) = hu^{k^{-1}}kv = hkuk^{-1}kv = hkuv = f(h,k)f(u,v).$$Hence the function $f$ is a homomorphism. Let $(k, h) \in\ker f$. Then we have $kh = 1$, or $k = h^{-1} \in K \cap H = \{1\}$. Thus the kernel of $f$ is $\{1\}$. Therefore $f$ is an isomorphism.
 \end{sketch}
 The definition of an internal semidirect product is not symmetric with respect to $H$ and $K$. So it should be stated clearly which subgroup is normal in $G$ when it is important to distinguish between them. In fact, if both subgroups are normal, then we recover  direct product. More specifically, we have the following result.
 \begin{proposition} \label{prop-semidirect-trivial-hom}
 	Let $\varphi$ be an action of a group $G$ on a group $H$. Then the following are equivalent.
 	\begin{enumerate}[(1)]
 		\item The identity  map between $H \rtimes G$ and $H \times G$ is a group isomorphism.
-		\item $\varphi$ is the trivial homomorphism from $G$ into $\Aut H$.
+		\item $\varphi$ is the trivial homomorphism from $G$ into $\operatorname{Aut}H$.
 		\item The subgroup $G$ is normal in $H \rtimes G$.
 	\end{enumerate}
 \end{proposition}
@@ -159,7 +151,7 @@ The definition of an internal semidirect product is not symmetric with respect t
 		\[
 		\dots \longrightarrow G_{n-1} \xlongrightarrow{\varphi_{n-1}} G_n \xlongrightarrow{\varphi_n} G_{n+1} \longrightarrow \dots
 		\]
-		such that $\Im \varphi_{n-1} = \Ker  \varphi_n$ for all $n$. A \textbf{short exact sequence} is an exact sequence of the form
+		such that $\operatorname{im}\varphi_{n-1} = \operatorname{ker} \varphi_n$ for all $n$. A \textbf{short exact sequence} is an exact sequence of the form
 		\begin{equation*} 
 			\{1\} \longrightarrow N \xlongrightarrow{\varphi} G \xlongrightarrow{\psi} H \longrightarrow \{1\}.
 		\end{equation*}
@@ -189,7 +181,7 @@ The definition of an internal semidirect product is not symmetric with respect t
 	By Proposition \ref{prop-group-of-order-p2q-has-normal-Sylow}, a group $G$ of order $p^2q$ ($p$ and $q$ are distinct prime) has a normal Sylow subgroup. Let $P\in\operatorname{Syl}_p(G)$ and $Q\in\operatorname{Syl}_q(G)$. Then we can check that $|PQ| = |G|$ and $P\cap Q = \{1\}$. If $P\lhd G$, then $G \cong P\rtimes Q$. If $Q\lhd G$, then $G \cong Q\rtimes P$.
 \end{example}
 \begin{example}
-	 Let $H$ be any abelian group and let $K = \langle k \rangle \cong \mathbb{Z}_2$ be the group of order $2$. Define $\varphi : K \rightarrow \Aut H$ by
+	 Let $H$ be any abelian group and let $K = \langle k \rangle \cong \mathbb{Z}_2$ be the group of order $2$. Define $\varphi : K \rightarrow \operatorname{Aut}H$ by
 	 mapping $k$ to the automorphism of inversion on $H$, i.e.,  $h^k = h^{-1}$ for all $h \in H$. Then $H\rtimes K$ contains the subgroup $H$ of index $2$, since every element $g\in H\rtimes K$ is either in $H$ or in $kH$. Let $H = \langle h\rangle$. Then we have $$k^{-1}hk = h^{-1}.$$  If $H = \mathbb{Z}_n $, one recognizes $H\rtimes K$ as the dihedral group $D_{n}$. Since $D_n$ has presentation $$\langle r,s\,|\, r^n = s^2 = 1, s^{-1}rs= r^{-1}\rangle,$$ by  Van Dyck's Theorem (Theorem \ref{thm-Van-Dyck}), we get
 	$$D_n \cong \mathbb{Z}_n\rtimes \mathbb{Z}_2$$
 	since both groups have the same order.
@@ -197,7 +189,7 @@ The definition of an internal semidirect product is not symmetric with respect t
 	 If $H = \mathbb{Z}$, then we get a group  $D_{\infty}$ having the presentation
 	 \begin{equation*}
 	 	D_{\infty} = \langle r,s\,|\,  s^2 = 1, s^{-1}rs= r^{-1}\rangle  = \langle x,y \,|\, x^2 = y^2 = 1\rangle.
-	 \end{equation*} The group $D_{\infty}$  is called the \textbf{infinite dihedral group}. By  Van Dyck's Theorem, there is an epimorphism $\theta:D_n\rightarrow H\rtimes K$ in which $\theta(r) =  h$ and $\theta(s)= k$. Every element of $D_n$ is the form $s^m r^\ell$ where $m=0, 1$. Suppose that $s^m r^\ell \in\Ker \theta$. Then  we have  $ k^m h^\ell = \theta(s^k r^\ell)= 1$, which implies that  $k=0=\ell$. Thus 
+	 \end{equation*} The group $D_{\infty}$  is called the \textbf{infinite dihedral group}. By  Van Dyck's Theorem, there is an epimorphism $\theta:D_n\rightarrow H\rtimes K$ in which $\theta(r) =  h$ and $\theta(s)= k$. Every element of $D_n$ is the form $s^m r^\ell$ where $m=0, 1$. Suppose that $s^m r^\ell \in\ker \theta$. Then  we have  $ k^m h^\ell = \theta(s^k r^\ell)= 1$, which implies that  $k=0=\ell$. Thus 
 	 \begin{equation*}
 	 	D_{\infty} \cong \mathbb{Z}\rtimes \mathbb{Z}_2.
 	 \end{equation*} 
@@ -262,14 +254,14 @@ The definition of an internal semidirect product is not symmetric with respect t
 \subsection{Some Classifications of Groups}
 \begin{comment}
 	\begin{lemma} \label{lemma-semidirect-kernel}
-		Let $L = H\rtimes G$ be a semidirect product of subgroups with respect to the action $\varphi: G\rightarrow \Aut  H$. Then $C_L(H)\cap G = C_{G}(H) = \Ker \varphi$.
+		Let $L = H\rtimes G$ be a semidirect product of subgroups with respect to the action $\varphi: G\rightarrow \operatorname{Aut} H$. Then $C_L(H)\cap G = C_{G}(H) = \ker \varphi$.
 	\end{lemma}
 	\begin{sketch}
 		The first formula is trivial. The second formula follows from the fact that $ghg^{-1} = h^g = \varphi(g)(h)$ for all $g\in G$ and $h\in H$.
 	\end{sketch}
 	
 	\begin{proposition} \label{prop-semidirect-isom-ker}
-		Let $G$ and $H$ be arbitrary groups. Let $\varphi_1$ and $\varphi_2$ be homomorphisms from $G$ into $\Aut (H)$ such that $H\rtimes_{\varphi_1} G \cong H\rtimes_{\varphi_2} G$. Then $\Ker \varphi_1 = \Ker \varphi_2$.
+		Let $G$ and $H$ be arbitrary groups. Let $\varphi_1$ and $\varphi_2$ be homomorphisms from $G$ into $\operatorname{Aut}(H)$ such that $H\rtimes_{\varphi_1} G \cong H\rtimes_{\varphi_2} G$. Then $\ker \varphi_1 = \ker \varphi_2$.
 	\end{proposition}
 	\begin{sketch}
 		We identify $G$ and $H$ as subgroups of semidirect products. The restriction of $\varphi$ to $C_G^{(1)}(H)$ induces an isomorphism $C_G^{(1)}(H) \cong C_G^{(2)}(H)$, where we identity $C_G^{(i)}(H)$ as the subgroup $C_G(H)$ of the semidirect product with respect to $\varphi_i$. Then the result follows from Lemma \ref{lemma-semidirect-kernel}.
@@ -278,16 +270,16 @@ The definition of an internal semidirect product is not symmetric with respect t
 	
 
 \begin{proposition} \label{prop-semidirect-useful-tool}
-	Let $C$ be a cyclic group and let $H$ be an arbitrary group. Let $\varphi_1$ and $\varphi_2$ be homomorphisms from $C$ into $\Aut (H)$ such that $\Im  \varphi_1$ and $\Im \varphi_2$ are conjugate subgroups of $\Aut (H)$. Then the following propositions hold.
+	Let $C$ be a cyclic group and let $H$ be an arbitrary group. Let $\varphi_1$ and $\varphi_2$ be homomorphisms from $C$ into $\operatorname{Aut}(H)$ such that $\operatorname{im} \varphi_1$ and $\operatorname{im}\varphi_2$ are conjugate subgroups of $\operatorname{Aut}(H)$. Then the following propositions hold.
 	\begin{enumerate}[(i)]
 		\item If $C$ is finite, then $H\rtimes_{\varphi_1} C \cong H\rtimes_{\varphi_2} C$.
 		\item If $C$ is infinite,  $\varphi_1$ and $\varphi_2$ are injective, then $H \rtimes_{\varphi_1} C \cong H \rtimes_{\varphi_2} C$.
 	\end{enumerate} 
 \end{proposition}
 \begin{sketch}
- 	There is an automorphism $\sigma\in \Aut (H)$ such that $\sigma^{-1} \Im  \varphi_1 \sigma = \Im  \varphi_2$. Let $x$ be a generator for $C$. Then there is some $k\in\mathbb{Z}$ such that $\sigma^{-1} \varphi_1(x) \sigma =  \varphi_2(x^k)$. For every $x^\ell\in C$, we see that $ \sigma^{-1} \varphi_1(x^\ell) \sigma = \varphi_2(x^{\ell k}) $. Hence $\sigma^{-1} \varphi_1(y) \sigma =  \varphi_2(y)^k$ for all $y\in C$. Hence we obtain
+ 	There is an automorphism $\sigma\in \operatorname{Aut}(H)$ such that $\sigma^{-1} \operatorname{im} \varphi_1 \sigma = \operatorname{im} \varphi_2$. Let $x$ be a generator for $C$. Then there is some $k\in\mathbb{Z}$ such that $\sigma^{-1} \varphi_1(x) \sigma =  \varphi_2(x^k)$. For every $x^\ell\in C$, we see that $ \sigma^{-1} \varphi_1(x^\ell) \sigma = \varphi_2(x^{\ell k}) $. Hence $\sigma^{-1} \varphi_1(y) \sigma =  \varphi_2(y)^k$ for all $y\in C$. Hence we obtain
  	\begin{align}
- 		\Im \varphi_2 &= \sigma^{-1}\Im \varphi_1 \sigma \notag
+ 		\operatorname{im}\varphi_2 &= \sigma^{-1}\operatorname{im}\varphi_1 \sigma \notag
  		\\
  		&= \langle \sigma^{-1}\varphi_1(x) \sigma \rangle \notag
  		\\
@@ -312,18 +304,18 @@ The definition of an internal semidirect product is not symmetric with respect t
  	\end{align*}
  Hence $\psi$ is a homomorphism.  To show that it is bijective, we consider two cases:
  	
- 	(i) If $C$ is of order $n$, then we have $|\varphi_1(x)| = |\Im \varphi_1| = |\Im \varphi_2|= |\varphi_2(x)|$. Write $m = |\varphi_2(x)|$.  Hence $k$ is coprime to $m$, because $|\varphi_2(x)^k| = |\sigma^{-1}\varphi_1(x)\sigma| = |\varphi_1(x)| = |\varphi_2(x)| = m$. If $k$ is not coprime to $n$, we let $k' = k + am$, where $a$ is the product of all primes dividing $n$ but not $k$. Then for every prime $p$ dividing $n$, $p\nmid k'$. Therefore $\gcd(k',n) = 1$. Note that $\varphi_2(x)^{k'} = \varphi_2(x)^k$. So we can without loss of generality assume that $\gcd(k,n)=1$.  Then there are integers $r,s$ for which $rk+sn = 1$. Then $\psi$ is bijective because we have a two-sided inverse 
+ 	(i) If $C$ is of order $n$, then we have $|\varphi_1(x)| = |\operatorname{im}\varphi_1| = |\operatorname{im}\varphi_2|= |\varphi_2(x)|$. Write $m = |\varphi_2(x)|$.  Hence $k$ is coprime to $m$, because $|\varphi_2(x)^k| = |\sigma^{-1}\varphi_1(x)\sigma| = |\varphi_1(x)| = |\varphi_2(x)| = m$. If $k$ is not coprime to $n$, we let $k' = k + am$, where $a$ is the product of all primes dividing $n$ but not $k$. Then for every prime $p$ dividing $n$, $p\nmid k'$. Therefore $\gcd(k',n) = 1$. Note that $\varphi_2(x)^{k'} = \varphi_2(x)^k$. So we can without loss of generality assume that $\gcd(k,n)=1$.  Then there are integers $r,s$ for which $rk+sn = 1$. Then $\psi$ is bijective because we have a two-sided inverse 
  	\begin{equation*}
  		\psi^{-1}(h,y) = (\sigma^{-1}(h),y^r).
  	\end{equation*}
  	
- 	(ii) Since $C$ is infinite cyclic and $\varphi_2$ is injective, the image $\Im  \varphi_2$ is infinite cyclic. By (\ref{eq-prop-8.16}), $\varphi_2(x)^k$ is also a generator for $\Im  \varphi_2$. Thus we must have $k = \pm 1$. Hence we have a two-sided inverse
+ 	(ii) Since $C$ is infinite cyclic and $\varphi_2$ is injective, the image $\operatorname{im} \varphi_2$ is infinite cyclic. By (\ref{eq-prop-8.16}), $\varphi_2(x)^k$ is also a generator for $\operatorname{im} \varphi_2$. Thus we must have $k = \pm 1$. Hence we have a two-sided inverse
  	\begin{equation*}
  		\psi^{-1}(h,y) = (\sigma^{-1}(h),y^k). \qedhere
  	\end{equation*}
 \end{sketch}
 \begin{remark}
-	In the case of finite cyclic groups, if  $\Im \varphi_1 = \Im \varphi_2$, then the resulting semidirect products are isomorphic.
+	In the case of finite cyclic groups, if  $\operatorname{im}\varphi_1 = \operatorname{im}\varphi_2$, then the resulting semidirect products are isomorphic.
 \end{remark}
 \begin{example}
 	There are only two isomorphism types of groups of order $pq$, where $p>q$ are primes.
@@ -331,20 +323,20 @@ The definition of an internal semidirect product is not symmetric with respect t
 	Let $G$ be any group of order $pq$, let $P \in \text{Syl}_p(G)$ and $Q \in \text{Syl}_q(G)$. By Proposition \ref{prop-sylow-order-pq}, we have $G \cong P \rtimes_\varphi Q$ with respect to some action $\varphi$.
 	Clearly  $P \cong \mathbb{Z}_p$ and $Q \cong \mathbb{Z}_q$ are cyclic. The group $\text{Aut}(P)\cong \mathbb{Z}_{p-1}$ is also cyclic. 
 	
-	If $q$ does not divide $p-1$, then $G$ is abelian by Proposition \ref{prop-sylow-order-pq}. By Proposition \ref{prop-semidirect-trivial-hom},  the only homomorphism from $Q$ to $\Aut (P)$ is the trivial homomorphism, hence the only semidirect product in this case the direct product, i.e., $G \cong \mathbb{Z}_p\times \mathbb{Z}_q \cong \mathbb{Z}_{pq}$.
+	If $q$ does not divide $p-1$, then $G$ is abelian by Proposition \ref{prop-sylow-order-pq}. By Proposition \ref{prop-semidirect-trivial-hom},  the only homomorphism from $Q$ to $\operatorname{Aut}(P)$ is the trivial homomorphism, hence the only semidirect product in this case the direct product, i.e., $G \cong \mathbb{Z}_p\times \mathbb{Z}_q \cong \mathbb{Z}_{pq}$.
 	
 	Consider now the case when $q$ divides  $p-1$. Let $Q = \langle y \rangle$. Since $\text{Aut}(P)$ is cyclic it contains a unique subgroup of order $q$, say $\langle \gamma \rangle$. Hence any homomorphism $\varphi : Q \to \text{Aut}(P)$ must map $y$ to a power of $\gamma$. Therefore there are $q$ homomorphisms $\varphi_i : Q \to \text{Aut}(P)$ given by $\varphi_i(y) = \gamma^i$ where $0 \leq i \leq q-1$. Since $\varphi_0$ is the trivial homomorphism, $P \rtimes_{\varphi_0} Q \cong P \times Q$ as before. Each nontrivial homomorphism $\varphi_i$ ($i\neq 0$)  gives rise to a semidirect product  of order $pq$, which is a nonabelian group. It is straightforward to check that $\varphi_i(Q) = \langle \gamma \rangle$ for each  $i > 0$. So these groups are all isomorphic by Proposition \ref{prop-semidirect-useful-tool}.
 \end{example}
 
 \begin{lemma} \label{lemma-noob}
-	Let $G = PQ$ where $p$ and $q$ are distinct primes, $P \in \text{Syl}_p(G)$ is a normal abelian subgroup in $G$ and $Q \in \text{Syl}_q(G)$. Let $\varphi_1$ and $\varphi_2$ be homomorphisms from $Q$ into $\Aut (P)$. If $P\rtimes_{\varphi_1} Q \cong P\rtimes_{\varphi_2} Q$,   then $\Ker \varphi_1 \cong \Ker \varphi_2$.
+	Let $G = PQ$ where $p$ and $q$ are distinct primes, $P \in \text{Syl}_p(G)$ is a normal abelian subgroup in $G$ and $Q \in \text{Syl}_q(G)$. Let $\varphi_1$ and $\varphi_2$ be homomorphisms from $Q$ into $\operatorname{Aut}(P)$. If $P\rtimes_{\varphi_1} Q \cong P\rtimes_{\varphi_2} Q$,   then $\ker \varphi_1 \cong \ker \varphi_2$.
 \end{lemma}
 \begin{sketch}
-	Let $\theta: P\rtimes_{\varphi_1} Q \rightarrow P\rtimes_{\varphi_2} Q$ be an isomorphism. Let $G_1 = P\rtimes_{\varphi_1} Q$ and $G_2 = P\rtimes_{\varphi_2} Q$. Note that  $P$ in normal in $G_1$ and $G_2$, and hence unique  in both semidirect products. The uniqueness implies that $\theta(P) = P$. Since $\theta$ is an isomorphism, we have $C_{G_1}(P) \cong C_{G_2}(\theta(P)) = C_{G_2}(P)$. Now we verify that $C_{G_1}(P) = P\Ker \varphi_1$ and $C_{G_2}(P) = P\Ker \varphi_2$. Clearly $P\Ker \varphi_i \subseteq C_{G_1}(P)$. Let $g\in C_{G_i}(P)$. Since $g\in G_i = P\rtimes_{\varphi_1} Q$,  it can be written uniquely as $g = pq$ where $p\in P$ and $q\in Q$. Hence $(pq)^{-1}xpq = x$ for all $x\in P$. Since $P$ is abelian, we get $q^{-1}xq = x$. Since $x^{q} = q^{-1}xq$, we obtain $x^q = x$ for all $x\in P$, and thus $q\in\Ker \varphi_i$. This proves our claim. Note that $P\cap \Ker\varphi_i =\{1\}$ for $i=1,2$. Hence we have 
+	Let $\theta: P\rtimes_{\varphi_1} Q \rightarrow P\rtimes_{\varphi_2} Q$ be an isomorphism. Let $G_1 = P\rtimes_{\varphi_1} Q$ and $G_2 = P\rtimes_{\varphi_2} Q$. Note that  $P$ in normal in $G_1$ and $G_2$, and hence unique  in both semidirect products. The uniqueness implies that $\theta(P) = P$. Since $\theta$ is an isomorphism, we have $C_{G_1}(P) \cong C_{G_2}(\theta(P)) = C_{G_2}(P)$. Now we verify that $C_{G_1}(P) = P\ker \varphi_1$ and $C_{G_2}(P) = P\ker \varphi_2$. Clearly $P\ker \varphi_i \subseteq C_{G_1}(P)$. Let $g\in C_{G_i}(P)$. Since $g\in G_i = P\rtimes_{\varphi_1} Q$,  it can be written uniquely as $g = pq$ where $p\in P$ and $q\in Q$. Hence $(pq)^{-1}xpq = x$ for all $x\in P$. Since $P$ is abelian, we get $q^{-1}xq = x$. Since $x^{q} = q^{-1}xq$, we obtain $x^q = x$ for all $x\in P$, and thus $q\in\ker \varphi_i$. This proves our claim. Note that $P\cap \ker\varphi_i =\{1\}$ for $i=1,2$. Hence we have 
 	\begin{equation*}
-	P\times \Ker \varphi_1\cong	C_{G_1}(P) \cong  C_{G_2}(P) \cong P\times \Ker \varphi_2.
+	P\times \ker \varphi_1\cong	C_{G_1}(P) \cong  C_{G_2}(P) \cong P\times \ker \varphi_2.
 	\end{equation*}
-	Since $\Ker \varphi_i$ is normal Sylow $q$-subgroup in $P\times \Ker \varphi_i$, it is unique. Let $\psi:P\times \Ker \varphi_1\rightarrow P\times \Ker \varphi_2$ be an isomorphism. Then the restriction of $\psi$ to $\Ker \varphi_1$ induces an isomorphism $\Ker\varphi_1 \cong \Ker\varphi_2$.
+	Since $\ker \varphi_i$ is normal Sylow $q$-subgroup in $P\times \ker \varphi_i$, it is unique. Let $\psi:P\times \ker \varphi_1\rightarrow P\times \ker \varphi_2$ be an isomorphism. Then the restriction of $\psi$ to $\ker \varphi_1$ induces an isomorphism $\ker\varphi_1 \cong \ker\varphi_2$.
 \end{sketch} 
 
 \begin{example}
@@ -353,11 +345,11 @@ The definition of an internal semidirect product is not symmetric with respect t
 	
 Before proceed to the classification, we shall show that $G$ must contain a normal Sylow subgroup. If there is a normal Sylow $7$-subgroup, then we are done. If all Sylow $7$-subgroups are not normal, then Theorem \ref{thm-third-sylow-thm} and Corollary \ref{cor-one-sylow-p-implies-normal} show that there are eight Sylow $7$-subgroups. Then we count the number of elements of order $7$ in $G$. There  are $6\cdot 8  =48$ of them, leaving $56-48= 8$ elements that are not of order $7$. This eight elements must form a unique Sylow $2$-subgroup, which is normal in $G$. Remark that the argument was modified from Proposition \ref{prop-group-of-order-p2q-has-normal-Sylow}. For now, we let $P$ and $Q$ be a Sylow $7$-subgroup and a Sylow $2$-subgroup respectively. % Clearly $G = PQ$ and $P\cap Q = \{1\}$. By Proposition \ref{prop-internal-semidirect-prod-isom}, we have $G\cong  P\rtimes Q$ or $G\cong Q\rtimes P$.
 	
-If  $P$ is normal in $G$, then we want to construct nonisomorphic semidirect products $P\rtimes Q$. To do this, we consider all homomorphisms $\varphi:Q\rightarrow \Aut P$ and identify which isomorphic types the corresponding semidirect products belong to. By the First Isomorphism Theorem, we have
+If  $P$ is normal in $G$, then we want to construct nonisomorphic semidirect products $P\rtimes Q$. To do this, we consider all homomorphisms $\varphi:Q\rightarrow \operatorname{Aut}P$ and identify which isomorphic types the corresponding semidirect products belong to. By the First Isomorphism Theorem, we have
 	$
-	Q/\Ker  \varphi \cong \Im  \varphi
+	Q/\operatorname{ker} \varphi \cong \operatorname{im} \varphi
 	$.
-	Since $\Aut  P\cong \mathbb{Z}_6$ and the order of $Q/\Ker \varphi$ must be a power of $2$, we get $Q/\Ker \varphi\cong \mathbb{Z}_1$ or $Q/\Ker \varphi\cong \mathbb{Z}_2$.  Then the order of $\Ker \varphi$ is either $4$ or $8$. Now we can find homomorphisms by determining all nonisomorphic normal subgroups of $Q$ with order $4$ or $8$. In view of Lemma \ref{lemma-noob}, the corresponding semidirect products are not isomorphic.
+	Since $\operatorname{Aut} P\cong \mathbb{Z}_6$ and the order of $Q/\operatorname{ker}\varphi$ must be a power of $2$, we get $Q/\operatorname{ker}\varphi\cong \mathbb{Z}_1$ or $Q/\operatorname{ker}\varphi\cong \mathbb{Z}_2$.  Then the order of $\ker \varphi$ is either $4$ or $8$. Now we can find homomorphisms by determining all nonisomorphic normal subgroups of $Q$ with order $4$ or $8$. In view of Lemma \ref{lemma-noob}, the corresponding semidirect products are not isomorphic.
 	
 	 By Theorems \ref{thm-nonabelian-order-8} and  \ref{thm-decomposition-of-AG-elem-div}, there are only five nonisomorphic groups of order $8$: $\mathbb{Z}_2\times \mathbb{Z}_2\times \mathbb{Z}_2$, $\mathbb{Z}_4\times \mathbb{Z}_2$, $\mathbb{Z}_8$, $D_4$ and $Q_8$. So we obtain the following  isomorphism types.
 	\begin{itemize}
@@ -371,17 +363,17 @@ If  $P$ is normal in $G$, then we want to construct nonisomorphic semidirect pro
 		\end{itemize}
 		\item $\varphi$ is nontrivial (the kernel has order $4$):
 		\begin{itemize}
-			\item[(6)] $\mathbb{Z}_7\rtimes_{\varphi} (\mathbb{Z}_2\times \mathbb{Z}_2\times \mathbb{Z}_2)$, $\Ker\varphi \cong \mathbb{Z}_2\times \mathbb{Z}_2$;
-			\item[(7)] $\mathbb{Z}_7\rtimes_{\varphi} (\mathbb{Z}_4\times \mathbb{Z}_2)$, $\Ker\varphi \cong \mathbb{Z}_4$;
-			\item[(8)] $\mathbb{Z}_7\rtimes_{\varphi} (\mathbb{Z}_4\times \mathbb{Z}_2)$, $\Ker\varphi \cong  \mathbb{Z}_2\times \mathbb{Z}_2$;
-			\item[(9)] $\mathbb{Z}_7\rtimes_{\varphi} \mathbb{Z}_8$, $\Ker\varphi \cong \mathbb{Z}_4$;
-			\item[(10)] $\mathbb{Z}_7\rtimes_{\varphi} D_4$, $\Ker\varphi \cong \langle r\,|\, r^4=1 \rangle$;
-			\item[(11)] $\mathbb{Z}_7\rtimes_{\varphi} D_4$, $\Ker\varphi \cong \langle r^2,s\,|\, r^4=s^2=1 ,\, s^{-1}rs = r^{-1}\rangle$;
-			\item[(12)] $\mathbb{Z}_7\rtimes_{\varphi} Q_8$, $\Ker\varphi \cong \langle i\,|\, i^4=1 \rangle \cong \mathbb{Z}_4$.
+			\item[(6)] $\mathbb{Z}_7\rtimes_{\varphi} (\mathbb{Z}_2\times \mathbb{Z}_2\times \mathbb{Z}_2)$, $\ker\varphi \cong \langle 1\rangle \oplus \langle 1 \rangle$;
+			\item[(7)] $\mathbb{Z}_7\rtimes_{\varphi} (\mathbb{Z}_4\times \mathbb{Z}_2)$, $\ker\varphi \cong \langle (1,0)\rangle$;
+			\item[(8)] $\mathbb{Z}_7\rtimes_{\varphi} (\mathbb{Z}_4\times \mathbb{Z}_2)$, $\ker\varphi \cong \langle 2\rangle\oplus \langle 1\rangle$;
+			\item[(9)] $\mathbb{Z}_7\rtimes_{\varphi} \mathbb{Z}_8$, $\ker\varphi \cong \langle 2\rangle$;
+			\item[(10)] $\mathbb{Z}_7\rtimes_{\varphi} D_4$, $\ker\varphi \cong \langle r\,|\, r^4=1 \rangle$;
+			\item[(11)] $\mathbb{Z}_7\rtimes_{\varphi} D_4$, $\ker\varphi \cong \langle r^2,s\,|\, r^4=s^2=1 ,\, s^{-1}rs = r^{-1}\rangle$;
+			\item[(12)] $\mathbb{Z}_7\rtimes_{\varphi} Q_8$, $\ker\varphi \cong \langle i\,|\, i^4=1 \rangle$;
 		\end{itemize}
 	\end{itemize}
 	
-	If $P$ is not normal, then $Q$ is normal. By Proposition \ref{prop-internal-semidirect-prod-isom},  we have a semidirect product $Q\rtimes_{\theta} P$ where $\theta$ is the conjugation of $P$ on $Q$. We  claim that $Q\cong \mathbb{Z}_2\times\mathbb{Z}_2\times\mathbb{Z}_2$.  By Proposition \ref{prop-semidirect-trivial-hom},   the homomorphism $\theta$ must be nontrivial, whence $\Ker \theta < P$.  Let $P = \langle x\rangle\cong\mathbb{Z}_7$. Since $P$ is cyclic, we have $\Ker \theta = \{1\}$. Note that $S_P(y) = \{1\}$ or $P$ for all $y\in Q$. If $S_P(y) = P$ for all $y\in Q$, then $x^{-1}yx = y$ for all $x\in P$ and $y\in Q$. This implies $\Ker  \theta = P$, a contradiction. Hence there exists $y\in Q$ with $S_P(y) = \{1\}$. By Orbit-Stabilizer Theorem (Theorem \ref{thm-orbit-stab}), $|O_P(y)| = |P| = 7$. This means that every other nonidentity element in $Q$ can be expressed as a conjugate of $y$. These all have the same order as $y$. Since $Q$ is a $2$-subgroup, by Cauchy's theorem (Theorem \ref{thm-Cauchy}), there exists an element of order $2$ in $Q$. Therefore the argument above shows that $Q$ must be isomorphic to $\mathbb{Z}_2\times\mathbb{Z}_2\times\mathbb{Z}_2$. By Proposition \ref{prop-semidirect-prod-isom}, we can conclude that 
+	If $P$ is not normal, then $Q$ is normal. By Proposition \ref{prop-internal-semidirect-prod-isom},  we have a semidirect product $Q\rtimes_{\theta} P$ where $\theta$ is the conjugation of $P$ on $Q$. We  claim that $Q\cong \mathbb{Z}_2\times\mathbb{Z}_2\times\mathbb{Z}_2$.  By Proposition \ref{prop-semidirect-trivial-hom},   the homomorphism $\theta$ must be nontrivial, whence $\ker \theta < P$.  Let $P = \langle x\rangle\cong\mathbb{Z}_7$. Since $P$ is cyclic, we have $\ker \theta = \{1\}$. Note that $S_P(y) = \{1\}$ or $P$ for all $y\in Q$. If $S_P(y) = P$ for all $y\in Q$, then $x^{-1}yx = y$ for all $x\in P$ and $y\in Q$. This implies $\operatorname{ker} \theta = P$, a contradiction. Hence there exists $y\in Q$ with $S_P(y) = \{1\}$. By Orbit-Stabilizer Theorem (Theorem \ref{thm-orbit-stab}), $|O_P(y)| = |P| = 7$. This means that every other nonidentity element in $Q$ can be expressed as a conjugate of $y$. These all have the same order as $y$. Since $Q$ is a $2$-subgroup, by Cauchy's theorem (Theorem \ref{thm-Cauchy}), there exists an element of order $2$ in $Q$. Therefore the argument above shows that $Q$ must be isomorphic to $\mathbb{Z}_2\times\mathbb{Z}_2\times\mathbb{Z}_2$. By Proposition \ref{prop-semidirect-prod-isom}, we can conclude that 
 	\begin{equation*}
 		Q\rtimes_{\theta} P \cong (\mathbb{Z}_2\times\mathbb{Z}_2\times\mathbb{Z}_2) \rtimes_{\varphi} \mathbb{Z}_7
 	\end{equation*}
@@ -396,9 +388,9 @@ If  $P$ is normal in $G$, then we want to construct nonisomorphic semidirect pro
 		&= (2^3-1)(2^3-2)(2^3-2^2) 
 		\\
 		&= 168 = 2^3\cdot 3\cdot 7.
-	\end{align*}  Since $P$ is cyclic of order $7$ and both $\varphi$ and $\theta$ are nontrivial, the images $\Im  \varphi$ and $\Im  \theta$ are of order $7$, whence they are Sylow $7$-subgroup of $\Aut  Q$. By the Second Sylow Theorem (Theorem \ref{thm-second-sylow-thm}), there exists $\sigma\in \Aut  Q$ such that $\sigma^{-1} \Im  \varphi \, \sigma=\Im  \theta$. By Proposition \ref{prop-semidirect-useful-tool}, we have $Q\times_{\varphi} P \cong Q\times_{\theta} P$. Therefore we have established the last isomorphism type.
+	\end{align*}  Since $P$ is cyclic of order $7$ and both $\varphi$ and $\theta$ are nontrivial, the images $\operatorname{im} \varphi$ and $\operatorname{im} \theta$ are of order $7$, whence they are Sylow $7$-subgroup of $\operatorname{Aut} Q$. By the Second Sylow Theorem (Theorem \ref{thm-second-sylow-thm}), there exists $\sigma\in \operatorname{Aut} Q$ such that $\sigma^{-1} \operatorname{im} \varphi \, \sigma=\operatorname{im} \theta$. By Proposition \ref{prop-semidirect-useful-tool}, we have $Q\times_{\varphi} P \cong Q\times_{\theta} P$. Therefore we have established the last isomorphism type.
 	\begin{itemize}
-		\item[(13)] $(\mathbb{Z}_2\times\mathbb{Z}_2\times\mathbb{Z}_2) \rtimes_{\varphi} \mathbb{Z}_7$, $\Ker\varphi = \{1\}$.
+		\item[(13)] $(\mathbb{Z}_2\times\mathbb{Z}_2\times\mathbb{Z}_2) \rtimes_{\varphi} \mathbb{Z}_7$, $\ker\varphi = \{1\}$.
 	\end{itemize}
 \end{example}
 

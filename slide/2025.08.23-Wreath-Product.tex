@@ -69,41 +69,22 @@ So $((\omega,\delta)^{(f_1,h_1)})^{(f_2,h_2)}  = (\omega,\delta)^{(f_1,h_1)(f_2,
 	The action defined in Proposition \ref{prop-imprimitive-action-of-WP} is called the \textbf{imprimitive action} of $G\Wr_{\Delta} H$.
 \end{definition}
 
-\begin{proposition} \label{prop-imprim-WP}
+\begin{proposition}
 	Let $G$ and $H$ act on $\Omega$ and $\Delta$ respectively. 
 	\begin{enumerate}[(i)]
-		\item $G\Wr_\Delta H$ acts transitively on $\Omega\times \Delta$   if and only if both $G$ and $H$ are transitive.
+		\item The set $\Omega\times \Delta$ is a transitive $G\Wr_\Delta H$-set if and only if both $X$ and $\Delta$ are transitive sets.
 		\item  $G\Wr_\Delta H$ acts faithfully on $\Omega\times \Delta$ if and only if both actions are faithful.
-		\item If $|\Omega|,|\Delta|\geq 2$ and $G\Wr_\Delta H$ acts transitively on $\Omega\times \Delta$, then $G\Wr_\Delta H$ is imprimitive on $\Omega\times \Delta$.
+		\item If $|\Omega|,|\Delta|\geq 2$, then the action of $G\Wr_\Delta H$ on $\Omega\times \Delta$ is imprimitive.
 		\item In this form the wreath product is associative in the sense that, if $K$ acts on $\Gamma$, then the action of $(G\Wr_\Delta H) \Wr_\Gamma K$ on $\Omega\times \Delta \times \Gamma$  is permutationally isomorphic to the action of $G\Wr_{\Delta\times \Gamma} (H \Wr_\Gamma K)$ on $\Omega\times \Delta \times \Gamma$.
 	\end{enumerate}
 \end{proposition}
 
 \begin{sketch}
-	(i) Suppose that $G\Wr_\Delta H$ is transitive on $\Omega\times \Delta$. Then for any $\omega_1,\omega_2\in \Omega$ and $\delta_1,\delta_2\in \Delta$, consider the pairs $(\omega_1,\delta_1),(\omega_2,\delta_2) \in \Omega\times\Delta$. 
 	
-	Conversely, let $(\omega_1,\delta_1),(\omega_2,\delta_2) \in \Omega\times\Delta$. Then we take a function $f:\Delta \to G$ such that $f(\delta_1)=g$ where $\omega_1^g =\omega_2$.
-	
-	(ii) Suppose that the action of $G\Wr_\Delta H$ on $\Omega\times \Delta$ is faithful. Let $g\in G$ be such that $\omega^g = \omega$ for all $\omega\in \Omega$. There is a function $f:\Delta\to G$ such that $f(\delta) = g$ for all $\delta\in \Delta$. So $\omega^{f(\delta)} = \omega$ for all $\delta\in \Delta$. This implies $g = f(\delta) = 1$. We use a similar argument to show that $H$ is faithful on $\Delta$.
-	
-	Conversely, let $(f,h)\in G\Wr_{\Delta} H$ be such that  $(\omega,\delta)^{(f,h)} = (\omega,\delta)$ for all $(\omega,\delta)\in\Omega\times \Delta$. In particular, $\delta^h = \delta$ for all $\delta\in \Delta$. Since the action of $H$ on $\Delta$ is faithful, we get $h = 1$. Next, note that $\omega^{f(\delta)} = \omega$ for all $\omega\in\Omega$, $\delta\in\Delta$. Since the action of $G$ on $\Omega$ is faithful, we get $f(\delta) = 1$ for all $\delta\in\Delta$.
-	
-	(iii) Let $\delta\in \Delta$ and consider the subset $\Omega\times \{\delta\}$ of $\Omega\times \Delta$. We show that it is a nontrivial block. Let $(f,h)\in G\Wr_{\Delta} H$ be  such that $(\Omega\times \{\delta\})^{(f,h)} \cap (\Omega\times \{\delta\}) \neq \emptyset$. Then $\delta^h = \delta$ and $\Omega^{f(\delta)} \cap \Omega \neq \emptyset$. Since $\Omega$ itself is a block, it follows that $\Omega^{f(\delta)} =\Omega$. Hence $(\Omega\times \{\delta\})^{(f,h)} = \Omega\times \{\delta\}$.
-	
-	(iv) This is so long. Just brute force.
 \end{sketch}
 
-\begin{remark}\begin{enumerate}[(i)]
-		\item 	Proposition \ref{prop-imprim-WP}.(iii) is the reason why we call the action imprimitive.
-		\item The standard wreath product is not associative in general. Let $H$, $K$ and $L$ be three groups. Then
-\begin{gather*}
-	|H \Wr K| = |H|^{|K|} |K| = |H|^{|K|} |K|,
-	\\
-	|(H \Wr K) \Wr L| = |H \Wr K|^{|L|} |L| = |H|^{|K||L|} |K|^{|L|} |L|.
-\end{gather*}  But $|K \Wr L| = |K|^{|L|} |L|$ and so $$|H \Wr (K \Wr L)| = |H|^{|K \Wr L|} |K \Wr L| = |H|^{|K|^{|L|} |L|} |K|^{|L|} |L|.$$
- Thus $(H \Wr K) \Wr L$ does not necessarily have the same order  as $H \Wr (K \Wr L)$. 
-	\end{enumerate}
-
+\begin{remark}
+	
 \end{remark}
 
 \begin{theorem}[Embedding Theorem] \label{thm-embedding}
@@ -162,13 +143,13 @@ This shows that $(\vartheta,\psi)$ is a permutational embedding.
 
 \subsection{Product Action}
 \begin{proposition} \label{prop-product-action-of-WP}
-	Let $(G,\Omega)$ and $(H,\Delta)$ be permutation groups. Then $G\Wr_\Delta H$ (resp. $G\wr_\Delta H$) acts on $\Omega^\Delta$ via
+	Let $(G,\Omega)$ and $(H,\Delta)$ be permutation groups. Then $G\Wr_\Delta H$ (resp. $G\wr_\Delta H$) acts on $\Delta^\Omega$ via
 	\begin{equation*}
 	\varphi^{(f,h)}(\delta) = \varphi(\delta^{h^{-1}})^{f(\delta^{h^{-1}})}.
 	\end{equation*} 
 \end{proposition}
 \begin{sketch}
-	Let $\varphi\in \Omega^\Delta$ and let $\delta\in \Delta$. 
+	Let $\varphi\in \Delta^{\Omega}$ and let $\delta\in \Delta$. 
 	Clearly $\varphi^{(1,1)}(\delta) = \varphi(\delta^{1})^{1(\delta^{1})} = \varphi(\delta)^{1} = \varphi(\delta)$. Let $f_1,f_2\in G^\Delta$ and $h_1,h_2\in H$. Then  
 	\begin{align*}
 		(\varphi^{(f_1,h_1)})^{(f_2,h_2)}(\delta) &= \varphi^{(f_1,h_1)}(\delta^{h_2^{-1}})^{f_2(\delta^{h_2^{-1}})}
@@ -189,7 +170,7 @@ This shows that $(\vartheta,\psi)$ is a permutational embedding.
 \\
 &= \varphi(\delta^{(h_1h_2)^{-1}})^{f_1(\delta^{(h_1h_2)^{-1}})f_2((\delta^{h_2^{-1}})}.
 \end{align*}
-	So $(\varphi^{(f_1,h_1)})^{(f_2,h_2)}  =\varphi^{(f_1,h_1)(f_2,h_2)}$. This shows that $G\Wr_{\Delta} H$ acts on $\Omega^\Delta$ with respect to this action.
+	So $(\varphi^{(f_1,h_1)})^{(f_2,h_2)}  =\varphi^{(f_1,h_1)(f_2,h_2)}$. This shows that $G\Wr_{\Delta} H$ acts on $\Delta^\Omega$ with respect to this action.
 \end{sketch}
 \begin{definition}
 	The action defined in Proposition \ref{prop-product-action-of-WP} is called the \textbf{product action} of $G\Wr_{\Delta} H$.

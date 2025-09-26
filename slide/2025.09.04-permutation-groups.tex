@@ -1,16 +1,16 @@
 \section{Introduction to Permutation Group Theory}
 \subsection{Notations}
-A \textbf{permutation group} of a set $\Omega$ is a subgroup of $\Sym\Omega$. If $G$ is a permutation group on $\Omega$, then $G$ acts on $\Omega$ via the inclusion map and this is a faithful action. The \textbf{degree} of such an action is $|\Omega|$.  Conversely, if $G$ is a faithful action on $\Omega$, then $G$ can be identified as a permutation group of $\Omega$. For simplicity, we reintroduce notations for notions in group actions. Let $G$ act on $\Omega$.  
+A \textbf{permutation group} of a set $\Omega$ is a subgroup of $\Sym\Omega$. If $G$ is a permutation group on $\Omega$, then $G$ acts on $\Omega$ via the canonical injection and this is a faithful action. The \textbf{degree} of such an action is $|\Omega|$.  Conversely, if $G$ is a faithful action on $\Omega$, then $G$ can be identified as a permutation group of $\Omega$. For simplicity, we reintroduce notations for notions in group actions. Let $G$ act on $\Omega$.  
 \begin{align*}
 	\omega^G &= O_G(\omega) =\{\omega^g\mid g\in G\}, \tag{\textbf{Orbit} of $\omega \in \Omega$}
 	\\
-	G_{\omega} &= S_G(\omega) = \{g\in G\mid \omega^g = \omega\}, \tag{\textbf{Point stabilizer} of $\omega\in \Omega$}
+	G_{\omega} &= \operatorname{Stab}_G(\omega) = \{g\in G\mid \omega^g = \omega\}, \tag{\textbf{Point stabilizer} of $\omega\in \Omega$}
 	\\
 	G_{X} &=  \{g\in G\mid X^g = X\}, \tag{\textbf{Setwise stabilizer} of $X\subseteq \Omega$}
 	\\
 	G_{(X)} &=  \{g\in G\mid x^g = x\text{ for all }x\in X\}. \tag{\textbf{Elementwise stabilizer} of $X\subseteq \Omega$}
 \end{align*}
-\subsection{Isomorphic Actions}
+\subsection{Isomorphic actions}
 \begin{definition}
 	Let $G$ and $H$ be groups acting on the sets $\Omega$ and $\Delta$, respectively. The two actions (or the pairs $(G,\Omega)$ and $(H,\Delta)$) are said to be \textbf{permutationally isomorphic} if there exist a bijection $\vartheta: \Omega \to \Delta$ and an isomorphism $\chi: G \to H$ such that
 	\[ \vartheta(\omega^g) = \vartheta(\omega)^{\chi(g)} \]
@@ -25,7 +25,7 @@ A \textbf{permutation group} of a set $\Omega$ is a subgroup of $\Sym\Omega$. If
 		\arrow["\vartheta", from=1-3, to=3-3]
 		\arrow["{\chi(g)}"', from=3-1, to=3-3]
 	\end{tikzcd}\]
-	If such conditions hold, the pair $(\vartheta, \chi)$ is said to be a \textbf{permutational isomorphism}. Similarly, the pair $(\vartheta, \chi)$ is a \textbf{permutational embedding} of the permutation group $G$ on $\Omega$ into the permutation group $H$ on $\Delta$, if $\chi: G \to H$ is a monomorphism and $(\vartheta, \hat{\chi})$ is a permutational isomorphism, where $\hat{\chi}: G \to \Im \chi$ is obtained from $\chi$ by simply restricting the range of $\chi$.
+	If such conditions hold, the pair $(\vartheta, \chi)$ is said to be a \textbf{permutational isomorphism}. Similarly, the pair $(\vartheta, \chi)$ is a \textbf{permutational embedding} of the permutation group $G$ on $\Omega$ into the permutation group $H$ on $\Delta$, if $\chi: G \to H$ is a monomorphism and $(\vartheta, \hat{\chi})$ is a permutational isomorphism, where $\hat{\chi}: G \to \operatorname{im}\chi$ is obtained from $\chi$ by simply restricting the range of $\chi$.
 \end{definition}
 
 
@@ -38,7 +38,7 @@ A \textbf{permutation group} of a set $\Omega$ is a subgroup of $\Sym\Omega$. If
 \end{sketch}
 
 
-\begin{proposition} \label{prop-eqv-for-isom-trans-grp}
+\begin{proposition}
 	Let $G $ and $H$ be groups acting transitively on $\Omega $ and $\Delta $, respectively. Then the following are equivalent.
 	\begin{enumerate}[(1)]
 		\item The actions of $G $ and $H$ on $\Omega $ and $\Delta $, respectively, are permutationally isomorphic.
@@ -50,15 +50,15 @@ A \textbf{permutation group} of a set $\Omega$ is a subgroup of $\Sym\Omega$. If
 \begin{sketch}
 	(1) $\Rightarrow$ (2) Let $(\vartheta: \Omega  \to \Delta , \varphi: G  \to H)$ be a permutational isomorphism. Let $\omega \in \Omega $ and $g \in G_{\omega}$. Then $\vartheta(\omega) ^{\varphi (g)} = \vartheta(\omega^g) = \vartheta(\omega)$, and so $\varphi(g) \in H_{\vartheta(\omega)}$. Therefore $\varphi (G_{\omega}) \leq H_{\vartheta(\omega)}$. 
 	
-	On the other hand if $h \in H_{\vartheta(\omega)}$ then there is some $g \in G $ such that $\varphi(g) = h$. Then $\vartheta(\omega) = \vartheta(\omega)^{h} = \vartheta(\omega)^{\varphi(g)} = \vartheta(\omega^{g})$. Since $\vartheta$ is injective, we obtain $\omega = \omega^{g}$. Therefore $g \in G_{\omega}$, and hence $h = \varphi(g) \in \varphi(G_{\omega})$. This shows that $\varphi(G_{\omega} ) = H_{\vartheta(\omega)}$.
+	On the other hand if $g_2 \in H_{\vartheta(\omega)}$ then there is some $g_1 \in G $ such that $\varphi(g_1) = g_2$. Then $\vartheta(\omega) = \vartheta(\omega)^{g_2} = \vartheta(\omega)^{\varphi(g_1)} = \vartheta(\omega^{g_1})$. Applying $\vartheta^{-1}$ we obtain $\omega = \omega^{g_1}$. Therefore $g_1 \in G_{\omega}$, and hence $g_2 = \varphi(g_1) \in \varphi(G_{\omega})$. This shows that $\varphi(G_{\omega} ) = H_{\vartheta(\omega)}$.
 	
 	(2) $\Rightarrow$ (3) Since both $G$ and $H$ are transitive, $\{G_{\omega'} \mid \omega' \in \Omega \}$ and $\{H_{\delta'} \mid \delta' \in \Delta \}$ are conjugacy classes in $G$ and $H$, respectively, by Proposition \ref{prop-stabilizer}.(ii). Let $\varphi: G  \to H$ be an isomorphism, and $\omega \in \Omega , \delta \in \Delta$ such that $\varphi(G_{\omega}) = H_{\delta}$, and let $\omega' \in \Omega $ and $\delta' \in \Delta $. Then there are $\sigma_1 \in \Inn G$ and $\sigma_2 \in \Inn H$ such that $\sigma_1(G_{\omega'}) = G_{\omega}$ and $\sigma_2(H_{\delta}) = H_{\delta'}$. If $\phi = \sigma_1\varphi\sigma_2$ then clearly $\phi(G_{\omega'} ) = H_{\delta'}$.
 	
-	(3) $\Rightarrow$ (1) Let $\omega \in \Omega , \delta \in \Delta $, and $\varphi: G  \to H$ be an isomorphism such that $\varphi(G_{\omega} ) = H_{\delta}$. Then define $\vartheta: \Omega  \to \Delta $ by $\vartheta (\omega^g)= \delta^{\varphi(g)}$ for $g \in G $. We show that $\vartheta$ is well-defined. Since $G $ is transitive, we have $\Omega = \{\omega^g\mid g\in G\}$. If $\omega^{g_1} = \omega^{g_2}$ for some $g_1, g_2 \in G $, then, $g_1g_2^{-1} \in G_{\omega}$, and so $\varphi(g_1g_2^{-1}) = \varphi(g_1)\varphi(g_2)^{-1} \in H_{\delta}$. Hence $\delta^{\varphi(g_1)} = \delta^{\varphi(g_2)}$, and so $\vartheta$ is well-defined.  Since $H = \varphi(G)$ is transitive, $\vartheta$ is surjective. For injectivity, suppose that $\vartheta(\omega^{g_1} ) = \vartheta(\omega^{g_2} )$ for some $g_1, g_2 \in G$, then, by the definition of $\vartheta$, we have $\delta^{\varphi(g_1)} = \delta^{\varphi(g_2)}$ and so $\varphi(g_1)\varphi(g_2)^{-1} = \varphi(g_1g_2^{-1}) \in H_{\delta}$. Thus $g_1g_2^{-1} \in G_{\omega}$, and so $\omega^{g_1} = \omega^{g_2}$. Therefore $\vartheta$ is injective, and hence $\vartheta$ is a bijection. 
+	(3) $\Rightarrow$ (2) Let $\omega \in \Omega , \delta \in \Delta $, and $\varphi: G  \to H$ be an isomorphism such that $\varphi(G_{\omega} ) = H_{\delta}$. Then define $\vartheta: \Omega  \to \Delta $ by $\vartheta (\omega^g)= \delta^{\varphi(g)}$ for $g \in G $. We show that $\vartheta$ is well defined. Since $G $ is transitive, we have $\Omega = \{\omega^g\mid g\in G\}$. If $\omega^{g_1} = \omega^{g_2}$ for some $g_1, g_2 \in G $, then, $g_1g_2^{-1} \in G_{\omega}$, and so $\varphi(g_1g_2^{-1}) = \varphi(g_1)\varphi(g_2)^{-1} \in H_{\delta}$. Hence $\delta^{\varphi(g_1)} = \delta^{\varphi(g_2)}$, and so $\vartheta$ is well defined.  Since $H = \varphi(G)$ is transitive, $\vartheta$ is surjective. For injectivity, suppose that $\vartheta(\omega^{g_1} ) = \vartheta(\omega^{g_2} )$ for some $g_1, g_2 \in G$, then, by the definition of $\vartheta$, we have $\delta^{\varphi(g_1)} = \delta^{\varphi(g_2)}$ and so $\varphi(g_1)\varphi(g_2)^{-1} = \varphi(g_1g_2^{-1}) \in H_{\delta}$. Thus $g_1g_2^{-1} \in G_{\omega}$, and so $\omega^{g_1} = \omega^{g_2}$. Therefore $\vartheta$ is injective, and hence $\vartheta$ is a bijection. 
 	
-	If $\omega' \in \Omega $ and $g \in G $ then there exists $g' \in G $ such that $\omega' = \omega^{g'}$. Then
+	If $\omega \in \Omega $ and $g \in G $ then there is a $g_1 \in G $ such that $\omega = \omega^{g_1}$. Then
 	\begin{equation*}
-		\vartheta(\omega'^g) = \vartheta((\omega^{g'} )^g) = \delta^{\varphi(g'g)} = \delta^{\varphi(g')\varphi(g)} = \vartheta(\omega^{g'} )^{\varphi(g)} = \vartheta(\omega')^{\varphi(g)}.
+		\vartheta(\omega^g) = \vartheta((\omega^{g_1} )^g) = \delta^{\varphi(g_1g)} = \delta^{\varphi(g_1)\varphi(g)} = \vartheta(\omega^{g_1} )^{\varphi(g)} = \vartheta(\omega)^{\varphi(g)}.
 	\end{equation*}
 	Thus $(\vartheta, \varphi)$ is a permutational isomorphism.
 \end{sketch}
@@ -66,29 +66,25 @@ A \textbf{permutation group} of a set $\Omega$ is a subgroup of $\Sym\Omega$. If
 
 
 
-\begin{proposition} \label{prop-isom-perm-grp-are-conj}
-	Let $\Omega$ be a set and let $G_1, G_2 \le \Sym\Omega$. Then $G_1$ and $G_2$ are permutationally isomorphic if and only if they are conjugate in $\Sym(\Omega)$. Moreover, if $(\vartheta, \varphi)$ is a permutational isomorphism, then $\vartheta \in \Sym(\Omega)$ and $\varphi(g) = \vartheta^{-1}g\vartheta$, for all $g \in G_1$.
+\begin{proposition}
+	Let $\Omega$ be a set and let $G_1, G_2 \le \Sym\Omega$. Then $G_1$ and $G_2$ are permutationally isomorphic if and only if they are conjugate in $\Sym\Omega$. Moreover, if $(\vartheta, \varphi)$ is a permutational isomorphism, then $\vartheta \in \Sym\Omega$ and $\varphi(g) = \vartheta^{-1}g\vartheta$, for all $g \in G_1$.
 \end{proposition}
 
 \begin{sketch}
 	Assume that $G_1$ and $G_2$ are permutationally isomorphic, and let $(\vartheta:\Omega\to \Omega, \varphi:G_1\rightarrow G_2)$ be a permutational isomorphism. Then we have $\vartheta(\omega^g) = \vartheta(\omega)^{\varphi(g)}$ for all $g \in G_1$ and $\omega \in \Omega$, i.e., $\omega^g = \vartheta^{-1}(\vartheta(\omega)^{\varphi(g)})$. This shows that $\vartheta^{-1}g\vartheta = \varphi(g)$, and so $G_1$ is conjugate to $\varphi(G_1) = G_2$.
 	
-	Conversely, suppose that $\vartheta \in \Sym\Omega$ with $\vartheta^{-1}G_1\vartheta = G_2$ and let $\varphi: G_1 \to G_2$ be the isomorphism defined by  $\varphi(g) = \vartheta^{-1}g\vartheta$. Then  $\vartheta(\omega)^{\varphi(g)} = \vartheta(\omega)^{\vartheta^{-1}g\vartheta} = \vartheta((\vartheta^{-1}(\vartheta(\omega)))^{g}) = \vartheta(\omega^g)$ for $g \in G$ and $\omega \in \Omega$. Hence $(\vartheta, \varphi)$ is a permutational isomorphism.
+	Suppose conversely that $\vartheta \in \Sym\Omega$ such that $\vartheta^{-1}G_1\vartheta = G_2$ and let $\varphi: G_1 \to G_2$ be the isomorphism defined by  $\varphi(g) = \vartheta^{-1}g\vartheta$. Then  $\vartheta(\omega)^{\varphi(g)} = \vartheta(\omega)^{\vartheta^{-1}g\vartheta} = \vartheta((\vartheta^{-1}(\vartheta(\omega)))^{g}) = \vartheta(\omega^g)$ for $g \in G$ and $\omega \in \Omega$. Hence $(\vartheta, \varphi)$ is a permutational isomorphism.
 \end{sketch}
 
- Recall that if $H$ is a subgroup of  a group $G$, then the right coset action of $G$ on the set $\Gamma_H$ of right cosets of $H$  is defined by $(Hx)^g  = Hxg$ for $x,g\in G$. In view of Theorem \ref{thm-statement-of-kernel-of-left-translation}, this action is transitive. In fact, every transitive action is permutationally isomorphic to a coset action. 
+ Recall that if $H$ is a subgroup of  a group $G$, then the right coset action of $G$ on the set $\Gamma_H$ of right cosets of $H$  is defined by $(Hh)^g  = Hhg$ for $h,g\in G$. In view of Theorem \ref{thm-statement-of-kernel-of-left-translation}, this action is transitive. In fact, every transitive action is permutationally isomorphic to a coset action. 
 \begin{proposition} \label{prop-transitive-action-perm-isom}
 	Let $G$ act transitively on $\Omega$ and let $\omega\in \Omega$. Then the $G$-action on $\Omega$ is permutationally isomorphic to the $G$-action on $\Gamma_{G_\omega}$.
 \end{proposition}
 \begin{sketch}
 	Since $G$ is transitive, we have $\omega^G = \Omega$. Let $\vartheta:\Omega \rightarrow \Gamma_{G_\omega}$ be the bijective function as defined in Lemma \ref{lemma-orbit-partition-and-bijection}.(ii). Then $\vartheta((\omega^g)^h) = \vartheta(\omega^{gh}) = G_\omega gh = (G_\omega g)^h = \vartheta(\omega^g)^h$. This shows that $(\vartheta,\operatorname{Id}_G)$ is a permutational isomorphism.
 \end{sketch}
-\begin{remark}
-	In case of a permutation group, or more generally, a faithful action of $G$ on $\Omega$, we can verify that this action is faithful on $\Gamma_{G_\omega}$. Let $\rho$ be the associated homomorphism. Then $\rho(G)\cong G$ and so we can establish a permutational isomorphism between $(G,\Omega)$ and $(\rho(G),\Gamma_{G_\omega})$.
-\end{remark}
 
-
-\begin{corollary}[Frattini's Argument] \label{cor-Frattini-transitive}
+\begin{corollary}
 	Let $G$ act transitively on $\Omega$ and let $\omega\in\Omega$. Then a subgroup $H$ of $G$ is transitive if and only if $G = G_\omega H$.
 \end{corollary}
 \begin{sketch}
@@ -143,7 +139,7 @@ To prove the last statement, note that the action of $G$ on $\Sigma$ is given by
 \end{sketch}
 
 \begin{definition}
-	Let $G$ act transitively on $\Omega$. The set $\Sigma$ of equivalence classes associated to a $G$-congruence on $\Omega$ is called a \textbf{system of blocks} (or a \textbf{system of imprimitivity}). Such a system is said to be \textbf{trivial} if it only contains trivial blocks.
+	Let $G$ act transitively on $\Omega$. A partition $\Sigma$ of $\Omega$ is called a \textbf{system of blocks} (or a \textbf{system of imprimitivity}) if each $\Delta\in \Sigma$ is a block.
 \end{definition}
 
 \subsection{Primitive Actions}
@@ -168,7 +164,7 @@ To prove the last statement, note that the action of $G$ on $\Sigma$ is given by
 	This correspondence is order-preserving, i.e., if $\Delta_1,\Delta_2$ are blocks of $\Omega$ containing $\omega$, then $\Delta_1\subseteq \Delta_2$ if and only if $\theta(\Delta_1)\subseteq \theta(\Delta_2)$. Indeed $\Delta_1\subseteq \Delta_2$ implies that $\omega^g \in \Delta_1\subseteq \Delta_2$ for all $g\in H_{\Delta_1}$. Conversely, suppose that $H_{\Delta_1}\leq H_{\Delta_2}$. Let $\delta\in \Delta_1$. So there exists $g\in G$ such that $\delta = \omega^g$. This implies $g\in H_{\Delta_1}\subseteq H_{\Delta_2}$. So $\delta = \omega^g \in \Delta_2$. This shows that $\theta$ is order-preserving.
 \end{remark}
 
-\begin{corollary} \label{cor-prim-iff-stab-is-max}
+\begin{corollary}
 	Let $G$ act transitively on $\Omega$. Then $G$ is primitive if and only
 	if the stabilizers are maximal subgroups.
 \end{corollary}
@@ -182,121 +178,52 @@ To prove the last statement, note that the action of $G$ on $\Sigma$ is given by
 \begin{definition}
 	Let $G$ act on a set $\Omega$. We say that $G$ acts \textbf{semiregularly} on $\Omega$ ($G$ or the $G$-set $\Omega$ is \textbf{semiregular}) if nonidentity elements fix no point, i.e., $G_\omega = 1$ for all $\omega\in\Omega$. We say that $G$ acts \textbf{regularly} on $\Omega$ if $G$ is transitive and semiregular.
 \end{definition}
-Let $H$ be a subgroup of a group $G$ and let $\Gamma_H$ be the set of right cosets of $H$ in $G$. We have the right coset action of $G$ on $\Gamma_H$, i.e., $(Hx)^g = Hxg$. In fact, we can also define another right coset action of $N_G(H)$ on $\Gamma_H$ by left multiplication: $(Hx)^g = Hg^{-1}x$. Note that $g^{-1}$ is required and $G$ is restricted to $N_G(H)$ to ensure that this action is a well-defined right action.
-\begin{lemma} \label{lemma-left-right-mult}
-	Let $G$ be a group with a subgroup $H$, and put $K := N_G(H)$. Let $\Gamma_H$ denote the set of right cosets of $H$ in $G$, and let $\rho$ and $\lambda$ denote the right and left multiplication of $G$ and $K$, respectively, on $\Gamma_H$ as defined above. Then the following hold.
+\begin{lemma}
+	Let $G$ be a group with a subgroup $H$, and put $K := N_G(H)$. Let $\Gamma_H$ denote the set of right cosets of $H$ in $G$, and let $\rho$ and $\lambda$ denote the right and left actions of $G$ and $K$, respectively, on $\Gamma_H$ as defined above. Then the following hold.
 \begin{enumerate}[(i)]
-\item $\Ker \lambda = H$ and $\lambda(K)$ is semiregular.
+\item $\ker \lambda = H$ and $\lambda(K)$ is semiregular.
 \item The centralizer $C$ of $\rho(G)$ in $\Sym\Gamma_H$ equals $\lambda(K)$.
 \item $H \in \Gamma_H$ has the same orbit under $\lambda(K)$ as under $\rho(K)$.
-\item If $\lambda(K)$ is transitive, then $K = G$, and $\lambda(G)$ and $\rho(G)$ are conjugate in $\Sym(\Gamma_H)$.
+\item If $\lambda(K)$ is transitive, then $K = G$, and $\lambda(G)$ and $\rho(G)$ are conjugate in $\Sym\Gamma_H$.
 \end{enumerate}
 \end{lemma}
 \begin{sketch}
-	(i) Clearly $(Ha)^{\lambda(x)} = Ha$ for all $a \in G \Leftrightarrow x \in H \Leftrightarrow (Ha)^{\lambda(x)} = Ha$ for some $a \in G$. Thus $\Ker \lambda = H$, and the point stabilizer of each point $Ha \in \Gamma_H$ under the action $\lambda$ is $H$.
-
-(ii) Let $\lambda(y)\in \lambda(K)$ and let $\rho(x)\in \rho(G)$. Then for each $a \in G$,
-	\begin{align*}
-		(Ha)^{\rho(x)\lambda(y)} &= Hy^{-1}ax = (Ha)^{\lambda(y)\rho(x)}
-	\end{align*}
-	and so $\rho(x)\lambda(y) = \lambda(y)\rho(x)$. Thus $\lambda(K) \subseteq C$.
-
-Conversely, suppose that $z \in C$ and write $Hc=H^z$ for some $c\in G$. Then for each $a \in G$,
-\begin{equation*}
-	(Ha)^z = (H^{\rho(a)})^z=H^{\rho(a)z} = H^{z\rho(a)} = Hca.
-\end{equation*}
-	In particular, for each $a \in H$, we have
-\begin{equation*}
-	Hc= H^z = (Ha)^z = Hca.
-\end{equation*}  Thus $c \in N_G(H) = K$, and $z = \lambda(c^{-1}) \in \lambda(K)$. This shows that $C \subseteq \lambda(K)$.
-
-(iii) Note that
-\begin{align*}
-	H^{\lambda(K)} &= \{H^{\lambda(x)}\mid x\in K\} 
-	\\
-	&= \{Hx^{-1}\mid x\in K\} 
-	\\
-	&= \{Hx\mid x\in K\}
-	\\
-	&= \{H^{\rho(x)}\mid x\in K\}
-	\\
-	&= H^{\rho(K)}.
-\end{align*}
-
-(iv) If $\lambda(K)$ is transitive, then (iii) shows that each coset $Hx$ ($x \in G$) has the form $H^{\rho(y)} = Hy$ for some $y \in K$. So $xy^{-1} \in H\subseteq K$ and thus $x\in K$. Hence $G = K = N_G(H)$. Now we can define a permutation $t \in\Sym(\Gamma_H)$ by $(Ha)^t := Ha^{-1}$. Note that $t$ is well-defined because $H$ is normal in $G$. Finally, the calculation shows that $t^{-1}\lambda(x)t = \rho(x)$ for all $x \in G$.
+	
 \end{sketch}
 
-\begin{theorem} \label{thm-centralizer-trans-perm-grp}
-	Let $G$ be a transitive subgroup of $\Sym(\Omega)$ and let $\omega\in \Omega$. Let $C$ be the centralizer of $G$ in $\Sym(\Omega)$. Then the following hold.
+\begin{theorem}
+	Let $G$ be a transitive subgroup of $\Sym\Omega$, and $\alpha$ a point in $\Omega$. Let $C$ be the centralizer of $G$ in $\Sym\Omega$. Then the following hold.
 	\begin{enumerate}[(i)]
-		\item $C$ is semiregular, and $C \cong N_G(G_\omega)/G_\omega$.
+		\item $C$ is semiregular, and $C \cong N_G(G_\alpha)/G_\alpha$. In particular, $|C| = |\text{fix}(G_\alpha)|$.
 		\item $C$ is transitive if and only if $G$ is regular.
-		\item If $C$ is transitive, then it is conjugate to $G$ in $\Sym(\Omega)$ and hence $C$ is regular.
-		\item $C = 1$ if and only if $G_\omega$ is self-normalizing in $G$, i.e., $N_G(G_\omega) = G_\omega$.
+		\item If $C$ is transitive, then it is conjugate to $G$ in $\Sym\Omega$ and hence $C$ is regular.
+		\item $C = 1$ if and only if $G_\alpha$ is self-normalizing in $G$, i.e., $N_G(G_\alpha) = G_\alpha$.
 		\item If $G$ is abelian, then $C = G$.
 		\item If $G$ is primitive and nonabelian, then $C = 1$.
 	\end{enumerate}
 \end{theorem}
 \begin{sketch}
-(i) Let $\omega\in\Omega$. Since $G$ is transitive, it follows from Proposition \ref{prop-transitive-action-perm-isom} that $(G,\Omega)$ and $(\rho(G),\Gamma_{G_\omega})$ are permutationally isomorphic. By Lemma \ref{lemma-left-right-mult}.(ii), $C$ is permutationally isomorphic to $C_{\Sym(\Gamma_{G_\omega})}(\rho(G)) = \lambda(K)$, where $K = N_G(G_\omega)$. So $C$ is semiregular by Lemma \ref{lemma-left-right-mult}.(i). Also, Lemma \ref{lemma-left-right-mult}.(i) and the First Isomorphism Theorem show that
-	$
-		C \cong \lambda(K) \cong K/\Ker \lambda  = N_G(G_\omega)/G_\omega$.
 	
-	(ii) If $C$ is transitive, then $\lambda(K)$ is transitive. By Lemma \ref{lemma-left-right-mult}.(iv), $N_G(G_\omega) = G$.  Then $G_\omega =G_{\omega^g}$ for all $g\in G$ by Proposition \ref{prop-stabilizer}.(ii). Since $G$ is transitive and faithful, it follows from Proposition \ref{prop-kernel-of-transitive-action} that $G_\omega = 1$. Hence $G$ is regular. 
-	
-	Conversely, if $G$ is regular, then $K = G$. By Theorem \ref{thm-statement-of-kernel-of-left-translation}.(i), we know that $\lambda(G)$ is transitive. Hence $C$ is transitive.
-	
-	(iii) If $C$ is transitive, we see that $K = G$ and both $\lambda(G)$ and $\rho(G)$ are conjugate in $\Sym(\Gamma_{G_\omega})$ by Lemma \ref{lemma-left-right-mult}.(iv). Since $G$ and $\rho(G)$ are permutationally isomorphic, $C$ and $G$ are conjugate in $\Sym(\Omega)$. By Proposition \ref{prop-isom-perm-grp-are-conj}, $C$ and $G$ are permutationally isomorphic. From (ii), we know that $G$ is regular and thus $C$ is regular.
-	
-	(iv) The result follows from (i).
-	
-	(v) Since $G$ is abelian, it follows that $G \subseteq C$. Let $\omega \in \Omega$.  Since $C$ is semiregular by (i), we have $C_\omega = 1$. By Frattini's argument (Corollary \ref{cor-Frattini-transitive}), we now have $C = GC_\omega = G$.
-	
-	(vi) Since $G$ is primitive, it follows from Corollary \ref{cor-prim-iff-stab-is-max} that $G_\omega$ is a maximal subgroup. By the argument in (ii), $N_G(G_\omega)$ is a proper subgroup of $G$. So we obtain $N_G(G_\omega) = G_\omega$. Hence the result follows from (iv).
 \end{sketch}
 
 
-\begin{theorem} \label{thm-normalizer-of-perm-grp}
+\begin{theorem}
 	Let $G$ be a transitive subgroup of $\Sym\Omega$, let $N$ be the normalizer of $G$ in $\Sym \Omega$ and let $\alpha \in \Omega$. If $\Psi:N\to \Aut G$ is the homomorphism defined by conjugation, and $\sigma \in \Aut G$, then
-	$ \sigma \in \Im  \Psi$ if and only if $(G_\alpha)^\sigma$ is a point stabilizer for $G$, i.e., $(G_\alpha)^\sigma = G_\beta$ for some $\beta\in\Omega$.
+	$ \sigma \in \operatorname{im} \Psi$ if and only if $(G_\alpha)^\sigma$ is a point stabilizer for $G$, i.e., $(G_\alpha)^\sigma = G_\beta$ for some $\beta\in\Omega$.
 \end{theorem}
 \begin{sketch}
-	Let $\sigma \in\Im  \Psi$, so $\sigma = \Psi(x)$ for some $x \in N$. Then $$(G_\alpha)^\sigma= (G_\alpha)^{\Psi(x)} = x^{-1}G_\alpha x = G_{\alpha^x}$$
-	by  Proposition \ref{prop-stabilizer}.(ii). Write $\beta = \alpha^x$ and we are done. 
-	
-	Conversely, suppose that $(G_\alpha)^\sigma = G_\beta$ for some $\beta \in \Omega$. By Proposition \ref{prop-eqv-for-isom-trans-grp}, the two permutation groups on $\Omega$ (which are $G$ and $G^\sigma$) are permutationally isomorphic. By Proposition \ref{prop-isom-perm-grp-are-conj}, there exists $t \in \Sym\Omega$ such that $x^\sigma = t^{-1}xt$ for all $x \in G$. Clearly $t \in N$. Hence $\sigma = \Psi(t) \in\Im  \Psi$ as required.
+	Let $\sigma \in\operatorname{im} \Psi$, so $\sigma = \Psi(x)$ for some $x \in N$. Then $(G_\alpha)^\sigma = x^{-1}G_\alpha x = G_\beta$ where $\beta = \alpha^x$. Conversely, suppose that $(G_\alpha)^\sigma = G_\beta$ for some $\beta \in \Omega$. Then the two transitive permutation representations of $G$ into $\Sym\Omega$ given by $x \mapsto x$ and $x \mapsto x^\sigma$ are equivalent because $G_\beta$ is a point stabilizer for each of them. This means that for some $t \in \Sym\Omega$ we have $xt = tx^\sigma$ for all $x \in G$. Clearly $t \in N$. Hence $\sigma = \Psi(t) \in\operatorname{im} \Psi$ as required.
 \end{sketch}
 
 \begin{definition}
-	Let $G$ be a group. The \textbf{holomorph} of $G$, denoted by $\operatorname{Hol} (G)$, is the semidirect product $G \rtimes \Aut (G)$ with respect to the natural action of $\Aut (G)$ on $G$.
+	Let $G$ be a group. The \textbf{holomorph} of $G$, denoted by $\operatorname{Hol} G$, is the semidirect product $G \rtimes \Aut G$ with respect to the natural action of $\Aut G$ on $G$.
 \end{definition}
 In the case where $G$ is regular,  the normalizer of $G$ in the symmetric group is the holomorph of $G$.
 \begin{corollary}
-	Let $G$ be a transitive subgroup of $\Sym (\Omega)$ and let $N$ be the normalizer of $G$ in $\Sym (\Omega)$. If $G$ is regular, then $\Im  \Psi = \Aut (G)$, where $\Psi$ is the homomorphism defined in Theorem \ref{thm-normalizer-of-perm-grp}. Let $\alpha\in \Omega$. In this case $N_\alpha \cong \Aut (G)$, and $N$ is isomorphic to $\operatorname{Hol}(G)$.
+	Let $G$ be a transitive subgroup of $\Sym\Omega$ and let $N$ be the normalizer of $G$ in $\Sym \Omega$. If $G$ is regular, then $\operatorname{im} \Psi = \Aut G$. In this case $N_\alpha \cong \Aut G$, and $N$ is isomorphic to $\operatorname{Hol}G$.
 \end{corollary}
 \begin{sketch}
-	Since $G$ is regular, therefore $G_\alpha = 1$, and so $\Im  \Psi = \Aut (G)$ by Theorem \ref{thm-normalizer-of-perm-grp} since $(G_\alpha)^{\sigma} = \{1\}$ is a point stabilizer for $G$. The centralizer $C$ of $G$ in $\text{Sym}(\Omega)$ is transitive by Theorem \ref{thm-centralizer-trans-perm-grp}.(ii). By Frattini's argument (Corollary \ref{cor-Frattini-transitive}), we get $N = CN_\alpha$. Next we show that $C \cap N_\alpha = 1$. Let $x\in C \cap N_\alpha$. Then $\alpha^x = \alpha$. Since $G$ is transitive, for every $\omega\in\Omega$, we have $\omega = \alpha^g$ for some $g\in G$. This implies 
-	\begin{equation*}
-		\omega^x = (\alpha^g)^x =\alpha^{gx} = \alpha^{xg} = (\alpha^x)^g = \alpha^g = \omega. 
-	\end{equation*}
-	This proves $C \cap N_\alpha = 1$. Clearly $\Ker\Psi = C$. By the First and Second Isomorphism Theorems, 
-\begin{equation*}
-	\Aut (G) =\Im  \Psi \cong N/\Ker \Psi = N/C = CN_\alpha/C \cong N_\alpha.
-\end{equation*} In fact, the isomorphism $N_\alpha\stackrel{\sim}{\rightarrow}\Aut (G)$ maps $x$ to the conjugation on $G$ by $x$. Note that $G \cap N_\alpha = G_\alpha = 1$ and $G$ is normal in $N$. By Propositions \ref{prop-semidirect-prod-isom} and \ref{prop-internal-semidirect-prod-isom}, we have 
-\begin{equation*}
-	N = GN_\alpha \cong G \rtimes \Aut (G) = \operatorname{Hol}(G). \qedhere
-\end{equation*}
+	Since $G$ is regular, therefore $G_\alpha = 1$, and so $\operatorname{im} \Psi = \Aut G$ by theorem xxx. The centralizer $C$ of $G$ in $\text{Sym}(\Omega)$ is regular and isomorphic to $G$ by Theorem 4.2A, and therefore $N = CN_\alpha$ with $C \triangleleft N$ and $C \cap N_\alpha = 1$. Hence $\Aut G =\operatorname{im} \Psi \cong N/\ker \Psi = N/C \cong N_\alpha$. Finally, because $G$ is regular and normal in $N$, therefore $G \cap N_\alpha = 1$ and $N = GN_\alpha \cong G \rtimes \Aut G$.
 \end{sketch} 
-
-\begin{remark}
-It seems to be true that permutational isomorphisms preserve transitivity, primitivity, regularity and faithfulness. More specifically, let $(G,\Omega)$ and $(H,\Delta)$ be permutational isomorphic group actions, then  the following holds.
-\begin{enumerate}[(i)]
-	\item $(G,\Omega)$ is transitive if and only if $(H,\Delta)$ is transitive.
-	\item $(G,\Omega)$ is primitive if and only if $(H,\Delta)$ is primitive.
-	\item $(G,\Omega)$ is regular if and only if $(H,\Delta)$ is regular.
-	\item $(G,\Omega)$ is faithful if and only if $(H,\Delta)$ is faithful.
-\end{enumerate}
-These might be too trivial until they are not mentioned anywhere, but it is important to know. Siapa boleh tolong provekan?
-\end{remark}
 
 \paragraph{Main References.} \cite{Praeger2018,Dixon1996,Cameron1999}

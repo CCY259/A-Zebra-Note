@@ -1,0 +1,18 @@
+[0] Config.pm:307> INFO - This is Biber 2.19
+[0] Config.pm:310> INFO - Logfile is '00 Slide.blg'
+[121] biber-MSWIN64:340> INFO - === 
+[155] Biber.pm:419> INFO - Reading '00 Slide.bcf'
+[265] Biber.pm:979> INFO - Found 16 citekeys in bib section 0
+[283] Biber.pm:4419> INFO - Processing section 0
+[300] Biber.pm:4610> INFO - Looking for bibtex file 'References.bib' for section 0
+[352] bibtex.pm:1713> INFO - LaTeX decoding ...
+[446] bibtex.pm:1519> INFO - Found BibTeX data source 'References.bib'
+[573] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[574] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[574] Biber.pm:4239> INFO - Sorting list 'anyt/global//global/global' of type 'entry' with template 'anyt' and locale 'en-US'
+[574] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[590] bbl.pm:660> INFO - Writing '00 Slide.bbl' with encoding 'UTF-8'
+[597] bbl.pm:763> INFO - Output to 00 Slide.bbl
+[597] Biber.pm:131> WARN - ISBN '978-0-521-67506-2; 978-1-139-19400-6' in entry 'Praeger2018' is invalid - run biber with '--validate_datamodel' for details.
+[597] Biber.pm:131> WARN - ISBN '0-521-65378-9; 0-521-65302-9' in entry 'Cameron1999' is invalid - run biber with '--validate_datamodel' for details.
+[597] Biber.pm:133> INFO - WARNINGS: 2
