@@ -156,7 +156,7 @@ To prove the last statement, note that the action of $G$ on $\Sigma$ is given by
 	Let $G$ acts transitively on $\Omega$. Let $\omega\in \Omega$ be fixed. Then there is a one-to-one correspondence between the set of blocks of $\Omega$ containing $\omega$ and the set of subgroups which contains the stabilizer $G_\omega$ of $\omega$.
 \end{proposition}
 \begin{sketch}
-	Let $\Delta$ be a block containing $\omega \in \Omega$, and consider the set $H_\Delta = \{g \in G \mid \omega^g \in \Delta\}$. We claim that $H_\Delta$ is a subgroup of  $G$. Clearly, $e \in H_\Delta$. Let $g,g' \in H_\Delta$. Since $\omega$ and $\omega^g$ both lie in $\Delta$, we see that $\Delta^g \cap \Delta\neq \emptyset$ and hence that $\Delta^g = \Delta$. Now we have $\omega^{gg'} = (\omega^g)^{g'} \in \Delta^{g'} = \Delta$ and hence $gg' \in H_\Delta$. Also, for $g \in H_\Delta$ we have $\omega^g \in \Delta$. Since $\omega$ is also in $\Delta$, this means $\Delta \cap \Delta^g \neq \emptyset$, which implies $\Delta^g = \Delta$. Acting on both sides by $g^{-1}$, we get $\Delta^{g^{-1}} = (\Delta^g)^{g^{-1}} = \Delta$. Since $\omega \in \Delta$, it follows that $\omega^{g^{-1}} \in \Delta^{g^{-1}} = \Delta$, and hence $g^{-1} \in H_\Delta$. Therefore $H_\Delta$ is a subgroup of $G$.
+	Let $\Delta$ be a block containing $\omega \in \Omega$, and consider the set $H_\Delta = \{g \in G \mid \omega^g \in \Delta\}$. We claim that $H_\Delta$ is a subgroup of  $G$. Clearly, $1 \in H_\Delta$. Let $g,g' \in H_\Delta$. Since $\omega$ and $\omega^g$ both lie in $\Delta$, we see that $\Delta^g \cap \Delta\neq \emptyset$ and hence that $\Delta^g = \Delta$. Now we have $\omega^{gg'} = (\omega^g)^{g'} \in \Delta^{g'} = \Delta$ and hence $gg' \in H_\Delta$. Also, for $g \in H_\Delta$ we have $\omega^g \in \Delta$. Since $\omega$ is also in $\Delta$, this means $\Delta \cap \Delta^g \neq \emptyset$, which implies $\Delta^g = \Delta$. Acting on both sides by $g^{-1}$, we get $\Delta^{g^{-1}} = (\Delta^g)^{g^{-1}} = \Delta$. Since $\omega \in \Delta$, it follows that $\omega^{g^{-1}} \in \Delta^{g^{-1}} = \Delta$, and hence $g^{-1} \in H_\Delta$. Therefore $H_\Delta$ is a subgroup of $G$.
 	
 	Observe that $G_\omega \le H_\Delta$ since for any $s \in G_\omega$, we have $\omega^s=\omega \in \Delta$.  Let $\Sigma$ be the set of blocks of $\Omega$ containing $\omega$ and let $\mathcal{H}$ be the set of subgroups containing $G_\omega$. Let $\theta:\Sigma\rightarrow \mathcal{H}$ be the function defined by $\theta(\Delta)=H_\Delta$. We claim that $\theta$ is bijective.
 	
@@ -170,7 +170,7 @@ To prove the last statement, note that the action of $G$ on $\Sigma$ is given by
 
 \begin{corollary} \label{cor-prim-iff-stab-is-max}
 	Let $G$ act transitively on $\Omega$. Then $G$ is primitive if and only
-	if the stabilizers are maximal subgroups.
+	if the point stabilizers are maximal subgroups.
 \end{corollary}
 \begin{sketch}
 	Suppose $G$ is primitive on $\Omega$. Let $\omega \in \Omega$.  Since $G$ is primitive, there are  two  blocks containing $\omega$, namely $\{\omega\}$ and $\Omega$.  By Proposition \ref{prop-block-and-stab}, there are only two subgroups of $G$ containing $G_\omega$, namely $G_\omega$ and $G$. So there is no proper subgroup of $G$ which properly contains $G_\omega$. Therefore $G_\omega$ is maximal in $G$.
