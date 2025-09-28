@@ -1,4 +1,5 @@
 \section{Semidirect Products}
+Hi! It's YH, test123123123123123.
 \paragraph{Important Note.} Throughout this section, we will use \textbf{right action} $X\times G\rightarrow X$ where the image of $x\in X$ under $g\in G$ is denoted by $x^g$. Following the axioms of right action, we have $(x^g)^{g'} = x^{gg'}$ for all $g,g'\in G$. In accordance with this, function composition will be written as $fg$ to mean that $f$ is applied first, followed by $g$, i.e., $(fg)(x) = g(f(x))$. In conjugation by $g$ on $x$, we define $x\mapsto g^{-1}xg$ to make it consistent with the right actions.  To summarize, we can just ``switch" the side from the corresponding left actions and replace the symbols $s$ with $s^{-1}$.
 \subsection{Definitions and Properties}
 \begin{definition}
@@ -151,38 +152,37 @@ The definition of an internal semidirect product is not symmetric with respect t
 	
 	 (3) $\Rightarrow$ (2) Let $h\in H$ and $g\in G$. We have $[(h,1), (1,g)] \in H \cap G = \{1\}$. Thus $(1,g)^{-1}(h,1)(1,g) = (h,1)$. By Proposition \ref{prop-semidirect-prod-properties}.(vi), we have $(h^g,1) = (h,1)$. So $h^g =h$ for all $h\in H$ and $g\in G$.
 \end{sketch} 
-\begin{comment}
-	\subsection{Short Exact Sequences}
-	We can define semidirect products using short exact sequence.
-	\begin{definition}
-		An \textbf{exact sequence} is a sequence of groups and group homomorphisms
-		\[
-		\dots \longrightarrow G_{n-1} \xlongrightarrow{\varphi_{n-1}} G_n \xlongrightarrow{\varphi_n} G_{n+1} \longrightarrow \dots
-		\]
-		such that $\Im \varphi_{n-1} = \Ker  \varphi_n$ for all $n$. A \textbf{short exact sequence} is an exact sequence of the form
-		\begin{equation*} 
-			\{1\} \longrightarrow N \xlongrightarrow{\varphi} G \xlongrightarrow{\psi} H \longrightarrow \{1\}.
-		\end{equation*}
-		In other words, $\varphi$ is an isomorphism from $N$ to a normal subgroup $N' \lhd G$ and $\psi$ descends to an isomorphism $G/N' \cong H$.
-	\end{definition}
-	\begin{definition}
-		A short exact sequence $\{1\} \rightarrow N \xrightarrow{\varphi} G \xrightarrow{\psi} H \rightarrow \{1\}$ \textbf{splits} if there exists a homomorphism $\sigma: H \to G$ called a \textbf{section} such that
-		\[
-		\psi \circ \sigma = \text{Id}.
-		\]
-		When the sequence splits we shall sometimes write it as
-		\[
-		\{1\} \longrightarrow N \longrightarrow G \xlongrightarrow{\curvearrowleft} H \longrightarrow \{1\}.
-		\]
-	\end{definition}
+	% \subsection{Short Exact Sequences}
+	% We can define semidirect products using short exact sequence.
+	% \begin{definition}
+	% 	An \textbf{exact sequence} is a sequence of groups and group homomorphisms
+	% 	\[
+	% 	\dots \longrightarrow G_{n-1} \xlongrightarrow{\varphi_{n-1}} G_n \xlongrightarrow{\varphi_n} G_{n+1} \longrightarrow \dots
+	% 	\]
+	% 	such that $\Im \varphi_{n-1} = \Ker  \varphi_n$ for all $n$. A \textbf{short exact sequence} is an exact sequence of the form
+	% 	\begin{equation*} 
+	% 		\{1\} \longrightarrow N \xlongrightarrow{\varphi} G \xlongrightarrow{\psi} H \longrightarrow \{1\}.
+	% 	\end{equation*}
+	% 	In other words, $\varphi$ is an isomorphism from $N$ to a normal subgroup $N' \lhd G$ and $\psi$ descends to an isomorphism $G/N' \cong H$.
+	% \end{definition}
+	% \begin{definition}
+	% 	A short exact sequence $\{1\} \rightarrow N \xrightarrow{\varphi} G \xrightarrow{\psi} H \rightarrow \{1\}$ \textbf{splits} if there exists a homomorphism $\sigma: H \to G$ called a \textbf{section} such that
+	% 	\[
+	% 	\psi \circ \sigma = \text{Id}.
+	% 	\]
+	% 	When the sequence splits we shall sometimes write it as
+	% 	\[
+	% 	\{1\} \longrightarrow N \longrightarrow G \xlongrightarrow{\curvearrowleft} H \longrightarrow \{1\}.
+	% 	\]
+	% \end{definition}
 	
-	\begin{proposition}
-		\begin{enumerate}[(i)]
-			\item Every split exact sequence  $\{1\} \rightarrow N \xrightarrow{\varphi} G \xrightarrow{\psi} H \rightarrow \{1\}$ determines a decomposition of $G$ as the semidirect product $\varphi(N) \rtimes \sigma(H)$, where $\sigma:H\rightarrow G$ is a section.
-			\item Every semidirect product $G = N \rtimes H$ defines a split exact sequence $\{1\} \rightarrow N \xrightarrow{\varphi} G \xrightarrow{\psi} H \rightarrow \{1\}$, where $\varphi$ is the inclusion map and $\psi: G \to H$ is the retraction.
-		\end{enumerate}
-	\end{proposition}
-\end{comment}
+	% \begin{proposition}
+	% 	\begin{enumerate}[(i)]
+	% 		\item Every split exact sequence  $\{1\} \rightarrow N \xrightarrow{\varphi} G \xrightarrow{\psi} H \rightarrow \{1\}$ determines a decomposition of $G$ as the semidirect product $\varphi(N) \rtimes \sigma(H)$, where $\sigma:H\rightarrow G$ is a section.
+	% 		\item Every semidirect product $G = N \rtimes H$ defines a split exact sequence $\{1\} \rightarrow N \xrightarrow{\varphi} G \xrightarrow{\psi} H \rightarrow \{1\}$, where $\varphi$ is the inclusion map and $\psi: G \to H$ is the retraction.
+	% 	\end{enumerate}
+	% \end{proposition}
+
 
 \subsection{Examples}
 \begin{example}
