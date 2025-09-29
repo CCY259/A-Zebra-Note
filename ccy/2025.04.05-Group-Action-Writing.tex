@@ -302,7 +302,7 @@ In the situation of Theorem \ref{thm-statement-of-kernel-of-left-translation}, t
 	Let $G$ be a group and let $H$ be a subgroup of $G$ with finite index $n$. Then there exists a normal subgroup $N$ in $G$ such that $N$ is a subgroup of $H$ and $[G:N]$ divides $n!$.
 \end{corollary}
 \begin{sketch}
-	Consider the action of $G$ on the set of left cosets of $H$ in $G$ by left translation and use Theorem \ref{thm-Cayley's-Theorem}.
+	Consider the action of $G$ on the set of left cosets of $H$ in $G$ by left translation with the induced group homomorphism $\phi : G \rightarrow \operatorname{Aut}(X)$, where $X$ is the set of left cosets of H in G. Take $N = \operatorname{Ker}\phi$, then $N$ is the largest normal subgroup of G contained in H and $G/N \cong \operatorname{Im}(\phi) \leq S_n$ by Theorem \ref{thm-statement-of-kernel-of-left-translation}.(iv) and Theorem \ref{thm-Cayley's-Theorem}. Thus, $[G:N] = |G/N|$ divides $|S_n| = n!$.
 \end{sketch}
 \begin{corollary}
 	If $G$ is a finite group of order $n$ and $p$ is the smallest prime dividing $|G|$,

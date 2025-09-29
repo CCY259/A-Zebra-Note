@@ -1,7 +1,7 @@
 \section{Direct Products}
 \subsection{Direct Products of Finitely Many Groups}
 \begin{definition}
-	Let $H_1, H_2, \ldots, H_n$ be groups. The \textbf{direct product} of these groups is the cartesian product set $H_1 \times H_2 \times \cdots \times H_n$, equipped with the following binary operation
+	Let $H_1, H_2, \ldots, H_n$ be groups. The \textbf{direct product} of these groups is the Cartesian product set $H_1 \times H_2 \times \cdots \times H_n$, equipped with the following binary operation
 	\begin{equation*}
 		(x_1, x_2, \ldots, x_n)(y_1, y_2, \ldots, y_n) = (x_1 y_1, x_2 y_2, \ldots, x_n y_n).
 	\end{equation*}
@@ -15,9 +15,7 @@
 	\end{enumerate}
 \end{proposition}
 \begin{sketch}
-	(i) Trivial.
-	
-	(ii) and (iii) Construct appropriate isomorphisms.
+	(i) Trivial. (ii) and (iii) Construct appropriate isomorphisms.
 \end{sketch}
 \begin{definition}
 	The direct product above is called an \textbf{external direct product}. If the operations in $H_i$ are written additively, then we call $\prod_{i=1}^n H_i$ the \textbf{external direct sum} of these groups and write $H_1\oplus H_2 \oplus \cdots \oplus H_n$ or $\bigoplus_{i=1}^n H_i$.
@@ -91,7 +89,7 @@ Let $G$ be an arbitrary group. We wish to know the characterization of $G$ if we
 	\end{equation*}
 	Thus
 	\begin{equation*}
-		\psi(gh) = (x_1 y_1, x_2 y_2, \ldots, x_n y_n) = f(g)f(h)
+		\psi(gh) = (x_1 y_1, x_2 y_2, \ldots, x_n y_n) = \psi(g)\psi(h)
 	\end{equation*}
 	and this proves that $\psi$ is a homomorphism. It is clear that $\psi$ is bijective and $\psi(H_i) = \overline{H}_i$ for all $i$.
 	
@@ -131,9 +129,9 @@ Let $G$ be an arbitrary group. We wish to know the characterization of $G$ if we
 	for all $1\leq k\leq n-1$. This satisfies Theorem \ref{thm-internal-direct-prod}.(2). Therefore $H_1 \cdots H_n$ is isomorphic to the direct product by Theorem \ref{thm-internal-direct-prod}.(4).
 \end{sketch}
 \begin{corollary} \label{cor-center-of-direct-product}
-	Let $G$ be the direct product of the subgroups $H_1, H_2, \dots, H_m$. Then 
+	Let $G$ be the direct product of the subgroups $H_1, H_2, \dots, H_n$. Then 
 	\begin{equation*}
-		Z(G) = Z(H_1) \times Z(H_2) \times \cdots \times Z(H_m).
+		Z(G) = Z(H_1) \times Z(H_2) \times \cdots \times Z(H_n).
 	\end{equation*}
 \end{corollary}
 \begin{sketch}
@@ -144,7 +142,7 @@ Let $G$ be an arbitrary group. We wish to know the characterization of $G$ if we
 	
 	Now let $z \in Z(G)$ and write $z = z_1 z_2 \cdots z_n$ with $z_i \in H_i$ for all $i$. Let $g \in G$, then
 	$$z = gzg^{-1} = (gz_1g^{-1})(gz_2g^{-1}) \cdots (gz_ng^{-1}).$$
-	Since $H_i\lhd G$, we have $gz_ig^{-1} \in H_i$ for all $i$. By Theorem \ref{thm-internal-direct-prod}.(1), we get  $z_i = gz_ig^{-1}$ for all $i$, and thus $z_i \in Z(G)$. In particular, $z_i \in Z_i$. Therefore $z \in Z_1Z_2\cdots Z_n$ and we have $Z(G) = Z_1Z_2\cdots Z_n$. This product is direct  because uniqueness is inherited from the fact that $G = \prod H_i$.
+	Since $H_i\lhd G$, we have $gz_ig^{-1} \in H_i$ for all $i$. By the uniqueness part of Theorem \ref{thm-internal-direct-prod}.(1), we get  $z_i = gz_ig^{-1}$ for all $i$, and thus $z_i \in Z(G)$. In particular, $z_i \in Z_i$. Therefore $z \in Z_1Z_2\cdots Z_n$ and we have $Z(G) = Z_1Z_2\cdots Z_n$. This product is direct  because uniqueness is inherited from the fact that $G = \prod H_i$.
 \end{sketch}
 \begin{proposition} \label{prop-direct-product-normal-subgrp}
 	Suppose that a group $G$ is the  direct product of the subgroups $H_1, \dots, H_n$. Let $N_i$ be a normal subgroup of $H_i$ for each $i$. Let $N = N_1 N_2 \dots N_n$. Then the following propositions hold.
@@ -200,11 +198,11 @@ defined similarly.
 \end{sketch}
 
 \begin{proposition}
-	Let $G$ be the restricted direct product of a family of groups $\{H_\lambda\,|\, \lambda \in \Lambda\}$. For each $\lambda\in \Lambda$,  let $\overline{H}_i$ be the image of $H_i$ under canonical injection. Then the following propositions hold.
+	Let $G$ be the restricted direct product of a family of groups $\{H_\lambda\,|\, \lambda \in \Lambda\}$. For each $\lambda\in \Lambda$,  let $\overline{H}_\lambda$ be the image of $H_\lambda$ under canonical injection. Then the following propositions hold.
 	\begin{enumerate}[(i)]
-		\item The subgroup $\overline{H}_\lambda$ is isomorphic to $H_i$.
+		\item The subgroup $\overline{H}_\lambda$ is isomorphic to $H_\lambda$.
 		\item The subgroup $\overline{H}_\lambda$ is normal in $G$.
-		\item The subgroups $\overline{H}_\lambda$ and $\overline{H}_\mu$ commute elementwise.
+		\item The subgroups $\overline{H}_\lambda$ and $\overline{H}_\mu$ commute elementwise for $\lambda \neq \mu$.
 		\item $G = \langle \overline{H}_\lambda \,|\, \lambda\in\Lambda \rangle$, and for  every nonidentity element $g$ of $G$, there exists a unique finite subset $\{\lambda_1,\dots, \lambda_n\}$ of $\Lambda$ such that $g$ can be written uniquely as $x_1 x_2 \cdots x_n$ with $x_i \in \overline{H}_{\lambda_i}\setminus\{1\}$ for all $i$.
 	\end{enumerate}
 \end{proposition}
@@ -226,7 +224,7 @@ We also have \textbf{internal direct product} of a family of normal subgroups as
 	Fix $\lambda$ and suppose $g \in H_\lambda \cap \langle H_\mu\,|\, \mu \neq \lambda \rangle$. Since $g \in \langle H_\mu\,|\, \mu \neq \lambda \rangle $, we can write $g=x_{\lambda}  = x_{\mu_1} x_{\mu_2} \cdots x_{\mu_n}$ where $x_\lambda\in H_\lambda$ and  $x_{\mu_i} \in H_{\mu_i}$ for all $i$. So $1 = x_{\lambda}^{-1} x_{\mu_1} x_{\mu_2} \cdots x_{\mu_n}$. The first paragraph implies that $g = x_{\lambda} = 1$.
 	
 	
-	(2) $\Rightarrow$ (1) The first assertion follows from Lemma \ref{lemma-indp-normal-subgrps-commute}. Since $G = \langle H_\lambda\,|\, \lambda \in \Lambda \rangle$, we can write any element $x$ of $G$  as $x_{\lambda_1} x_{\lambda_2} \cdots x_{\lambda_n}$ where $\{\lambda_1,\dots, \lambda_n\}$ is a finite subset of $\Lambda$ and $x_{\lambda_i} \in H_i\setminus\{1\}$ for all $i$. Let $x_{\mu_1} x_{\mu_2} \cdots x_{\mu_\ell}$ be another expression for $x$. If $x_{\mu_i} \not\in\{\lambda_1,\dots, \lambda_n\}$, then we apply the first assertion to obtain $$x_{\mu_i} = (x_{\mu_2} \cdots x_{\mu_\ell})^{-1}x_{\lambda_1} x_{\lambda_2} \cdots x_{\lambda_n} \in H_{\mu_i} \cap \langle H_\lambda\,|\, \lambda \neq \mu_i \rangle = \{1\}.$$ Hence we have $\{\lambda_1,\dots, \lambda_n\} = \{\mu_1,\dots, \mu_\ell\}$. The first assertion allows us to reindex $\mu_i$ so that $x_{\lambda_i},x_{\mu_i}\in H_{\lambda_i}$ for all $i$. Then we can use the same argument as in the proof of Theorem \ref{thm-internal-direct-prod} to get (1). 
+	(2) $\Rightarrow$ (1) The first assertion follows from Lemma \ref{lemma-indp-normal-subgrps-commute}. Since $G = \langle H_\lambda\,|\, \lambda \in \Lambda \rangle$, we can write any element $x$ of $G$  as $x_{\lambda_1} x_{\lambda_2} \cdots x_{\lambda_n}$ where $\{\lambda_1,\dots, \lambda_n\}$ is a finite subset of $\Lambda$ and $x_{\lambda_i} \in H_i\setminus\{1\}$ for all $i$. Let $x_{\mu_1} x_{\mu_2} \cdots x_{\mu_\ell}$ be another expression for $x$. If $\mu_i \not\in\{\lambda_1,\dots, \lambda_n\}$, then we apply the first assertion to obtain $$x_{\mu_i} = (x_{\mu_1} x_{\mu_2} \cdots x_{\mu_{i-1}} x_{\mu_{i+1}} \cdots x_{\mu_\ell})^{-1}x_{\lambda_1} x_{\lambda_2} \cdots x_{\lambda_n} \in H_{\mu_i} \cap \langle H_\lambda\,|\, \lambda \neq \mu_i \rangle = \{1\}.$$ Hence we have $\{\lambda_1,\dots, \lambda_n\} = \{\mu_1,\dots, \mu_\ell\}$. The first assertion allows us to reindex $\mu_i$ so that $x_{\lambda_i},x_{\mu_i}\in H_{\lambda_i}$ for all $i$. Then we can use the same argument as in the proof of Theorem \ref{thm-internal-direct-prod} to get (1). 
 	
 	(1) $\Rightarrow$ (3)  Let $g$ be an element of $G$. We can write the element $g$ uniquely as $g = x_{\lambda_1} x_{\lambda_2} \cdots x_{\lambda_n}$, where $x_i \in H_{\lambda_i}\setminus\{1\}$ for all $i$. Let the function $\psi: G \rightarrow \prod_{\lambda\in\Lambda} H_\lambda$ be defined by $\psi(g) = \psi_g$, where
 	\begin{equation*}

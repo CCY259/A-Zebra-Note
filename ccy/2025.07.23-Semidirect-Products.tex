@@ -1,5 +1,4 @@
 \section{Semidirect Products}
-Hi! It's YH, test123123123123123.
 \paragraph{Important Note.} Throughout this section, we will use \textbf{right action} $X\times G\rightarrow X$ where the image of $x\in X$ under $g\in G$ is denoted by $x^g$. Following the axioms of right action, we have $(x^g)^{g'} = x^{gg'}$ for all $g,g'\in G$. In accordance with this, function composition will be written as $fg$ to mean that $f$ is applied first, followed by $g$, i.e., $(fg)(x) = g(f(x))$. In conjugation by $g$ on $x$, we define $x\mapsto g^{-1}xg$ to make it consistent with the right actions.  To summarize, we can just ``switch" the side from the corresponding left actions and replace the symbols $s$ with $s^{-1}$.
 \subsection{Definitions and Properties}
 \begin{definition}
@@ -47,7 +46,7 @@ Hi! It's YH, test123123123123123.
  \end{remark}
  
  We set
-$$\overline{H} = \{(h,1) \,|\, h \in H\},\quad\overline{G} = \{(g,1)\,|\, g \in G\}.$$
+$$\overline{H} = \{(h,1) \,|\, h \in H\},\quad\overline{G} = \{(1,g)\,|\, g \in G\}.$$
 Obviously they are just image sets under canonical injections.  We summarize all the properties in a proposition.
 \begin{proposition} \label{prop-semidirect-prod-properties}
 	Let $H \rtimes G$ be the semidirect product. Then the following propositions hold.
@@ -197,20 +196,14 @@ The definition of an internal semidirect product is not symmetric with respect t
 	 If $H = \mathbb{Z}$, then we get a group  $D_{\infty}$ having the presentation
 	 \begin{equation*}
 	 	D_{\infty} = \langle r,s\,|\,  s^2 = 1, s^{-1}rs= r^{-1}\rangle  = \langle x,y \,|\, x^2 = y^2 = 1\rangle.
-	 \end{equation*} The group $D_{\infty}$  is called the \textbf{infinite dihedral group}. By  Van Dyck's Theorem, there is an epimorphism $\theta:D_n\rightarrow H\rtimes K$ in which $\theta(r) =  h$ and $\theta(s)= k$. Every element of $D_n$ is the form $s^m r^\ell$ where $m=0, 1$. Suppose that $s^m r^\ell \in\Ker \theta$. Then  we have  $ k^m h^\ell = \theta(s^k r^\ell)= 1$, which implies that  $k=0=\ell$. Thus 
+	 \end{equation*} The group $D_{\infty}$  is called the \textbf{infinite dihedral group}. By  Van Dyck's Theorem, there is an epimorphism $\theta:D_{\infty}\rightarrow H\rtimes K$ in which $\theta(r) =  h$ and $\theta(s)= k$. Every element of $D_{\infty}$ is the form $s^m r^\ell$ where $m=0, 1$. Suppose that $s^m r^\ell \in\Ker \theta$. Then  we have  $ k^m h^\ell = \theta(s^k r^\ell)= 1$, which implies that  $k=0=\ell$. Thus 
 	 \begin{equation*}
 	 	D_{\infty} \cong \mathbb{Z}\rtimes \mathbb{Z}_2.
 	 \end{equation*} 
 \end{example}
-
-
-
-
 	
 \begin{example}
  Let $H$ be any abelian group and to let $K = \langle k \rangle \cong \mathbb{Z}_{2n}$ be cyclic of order $2n$. Define $\varphi$ again by mapping $k$ to inversion, i.e., $h^k = h^{-1}$, so that $k^2$ acts as the identity on $H$. In $H\rtimes K$, we have $k^{-1}hk = h^{-1}$ and $k^{-2}hk^2 = h$ for all $h \in H$. Thus $k^2 \in Z(H\rtimes K)$. For instances, set $H = \mathbb{Z}_3$ and $K = \mathbb{Z}_4$. Then $\mathbb{Z}_3 \rtimes \mathbb{Z}_4$ is a nonabelian group of order $12$ which is not isomorphic to $A_4$ or $D_{6}$, since its Sylow $2$-subgroup,  is cyclic of order $4$.
- 
- 
 \end{example}
 
 \begin{example}
@@ -245,7 +238,7 @@ The definition of an internal semidirect product is not symmetric with respect t
 	\begin{equation*}
 		A = A\operatorname{diag}(a^{-1},1,\dots, 1)\operatorname{diag}(a,1,\dots, 1) \in \operatorname{SL}(n,\mathbb{F})K
 	\end{equation*}
-	since $\det [A\operatorname{diag}(a^{-1},1,\dots, 1)] = 1$. This proves the claim. By $K \cong \mathbb{F}^*$, Propositions \ref{prop-semidirect-prod-isom} and \ref{prop-internal-semidirect-prod-isom}, we obtain
+	since $\det (A\operatorname{diag}(a^{-1},1,\dots, 1)) = 1$. This proves the claim. By $K \cong \mathbb{F}^*$, Propositions \ref{prop-semidirect-prod-isom} and \ref{prop-internal-semidirect-prod-isom}, we obtain
 	\begin{equation*}
 		\operatorname{GL}(n,\mathbb{F}) \cong \operatorname{SL}(n,\mathbb{F})\rtimes K \cong \operatorname{SL}(n,\mathbb{F})\rtimes\mathbb{F}^*.
 	\end{equation*}
@@ -375,8 +368,8 @@ If  $P$ is normal in $G$, then we want to construct nonisomorphic semidirect pro
 			\item[(7)] $\mathbb{Z}_7\rtimes_{\varphi} (\mathbb{Z}_4\times \mathbb{Z}_2)$, $\Ker\varphi \cong \mathbb{Z}_4$;
 			\item[(8)] $\mathbb{Z}_7\rtimes_{\varphi} (\mathbb{Z}_4\times \mathbb{Z}_2)$, $\Ker\varphi \cong  \mathbb{Z}_2\times \mathbb{Z}_2$;
 			\item[(9)] $\mathbb{Z}_7\rtimes_{\varphi} \mathbb{Z}_8$, $\Ker\varphi \cong \mathbb{Z}_4$;
-			\item[(10)] $\mathbb{Z}_7\rtimes_{\varphi} D_4$, $\Ker\varphi \cong \langle r\,|\, r^4=1 \rangle$;
-			\item[(11)] $\mathbb{Z}_7\rtimes_{\varphi} D_4$, $\Ker\varphi \cong \langle r^2,s\,|\, r^4=s^2=1 ,\, s^{-1}rs = r^{-1}\rangle$;
+			\item[(10)] $\mathbb{Z}_7\rtimes_{\varphi} D_4$, $\Ker\varphi \cong \langle r\,|\, r^4=1 \rangle \cong \mathbb{Z}_4$;
+			\item[(11)] $\mathbb{Z}_7\rtimes_{\varphi} D_4$, $\Ker\varphi \cong \langle r^2,s\,|\, r^4=s^2=1 ,\, s^{-1}rs = r^{-1}\rangle \cong \mathbb{Z}_2 \times \mathbb{Z}_2$;
 			\item[(12)] $\mathbb{Z}_7\rtimes_{\varphi} Q_8$, $\Ker\varphi \cong \langle i\,|\, i^4=1 \rangle \cong \mathbb{Z}_4$.
 		\end{itemize}
 	\end{itemize}

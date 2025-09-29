@@ -75,8 +75,8 @@ This motivates us to add some conditions so that the converse is true. It turns 
 	Let $X$ be the set of left cosets of $H$ in $G$. Let $H$ act on $X$ by left translation. By Lemma \ref{lemma-fixed-point-lemma}, $|X_H|\equiv |X|\mod p$. Since $|X| = [G:H]$ it suffices to show that $|X_H| = [N_G(H):H]$. To see this, 
 	$$xH\in X_H\iff hxH = xH \quad \forall h\in H\iff x^{-1}Hx = H\iff x\in N_G(H).$$ 
 	So $X_H$ contains $xH$ where $x\in N_G(H)$. This proves (i). 
-	
-	If $p|[G:H]$, then we have $[N_G(H):H]\equiv 0 \mod p$. Since $[N_G(H):H]\geq 1$, we must have $[N_G(H):H]>1$ and so $N_G(H)\neq H$.
+	\\ \\
+	For (ii), if $p|[G:H]$, then we have $[N_G(H):H]\equiv 0 \mod p$. Since $[N_G(H):H]\geq 1$, we must have $[N_G(H):H]>1$ and so $N_G(H)\neq H$.
 \end{sketch}
 
 \subsection{Sylow's Theorems}
@@ -101,7 +101,7 @@ Let $G$ be a group of order $p^k m$, where $p\nmid m$, then a subgroup of order 
 \end{theorem}
 \begin{sketch}
 	%Let $G$ act on $P$ by conjugation. Let $X=O_G(P)= \{xPx^{-1}\,|\, x\in G\}$. Now we treat $X$ as a set and let $H$ act on $X$ by conjugation. By Lemma \ref{lemma-orbit-partition-and-bijection}.(i), we write $$X = \bigcup_{i=1}^s O_H(P_i)$$ where $P_1,\dots, P_s\in X$ and $s\geq 1$. Recall from Definition \ref{def-notions-of-orbits-and-stab} that the stabilizer of $P_i$ is $N_H(P_i)$. By Theorem \ref{thm-orbit-stab}, $|O_H(P_i)| = [H:N_H(P_i)]$. It can be verified that $N_H(P_i) = N_G(P_i)\cap H$.
-	Consider the set $X$ of left cosets of $P$ in $G$. Let $H$ act on $X$ by left translation. By Lemma \ref{lemma-fixed-point-lemma}, $|X_H|\equiv |X| \mod p$. Now we claim that $|X_H|\geq 1$. Since $|X| = [G:P]$, it suffices to show that $p$ does not divide $[G:P]$. To see this, note that $|G| = [G:P]|P|$ by Lagrange's Theorem. Let $|G| = p^k m$ where $p$ does not divide $m$. Then w e have $|P| = p^k$ and so $[G:P] = m$. Consequently, $|X_H|\geq 1$. Let $xP\in X_H$ where $x\in G$. By the definition of $X_H$, we have
+	Consider the set $X$ of left cosets of $P$ in $G$. Let $H$ act on $X$ by left translation. By Lemma \ref{lemma-fixed-point-lemma}, $|X_H|\equiv |X| \mod p$. Now we claim that $|X_H|\geq 1$. Since $|X| = [G:P]$, it suffices to show that $p$ does not divide $[G:P]$. To see this, note that $|G| = [G:P]|P|$ by Lagrange's Theorem. Let $|G| = p^k m$ where $p$ does not divide $m$. Then, we have $|P| = p^k$ and so $[G:P] = m$. Consequently, $|X_H|\geq 1$. Let $xP\in X_H$ where $x\in G$. By the definition of $X_H$, we have
 $hxP = xP$ for all $h\in H$. Hence $H\leq xPx^{-1}$.
 
 If $H$ is a Sylow $p$-subgroup, then $|H| = |P| = |xPx^{-1}|$. Since $H\leq xPx^{-1}$, we obtain $H = xPx^{-1}$.
@@ -114,7 +114,7 @@ If $H$ is a Sylow $p$-subgroup, then $|H| = |P| = |xPx^{-1}|$. Since $H\leq xPx^
 	We also see that $\gcd(n_p, p) = 1$, will be useful later.
 \end{remark}
 \begin{sketch}
-	Since any two Sylow $p$-subgroups of $G$ are conjugate by Theorem \ref{thm-second-sylow-thm}, we can choose a Sylow $p$-subgroup $P$ and consider the action of $G$ on $\operatorname{Syl}_p(G)$ by conjugation to obtain $n_p = |O_G(P)|$. By Theorem \ref{thm-orbit-stab} and  Definition  \ref{def-notions-of-orbits-and-stab}, we have $n_p = [G:N_G(P)]$ and hence $n_p$ divides $|G|$.
+	Since any two Sylow $p$-subgroups of $G$ are conjugate by Theorem \ref{thm-second-sylow-thm}, we can choose a Sylow $p$-subgroup $P$ and consider the action of $G$ on $\operatorname{Syl}_p(G)$ by conjugation to obtain $n_p = |O_G(P)|$. By Theorem \ref{thm-orbit-stab} and  Definition  \ref{def-notions-of-orbits-and-stab}, we have $n_p = [G:S_G(P)] = [G:N_G(P)]$ and hence $n_p$ divides $|G|$.
 	
 	Let $P$ act on $\operatorname{Syl}_p(G)$ by conjugation. Let $X = \operatorname{Syl}_p(G)$. By Lemma \ref{lemma-fixed-point-lemma}, $n_p =|X| \equiv |X_P|\mod p$. We now claim that $X_P  =\{P\}$. Let $Q\in X_P$. Note that
 	$$Q\in X_P\iff xQx^{-1} = Q \quad\forall x\in P \iff P\leq N_G(Q).$$
@@ -170,6 +170,29 @@ By Theorem \ref{thm-third-sylow-thm},  $n_p \equiv 1\mod p$ and $n_p |m$. So $n_
 	
 	Consider now the case $p<q$. If $n_q=1$, then we are done. If $n_q>1$, Then $n_q  = 1+kq$ for some $k\geq 1$. Since $n_q$ divides $p^2$, we have $n_q=p$ or $p^2$. Since $q>p$, we see that $n_q = 1+kq > p $. So we must have $n_q  = p^2$.  We count the elements. Note that for distinct Sylow $q$-subgroups $Q_1$ and $Q_2$, we have $Q_1\cap Q_2 = 1$. So they do not share any nonidentity element. Since there are $p^2$ Sylow $q$-subgroups, each
 	containing $q -1$ nonidentity elements, we have a total of $p^2(q-1)$ nonidentity elements of order $q$. So there are $p^2$ elements which are not of order $q$. Then $P$ must contain these $p^2$ elements, since $P$ does not have an element of order $q$. Hence $P$ is unique and thus normal in $G$.
+\end{sketch}
+
+\begin{proposition} \label{prop-group-of-order-p3q-has-normal-Sylow}
+	Let $G$ be a group of order $p^3q$, where $p$ and $q$ are distinct primes. Then either G has a normal Sylow subgroup (either $p$ or $q$) or that $p=2, q=3, |G|=24$.
+\end{proposition}
+\begin{sketch}
+	The argument for the cases of $p > q$ and $p < q, n_q = 1$ are exactly the same as in Proposition \ref{prop-group-of-order-p2q-has-normal-Sylow}. For the case of $p < q, n_q > 1$, then $n_q = 1 + kq$ for some $k \geq 1$. Since $n_q$ divides $p^3$, we have that $n_q = p^2$ or $p^3$ as $n_q > p$. If we have $n_q = p^3$, we count the elements just like in Proposition \ref{prop-group-of-order-p2q-has-normal-Sylow} to get a normal Sylow $p$-subgroup. \\
+
+	If $n_q = p^2$, we know from Sylow's second theorem that $p^2 \equiv 1\mod q$. This implies that $q ~|~ p^2-1$ or $q$ divides either $p-1$ or $p+1$. Since $p < q$, $q$ cannot possibly divide $p-1$. Thus, $q$ divides $p+1$ or $p+1 = qr$ for some integer $r$. Since $qr = p+1 < q+1$, we must have $q(r-1) < 1$, which forces $r=1$. In this case, we find that $p=2$, $q=3$ and $|G| =24$.
+\end{sketch}
+
+\begin{proposition}\label{prop-simple-group-of-order-p^kq}
+	Let $G$ be a group of order $p^km$, where $k > 0$, $m > 1$ and $p \nmid m$. If $G$ is simple, then $|G|$ divides $n_p!$.
+\end{proposition}
+\begin{sketch}
+	Let $S \in \operatorname{Syl}_p(G)$ and $H = N_G(S)$. By Theorem \ref{thm-orbit-stab}, we have $[G:N_G(S)] = [O_G(S)] = n_p$. Since $G$ is simple and $\{e\} < S < G$, we know that $S$ is not simple (otherwise, $G$ would not be simple) and so $n_p > 1$. Then, from Corollary \ref{cor-normal-subgroup of-H}, there exists a normal subgroup $N \lhd G$ such that $[G:N] ~|~ n_p!$. Since $G$ is simple, $N = \{e\}$ and so $|G|$ divides $n_p!$.
+\end{sketch}
+
+\begin{corollary}
+	There is no simple group of order $1000000 = 2^6 5^6$.
+\end{corollary}
+\begin{sketch}
+	From Proposition \ref{prop-simple-group-of-order-p^kq}, we must have $|G|$ divides $n_5!$. By Sylow's third theorem, $n_5 ~|~ 2^6$ and $n_5 \equiv 1 \mod 5$. The only possibilities are $n_5 = 1$ or $16$. However, $1000000 \nmid 1!$ and $1000000 \nmid 16!$, thus $G$ is not simple.
 \end{sketch}
 
 \paragraph{Main References.} \cite{Hungerford1974,DummitFoote2004,Isaacs2009}
