@@ -128,7 +128,7 @@ Now let the socle $B$ of $G$ be isomorphic to $\mathbb{Z}_p^k$ with $k\geq 1$. R
 
 
 
-\subsubsection{Almost Simple Groups} Let $T$ be a nonabelian and nonregular simple group such that $\soc(G) \cong T$. We say that a group $G$ is of \textbf{type (S)} if $T\leq G\leq \Aut(T)$. In fact $T\leq G$ is redundant, but we write it down so that it is closely related to the following definition.
+\subsubsection{Groups of Almost Simple Type} Let $T$ be a nonabelian and nonregular simple group such that $\soc(G) \cong T$. We say that a group $G$ is of \textbf{type (S)} if $T\leq G\leq \Aut(T)$. In fact $T\leq G$ is redundant, but we write it down so that it is closely related to the following definition.
 \begin{definition}
 	A group $G$ is said to be \textbf{almost simple} if there exists a nonabelian simple group $S$ such that $S\leq G\leq \Aut S$.
 \end{definition}
@@ -171,21 +171,46 @@ Let $P$ be the permutation group induced by $W$ on $\mathcal{T}$. We say that a 
 
 
 \subsubsection{Twisted Wreath Product} 
-Let $A$ and $G$ be groups, and let $H$ be a subgroup of $G$ acting on $A$ with respect to an action $\varphi:H\rightarrow \Aut A$. Let 
+Let $G$ and $H$ be groups, and let $K$ be a subgroup of $H$ acting on $G$ with respect to an action $\varphi:K\rightarrow \Aut (G)$. Let 
 \begin{equation*}
-	B = \{b\in A^G\mid b(gh) = b(g)^h\text{ for all }g\in G,h\in H\}.
+	B = \{b\in G^H\mid b(hk) = b(h)^k\text{ for all }h\in H,k\in K\}.
 \end{equation*}
-Recall that $A^G$ is a group under pointwise multiplication. If $b_1,b_2\in B$, it is easy to verify that $b_1b_2\in B$ and hence $B$ is a subgroup of $A^G$. Now we define an action $\psi$ of $G$ on $B$ by. 
+Recall that $G^H$ is a group under pointwise multiplication. If $b_1,b_2\in B$, it is easy to verify that $b_1b_2\in B$ and hence $B$ is a subgroup of $G^H$. Now we define an action $\psi$ of $H$ on $B$ by
 \begin{equation*}
-	b^x(g) = b(xg)
+	b^x(h) = b(xh)
 \end{equation*}
-for $x,g\in G$ and $b\in B$. This is an action because it satisfies all the formulae stated in Proposition \ref{prop-action-criterion-for-groups}.
-
+for $x,h\in H$ and $b\in B$.
 \begin{definition}
-	The semidirect product $B\rtimes_\psi G$ with respect to the action $\psi$ defined above is called the \textbf{twisted wreath product} $A\twr_\varphi G$ of $A$ by $G$. The groups $B$ and $G$ are called the \textbf{base group} and \textbf{top group}, respectively. The subgroup $H$ is called the \textbf{twisting subgroup}.
+	The semidirect product $B\rtimes_\psi H$ with respect to the action $\psi$ defined above is called the \textbf{twisted wreath product} $G\twr_\varphi H$ of $G$ by $H$. The groups $B$ and $H$ are called the \textbf{base group} and \textbf{top group}, respectively. The subgroup $H$ is called the \textbf{twisting subgroup}.
 \end{definition}
 \begin{remark}
-	If $H = \{1\}$, then we get the standard wreath product of $A$ by $G$ where $G$ acts on itself by left regular action.
+	\begin{enumerate}[(i)]
+		\item If $H = \{1\}$, then we get the standard wreath product of $G$ by $H$ where $H$ acts on itself by left regular action.
+		\item The following table outlines some differences between wreath products and twisted wreath products.
+\begin{center}
+	\begin{tabular}{|p{1.7cm}|p{3.6cm}|p{5.2cm}|}
+		\hline
+		  & Wreath Products & Twisted Wreath Products  \\
+\hline \hline
+Ingredients & Two groups $G,H$, 
+
+a set $\Delta$, 
+
+an action $H\to\Sym(\Delta)$ & Two groups $G,H$,
+
+a subgroup $K$ of $H$,
+
+an action $K\to \Aut(G)$  \\
+\hline
+Group action of $H$ on $\Delta$ & Any action of $H$ on $\Delta$ & $H$ acts on itself by left multiplication (so in fact the set $\Delta$ considered here is $H$ itself) \\
+\hline
+Base group & $G^\Delta$ & $B$ as above (which is a subgroup of $G^H$) \\
+\hline
+Action of $H$ on the base group & $f^h(\delta) = f(\delta^{h^{-1}})$ & $b^x(h) = b(h^{x^{-1}}) = b((x^{-1})^{-1}h) = b(xh)$ \\
+\hline
+\end{tabular}
+\end{center}
+\end{enumerate}
 \end{remark}
 
 Let $T$ be a nonabelian simple group. Let $P\leq S_n$ be a primitive permutation group and let $Q$ be the point stabilizer $P_i$. Let $\varphi:Q\rightarrow \Aut T$ be an action such that $\varphi(Q)\supseteq \Inn T$. So we have the twisted wreath product $W=T\twr_\varphi P$ of $T$ by $P$. Now $W$ acts naturally on the set $\Omega$ of right cosets of $P$ in $W$.
