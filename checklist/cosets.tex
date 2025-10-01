@@ -7,7 +7,10 @@
 		\item The number of distinct left cosets of $H$ in $G$ is called the index of $H$ in $G$ and denoted $[G:H]$.
 	\end{itemize}
 	When the context is clear, we will call a left coset simply a coset.
-	\item $xH = yH\Leftrightarrow xy^{-1}\in H$.
+	\item In fact, the coset $gH$ is an equivalence class of $g$ with respect to the relation defined by 
+	\begin{equation*}
+		x\sim y \text{ if and only if } x^{-1}y\in H.
+	\end{equation*} Hence we have $xH = yH\Leftrightarrow x^{-1}y\in H$.
 	\item $G$ can be \textbf{partitioned} into a \textbf{disjoint union of cosets} of $H$.
 	\item Each coset has the same number of elements as in $H$, i.e., $|xH| = |H|$.
 	\item $[G:K] = [G:H][H:K]$ for $K\leq H\leq G$.
