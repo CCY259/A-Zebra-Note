@@ -1,14 +1,14 @@
 \section{Introduction to Permutation Group Theory}
 \subsection{Notations}
-A \textbf{permutation group} of a set $\Omega$ is a subgroup of $\Sym\Omega$. If $G$ is a permutation group on $\Omega$, then $G$ acts on $\Omega$ via the inclusion map and this is a faithful action. The \textbf{degree} of such an action is $|\Omega|$.  Conversely, if $G$ is a faithful action on $\Omega$, then $G$ can be identified as a permutation group of $\Omega$. For simplicity, we reintroduce notations for notions in group actions. Let $G$ act on $\Omega$.  
+A \textbf{permutation group} of a set $\Omega$ is a subgroup of $\Sym(\Omega)$. If $G$ is a permutation group on $\Omega$, then $G$ acts on $\Omega$ via the inclusion map, i.e. $\omega^g = g(\omega)$, and this is a faithful action. The \textbf{degree} of such an action is $|\Omega|$.  Conversely, if $G$ is a faithful action on $\Omega$, then $G$ can be identified as a permutation group of $\Omega$. For simplicity, we reintroduce notations for notions in group actions. Let $G$ act on $\Omega$.  
 \begin{align*}
-	\omega^G &= O_G(\omega) =\{\omega^g\mid g\in G\}, \tag{\textbf{Orbit} of $\omega \in \Omega$}
+	\omega^G &\coloneq O_G(\omega) =\{\omega^g\mid g\in G\}, \tag{\textbf{Orbit} of $\omega \in \Omega$}
 	\\
-	G_{\omega} &= S_G(\omega) = \{g\in G\mid \omega^g = \omega\}, \tag{\textbf{Point stabilizer} of $\omega\in \Omega$}
+	G_{\omega} &\coloneq  S_G(\omega) = \{g\in G\mid \omega^g = \omega\}, \tag{\textbf{Point stabilizer} of $\omega\in \Omega$}
 	\\
-	G_{X} &=  \{g\in G\mid X^g = X\}, \tag{\textbf{Setwise stabilizer} of $X\subseteq \Omega$}
+	G_{X} &\coloneq   \{g\in G\mid X^g = X\}, \tag{\textbf{Setwise stabilizer} of $X\subseteq \Omega$}
 	\\
-	G_{(X)} &=  \{g\in G\mid x^g = x\text{ for all }x\in X\}. \tag{\textbf{Elementwise stabilizer} of $X\subseteq \Omega$}
+	G_{(X)} &\coloneq   \{g\in G\mid x^g = x\text{ for all }x\in X\}. \tag{\textbf{Elementwise stabilizer} of $X\subseteq \Omega$}
 \end{align*}
 \subsection{Isomorphic Actions}
 \begin{definition}
@@ -67,7 +67,7 @@ A \textbf{permutation group} of a set $\Omega$ is a subgroup of $\Sym\Omega$. If
 
 
 \begin{proposition} \label{prop-isom-perm-grp-are-conj}
-	Let $\Omega$ be a set and let $G_1, G_2 \le \Sym\Omega$. Then $G_1$ and $G_2$ are permutationally isomorphic if and only if they are conjugate in $\Sym(\Omega)$. Moreover, if $(\vartheta, \varphi)$ is a permutational isomorphism, then $\vartheta \in \Sym(\Omega)$ and $\varphi(g) = \vartheta^{-1}g\vartheta$, for all $g \in G_1$.
+	Let $\Omega$ be a set and let $G_1,G_2$ be permutation groups on $\Sym(\Omega)$. Then $G_1$ and $G_2$ are permutationally isomorphic if and only if they are conjugate in $\Sym(\Omega)$. Moreover, if $(\vartheta, \varphi)$ is a permutational isomorphism, then $\vartheta \in \Sym(\Omega)$ and $\varphi(g) = \vartheta^{-1}g\vartheta$, for all $g \in G_1$.
 \end{proposition}
 
 \begin{sketch}
@@ -184,7 +184,7 @@ To prove the last statement, note that the action of $G$ on $\Sigma$ is given by
 \end{definition}
 Let $H$ be a subgroup of a group $G$ and let $\Gamma_H$ be the set of right cosets of $H$ in $G$. We have the right coset action of $G$ on $\Gamma_H$, i.e., $(Hx)^g = Hxg$. In fact, we can also define another right coset action of $N_G(H)$ on $\Gamma_H$ by left multiplication: $(Hx)^g = Hg^{-1}x$. Note that $g^{-1}$ is required and $G$ is restricted to $N_G(H)$ to ensure that this action is a well-defined right action.
 \begin{lemma} \label{lemma-left-right-mult}
-	Let $G$ be a group with a subgroup $H$, and put $K := N_G(H)$. Let $\Gamma_H$ denote the set of right cosets of $H$ in $G$, and let $\rho$ and $\lambda$ denote the right and left multiplication of $G$ and $K$, respectively, on $\Gamma_H$ as defined above. Then the following hold.
+	Let $G$ be a group with a subgroup $H$, and put $K \coloneq  N_G(H)$. Let $\Gamma_H$ denote the set of right cosets of $H$ in $G$, and let $\rho$ and $\lambda$ denote the right and left multiplication of $G$ and $K$, respectively, on $\Gamma_H$ as defined above. Then the following hold.
 \begin{enumerate}[(i)]
 \item $\Ker \lambda = H$ and $\lambda(K)$ is semiregular.
 \item The centralizer $C$ of $\rho(G)$ in $\Sym\Gamma_H$ equals $\lambda(K)$.
@@ -223,7 +223,7 @@ Conversely, suppose that $z \in C$ and write $Hc=H^z$ for some $c\in G$. Then fo
 	&= H^{\rho(K)}.
 \end{align*}
 
-(iv) If $\lambda(K)$ is transitive, then (iii) shows that each coset $Hx$ ($x \in G$) has the form $H^{\rho(y)} = Hy$ for some $y \in K$. So $xy^{-1} \in H\subseteq K$ and thus $x\in K$. Hence $G = K = N_G(H)$. Now we can define a permutation $t \in\Sym(\Gamma_H)$ by $(Ha)^t := Ha^{-1}$. Note that $t$ is well-defined because $H$ is normal in $G$. Finally, the calculation shows that $t^{-1}\lambda(x)t = \rho(x)$ for all $x \in G$.
+(iv) If $\lambda(K)$ is transitive, then (iii) shows that each coset $Hx$ ($x \in G$) has the form $H^{\rho(y)} = Hy$ for some $y \in K$. So $xy^{-1} \in H\subseteq K$ and thus $x\in K$. Hence $G = K = N_G(H)$. Now we can define a permutation $t \in\Sym(\Gamma_H)$ by $(Ha)^t \coloneq  Ha^{-1}$. Note that $t$ is well-defined because $H$ is normal in $G$. Finally, the calculation shows that $t^{-1}\lambda(x)t = \rho(x)$ for all $x \in G$.
 \end{sketch}
 
 \begin{theorem} \label{thm-centralizer-trans-perm-grp}
@@ -257,7 +257,7 @@ Conversely, suppose that $z \in C$ and write $Hc=H^z$ for some $c\in G$. Then fo
 
 
 \begin{theorem} \label{thm-normalizer-of-perm-grp}
-	Let $G$ be a transitive subgroup of $\Sym\Omega$, let $N$ be the normalizer of $G$ in $\Sym \Omega$ and let $\alpha \in \Omega$. If $\Psi:N\to \Aut G$ is the homomorphism defined by conjugation, and $\sigma \in \Aut G$, then
+	Let $G$ be a transitive subgroup of $\Sym(\Omega)$, let $N$ be the normalizer of $G$ in $\Sym(\Omega)$ and let $\alpha \in \Omega$. If $\Psi:N\to \Aut G$ is the homomorphism defined by conjugation, and $\sigma \in \Aut (G)$, then
 	$ \sigma \in \Im  \Psi$ if and only if $(G_\alpha)^\sigma$ is a point stabilizer for $G$, i.e., $(G_\alpha)^\sigma = G_\beta$ for some $\beta\in\Omega$.
 \end{theorem}
 \begin{sketch}
