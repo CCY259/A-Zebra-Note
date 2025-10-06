@@ -12,7 +12,7 @@ A \textbf{permutation group} of a set $\Omega$ is a subgroup of $\Sym(\Omega)$. 
 \end{align*}
 \subsection{Isomorphic Actions}
 \begin{definition}
-	Let $G$ and $H$ be groups acting on the sets $\Omega$ and $\Delta$, respectively. The two actions (or the pairs $(G,\Omega)$ and $(H,\Delta)$) are said to be \textbf{permutationally isomorphic} if there exist a bijection $\vartheta: \Omega \to \Delta$ and an isomorphism $\chi: G \to H$ such that
+	Let $G$ and $H$ be groups acting on the sets $\Omega$ and $\Delta$, respectively. The two actions (or the pairs $(G,\Omega)$ and $(H,\Delta)$) are said to be \textbf{permutationally isomorphic} if there exists a bijection $\vartheta: \Omega \to \Delta$ and an isomorphism $\chi: G \to H$ such that
 	\[ \vartheta(\omega^g) = \vartheta(\omega)^{\chi(g)} \]
 	for all  $\omega \in \Omega, g \in G$. In other words, for every $g\in G$ the following diagram commutes.
 	% https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXE9tZWdhIl0sWzIsMCwiXFxPbWVnYSJdLFswLDIsIlxcRGVsdGEiXSxbMiwyLCJcXERlbHRhIl0sWzAsMSwiZyJdLFsxLDMsIlxcdmFydGhldGEiXSxbMCwyLCJcXHZhcnRoZXRhIiwyXSxbMiwzLCJcXGNoaShnKSIsMl1d
@@ -88,11 +88,11 @@ A \textbf{permutation group} of a set $\Omega$ is a subgroup of $\Sym(\Omega)$. 
 \end{remark}
 
 
-\begin{corollary}[Frattini's Argument] \label{cor-Frattini-transitive}
+\begin{proposition}[Frattini's Argument] \label{prop-Frattini-transitive}
 	Let $G$ act transitively on $\Omega$ and let $\omega\in\Omega$. Then a subgroup $H$ of $G$ is transitive if and only if $G = G_\omega H$.
-\end{corollary}
+\end{proposition}
 \begin{sketch}
-If $H$ is transitive, then for every $g\in G$, there exists $h\in H$ such that $\omega^g = \omega^h$. By Proposition \ref{prop-transitive-action-perm-isom}, we get $G_\omega g = G_\omega h$. Hence we can write $gh^{-1} = g'\in G$ and thus $g = g'h\in G_\omega H$.
+If $H$ is transitive, then for every $g\in G$, there exists $h\in H$ such that $\omega^g = \omega^h$. So we get $gh^{-1} = g'\in G_\omega$ and thus $g = g'h\in G_\omega H$.
 	
 For the converse, reverse the argument in the previous paragraph.
 \end{sketch}
@@ -108,7 +108,7 @@ For the converse, reverse the argument in the previous paragraph.
 	Let $G$ act transitively on $\Omega$.  Then the following propositions hold.
 	\begin{enumerate}[(i)]
 		\item If $\Delta$ is a block of $\Omega$, then $G_{\Delta}$ acts transitively on $\Delta$. 
-		\item If $\Delta$ is a block, then $|\Delta^g| = |\Delta|$ and $\Delta^g$ is a block for each $g\in G$. 
+		\item If $\Delta$ is a block of $\Omega$, then $|\Delta^g| = |\Delta|$ and $\Delta^g$ is a block for each $g\in G$. 
 		\item If $\Delta$ is a subset of $\Omega$, then $\Delta$ is a block if and only if $\{\Delta^g\mid g\in G\}$ forms a partition of $\Omega$.
 	\end{enumerate}  
 \end{proposition}
@@ -250,7 +250,7 @@ Conversely, suppose that $z \in C$ and write $Hc=H^z$ for some $c\in G$. Then fo
 	
 	(iv) The result follows from (i).
 	
-	(v) Since $G$ is abelian, it follows that $G \subseteq C$. Let $\omega \in \Omega$.  Since $C$ is semiregular by (i), we have $C_\omega = 1$. By Frattini's argument (Corollary \ref{cor-Frattini-transitive}), we now have $C = GC_\omega = G$.
+	(v) Since $G$ is abelian, it follows that $G \subseteq C$. Let $\omega \in \Omega$.  Since $C$ is semiregular by (i), we have $C_\omega = 1$. By Frattini's argument (Proposition \ref{prop-Frattini-transitive}), we now have $C = GC_\omega = G$.
 	
 	(vi) Since $G$ is primitive, it follows from Corollary \ref{cor-prim-iff-stab-is-max} that $G_\omega$ is a maximal subgroup. By the argument in (ii), $N_G(G_\omega)$ is a proper subgroup of $G$. So we obtain $N_G(G_\omega) = G_\omega$. Hence the result follows from (iv).
 \end{sketch}
@@ -275,7 +275,7 @@ In the case where $G$ is regular,  the normalizer of $G$ in the symmetric group 
 	Let $G$ be a transitive subgroup of $\Sym (\Omega)$ and let $N$ be the normalizer of $G$ in $\Sym (\Omega)$. If $G$ is regular, then $\Im  \Psi = \Aut (G)$, where $\Psi$ is the homomorphism defined in Theorem \ref{thm-normalizer-of-perm-grp}. Let $\alpha\in \Omega$. In this case $N_\alpha \cong \Aut (G)$, and $N$ is isomorphic to $\operatorname{Hol}(G)$.
 \end{corollary}
 \begin{sketch}
-	Since $G$ is regular, therefore $G_\alpha = 1$, and so $\Im  \Psi = \Aut (G)$ by Theorem \ref{thm-normalizer-of-perm-grp} since $(G_\alpha)^{\sigma} = \{1\}$ is a point stabilizer for $G$. The centralizer $C$ of $G$ in $\text{Sym}(\Omega)$ is transitive by Theorem \ref{thm-centralizer-trans-perm-grp}.(ii). By Frattini's argument (Corollary \ref{cor-Frattini-transitive}), we get $N = CN_\alpha$. Next we show that $C \cap N_\alpha = 1$. Let $x\in C \cap N_\alpha$. Then $\alpha^x = \alpha$. Since $G$ is transitive, for every $\omega\in\Omega$, we have $\omega = \alpha^g$ for some $g\in G$. This implies 
+	Since $G$ is regular, therefore $G_\alpha = 1$, and so $\Im  \Psi = \Aut (G)$ by Theorem \ref{thm-normalizer-of-perm-grp} since $(G_\alpha)^{\sigma} = \{1\}$ is a point stabilizer for $G$. The centralizer $C$ of $G$ in $\text{Sym}(\Omega)$ is transitive by Theorem \ref{thm-centralizer-trans-perm-grp}.(ii). By Frattini's argument (Proposition \ref{prop-Frattini-transitive}), we get $N = CN_\alpha$. Next we show that $C \cap N_\alpha = 1$. Let $x\in C \cap N_\alpha$. Then $\alpha^x = \alpha$. Since $G$ is transitive, for every $\omega\in\Omega$, we have $\omega = \alpha^g$ for some $g\in G$. This implies 
 	\begin{equation*}
 		\omega^x = (\alpha^g)^x =\alpha^{gx} = \alpha^{xg} = (\alpha^x)^g = \alpha^g = \omega. 
 	\end{equation*}
