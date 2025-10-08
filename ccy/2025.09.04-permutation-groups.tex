@@ -104,7 +104,7 @@ For the converse, reverse the argument in the previous paragraph.
 
 
 
-\begin{proposition}
+\begin{proposition} \label{prop-block}
 	Let $G$ act transitively on $\Omega$.  Then the following propositions hold.
 	\begin{enumerate}[(i)]
 		\item If $\Delta$ is a block of $\Omega$, then $G_{\Delta}$ acts transitively on $\Delta$. 
@@ -119,32 +119,36 @@ For the converse, reverse the argument in the previous paragraph.
 	
 	(iii) Assume that $\Delta$ is a block. Let $\mathcal{P} = \{\Delta^g \mid g \in G\}$. We claim that $\mathcal{P}$ is a partition of $\Omega$. Let $\omega \in \Omega$. Since $G$ is transitive and $\Delta \neq \emptyset$, there is some $g \in G$ such that $\omega^g \in \Delta$. Thus $\omega \in \Delta^{g^{-1}} $ which shows that $\bigcup_{g \in G} \Delta^g = \Omega$.  Let $\Delta^g, \Delta^h \in \mathcal{P}$ and suppose that $\Delta^g \cap \Delta^h \neq \emptyset$. Then $\Delta^g \cap (\Delta^g)^{g^{-1} h} \neq \emptyset$. By (ii), $\Delta^g$ is a block. So $\Delta^g = (\Delta^g)^{g^{-1} h} = \Delta^h$. Therefore $\mathcal{P}$ is a partition of $\Omega$. 
 	
-	For the converse, note that the definition of partition gives $\Delta g = \Delta$ or $\Delta g \cap \Delta = \emptyset$ for all $g \in G$.
+	For the converse, note that the definition of partition gives $\Delta^g = \Delta$ or $\Delta^g \cap \Delta = \emptyset$ for all $g \in G$.
 \end{sketch}
 
 \begin{definition}
 	Let $G$ act on $\Omega$. An equivalence relation $\sim$ on $\Omega$ is called a $G$-\textbf{congruence} if  $$\omega_1 \sim \omega_2 \iff \omega_1^g \sim \omega_2^g$$ 
 	for all $\omega_1,\omega_2\in \Omega$ and $g\in G$. We also say that $G$ preserves the relation.
 \end{definition}
-\begin{proposition}
+\begin{proposition} \label{prop-G-congruence}
 	Let $G$ act transitively on $\Omega$.
 	\begin{enumerate}[(i)]
 		\item If $\sim$ is a $G$-congruence on $\Omega$, then each equivalence class is a block of $\Omega$.
-		\item  If  $\Delta$ is a block, then $\Sigma = \{\Delta^g\mid g\in G\}$ is the set of equivalence classes of a $G$-congruence on $\Omega$. Hence $G$ acts transitively on $\Sigma$.
+		\item Let $\Sigma$ be the set of equivalence classes of a $G$-congruence. Then $G$ acts transitively on $\Sigma$.
+		\item  If  $\Delta$ is a block, then $\Sigma = \{\Delta^g\mid g\in G\}$ is the set of equivalence classes of a $G$-congruence on $\Omega$. 
 	\end{enumerate}
 \end{proposition}
 \begin{sketch}
 	(i) let $[\omega]$ be an equivalence class of $\sim$. It suffices to show that $[\omega]^g$ is an equivalence class for each $g\in G$. Let $g\in G$. If $\alpha^g\in [\omega]^g$, then $\alpha \sim \omega$ implies $\alpha^g \sim \omega^g$ and so $[\omega]^g\subseteq [\omega^g]$. If $\alpha\in [\omega^g]$, then $\alpha \sim \omega^g$. Hence $\alpha^{g^{-1}} \sim \omega$ and $\alpha^{g^{-1}}\in [\omega]$. This implies $\alpha = (\alpha^{g^{-1}})^g \in [\omega]^g$ and thus $[\omega^g]\subseteq [\omega]^g$. Consequently, $[\omega]^g$ is an equivalence class (namely $[\omega^g]$) which proves that $[\omega]$ is a block. 
 	
-(ii) Clearly any two sets in $\Sigma$ are pairwise disjoint. Let $\omega\in\Omega$ and let $\alpha\in \Delta$. Since $G$ is transitive, there exists $g \in G$ such that $\alpha^g = \omega$. So $\omega\in \Delta^g$. This shows that $\Sigma$ is a partition of $\Omega$. Now we verify that the equivalence relation $\sim$ on $\Omega$ induced by $\Sigma$ (where $\omega_1\sim\omega_2$ if and only if $\omega_1,\omega_2$ belong to the same set in $\Sigma$) is a $G$-congruence. Let $g\in G$. Assume  that $\omega_1 \sim \omega_2$. Then   $\omega_1, \omega_2 \in \Delta^h$ for some $h \in G$.  Then we get $\omega_1^g,\omega_2^g \in (\Delta^h)^g = \Delta^{hg}$ and so $\omega_1^g\sim\omega_2^g$.
+(ii) In view of (i), the action of $G$ on $\Sigma$ is well-defined. Let $[\omega_1],[\omega_2]\in\Sigma$. Then we have $\omega_1 = \omega_2^g$ for some $g\in G$. From (i), we know that $[\omega_2^g] = [\omega_2]^g$. Hence $[\omega_1] = [\omega_2]^g$.
+	
+(iii) Since $\Delta$ is a block, the set $\Sigma$ partitions $\Omega$ by Proposition \ref{prop-block}.(iii). Now we verify that the equivalence relation $\sim$ on $\Omega$ induced by $\Sigma$ (where $\omega_1\sim\omega_2$ if and only if $\omega_1,\omega_2$ belong to the same set in $\Sigma$) is a $G$-congruence. Let $g\in G$. Assume  that $\omega_1 \sim \omega_2$. Then   $\omega_1, \omega_2 \in \Delta^h$ for some $h \in G$.  Then we get $\omega_1^g,\omega_2^g \in (\Delta^h)^g = \Delta^{hg}$ and so $\omega_1^g\sim\omega_2^g$.
  Assume that $\omega_1^g \sim \omega_2^g$. Then $\omega_1^g, \omega_2^g \in \Delta^{h}$ for some $h\in G$. So $\omega_1,\omega_2\in \Delta^{hg^{-1}}$ and $\omega_1\sim\omega_2$.  Therefore, the relation $\sim$ is a $G$-congruence.
-
-To prove the last statement, note that the action of $G$ on $\Sigma$ is given by $(\Delta^g)^h = \Delta^{gh}$. This action is transitive because $(\Delta^g)^{g^{-1}h} = \Delta^h$. 
 \end{sketch}
 
 \begin{definition}
 	Let $G$ act transitively on $\Omega$. The set $\Sigma$ of equivalence classes associated to a $G$-congruence on $\Omega$ is called a \textbf{system of blocks} (or a \textbf{system of imprimitivity}). Such a system is said to be \textbf{trivial} if it only contains trivial blocks.
 \end{definition}
+\begin{remark}
+Let $\Sigma$ be a system of blocks. By Proposition \ref{prop-G-congruence} (i) and (ii), we can choose an equivalence class $\Delta$ from $\Sigma$ so that $\Sigma = \{\Delta^g\mid g\in G\}$.
+\end{remark}
 
 \subsection{Primitive Actions}
 
