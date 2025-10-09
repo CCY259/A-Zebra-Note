@@ -1,7 +1,7 @@
 \section{Solvable and Nilpotent Groups}
 \subsection{Solvable Groups}
 \begin{definition}
-	A group $G$ is said to be \textbf{solvable} if there exists a normal series
+	A group $G$ is said to be \textbf{solvable} if there exists a subnormal series
 	\begin{equation*}
 		\{e\} = G_0 \leq G_1 \leq \cdots \leq G_n = G
 	\end{equation*}
@@ -81,7 +81,7 @@ Conversely, assume that the composition factors have prime order. These factors 
 
 \subsection{Nilpotent Groups}
 \begin{definition}
-	A group $G$ is said to be \textbf{nilpotent} if there exists a normal series
+	A group $G$ is said to be \textbf{nilpotent} if there exists a subnormal series
 	\begin{equation*}
 		\{e\} = G_0 \leq G_1 \leq \cdots \leq G_n = G
 	\end{equation*}
@@ -100,7 +100,7 @@ In general, how can we generate a central series for $ G $? One way to do this i
 \end{enumerate}
 
 Let $ G $ be a group. The center $Z_1(G) =  Z(G) $ of $ G $ is a normal subgroup. Let $ Z_{2}(G) $ be the subgroup of $G$ corresponding to $ Z(G/Z_1(G)) $, i.e., $
-	Z_2(G) / Z_1(G) = Z(G/Z(G))$. The Correspondence Theorem shows that $Z_1(G) \lhd Z_2(G) \lhd G$.  Continue this process by defining inductively:  $Z_{i}(G)$ is the subgroup of $G$ corresponding to $ Z(G/Z_{i-1}(G)) $, i.e., $Z_i(G) / Z_{i-1}(G) = Z(G/Z_{i-1}(G))$. This leads to the following definition.
+	Z_2(G) / Z_1(G) = Z(G/Z_1(G))$. The Correspondence Theorem shows that $Z_1(G) \lhd Z_2(G) \lhd G$.  Continue this process by defining inductively:  $Z_{i}(G)$ is the subgroup of $G$ corresponding to $ Z(G/Z_{i-1}(G)) $, i.e., $Z_i(G) / Z_{i-1}(G) = Z(G/Z_{i-1}(G))$. This leads to the following definition.
 
 \begin{definition}
  	The \textbf{ascending central series} of a group $G$ is a sequence of normal subgroups of $G$ given by  $$ \langle e \rangle \leq Z_{1}(G) \leq  Z_{2}(G) \leq  \cdots .$$
@@ -184,7 +184,7 @@ This immediately yields the following consequence.
 	We can remember the proposition above  using the following diagram:
 	\begin{equation*}
 		\begin{array}{ccccccccccc}
-			G&=&Z_n(G) & \geq & Z_{n-1} & \geq & \dots & \geq & Z_0(G) &=& \{e\} \\
+			G&=&Z_n(G) & \geq & Z_{n-1}(G) & \geq & \dots & \geq & Z_0(G) &=& \{e\} \\
 			&&\shortparallel & & \cup & & & & \shortparallel&&\\
 			G &= &G_n & \geq & G_{n-1} & \geq & \dots & \geq & G_0 &=& \{e\} \\
 			&&\shortparallel & & \cup & & & & \shortparallel &&\\
@@ -305,7 +305,7 @@ This immediately yields the following consequence.
 	\end{equation*}
 	Clearly  $S_3/A_3\cong \mathbb{Z}_2$ and $A_3/\{e\} \cong \mathbb{Z}_3$. Thus they are abelian.  
 	
-	The group $S_4$ is solvable because we have the following normal series
+	The group $S_4$ is solvable because we have the following subnormal series
 	\begin{equation*}
 		\{e\} \lhd V_4 \lhd A_4\lhd S_4
 	\end{equation*}

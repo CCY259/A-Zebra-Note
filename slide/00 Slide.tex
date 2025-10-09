@@ -1,32 +1,30 @@
-\documentclass[20pt]{extarticle} % or another class like 'report', 'book'
+\documentclass[20pt]{extarticle} %& Customize font size
 \usepackage[
-paperwidth=32cm, %paperheight=14.6cm,
-paperheight=14.6cm, left=1.0cm, right=6cm, top=0.3cm, bottom=0.3cm
+paperwidth=32cm, %paperheight=14.6cm, right=6cm
+paperheight=14.6cm, left=1.0cm, right=7.5cm, top=0.3cm, bottom=0.3cm
 ]{geometry}
 \usepackage{mathtools}
 \usepackage{amssymb}
 \usepackage{amsthm}
-\usepackage{mlmodern}
+%\usepackage{mlmodern}
 \usepackage{hyperref}
 \usepackage{enumerate}
 \usepackage{quiver}
 \usepackage{comment}
 \usepackage{xcolor}
 
-%\usepackage{titlesec}
-
+%& Customize background
 \usepackage[pages=all]{background}
 \usepackage{graphicx}
-
 \backgroundsetup{
 	scale=1,
 	angle=0,
 	opacity=1,
 	contents={\includegraphics[width=\paperwidth,height=\paperheight]{background-2.pdf}}
 }
-
 \pagestyle{empty}
 
+%& Bibliography (Compile using biber)
 \usepackage[backend=biber, style=alphabetic, isbn=false, doi=false, url=false]{biblatex}
 %\usepackage{xurl} % after biblatex
 \addbibresource{../References.bib}
@@ -50,12 +48,13 @@ paperheight=14.6cm, left=1.0cm, right=6cm, top=0.3cm, bottom=0.3cm
 
 
 
-
+%& Theorems
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{lemma}[theorem]{Lemma}
 
+%& Theorems (definition style)
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{problem}{Problem}
@@ -64,10 +63,12 @@ paperheight=14.6cm, left=1.0cm, right=6cm, top=0.3cm, bottom=0.3cm
 
 %\newenvironment{sketch}{\begin{proof}}{\end{proof}} 
 
+%& Remove all proofs
 \excludecomment{sketch}
 %\excludecomment{remark}
 %\excludecomment{proof}
 
+%& Clear page after every environment
 \usepackage{etoolbox}
 \AfterEndEnvironment{theorem}{\clearpage}
 \AfterEndEnvironment{definition}{\clearpage}
@@ -75,19 +76,26 @@ paperheight=14.6cm, left=1.0cm, right=6cm, top=0.3cm, bottom=0.3cm
 \AfterEndEnvironment{proposition}{\clearpage}
 \AfterEndEnvironment{corollary}{\clearpage}
 \AfterEndEnvironment{example}{\clearpage}
+\AfterEndEnvironment{remark}{\clearpage}
 %\AfterEndEnvironment{sketch}{\clearpage}
 
-
+%& Font color
 %\definecolor{darkmode}{HTML}{2B2A2A}
 %\pagecolor{darkmode}
 \color{white}
 
-
+%& Set font to sans-serif
+\renewcommand*\familydefault{\sfdefault} 
+\usepackage{sansmath} 
+\sansmath 
 
 
 
 \begin{document}
+%& Section Numbering
 \setcounter{section}{8}
+
+%& Input files
 \input{../ccy/2025.09.04-permutation-groups.tex}
 
 \end{document}

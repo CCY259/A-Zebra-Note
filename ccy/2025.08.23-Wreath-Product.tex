@@ -1,6 +1,5 @@
 \section{Wreath Products}
-We will always consider right actions in this section. This is probably influenced by FAR-RIGHT mathematicians.
-\subsection{Construction and Basic Properties}
+\subsection{Construction}
 Let $G$ be an arbitrary group and let $H$ be a group acting on a set $\Delta$. Let $G^\Delta$ be the group of all functions from $\Delta$ into $G$ with pointwise multiplication. In other words,  $G^\Delta$ is isomorphic to a direct product of copies of $G$ indexed by $\Delta$. Now we define an action of $H$ on  $G^\Delta$ by 
 \begin{equation*}
 	f^h(\delta) = f(\delta^{h^{-1}}).
@@ -60,7 +59,7 @@ So $((\omega,\delta)^{(f_1,h_1)})^{(f_2,h_2)}  = (\omega,\delta)^{(f_1,h_1)(f_2,
 		\item $G\Wr_\Delta H$ acts transitively on $\Omega\times \Delta$   if and only if both $G$ and $H$ are transitive.
 		\item  $G\Wr_\Delta H$ acts faithfully on $\Omega\times \Delta$ if and only if both actions are faithful.
 		\item If $|\Omega|,|\Delta|\geq 2$ and $G\Wr_\Delta H$ acts transitively on $\Omega\times \Delta$, then $G\Wr_\Delta H$ is imprimitive on $\Omega\times \Delta$.
-		\item In this form the wreath product is associative in the sense that, if $K$ acts on $\Gamma$, then the action of $(G\Wr_\Delta H) \Wr_\Gamma K$ on $\Omega\times \Delta \times \Gamma$  is permutationally isomorphic to the action of $G\Wr_{\Delta\times \Gamma} (H \Wr_\Gamma K)$ on $\Omega\times \Delta \times \Gamma$.
+		\item In this form the wreath product is associative in the sense that, if $K$ acts on $\Gamma$, then the action of $(G\Wr_\Delta H) \Wr_\Gamma K$ on $(\Omega\times \Delta) \times \Gamma$  is permutationally isomorphic to the action of $G\Wr_{\Delta\times \Gamma} (H \Wr_\Gamma K)$ on $\Omega\times (\Delta \times \Gamma)$.
 	\end{enumerate}
 \end{proposition}
 
@@ -69,13 +68,83 @@ So $((\omega,\delta)^{(f_1,h_1)})^{(f_2,h_2)}  = (\omega,\delta)^{(f_1,h_1)(f_2,
 	
 	Conversely, let $(\omega_1,\delta_1),(\omega_2,\delta_2) \in \Omega\times\Delta$. Then we take a function $f:\Delta \to G$ such that $f(\delta_1)=g$ where $\omega_1^g =\omega_2$.
 	
-	(ii) Suppose that the action of $G\Wr_\Delta H$ on $\Omega\times \Delta$ is faithful. Let $g\in G$ be such that $\omega^g = \omega$ for all $\omega\in \Omega$. There is a function $f:\Delta\to G$ such that $f(\delta) = g$ for all $\delta\in \Delta$. So $\omega^{f(\delta)} = \omega$ for all $\delta\in \Delta$. This implies $g = f(\delta) = 1$. We use a similar argument to show that $H$ is faithful on $\Delta$.
+	(ii) Suppose that the action of $G\Wr_\Delta H$ on $\Omega\times \Delta$ is faithful. Let $g\in G$ be such that $\omega^g = \omega$ for all $\omega\in \Omega$. There is a function $f:\Delta\to G$ such that $f(\delta) = g$ for all $\delta\in \Delta$. So $\omega^{f(\delta)} = \omega$ for all $\delta\in \Delta$. Note that
+	\begin{equation*}
+		(\omega,\delta)^{(f,1)} = (\omega^{f(\delta)}, \delta^1) = 	(\omega,\delta).
+	\end{equation*} This implies $g  = 1$. We use a similar argument to show that $H$ is faithful on $\Delta$.
 	
 	Conversely, let $(f,h)\in G\Wr_{\Delta} H$ be such that  $(\omega,\delta)^{(f,h)} = (\omega,\delta)$ for all $(\omega,\delta)\in\Omega\times \Delta$. In particular, $\delta^h = \delta$ for all $\delta\in \Delta$. Since the action of $H$ on $\Delta$ is faithful, we get $h = 1$. Next, note that $\omega^{f(\delta)} = \omega$ for all $\omega\in\Omega$, $\delta\in\Delta$. Since the action of $G$ on $\Omega$ is faithful, we get $f(\delta) = 1$ for all $\delta\in\Delta$.
 	
 	(iii) Let $\delta\in \Delta$ and consider the subset $\Omega\times \{\delta\}$ of $\Omega\times \Delta$. We show that it is a nontrivial block. Let $(f,h)\in G\Wr_{\Delta} H$ be  such that $(\Omega\times \{\delta\})^{(f,h)} \cap (\Omega\times \{\delta\}) \neq \emptyset$. Then $\delta^h = \delta$ and $\Omega^{f(\delta)} \cap \Omega \neq \emptyset$. Since $\Omega$ itself is a block, it follows that $\Omega^{f(\delta)} =\Omega$. Hence $(\Omega\times \{\delta\})^{(f,h)} = \Omega\times \{\delta\}$.
 	
-	(iv) Let 
+	(iv) The elements of $(G\Wr_\Delta H) \Wr_\Gamma K$ are of the form $(f,k)$ where $f:\Gamma\to G\Wr_\Delta H$ is a function such that $f(\gamma) = (g_\gamma,h_\gamma)$ with a function $g_\gamma:\Delta\to G$ and an element $h_\gamma\in H$. On the other hand, the elements of $G\Wr_{\Delta\times \Gamma} (H \Wr_\Gamma K)$ are of the form $(g,(h,k))$ where $g:\Delta\times\Gamma\to G$ and $h:\Gamma \to H$ are functions. 
+	
+	Let $\varphi:(G\Wr_\Delta H) \Wr_\Gamma K \to G\Wr_{\Delta\times \Gamma} (H \Wr_\Gamma K)$ be defined by
+	\begin{equation*}
+		\varphi(f,k) = (g_\varphi,(h_\varphi,k))
+	\end{equation*}
+	where $f$ is as described above, $g_\varphi:\Delta\times\Gamma\to G$ and $h_\varphi:\Gamma \to H$ are functions respectively defined by
+\begin{equation*}
+	g_\varphi(\delta,\gamma) = g_\gamma(\delta),\quad 	h_\varphi(\gamma)= h_\gamma.
+\end{equation*}
+We verify that $\varphi$ is a homomorphism. Let $(f^{(1)},k_1),(f^{(2)},k_2)\in (G\Wr_\Delta H) \Wr_\Gamma K$ with $f^{(i)}(\gamma) = (g^{(i)}_\gamma, h^{(i)}_\gamma)$  for $i=1,2$. Then
+\begin{equation*}
+	\varphi((f^{(1)},k_1)(f^{(2)},k_2)) = \varphi((f^{(1)}(f^{(2)})^{k_1^{-1}},k_1k_2)).
+\end{equation*}
+Note that 
+\begin{align*}
+	f^{(1)}(f^{(2)})^{k_1^{-1}}(\gamma) &= f^{(1)}(\gamma)(f^{(2)})^{k_1^{-1}}(\gamma) 
+	\\
+	&= 
+	f^{(1)}(\gamma)f^{(2)}(\gamma^{k_1}) 
+	\\
+	&=(g^{(1)}_\gamma, h^{(1)}_\gamma)(g^{(2)}_{\gamma^{k_1}}, h^{(2)}_{\gamma^{k_1}})
+	\\
+	&= \left(g^{(1)}_\gamma (g^{(2)}_{\gamma^{k_1}})^{(h^{(1)}_\gamma)^{-1}}, h^{(1)}_\gamma h^{(2)}_{\gamma^{k_1}}\right)
+\end{align*} for $\gamma\in\Gamma$. So we have $\varphi((f^{(1)},k_1)(f^{(2)},k_2)) = (g',(h',k_1k_2))$ where $g':\Delta\times\Gamma\to G$ and $h':\Gamma \to H$ are functions respectively given by
+\begin{equation*}
+	g'(\delta,\gamma) = g^{(1)}_\gamma(\delta)g^{(2)}_{\gamma^{k_1}}(\delta^{h_\gamma^{(1)}}),\quad h'(\gamma) = h^{(1)}_\gamma h^{(2)}_{\gamma^{k_1}}.
+\end{equation*}
+Next, we have 
+\begin{align*}
+	\varphi(f^{(1)},k_1) \varphi(f^{(2)},k_2) &= \left(g_\varphi^{(1)},(h_\varphi^{(1)},k_1)\right)\left(g_\varphi^{(2)},(h_\varphi^{(2)},k_2)\right)
+	\\
+	&= \left(g_\varphi^{(1)}(g_\varphi^{(2)})^{(h_\varphi^{(1)},k_1)^{-1}},(h_\varphi^{(1)},k_1)(h_\varphi^{(2)},k_2)\right)
+	\\
+	&=  \left(g_\varphi^{(1)}(g_\varphi^{(2)})^{(h_\varphi^{(1)},k_1)^{-1}},(h_\varphi^{(1)}(h_\varphi^{(2)})^{k_1^{-1}},k_1k_2)\right)
+	\\
+	&= (g',(h',k_1k_2))
+\end{align*}
+because
+\begin{align*}
+\left[g_\varphi^{(1)}(g_\varphi^{(2)})^{(h_\varphi^{(1)},k_1)^{-1}}\right] (\delta,\gamma) &= g_\varphi^{(1)}(\delta,\gamma) (g_\varphi^{(2)})^{(h_\varphi^{(1)},k_1)^{-1}}(\delta,\gamma)
+\\
+&= g_\gamma^{(1)}(\delta) g_\varphi^{(2)}((\delta,\gamma)^{(h_\varphi^{(1)},k_1)})
+\\
+&= g_\gamma^{(1)}(\delta) g_\varphi^{(2)}(\delta^{h_\gamma^{(1)}},\gamma^{k_1})
+\\
+&= g_\gamma^{(1)}(\delta) g_{\gamma^{k_1}}^{(2)}(\delta^{h_\gamma^{(1)}}),
+\\
+\left[h_\varphi^{(1)}(h_\varphi^{(2)})^{k_1^{-1}} \right](\gamma)&=  h_\varphi^{(1)}(\gamma)(h_\varphi^{(2)})^{k_1^{-1}}(\gamma)
+\\
+&= h_\varphi^{(1)}(\gamma)(h_\varphi^{(2)})(\gamma^{k_1})
+\\
+&= h_\gamma^{(1)}h_{\gamma^{k_1}}^{(2)}.
+\end{align*}
+Finally, let $\vartheta:(\Omega\times \Delta)\times \Gamma \to \Omega\times (\Delta\times \Gamma)$ be defined by $\vartheta((\omega,\delta),\gamma) = (\omega,(\delta,\gamma))$. We claim that $(\vartheta,\varphi)$ is a permutational isomorphism. Let $((\omega,\delta),\gamma)\in (\Omega\times \Delta)\times \Gamma$ and $(f,k)\in (G\Wr_\Delta H) \Wr_\Gamma K$ be such that $f(\gamma)= (g_\lambda,h_\lambda)$ and $\varphi(f,k) = (g_\varphi,(h_\varphi,k))$. Then
+\begin{align*}
+	\vartheta\left(((\omega,\delta),\gamma)^{(f,k)}\right) &= \vartheta\left((\omega,\delta)^{f(\gamma)},\gamma^k\right) = \vartheta\left((\omega,\delta)^{(g_\gamma,h_\gamma)},\gamma^k\right)
+	 \\
+	 &= \vartheta\left((\omega^{g_\gamma(\delta)},\delta^{h_\gamma}),\gamma^k\right)
+	 = \left(\omega^{g_\gamma(\delta)},(\delta^{h_\gamma},\gamma^k)\right)
+	 \\
+	 &= \left(\omega^{g_{\varphi}(\delta,\gamma)},(\delta^{h_\varphi(\gamma)},\gamma^k)\right)
+	= \left(\omega^{g_{\varphi}(\delta,\gamma)},(\delta,\gamma)^{(h_\varphi,k)}\right)
+	 \\
+	 &= (\omega,(\delta,\gamma))^{(g_{\varphi},(h_\varphi,k))}
+	  = (\omega,(\delta,\gamma))^{\varphi(f,k)}.
+\end{align*}
+This completes the proof.
 \end{sketch}
 
 \begin{remark}\begin{enumerate}[(i)]
@@ -147,7 +216,7 @@ This shows that $(\vartheta,\psi)$ is a permutational embedding.
 
 \subsection{Product Action}
 \begin{proposition} \label{prop-product-action-of-WP}
-	Let $G$ and $H$ act on $\Omega$ and $\Delta$ respectively. Then $G\Wr_\Delta H$ (resp. $G\wr_\Delta H$) acts on $\Omega^\Delta$ via
+	Let $G$ and $H$ act on $\Omega$ and $\Delta$ respectively. Then $G\Wr_\Delta H$  acts on $\Omega^\Delta$ via
 	\begin{equation*}
 	\varphi^{(f,h)}(\delta) = \varphi(\delta^{h^{-1}})^{f(\delta^{h^{-1}})}.
 	\end{equation*} 
@@ -180,20 +249,47 @@ This shows that $(\vartheta,\psi)$ is a permutational embedding.
 	The action defined in Proposition \ref{prop-product-action-of-WP} is called the \textbf{product action} of $G\Wr_{\Delta} H$.
 \end{definition}
 \begin{proposition}
-	Let $G$ and $H$ act on $\Omega$ and $\Delta$ respectively. Then $G\Wr_\Delta H$ acts faithfully on $\Omega^\Delta$ if and only if both actions are faithful. 
+	Let $G$ and $H$ act on $\Omega$ and $\Delta$ respectively. Assume that $|\Omega|\geq 2$. Then $G\Wr_\Delta H$ acts faithfully on $\Omega^\Delta$ if and only if both actions are faithful. 
 \end{proposition}
 \begin{sketch}
+	Suppose that $G\Wr_\Delta H$ acts faithfully on $\Omega^\Delta$. Let $g\in G$ be such that $\omega^g =\omega$ for all $\omega\in\Omega$. There is a function $f:\Delta\to G$ such that $f(\delta) = g$ for all $\delta\in\Delta$. Note that for any $\varphi\in \Omega^\Delta$ and $\delta\in \Delta$, we have
+	\begin{equation*}
+		\varphi^{(f,1)}(\delta) = \varphi(\delta)^{f(\delta)} = \varphi(\delta)^g = \varphi(\delta).
+	\end{equation*}
+	Thus $f(\delta) = 1$ for all $\delta\in\Delta$ and so $g = 1$. Now let $h\in H$ be such that $\delta^h = \delta$ for all $\delta\in\Delta$. Then for  any $\varphi\in \Omega^\Delta$ and $\delta\in \Delta$, 
+	\begin{equation*}
+		\varphi^{(1,h)}(\delta) = \varphi(\delta^{h^{-1}})^{1(\delta^{h^{-1}})} = \varphi(\delta)^1 = \varphi(\delta)
+	\end{equation*}
+	where $1:\Delta\to G$ is the trivial map. Hence $h=1$. Therefore $G$ and $H$ are faithful on $\Omega$ and $\Delta$ respectively.
 	
+	Conversely, let $(f,h)\in G\Wr_{\Delta} H$ such that $\varphi^{(f,h)}(\delta) = \varphi(\delta)$ for all $\varphi:\Delta\to \Omega$ and $\delta\in \Delta$. Then $
+		\varphi(\delta^{h^{-1}})^{f(\delta^{h^{-1}})} = \varphi(\delta)$ for all $\delta\in \Delta$. Let $\delta\in\Delta$ be fixed. For each $\omega\in \Omega$, we can find a function $\varphi_\omega\in \Omega^\Delta$ such that  $\varphi_\omega(\delta^{h^{-1}}) =\varphi_\omega(\delta) = \omega$. Hence we get $\omega^{f(\delta^{h^{-1}})} = \omega$ for all $\omega\in \Omega$. Since $G$ is faithful on $\Omega$, we get $f(\delta^{h^{-1}}) = 1$ for each $\delta\in \Delta$, which means that $f$ is the trivial map. So $\varphi(\delta^{h^{-1}}) = \varphi(\delta)$ for all $\delta\in \Delta$. Suppose for the sake of contradiction that $\delta^{h^{-1}}\neq \delta$ for some $\delta\in\Delta$. Let $\omega_1,\omega_2\in \Omega$ be two distinct elements. We can consider a function $\phi:\Delta\to \Omega$ such that $\phi(\delta) = \omega_1$, $\phi(\delta^{h^{-1}}) = \omega_2$. This contradicts to the fact that $\phi(\delta) = \phi(\delta^{h^{-1}})$. Hence $H$ is faithful on $\Delta$.
 \end{sketch}
+\begin{remark}
+The result is not true if $|\Omega| = 1$. The groups $G=\{1\}$ and $H = S_2$ provide a counterexample.
+\end{remark}
 \begin{proposition}
 	Let $G$ and $H$ be nontrivial groups acting on $\Omega$ and $\Delta$ respectively. Then $G\Wr_{\Delta} H$ is primitive on $\Omega^\Delta$ if and only if the following hold:
 \begin{enumerate}[(i)]
-	\item $H$ is primitive and nonregular on $\Delta$;
-	\item $\Omega$ is finite and $G$ is transitive on $\Omega$.
+	\item $G$ is primitive on $\Omega$ and the point stabilizers in $G$ are not normal in $G$;
+	\item $\Delta$ is finite and $H$ is transitive on $\Delta$.
 \end{enumerate}
 \end{proposition}
 \begin{sketch}
-	
+	Let $W\coloneq G\Wr_{\Delta} H$. Suppose that $W$ is primitive on $\Omega^\Delta$. Fix an element $\omega\in\Omega$. Define $\phi_\omega\in \Omega^\Delta$ by $\phi_\omega(\delta) \coloneq \omega$ for all $\delta\in \Delta$. Then we can verify that the stabilizer of $\phi_{\omega}$ is 
+	\begin{equation*}
+		W_{\phi_{\omega}} = \{(f,h)\in W\mid f(\delta)\in G_\omega \text{ for all }\delta\in\Delta\}.
+	\end{equation*}
+	In view of Corollary \ref{cor-prim-iff-stab-is-max}, $W_{\phi_{\omega}}$ is a maximal subgroup.
+Now we show (i) and (ii). Suppose that $G$ is not primitive on $\Omega$. We argue in two cases:
+\begin{enumerate}[(1)]
+	\item If $G$ is transitive, then, by Corollary \ref{cor-prim-iff-stab-is-max}, there exists a subgroup $R$ with $G_\omega< R < G$ for some $\omega\in\Omega$. Note that 
+	\begin{equation*}
+		W_{\phi_{\omega}} < \{(f,h)\in W\mid f(\delta)\in R \text{ for all }\delta\in\Delta\} < W.
+	\end{equation*}
+This contradicts the maximality of $W_{\phi_\omega}$.
+	\item If $G$ is not transitive, then take an orbit $\Omega'\subsetneq \Omega$. We claim that $W$ is intransitive on $\Omega^\Delta$. Walao
+\end{enumerate}
 \end{sketch}
 
 \paragraph{Main References.} \cite{Meldrum1995,Praeger2018,Dixon1996}
