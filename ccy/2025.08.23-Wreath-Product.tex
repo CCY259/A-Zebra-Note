@@ -248,6 +248,14 @@ This shows that $(\vartheta,\psi)$ is a permutational embedding.
 \begin{definition}
 	The action defined in Proposition \ref{prop-product-action-of-WP} is called the \textbf{product action} of $G\Wr_{\Delta} H$.
 \end{definition}
+\begin{proposition} \label{prop-product-action-transitive}
+Let $G$ and $H$ act on $\Omega$ and $\Delta$ respectively.  Then $G\Wr_\Delta H$ acts transitively on $\Omega^\Delta$ if and only if $G$ is transitive on $\Omega$.
+\end{proposition}
+\begin{sketch}
+	Suppose that $G\Wr_\Delta H$ acts transitively on $\Omega^\Delta$. Let $\omega_1,\omega_2\in G$. Then take two constant functions $\varphi_1,\varphi_2\in \Omega^\Delta$ whose images are $\omega_1$ and $\omega_2$ respectively. So there is $(f,h)\in G\Wr_{\Delta} H$ such that $\varphi_1^{(f,h)} = \varphi_2$. In particular, $\omega_1^{f(\delta^{h^{-1}})} = \omega_2$ for some $\delta\in\Delta$.
+	
+	Conversely, suppose that $G$ is transitive on $\Omega$. Let $\varphi_1,\varphi_2\in \Omega^\Delta$. For each $\delta\in\Delta$, there exists $g_\delta\in G$ such that $\varphi_1(\delta)^{g_\delta} = \varphi_2(\delta)$. Let $f:\Delta\to G$ be defined by $f(\delta) = g_\delta$. Then we see that $\varphi_1^{(f,1)}(\delta) = \varphi_1(\delta)^{f(\delta)} = \varphi_1(\delta)^{g_\delta} = \varphi_2(\delta)$ for all $\delta\in\Delta$. Hence $G\Wr_\Delta H$ is transitive on $\Omega^\Delta$.
+\end{sketch}
 \begin{proposition}
 	Let $G$ and $H$ act on $\Omega$ and $\Delta$ respectively. Assume that $|\Omega|\geq 2$. Then $G\Wr_\Delta H$ acts faithfully on $\Omega^\Delta$ if and only if both actions are faithful. 
 \end{proposition}
@@ -268,28 +276,69 @@ This shows that $(\vartheta,\psi)$ is a permutational embedding.
 \begin{remark}
 The result is not true if $|\Omega| = 1$. The groups $G=\{1\}$ and $H = S_2$ provide a counterexample.
 \end{remark}
+
+\begin{lemma} \label{lemma-not-regular-iff-stab-self-normalizing}
+	Let $G$ be a primitive group on a set $\Omega$ with $|\Omega|\geq 2$. Then either
+	\begin{enumerate}[(i)]
+		\item all the point stabilizers are self-normalizing; or
+		\item the point stabilizers $G_\omega$ are all equal and $G_\omega$ is normal in $G$. Moreover, $|G/G_\omega|$ is a prime.
+	\end{enumerate}
+\end{lemma}
+\begin{sketch}
+	By Corollary \ref{cor-prim-iff-stab-is-max}, all point stabilizers are maximal. Note that $N_G(G_\omega) \supseteq G_\omega$ for all $\omega\in \Omega$. So for each $\omega\in \Omega$, we have either $N_G(G_\omega) = G_\omega$ or $N_G(G_\omega) = G$. Now we argue in two cases.
+	
+\textit{Case 1.} $N_G(G_\omega) = G_\omega$ for some $\omega\in\Omega$. Then for each $x\in G$, we get
+\begin{equation*}
+	N_G(G_{\omega^x}) = N_G(x^{-1}G_{\omega}x) = x^{-1}N_G(G_{\omega})x = x^{-1}G_{\omega}x =G_{\omega^x}.
+\end{equation*}
+Since $G$ is transitive, we obtain (i).
+
+\textit{Case 2.} $N_G(G_\omega) = G$ for some $\omega\in G$. By definition, $G_\omega$ is normal in $G$.  Note that $G_{\omega^x} = x^{-1}G_\omega x = G_\omega$ for all $x\in G$. Since $G$ is transitive, the point stabilizers are all equal. Now we prove the last assertion. Since $G_\omega$ is maximal, by Correspondence Theorem, the only subgroups of the quotient group $G/G_\omega$ are $1$ and $G/G_\omega$ itself. Since $G$ is transitive, we know that $G\neq G_\omega$. So $G/G_\omega$ is a nontrivial group which has no proper nontrivial subgroup. It only happens when $G/G_\omega$ is  of prime order. This proves (ii).
+\end{sketch}
+
 \begin{proposition}
-	Let $G$ and $H$ be nontrivial groups acting on $\Omega$ and $\Delta$ respectively. Then $G\Wr_{\Delta} H$ is primitive on $\Omega^\Delta$ if and only if the following hold:
+	Let $G$ and $H$ be nontrivial groups acting faithfully on $\Omega$ and $\Delta$ respectively. Then $G\Wr_{\Delta} H$ is primitive on $\Omega^\Delta$ if and only if the following hold.
 \begin{enumerate}[(i)]
-	\item $G$ is primitive on $\Omega$ and the point stabilizers in $G$ are not normal in $G$;
+	\item $G$ is primitive and the point stabilizers are not normal in $G$.
 	\item $\Delta$ is finite and $H$ is transitive on $\Delta$.
 \end{enumerate}
 \end{proposition}
 \begin{sketch}
-	Let $W\coloneq G\Wr_{\Delta} H$. Suppose that $W$ is primitive on $\Omega^\Delta$. Fix an element $\omega\in\Omega$. Define $\phi_\omega\in \Omega^\Delta$ by $\phi_\omega(\delta) \coloneq \omega$ for all $\delta\in \Delta$. Then we can verify that the stabilizer of $\phi_{\omega}$ is 
+	Let $W\coloneq G\Wr_{\Delta} H$.  Fix an element $\omega\in\Omega$. Define $\phi_\omega\in \Omega^\Delta$ by $\phi_\omega(\delta) \coloneq \omega$ for all $\delta\in \Delta$. Then we can verify that the stabilizer of $\phi_{\omega}$ is 
 	\begin{equation*}
 		W_{\phi_{\omega}} = \{(f,h)\in W\mid f(\delta)\in G_\omega \text{ for all }\delta\in\Delta\}.
 	\end{equation*}
-	In view of Corollary \ref{cor-prim-iff-stab-is-max}, $W_{\phi_{\omega}}$ is a maximal subgroup.
-Now we show (i) and (ii). Suppose that $G$ is not primitive on $\Omega$. We argue in two cases:
+	Suppose that $W$ is primitive on $\Omega^\Delta$. In view of Corollary \ref{cor-prim-iff-stab-is-max}, $W_{\phi_{\omega}}$ is a maximal subgroup.
+Now we show (i) and (ii). The main idea of the proof is to construct a subgroup $S$ so that $W_{\phi_\omega}< S <W$. Such a construction contradicts the maximality of $W_{\phi_\omega}$. Suppose that $G$ is not primitive on $\Omega$. We argue in two cases:
 \begin{enumerate}[(1)]
 	\item If $G$ is transitive, then, by Corollary \ref{cor-prim-iff-stab-is-max}, there exists a subgroup $R$ with $G_\omega< R < G$ for some $\omega\in\Omega$. Note that 
 	\begin{equation*}
 		W_{\phi_{\omega}} < \{(f,h)\in W\mid f(\delta)\in R \text{ for all }\delta\in\Delta\} < W.
 	\end{equation*}
-This contradicts the maximality of $W_{\phi_\omega}$.
-	\item If $G$ is not transitive, then take an orbit $\Omega'\subsetneq \Omega$. We claim that $W$ is intransitive on $\Omega^\Delta$. Walao
+	\item If $G$ is not transitive, then take an orbit $\Omega'\subsetneq \Omega$. We claim that $W$ is intransitive on $\Omega^\Delta$. Consider a  function $f\in\Omega^{\Delta}$ such that $f(\Delta)\subseteq \Omega'$. Then $f$ cannot be acted by $W$ to a function whose values lie in $\Omega\setminus \Omega'$. Therefore $W$ is intransitive on $\Omega^\Delta$, and hence imprimitive, a contradiction.
 \end{enumerate}
+Thus $G$ is primitive on $\Omega$. Assume that $G_\omega$ is normal in $G$, then $G_\omega = 1$ by Corollary \ref{cor-normal-subgrp-of-prim-grp}.  Hence the set
+\begin{equation*}
+	D\coloneq\{(f,1)\in W \mid \text{$f$ is a constant function}\}
+\end{equation*}
+is normalized by $\overline{H} \coloneq \{(1,h)\in W\mid h\in H\}$ and $W_{\phi_\omega} < D\overline{H} < W$. This completes the proof of (i).
+
+For (ii), if $\Delta$ is infinite, then the set
+\begin{equation*}
+	B_0 \coloneq \{ (f,1)\in W \mid \text{$f$ has finite support}\}
+\end{equation*}
+is a normal subgroup of $W$ and satisfies $W_{\phi_\omega}< W_{\phi_\omega} B_0 < W$. If $H$ is intransitive on $\Delta$. Let $\Delta'\subseteq \Delta$ be an orbit of $H$. Note that 
+\begin{equation*}
+	W_{\phi_\omega} < \{(f,h)\in W\mid f(\delta)\in G_\omega \text{ for all }\delta\in\Delta'\} < W.
+\end{equation*}
+
+Conversely, suppose that (i) and (ii) hold. Since $G$ is transitive, $W$ is transitive by Proposition \ref{prop-product-action-transitive}. In view of Corollary \ref{cor-prim-iff-stab-is-max}, it suffices to show that if $S$ properly contains $W_{\phi_\omega}$, then $S = W$. Let $B = G^\Delta$. Note that $W = \overline{B} \overline{H} = \overline{B} W_{\phi_\omega}$, where $\overline{B}  \coloneq \{(f,1)\mid f\in B\}$. Then we can use Dedekind Law to show that $S = SL\cap W = (S\cap B)L$. So we must have $S\cap B > L\cap B$, otherwise $S = (L\cap B)L = L$. Let $(f_0,1)\in S\cap B$ be such that $f_0(\delta_0)\not\in G_\omega$ for some $\delta_0\in\Delta$. By Lemma \ref{lemma-not-regular-iff-stab-self-normalizing}, $G_\omega$ is self-normalizing. Since $f_0(\delta_0)\not\in G_\omega = N_G(G_\omega)$, the element $f_0(\delta_0)$ does not normalize $G_\omega$, and so $f_0(\delta_0)^{-1}g_0 f_0(\delta_0) \not\in G_\omega$ for some $g_0\in G_\omega$. Let $\phi:\Delta\to G$ be defined by $\phi(\delta_0) = g_0$ and $\phi(\delta) = 1$ for all $\delta\in\Delta\setminus\{\delta_0\}$.  Let the function $\psi:\Delta\to G$ be defined by $\psi(\delta) = [\phi(\delta),f_0(\delta)] = \phi(\delta)^{-1}f_0(\delta)^{-1}\phi(\delta)f_0(\delta)$. Then  $\psi(\delta_0)\not\in G_\omega$ and $\psi(\delta) = 1$ for all $\delta\in\Delta\setminus\{\delta_0\}$.  Since $G$ is primitive, $G_\omega$ is maximal by Corollary \ref{cor-prim-iff-stab-is-max}. So $G = \langle G_\omega, \psi(\delta_0)\rangle$. For each $\delta'\in \Delta$, let 
+\begin{equation*}
+	B_{\delta'} \coloneq \{(f,1)\in W\mid f(\delta) = 1\text{ for all }\delta\in\Delta\setminus\{\delta'\}\}.
+\end{equation*}
+Note that $(\psi,1)\in S\cap B$. We show that $S$ contains $B_{\delta_0}$. Let $(f,1)\in B_{\delta_0}$ and let $g\coloneq f(\delta_0)$. Since $g\in \langle G_\omega, \psi(\delta_0)\rangle$, it can be written as a product of $g_1,\dots, g_n$ and $ \psi(\delta_0)$. So $(f,1)$ is a product of $(f_{g_1},1),\dots, (f_{g_n},1)$ and $(\psi,1)$ in $S\cap B$, where $f_{g_i}(\delta_0) = g_i$ for all $i$. Hence $B_{\delta_0}$ is contained in $S$. 
+
+Next, we can check that $$(1,x)^{-1}B_{\delta'} (1,x) = B_{\delta'^{x}}$$ for all $(1,x)\in W$. To see this, recall that $(1,x)^{-1}(f,1)(1,x) = (f^x,1)$ and $f^x(\delta) = f(\delta^{x^{-1}})$. Since $\overline{H}\leq S$ and $H$ is transitive on $\Delta$, we obtain $B_{\delta}\subseteq S$ for all $\delta\in \Delta$. Since $\Delta$ is finite, we have $$B = \prod_{\delta\in\Delta} B_{\delta}.$$ Hence $B\leq S$. Therefore $S\geq B\bar{H} = W$. This completes the proof.
 \end{sketch}
 
 \paragraph{Main References.} \cite{Meldrum1995,Praeger2018,Dixon1996}

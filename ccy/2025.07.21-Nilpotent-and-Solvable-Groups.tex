@@ -328,9 +328,9 @@ This immediately yields the following consequence.
 	Let $S$ be a Sylow $p$-subgroup of a group $G$. If a subgroup $H$ of $G$ contains $N_G(S)$, then we have $H = N_G(H)$.
 \end{lemma}
 \begin{sketch}
-	By assumption, $S \subseteq N_G(S) \subseteq H$. Let $L = N_G(H)$. Then $H\lhd L$. By applying Lemma \ref{lemma-G=N_G(S)H} to $L$, we  get
-	$$N_G(H)=L = N_L(S)H \subseteq \langle N_G(S), H \rangle = H.$$
-	Clearly, $H \subseteq N_G(H)$, so we have $H = N_G(H)$.
+	By assumption, $S \subseteq N_G(S) \subseteq H$. Note that $H$ is a normal subgroup of $N_G(H)$. By applying Frattini's argument (Lemma \ref{lemma-G=N_G(S)H}) to $N_G(H)$, we  get
+	$$N_G(H) = N_{N_G(H)}(S)H \subseteq \langle N_G(S), H \rangle = H.$$
+	Clearly, $H \subseteq N_G(H)$, and so we have $H = N_G(H)$.
 \end{sketch}
 
 The following theorem gives some of the main properties which characterize  finite nilpotent groups. We include Theorem \ref{thm-nilpotent} and Corollary \ref{cor-nilpotent} for convenience.

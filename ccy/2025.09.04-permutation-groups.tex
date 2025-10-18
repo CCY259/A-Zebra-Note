@@ -155,6 +155,9 @@ Let $\Sigma$ be a system of blocks. By Proposition \ref{prop-G-congruence} (i) a
 \begin{definition}
 	Let $G$ act transitively on $\Omega$. The action (or $G$-set) is said to be \textbf{primitive} (or $G$ is \textbf{primitive} on $\Omega$) if $G$ has no nontrivial blocks; otherwise, it is \textbf{imprimitive}.
 \end{definition}
+\begin{remark}
+	Some authors define primitive actions without the assumption of transitivity. In this setting, we see that every nontrivial intransitive group has a nontrivial block (can be obtained by excluding an orbit). So every primitive group is transitive.
+\end{remark}
 
 \begin{proposition} \label{prop-block-and-stab}
 	Let $G$ acts transitively on $\Omega$. Let $\omega\in \Omega$ be fixed. Then there is a one-to-one correspondence between the set of blocks of $\Omega$ containing $\omega$ and the set of subgroups which contains the stabilizer $G_\omega$ of $\omega$.
@@ -180,6 +183,13 @@ Let $\Sigma$ be a system of blocks. By Proposition \ref{prop-G-congruence} (i) a
 	Suppose $G$ is primitive on $\Omega$. Let $\omega \in \Omega$.  Since $G$ is primitive, there are  two  blocks containing $\omega$, namely $\{\omega\}$ and $\Omega$.  By Proposition \ref{prop-block-and-stab}, there are only two subgroups of $G$ containing $G_\omega$, namely $G_\omega$ and $G$. So there is no proper subgroup of $G$ which properly contains $G_\omega$. Therefore $G_\omega$ is maximal in $G$.
 	
 	Conversely, suppose that every stabilizer is a maximal subgroup. Fix $\omega\in \Omega$. Then there are only two subgroups of $G$ containing $G_\omega$, namely $G_\omega$ and $G$. By Proposition \ref{prop-block-and-stab}, we only have two such blocks $\{\omega\}$ and $\Omega$.  Consequently, $\Omega$ can have no other blocks besides itself and its singletons, and so $\Omega$ is primitive.
+\end{sketch}
+
+\begin{corollary} \label{cor-normal-subgrp-of-prim-grp}
+	A normal subgroup of a primitive  group $G$ on a set $\Omega$ is either transitive on $\Omega$ or it lies in the kernel of the action.
+\end{corollary}
+\begin{sketch}
+	Let $N$ be a normal subgroup of $G$. Suppose that $N$ does not lie in the kernel of the action. Assume that there is a point stabilizer that contains $N$.  Since $G$ is transitive, it follows from Proposition \ref{prop-stabilizer}.(ii) that the point stabilizers of $G$ are conjugate, and the normality of $N$ implies that $N$ lies in every point stabilizer. By Proposition \ref{prop-kernel-of-action-is-intersection}, $N$ is contained in the kernel, a contradiction. No point stabilizer contains $N$. Let $G_\omega$ be the stabilizer of $\omega\in\Omega$. Note that $G_\omega<G_\omega N$. By Corollary \ref{cor-prim-iff-stab-is-max}, we get $G = G_\omega N$. Finally Frattini's argument (Proposition \ref{prop-Frattini-transitive}) shows that $N$ is transitive.
 \end{sketch}
 
 \subsection{Centralizers and Normalizers of Transitive Permutation Groups}
@@ -279,7 +289,7 @@ In the case where $G$ is regular,  the normalizer of $G$ in the symmetric group 
 	Let $G$ be a transitive subgroup of $\Sym (\Omega)$ and let $N$ be the normalizer of $G$ in $\Sym (\Omega)$. If $G$ is regular, then $\Im  \Psi = \Aut (G)$, where $\Psi$ is the homomorphism defined in Theorem \ref{thm-normalizer-of-perm-grp}. Let $\alpha\in \Omega$. In this case $N_\alpha \cong \Aut (G)$ and $N\cong\operatorname{Hol}(G)$.
 \end{corollary}
 \begin{sketch}
-	Since $G$ is regular, therefore $G_\alpha = 1$, and so $\Im  \Psi = \Aut (G)$ by Theorem \ref{thm-normalizer-of-perm-grp} since $(G_\alpha)^{\sigma} = \{1\}$ is a point stabilizer for $G$. The centralizer $C$ of $G$ in $\text{Sym}(\Omega)$ is transitive by Theorem \ref{thm-centralizer-trans-perm-grp}.(ii). By Frattini's argument (Proposition \ref{prop-Frattini-transitive}), we get $N = CN_\alpha$. Next we show that $C \cap N_\alpha = 1$. Let $x\in C \cap N_\alpha$. Then $\alpha^x = \alpha$. Since $G$ is transitive, for every $\omega\in\Omega$, we have $\omega = \alpha^g$ for some $g\in G$. This implies 
+	Since $G$ is regular, therefore $G_\alpha = 1$, and so $\Im  \Psi = \Aut (G)$ by Theorem \ref{thm-normalizer-of-perm-grp} since $(G_\alpha)^{\sigma} = 1$ is a point stabilizer for $G$. The centralizer $C$ of $G$ in $\text{Sym}(\Omega)$ is transitive by Theorem \ref{thm-centralizer-trans-perm-grp}.(ii). By Frattini's argument (Proposition \ref{prop-Frattini-transitive}), we get $N = CN_\alpha$. Next we show that $C \cap N_\alpha = 1$. Let $x\in C \cap N_\alpha$. Then $\alpha^x = \alpha$. Since $G$ is transitive, for every $\omega\in\Omega$, we have $\omega = \alpha^g$ for some $g\in G$. This implies 
 	\begin{equation*}
 		\omega^x = (\alpha^g)^x =\alpha^{gx} = \alpha^{xg} = (\alpha^x)^g = \alpha^g = \omega. 
 	\end{equation*}
