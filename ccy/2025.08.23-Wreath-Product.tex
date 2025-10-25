@@ -87,6 +87,26 @@ So $((\omega,\delta)^{(f_1,h_1)})^{(f_2,h_2)}  = (\omega,\delta)^{(f_1,h_1)(f_2,
 \begin{equation*}
 	g_\varphi(\delta,\gamma) = g_\gamma(\delta),\quad 	h_\varphi(\gamma)= h_\gamma.
 \end{equation*}
+Now we show that $\varphi$ is bijective. Let $(f^{(1)},k_1),(f^{(2)},k_2)\in (G\Wr_\Delta H) \Wr_\Gamma K$ with $f^{(i)}(\gamma) = (g^{(i)}_\gamma, h^{(i)}_\gamma)$  for $i=1,2$.
+Assume $\varphi(f^{(1)}, k_1) = \varphi(f^{(2)}, k_2)$, or equivalently,
+\[
+(g_\varphi^{(1)}, (h_\varphi^{(1)}, k_1)) = (g_\varphi^{(2)}, (h_\varphi^{(2)}, k_2)).
+\]
+So $k_1 = k_2$,   $h_\varphi^{(1)} = h_\varphi^{(2)}$ and  $g_\varphi^{(1)} = g_\varphi^{(2)}$. Since $h_\varphi^{(1)} = h_\varphi^{(2)}$, we get
+\begin{equation*}
+	h_{\gamma}^{(1)} = h_\varphi^{(1)}(\gamma) = h_\varphi^{(2)}(\gamma) = 	h_{\gamma}^{(2)}
+\end{equation*}
+for all $\gamma\in\Gamma$. Since $g_\varphi^{(1)} = g_\varphi^{(2)}$, we get 
+\begin{equation*}
+	g_\gamma^{(1)}(\delta) = g_{\varphi}^{(1)}(\delta,\gamma) = g_{\varphi}^{(2)}(\delta,\gamma) = g_\gamma^{(2)}(\delta)
+\end{equation*} for all $\delta \in \Delta$ and $\gamma \in \Gamma$. This implies that  $g_\gamma^{(1)}=g_\gamma^{(2)}$ for all $\gamma \in \Gamma$. Hence  $f^{(1)}(\gamma) = f^{(2)}(\gamma)$ for all $\gamma \in \Gamma$. Therefore $f^{(1)} = f^{(2)}$. Consequently, $(f^{(1)}, k_1) = (f^{(2)}, k_2)$. Thus $\varphi$ is injective.
+
+Let $(g, (h, k))$ be an arbitrary element of $G \operatorname{Wr}_{\Delta \times \Gamma} (H \operatorname{Wr}_\Gamma K)$.
+Recall that $g: \Delta \times \Gamma \to G$ is a function, $h: \Gamma \to H$ is a function, and $k \in K$.  Define the function $f: \Gamma \to G \operatorname{Wr}_\Delta H$ by $f(\gamma) = (g_\gamma, h(\gamma))$, where  $g_\gamma:\Delta\to G$ is a function defined by $g_\gamma(\delta) = g(\delta,\gamma)$. Now we have 
+$
+\varphi(f, k) = (g_\varphi, (h_\varphi, k))$.
+Clearly $h_\varphi(\gamma) = h(\gamma)$ for all $\gamma \in \Gamma$ and   $g_\varphi(\delta, \gamma) = g_\gamma(\delta) = g(\delta, \gamma)$ for all $(\delta, \gamma) \in \Delta \times \Gamma$.   Therefore, $\varphi$ is surjective.
+
 We verify that $\varphi$ is a homomorphism. Let $(f^{(1)},k_1),(f^{(2)},k_2)\in (G\Wr_\Delta H) \Wr_\Gamma K$ with $f^{(i)}(\gamma) = (g^{(i)}_\gamma, h^{(i)}_\gamma)$  for $i=1,2$. Then
 \begin{equation*}
 	\varphi((f^{(1)},k_1)(f^{(2)},k_2)) = \varphi((f^{(1)}(f^{(2)})^{k_1^{-1}},k_1k_2)).
@@ -207,7 +227,7 @@ This shows that $(\vartheta,\psi)$ is a permutational embedding.
 \end{sketch}
 
 \begin{corollary}[Kaluzhnin–Krasner Embedding Theorem]
-	Let $G$ be a group and let $N$ be a subgroup of $G$. Let $H$ be the permutation group induced by $G$ on the set of right cosets. Then $G$ is embedded into $N \Wr H$. If $N$ is normal in $G$, then $G$ is embedded into $N\Wr G/N$.
+	Let $G$ be a group and let $N$ be a subgroup of $G$. Let $H$ be the permutation group induced by $G$ on the set of right cosets of $N$ in $G$. Then $G$ is embedded into $N \Wr H$. If $N$ is normal in $G$, then $G$ is embedded into $N\Wr G/N$.
 \end{corollary}
 \begin{sketch}
 	Apply Theorem \ref{thm-embedding} using the right regular action. 

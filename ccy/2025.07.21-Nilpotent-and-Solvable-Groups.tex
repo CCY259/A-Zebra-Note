@@ -41,14 +41,28 @@ Let  $G^{(0)} = G$ and  general, $G^{(n)} = [G^{(n-1)},G^{(n-1)}]$ for $n > 0$. 
 	If $N \lhd G$, then the canonical projection $\rho : G \rightarrow G/N$ yields that $(G/N)^{(k)} = \varphi(G^{(k)})$ for all $k$, and so   $(G/N)^{(n)} = \varphi(G^{n}) =\{e\}$.
 \end{sketch}
 
-\begin{proposition}
-	If $G$ and $H$ are solvable groups, then $G\rtimes H$ is solvable.
+\begin{definition}
+	Let $G$ be a  solvable group. The \textbf{derived length} $\operatorname{dl}(G)$ of $G$ is the smallest integer $n$ such that $G^{(n)} = \{e\}$.
+\end{definition}
+
+
+\begin{proposition} \label{prop-solv-iff-normal-and-quotient-solv}
+	Let $N$ be a normal subgroup of  a group $G$. Then $G$ is solvable if and only if both $N$ and $G/N$ are solvable. Moreover, $$\text{dl}(G) \leq \text{dl}(N) + \text{dl}(G/N).$$
 \end{proposition}
 \begin{sketch}
-	BRUH
+	The group $G$ is solvable implies that $N$ and $G/N$ are solvable by Corollary \ref{cor-solvable}.
+	
+	Conversely, assume that both $N$ and $G/N$ are solvable. Let $\operatorname{dl}(N) = n$ and $\operatorname{dl}(G/N) = m$. Let  $\rho:G \rightarrow G/N$ be the canonical projection. Since $\rho(G^{(m)}) = (G/N)^{(m)} = \{e\}$, we get $G^{(m)} \subseteq \Ker \rho = N$. Thus $G^{(m+n)} = (G^{(m)})^{(n)} \subseteq N^{(n)} = 1$, and the result follows.
 \end{sketch}
 
-
+\begin{corollary}
+The groups $G$ and $H$ are solvable if and only if $G\rtimes H$ is solvable.
+\end{corollary}
+\begin{sketch}
+	%Assume that $G$ and $H$ are solvable. Since $G$ is solvable, the normal subgroup $\overline{G}$ of $G\rtimes H$ is solvable. Note that $\overline{H} \cong (G\rtimes H)/\overline{G}$. Since $H$ is solvable, we know that $(G\rtimes H)/\overline{G}$ is solvable. By Proposition \ref{prop-solv-iff-normal-and-quotient-solv}, $G\rtimes H$ is solvable.
+	%Conversely, if $G\rtimes H$ is solvable, then $G\cong\bar{G}$ and $H \cong (G\rtimes H)/\overline{G}$ are  solvable by Corollary \ref{cor-solvable}. 
+	It follows from the fact that $\overline{G}$ is a normal subgroup of  $G\rtimes H$. 
+\end{sketch}
 
 
 \begin{theorem}
@@ -63,18 +77,6 @@ Let  $G^{(0)} = G$ and  general, $G^{(n)} = [G^{(n-1)},G^{(n-1)}]$ for $n > 0$. 
 	
 Conversely, assume that the composition factors have prime order. These factors $H_{i+1}/H_i$ are abelian since every group of prime order is cyclic.  Therefore $G^{(i)} \subseteq H_{n-i}$ for all $i$ by induction.  It follows that $G^{(n)} = \{e\}$ and $G$ is solvable.
 \end{sketch} 
-\begin{definition}
-	Let $G$ be a  solvable group. The \textbf{derived length} $\operatorname{dl}(G)$ of $G$ is the smallest integer $n$ such that $G^{(n)} = \{e\}$.
-\end{definition}
-\begin{corollary}
-	Let $N$ be a normal subgroup of  a group $G$. Then $G$ is solvable if and only if both $N$ and $G/N$ are solvable. Moreover, $$\text{dl}(G) \leq \text{dl}(N) + \text{dl}(G/N).$$
-\end{corollary}
-\begin{sketch}
-	 The group $G$ is solvable implies that $N$ and $G/N$ are solvable by Corollary \ref{cor-solvable}.
-	 
-	 Conversely, assume that both $N$ and $G/N$ are solvable. Let $\operatorname{dl}(N) = n$ and $\operatorname{dl}(G/N) = m$. Let  $\rho:G \rightarrow G/N$ be the canonical projection. Since $\rho(G^{(m)}) = (G/N)^{(m)} = \{e\}$, we get $G^{(m)} \subseteq \ker \rho = N$. Thus $G^{(m+n)} = (G^{(m)})^{(n)} \subseteq N^{(n)} = 1$, and the result follows.
-\end{sketch}
-
 
 
 
@@ -193,7 +195,7 @@ This immediately yields the following consequence.
 	\end{equation*}
 \end{remark}
 
-\begin{proposition}
+\begin{proposition} \label{prop-DP-of-nilpotent}
 	Let $H$ be a nilpotent group of class $c$, and let $K$ be nilpotent of class $d$. Then the direct product $H \times K$ is a nilpotent group of class $e$, where $e = \max\{c, d\}$.
 \end{proposition}
 \begin{sketch}
@@ -209,6 +211,9 @@ This immediately yields the following consequence.
 \begin{corollary} \label{cor-direct-prod-nil-is-nil}
 	The direct product of a finite number of nilpotent groups is nilpotent.
 \end{corollary}
+\begin{sketch}
+	Use induction on the number of groups and apply Proposition \ref{prop-DP-of-nilpotent}.
+\end{sketch}
 
 \subsection{Examples}
 \subsubsection{Triangular Matrices}
@@ -310,8 +315,7 @@ This immediately yields the following consequence.
 		\{e\} \lhd V_4 \lhd A_4\lhd S_4
 	\end{equation*}
 	where $V_4$ is the Klein $4$-group.
-	
-	\url{https://math.stackexchange.com/questions/120429/prove-that-s-3-and-s-4-are-solvable-groups}
+	%\url{https://math.stackexchange.com/questions/120429/prove-that-s-3-and-s-4-are-solvable-groups}
 \end{sketch}
 \begin{proposition}
 	The symmetric group $S_n$ is not solvable for $n\geq 5$.
