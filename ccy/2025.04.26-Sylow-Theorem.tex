@@ -188,11 +188,118 @@ By Theorem \ref{thm-third-sylow-thm},  $n_p \equiv 1\mod p$ and $n_p |m$. So $n_
 	Let $S \in \operatorname{Syl}_p(G)$ and $H = N_G(S)$. By Theorem \ref{thm-orbit-stab}, we have $[G:N_G(S)] = [O_G(S)] = n_p$. Since $G$ is simple and $\{e\} < S < G$, we know that $S$ is not normal (otherwise, $G$ would not be simple) and so $n_p > 1$. Then, from Corollary \ref{cor-normal-subgroup of-H}, there exists a normal subgroup $N \lhd G$ such that $[G:N] ~|~ n_p!$. Since $G$ is simple, $N = \{e\}$ and so $|G|$ divides $n_p!$.
 \end{sketch}
 
-\begin{corollary}
-	There is no simple group of order $1000000 = 2^6 5^6$.
-\end{corollary}
-\begin{sketch}
-	From Proposition \ref{prop-simple-group-of-order-p^kq}, we must have $|G|$ divides $n_5!$. By Sylow's third theorem, $n_5 ~|~ 2^6$ and $n_5 \equiv 1 \mod 5$. The only possibilities are $n_5 = 1$ or $16$. However, $1000000 \nmid 1!$ and $1000000 \nmid 16!$, thus $G$ is not simple.
-\end{sketch}
+\subsection{Techniques for Non-simplicity}
+Recall that $G$ is a simple group if $G$ has no normal subgroups other than $e$ and $G$ itself. Simple groups act as building blocks for all groups, similar to prime numbers in number theory. 
+\\\\ A major achievement of the 20\textsuperscript{th} century was the classification of finite simple groups that involved tens of thousand of pages and hundreds of mathematicians. In particular, it says that every finite simple group, up to isomorphism is one of the following types:
+
+\begin{itemize}
+    \item \textbf{Conventional Simple Groups}
+    \begin{enumerate}
+        \item Cyclic groups of prime order $\mathbb{Z}/p\mathbb{Z}$
+        \item Alternating groups $A_n$, $n > 4$
+    \end{enumerate}
+
+    \item \textbf{Simple Groups of Lie Type}
+    \begin{enumerate}
+        \item Classical Chevalley groups:
+        $A_n(q)$, $B_n(q)$ for $n > 1$,
+        $C_n(q)$ for $n > 2$, $D_n(q)$ for $n > 3$
+
+        \item Exceptional Chevalley groups:
+        $E_6(q)$, $E_7(q)$, $E_8(q)$, $F_4(q)$, $G_2(q)$
+
+        \item Classical Steinberg groups:
+        ${}^2A_n(q^2)$ for $n > 1$,
+        ${}^2D_n(q^2)$ for $n > 3$
+
+        \item Exceptional Steinberg groups:
+        ${}^2E_6(q^2)$, ${}^3D_4(q^3)$
+
+        \item Suzuki groups:
+        ${}^2B_2(q)$ where $q = 2^{2n+1}$
+
+        \item Ree groups:
+        ${}^2F_4(q)$ where $q = 2^{2n+1}$,
+        ${}^2G_2(q)$ where $q = 3^{2n+1}$
+    \end{enumerate}
+
+    \item \textbf{One of the 26 Sporadic Groups}
+\end{itemize}
+
+Here, sporadic means that the groups do not fit well with the previous 18 infinite families, being outliers in a sense. We shall note that the most famous sporadic group, the Monster group with order \[808017424794512875886459904961710757005754368000000000\]
+\noindent which is the group of symmetries (automorphisms) on a 196883 dimensional faithful real vector space inside the Griess algebra, a commutative non-associative algebra of real dimension 196884, has shown up unexpectedly in number theory in the Fourier expansion of the normalised J-invariant of a modular function. 
+\[J(\tau) = \frac{1}{q} + 744 + \textbf{196884}q + 21493760q^2 + \dots\]
+This "coincidence" was dubbed the Monstrous Moonshine Conjecture and was proven by Richard Borcherds, who won the Fields medal in 1992. (This is just some historical tidbit and none of this is necessary for us here!)
+\\\\
+We shall develop a wide variety of techniques in showing that groups of certain order can never be simple.
+\\\\
+First, a few lemmas (some that we have seen before).
+
+\begin{lemma}[Basic Index] \label{basic-index}
+	Suppose $|G| = p^km$, where $k$ is a non-zero positive integer, $p$ is a prime number not dividing $m$. If $G$ is simple, then $|G| ~|~ n_p!.$
+\end{lemma}
+
+\begin{theorem}[Strong Index] \label{strong-index}
+	Suppose $G$ is a finite group and $H < G$, if $G$ is simple, then $|G| ~|~ [G: H]!.$
+\end{theorem}
+
+\begin{proof}
+	This follows from \ref{cor-normal-subgroup of-H} since $[G:H] = n$ and the simplicity of $G$ and $H < G$ implies $H = e$. Note that by Sylow's First Theorem, we recover the basic index lemma by replacing $H$ with $N_G(H)$.
+\end{proof}
+
+\begin{theorem}[2-Odd Test] \label{2-odd}
+	If $|G| = 2n$, where $n > 1$ is an odd integer, then $G$ is not simple. 
+\end{theorem}
+
+\begin{proof}
+	By Cauchy's theorem \ref{thm-Cauchy}, $G$ has an element of order 2, say $g$. By Cayley's theorem \ref{thm-Cayley's-Theorem}, we have an isomorphism of $g \mapsto T_g$ by left regular representation. Since $g$ has order 2, its regular representation in $S_{2n}$ consists of only 1-cycles and 2-cycles. Suppose $T_g$ has 1-cycles (i.e. fixed points), say $h$, it would imply that $gh = h$ or $g = e$, contradicting $g$ has order 2. Thus, $T_g$ only has 2-cycles and has $2n/2 = n$ disjoint 2-cycles, so is an odd permutation. This implies that the set of all even permutation $A_{2n}$ is a normal subgroup of $G$ and that $G$ is not simple.
+\end{proof}
+
+\begin{theorem}[Embedding Theorem] \label{embedding-thm}
+	If a finite non-Abelian simple group $G$ with $|G| > 2$ has a proper subgroup of index $n > 1$, then $G$ is isomorphic to a subgroup of $A_n$.
+\end{theorem}
+
+\begin{proof}
+	The proof runs parallel to the proof of \ref{cor-normal-subgroup of-H}. We consider the action of $G$ on the set of left cosets of $H$ in $G$, denoted by $X$ by left translation with the induced group homomorphism $\phi : G \rightarrow \text{Aut}(X) \cong S_{n}$. We have $G/\Ker\phi \cong \operatorname{Im}\phi \leq S_n$. Since $G$ is simple, we either have $\Ker\phi = e \text{~or~} G$. Suppose $\Ker\phi = G$, then $\Ker\phi$ being contained in $H$ implies $G = H$, contradiction. So, $\phi$ is injective and $G \cong \operatorname{Im}(\phi)$. Compose $\phi$ with the sign homomorphism $\operatorname{sgn}: S_{n} \rightarrow \{\pm 1\}$, we have $\Ker(\operatorname{sgn} ~\circ~ \phi)$ is a normal subgroup of $G$, so $\Ker(\operatorname{sgn} ~\circ~ \phi) = e \text{~or~} G$. Suppose $\Ker(\operatorname{sgn} ~\circ~ \phi) = e$, then $G$ is isomorphic to a subgroup of $\{\pm 1\}$, which is absurd as $|G| > 2$. Thus, $\Ker(\operatorname{sgn} ~\circ~ \phi) = G$, implying $G$ is isomorphic to a subgroup of $A_n$ as the alternating group is the kernel of $\operatorname{sgn}$.
+\end{proof}
+
+\subsubsection{Technique 1: Counting Number of Elements}
+The simplest technique that works well if the number of possibilities of Sylow $p$-subgroups are few and $|G|$ is square-free. Recall that a unique Sylow subgroup of $G$ is normal in $G$, so we first suppose $G$ is simple and calculate the possible number of Sylow $p$-subgroups of each $p$ that are more than 1.
+\\\\
+Sometimes, the number of elements of prime order exceed $|G|$, giving a contradiction, so one of the Sylow subgroups is normal in $G$, proving that $G$ is not simple.
+
+\begin{example}
+	We show groups of order $30 = 2 \times 3 \times 5$ is never simple. Suppose $G$ is simple, by Sylow's Third Theorem, $n_3 = 10$ and $n_5 = 6$. Recall that Sylow $p$-subgroups of prime order (in this case is 3 and 5) intersect trivially, so by counting non-trivial elements, we have $10 \times (3-1) + 6 \times (5-1) = 44$ elements, exceeding $|G|$, contradiction. Thus, either $n_3$ or $n_5$ is 1, which implies $G$ has a normal subgroup. 
+\end{example}
+
+\textbf{Warning}: Note that if two Sylow $p$-subgroups $P, Q$ have order $p^2, p^3, \hdots$ and \textbf{not} $p$, then they may not intersect trivially, in this case, we would need to count the number of intersections by considering $|PQ| = \frac{|P||Q|}{|P \cap Q|}$, where $|P \cap Q| ~|~ |P|, |Q|$. In this case, this technique is not suitable.
+
+\begin{example}
+	We show groups of order $105 = 3 \times 5 \times 7$ is never simple. Suppose $G$ is simple, by Sylow's Third Theorem, we have $n_3 = 7$, $n_5 = 21$, $n_7 = 15$. So, counting non-trivial elements, we have $7 \times (3 - 1) + 21 \times (5 - 1) + 15 \times (7 - 1) = 188 > 105$. Thus, one of $n_3, n_5, n_7$ is equal to 1 and $G$ is not simple.
+\end{example}
+
+Sometimes, counting elements do not immediately give a contradiction by too many elements. If instead, we have too few elements such that the remaining elements lie in a unique Sylow subgroup of their own, then $G$ would have a normal subgroup and would not be simple.
+
+\begin{example}
+	We show groups of order $56 = 2^3 \times 7$ is never simple. Suppose $G$ is simple, by Sylow's Third Theorem, we have $n_7 = 8$, then we would have $8 \times (7 - 1) = 48$ elements of order 7 in $G$. In this case, we would have $56 - 48 = 8$ leftover element of order coprime to 7. Since a Sylow 2-subgorup of $G$ must have order 8, the 8 leftover elements must lie in that Sylow 2-subgroup, thus that Sylow 2-subgroup is normal and $G$ is not simple.
+\end{example}
+
+Similarly, you can try to show that groups of order 80 and 351 are never simple.
+
+\subsubsection{Technique 2: Exploiting Index Theorems}
+I think this is the most fun technique because it is very easy to use. First, a quick example.
+\begin{example}
+	Groups of order $38, 206, 19730, 2(10^100 + 1)$ are never simple by the 2-Odd Test \ref{2-odd}.
+\end{example}
+
+When listing down the possibilities of number of Sylow $p$-subgroups of $G$, we can rule out certain possibilities quickly by exploiting the basic index theorem as $|G|$ must divide $n_p!$.
+
+\begin{example}
+	There are no simple groups of order $1000000 = 2^6 \times 5^6$. By Sylow's Third Theorem, $n_5 = 1 \text{~or~} 16$. However, $1000000 \nmid 1!$ and $1000000 \nmid 16!$. Thus, $G$ is not simple.
+\end{example}
+
+\subsubsection{Technique 3: Exploiting Permutation Structures}
+\subsubsection{Technique 4: Exploiting Normalizer of Intersections}
+\subsubsection{Technique 5: Playing $p$-subgroups for Different Primes}
 
 \paragraph{Main References.} \cite{Hungerford1974,DummitFoote2004,Isaacs2009}

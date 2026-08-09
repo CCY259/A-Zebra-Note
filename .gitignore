@@ -19,3 +19,5 @@
 *.vrb
 *.xml
 *.gz
+.vscode/ltex.hiddenFalsePositives.en-US.txt
+00 main.bbl-SAVE-ERROR

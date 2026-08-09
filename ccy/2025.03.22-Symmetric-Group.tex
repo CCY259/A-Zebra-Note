@@ -179,7 +179,7 @@ appearing in these decompositions are always all even or all odd.
 		\\
 		(abc) &= (rsa)^2(rsc)(rsb)^2(rsa).
 	\end{align*}
-	Hence the result follows from Lemma \ref{01-lemma-A_n-by-3-cycles}.
+	Hence, the result follows from Lemma \ref{01-lemma-A_n-by-3-cycles}.
 \end{sketch}
 \begin{lemma} \label{lemma-A_n-contains-3-cycle}
 	If $N$ is a normal subgroup of $A_n$ $(n\geq 3)$ and $N$ contains a $3$-cycle, then $N=A_n$.
@@ -187,6 +187,10 @@ appearing in these decompositions are always all even or all odd.
 \begin{sketch}
 	Without loss of generality, assume that  $(123)\in N$. Then $(213) = (123)^2\in N$. Since $N$ is normal in $A_n$, $N$ contains all the conjugates $\sigma (213)\sigma^{-1}$ $(\sigma\in A_n)$. In particular, if we choose $\sigma = (12)(3k) $, where $k\geq 4$, then $\sigma (213)\sigma^{-1} = (12k)$. The result follows by Lemma \ref{lemma-A_n-gen-by-n-2-cycles}.
 \end{sketch}
+\newpage
+\begin{definition}
+	We call a group $G$ to be a \textbf{simple} group if $G$ has no normal subgroups other than $e$ and $G$ itself.
+\end{definition}
 
 \begin{theorem}
 	The alternating group $A_n$ is simple if and only if $n\neq 4$.
