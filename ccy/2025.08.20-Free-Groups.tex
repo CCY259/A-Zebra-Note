@@ -196,15 +196,67 @@ This smallest relation on $T$ can be constructed by forming the intersection of 
 \end{equation*}
 Let $u:X\rightarrow F$ be the function defined by
 \begin{equation*}
-	u(x) = [x].
+	u(x) = [\text{symb}_T(x)].
 \end{equation*}
-Define operation $\cdot$, ${}^{-1}$ and $e$ on $F$ by
-\begin{equation*}
-	[p]\cdot [q] = [p\cdot q].
-\end{equation*}
-Then the operation is well-defined by (\ref{eq-WD}). It can be verified that $[e]$ is the identity and $[p]^{-1} = [p^{-1}]$ for all $p\in T$. It follows that $F$ is a group by (\ref{eq-G1})--(\ref{eq-G3}). Now we claim that $(F,u)$ satisfies the universal property.
+For simplicity, we identify $[\text{symb}_T(x)]$ as $[x]$. Define operation $\cdot$, ${}^{-1}$ and $e$ on $F$ by
+\begin{align*}
+	[p]\cdot [q] &= [p\cdot q],
+	\\
+	[p]^{-1} &= [p^{-1}],
+	\\
+	e&= [e].
+\end{align*}
+Then the operations are well-defined. It follows that $F$ is a group by (\ref{eq-G1})--(\ref{eq-G3}). Now we claim that $(F,u)$ satisfies the universal property.
 
-
+\begin{proposition}
+	The group $F(X)$ defined above is free on the set $X$.
+\end{proposition}
+\begin{sketch}
+	Let $G$ be a group and let $f:X\rightarrow G$ be a set function.  Let $\cdot_f:T\to G$ be defined recursively as follows:  
+	\begin{align*}
+		x_f &= f(x) \quad \text{for }x\in X,\\
+		e_f &= e_G,\\
+		(p\cdot q)_f &= p_fq_f,\\
+		(p^{-1})_f &= (p_f)^{-1}.
+	\end{align*}
+	Thus $p_f$ is obtained from $p\in T$ by replacing each
+	symbol $x\in X$ by $f(x)$ and interpreting the formal operations
+	$\cdot$, $e$, and ${}^{-1}$ as the corresponding group operations in $G$.
+	
+	Define a relation $\sim_f$ on $T$ by
+	$$ p\sim_f q
+	\quad\iff\quad
+	p_f=q_f \text{ in }G.$$
+	We see that $\sim_f$ satisfies all the conditions (\ref{eq-G1})--(\ref{eq-R3}) used in the definition of $\sim$.
+	
+	Indeed, for (\ref{eq-G1}), 
+	$$((p\cdot q)\cdot r)_f = (p\cdot q)_f \cdot r_f = (p_fq_f)r_f = p_f(q_fr_f) = (p\cdot(q\cdot r))_f$$
+	for all $p,q,r\in T$. Other conditions can be verified similarly and hence we omitted the verification here. Thus $\sim_f$ is one of the relations on $T$ satisfying all the conditions used to define $\sim$. Since $\sim$ is the
+	smallest such relation, $\sim \subseteq\ \sim_f$.  In particular, 
+	$$p\sim q\implies p_f=q_f.$$ 
+	Therefore we may define a function $f':F\rightarrow G$ by $f'([p])=p_f$. 
+	\begin{enumerate}[(i)]
+		\item $f'$ is well-defined: if $[p]=[q]$, then $p\sim q$, and hence $p_f=q_f$.
+		\item $f'$ is a group homomorphism: For $p,q\in T$, we have
+		\begin{equation*}
+			f'([p]\cdot[q]) =  f'([p\cdot q]) = (p\cdot q)_f = p_fq_f = f'([p])f'([q]).
+		\end{equation*} 
+		Also, $f'([e])=e_f=e_G$.
+		\item $f'\circ u=f$: For every $x\in X$,
+		\begin{equation*}
+			(f'\circ u)(x) = f'([x]) = x_f = f(x).
+		\end{equation*}
+	\end{enumerate}
+	It remains to prove uniqueness. Suppose that $f'':F\rightarrow G$  is a group homomorphism such that $f''\circ u=f$. We show that for every $p\in T$, $f''([p])=p_f$. If $p=x\in X$, then
+	$$h([x])=h(u(x))=f(x)=x_f.$$
+	Since $h([e])=e_G=e_f$,  Let $p,q\in T$ be such that $f''([p])=p_f$ and $f''([q])=q_f$. Then
+	\begin{gather*}
+		f''([p\cdot q]) = f''([p][q]) = f''([p])f''([q]) = p_fq_f = (p\cdot q)_f,
+		\\
+		f''([p^{-1}]) = f''([p]^{-1}) = f''([p])^{-1} = (p_f)^{-1} = (p^{-1})_f.
+	\end{gather*}
+	Thus $f''([p]) = p_f = f'([p])$ for every $p\in T$. Therefore $f''=f'$ and $(F,u)$ satisfies the universal property, and hence $F$ is a free group on $X$.
+\end{sketch}
 
 \subsubsection{Crazy Construction from Direct Products: Only Serge Lang's Favourite}
 \subsection{Group Presentations} \label{sec-group-presentations}
