@@ -200,18 +200,34 @@ appearing in these decompositions are always all even or all odd.
 		\item $A_2$ only contains the identity permutation.
 		\item The order of $A_3$ is $3$ (which is a prime) and hence a cyclic group.
 		\item $\{(1),(12)(34),(13)(24),(14)(23)\}\lhd A_4$ provides a counterexample.
-		\item For $n\geq 5$, let $N$ be a nontrivial normal subgroup of $A_n$.  For any $\sigma \in S_n$, we say that $i \in [n]$ is a \textbf{fixed point} of $\sigma$ if $\sigma(i) = i$. The number of fixed points of $\sigma$ is denoted by $[n]_\sigma$. 
+		\item For $n\geq 5$, let $N$ be a nontrivial normal subgroup of $A_n$.  For any $\sigma \in S_n$, we say that $i \in [n]$ is a \textbf{fixed point} of $\sigma$ if $\sigma(i) = i$. The set of fixed points of $\sigma$ is denoted by $F(\sigma)$. 
 		\begin{enumerate}
-			\item Take a permutation $\sigma\in N$ so that $[n]_\sigma$ is the largest among the permutations in $N$. Two cases to consider: $\sigma$ is a product of disjoint transpositions; and $\sigma$ is a cycle of length at least $3$.
+			\item Take a nonidentity permutation $\sigma\in N$ so that $|F(\sigma)|$ is the largest among the nonidentity permutations in $N$. Three cases to consider: $\sigma$ is a product of disjoint transpositions; $\sigma$ has a cycle of length at least $4$; $\sigma$ is a product of disjoint cycle of length $2$ or $3$ and at least one has length three.
 			\item For the first case, we can find two disjoint transpositions $(ab)$ and $(cd)$. Then we take $x\neq a,b,c,d$ and define
 			\begin{align*}
 				\tau &= (cdx)\in A_n, \\
 				\sigma' &= [\tau,\sigma] = \tau\sigma\tau^{-1}\sigma^{-1} \in N.
 			\end{align*}
-			It can be checked that we see that $\sigma'(c) = x$ (and thus nontrivial) and  $\sigma'$ fixes $a,b$ and $[n]_{\sigma}\setminus\{x\}$. This means that $[n]_{\sigma'}>[n]_{\sigma}$, a contradiction.
-			\item For the second case, if it is of length $3$, then we are done. If it is of length $4$, then we arrive at a contradiction because it is an odd permutation. If it is of length at least $5$, i.e., $\sigma = (abcdx\cdots)$, then using the same construction in (b) one can see that $\sigma'(c) = d$ and $\sigma'$ fixes $b$ and $[n]_\sigma$. So $[n]_{\sigma'}>[n]_{\sigma}$, again a contradiction.
+			It can be checked that we see that $\sigma'(c) = x$ (and thus nontrivial) and  $\sigma'$ fixes $a,b$ and every fixed point of $\sigma$ other than $x$. This means that $|F(\sigma')|>|F(\sigma)|$, a contradiction.
+			\item For the second case, suppose that $\sigma$ has a cycle $(abcd)$. Define
+			\begin{align*}
+				\tau &= (abc)\in A_n, \\
+				\sigma' &= [\tau,\sigma] = \tau\sigma\tau^{-1}\sigma^{-1} \in N.
+			\end{align*}
+			Then $\sigma' = (abc)(bdc) = (abd)$. Thus $N$ contains a $3$-cycle and Lemma \ref{lemma-A_n-contains-3-cycle} gives $N=A_n$.
+			\item For the third case, let $(abc)$ be a cycle in the product of $\sigma$. If $\sigma=(abc)$, then we are done. Otherwise, choose a point $d$ and set $e=\sigma(d)$. Clearly $d\neq e$. Define
+			\begin{align*}
+				\tau &= (abd)\in A_n, \\
+				\sigma' &= [\tau,\sigma] = \tau\sigma\tau^{-1}\sigma^{-1} \in N.
+			\end{align*}
+			Then $\sigma' = (abd)(bec) = (abecd)$. Hence $|F(\sigma')| = n-5$. Now we show that $|F(\sigma)| \leq n-6$, which leads to a contradiction since $|F(\sigma')|>|F(\sigma)|$.
+			
+			If $\sigma$ contains another cycle of length $3$, then $\sigma$ moves at least six points.
+			
+			If $\sigma$ contains a transposition, then it must contains an even number of transpositions. So $\sigma$ moves at least seven points.
+			
+			In either cases, we have $|F(\sigma)| \leq n-6$. \qedhere
 		\end{enumerate}
-		\item Therefore $\sigma $ is a cycle of length $3$. Hence Lemma \ref{lemma-A_n-contains-3-cycle} gives the result. \qedhere
 	\end{enumerate}
 	
 \end{sketch}
@@ -220,10 +236,9 @@ appearing in these decompositions are always all even or all odd.
 
 \newpage
 \section{Dihedral Groups and the Quaternion Group}
-\subsection{Dihedral Groups}
+\subsection{Dihedral Groups} 
 \begin{definition}
-	  Let $n\geq 3$ and let $d:\mathbb{R}^2\times \mathbb{R}^2\rightarrow \mathbb{R}_{\geq 0}$ be the Euclidean distance. A \textbf{symmetry} $s$ of a regular polygon $P_n$ of $n$ sides  is a bijection that preserves distances, i.e., if $x,y\in P_n$, then $d(x,y)\implies d(s(x),s(y))$.    The \textbf{dihedral group} $D_{n}$ is  the group of
-	symmetries of  $P_n$.
+	Let $n \geq 3$, and let $P_n \subseteq \mathbb{R}^2$ be a regular polygon with $n$ sides. Let $d:\mathbb{R}^2 \times \mathbb{R}^2 \to \mathbb{R}_{\geq 0}$ be the Euclidean distance. A \textbf{symmetry} of $P_n$ is a bijection $s:P_n \to P_n$ that preserves distances, i.e., $d(s(x),s(y))=d(x,y)$ for all $x,y\in P_n$. The \textbf{dihedral group} $D_n$ is the group of all symmetries of $P_n$ under function composition.
 \end{definition}
 \begin{proposition}
 	Let $r$ be a rotations of degree $360^\circ/n$ clockwise around the center of the polygon $P_n$ and let $s$ be a fixed reflection about a line through the center and one vertex $v$. Then $D_{n} = \langle r,s\rangle$ and hence $|D_{n}|  = 2n$.
@@ -324,13 +339,15 @@ We can give the complete description of subgroups of dihedral groups. The proof 
 \begin{definition}
 	The \textbf{quaterion group} is the group $Q_8 = \langle i,j\,|\, i^4=1, i^2=j^2, ij = ji^{-1}  \rangle$. Another presentation is $\langle -1, i,j,k\,|\, (-1)^2=1, i^2=j^2=k^2 = ijk = -1 \rangle$.
 \end{definition}
+
 \begin{proposition}
 	The order of $Q_8$ is $8$.
 \end{proposition}
 \begin{sketch}
-	Let $Q_8 = \langle i,j\,|\, i^4=1, i^2=j^2, ij = ji^{-1}  \rangle$. The relation $ij = ji^{-1}$ forces every elements in $Q_8$ can be written as the form $i^sj^t$ $(s,t\in\mathbb{Z})$. From   $i^4=1$ and  $i^2=j^2$, one can restrict $s,t$ to  $s \in\{0,1,2,3\}$ and $t\in \{0,1\}$. Observe that $\langle i \rangle \cap \langle j \rangle = \langle i^2\rangle$. If $i^{s_1}j^{t_1} = i^{s_2}j^{t_2}$, then $j^{t_1-t_2}\in \langle i^2\rangle$ and so $t_1=t_2$. Hence $s_1=s_2$. This shows that $i^sj^t$ $(s \in\{0,1,2,3\},t\in \{0,1\})$ are distinct elements in $Q_8$.
+	Let $Q_8 = \langle i,j\,|\, i^4=1, i^2=j^2, ij = ji^{-1}  \rangle$. The relation $ij = ji^{-1}$ forces every elements in $Q_8$ can be written as the form $i^sj^t$ $(s,t\in\mathbb{Z})$. From   $i^4=1$ and  $i^2=j^2$, one can restrict $s,t$ to  $s \in\{0,1,2,3\}$ and $t\in \{0,1\}$. So $|Q_8|\leq 8$.  Now construct an group of order $8$ satisfying the defining relations (some examples shown below). Then Theorem \ref{thm-Van-Dyck} shows that $Q_8 \to H$ is an surjection. So $|Q_8|\geq 8$.  Therefore $|Q_8|=8$.
+%	Observe that $\langle i \rangle \cap \langle j \rangle = \langle i^2\rangle$. If $i^{s_1}j^{t_1} = i^{s_2}j^{t_2}$, then $j^{t_1-t_2}\in \langle i^2\rangle$ and so $t_1=t_2$. Hence $s_1=s_2$. This shows that $i^sj^t$ $(s \in\{0,1,2,3\},t\in \{0,1\})$ are distinct elements in $Q_8$.
 \end{sketch}
-The following are some usual presentations of $Q_8$: 
+The following are some usual presentations for $Q_8$: 
 \begin{enumerate}[(i)]
 	\item A subgroup of $\operatorname{GL}(2,\mathbb{C})$ generated by $\begin{pmatrix}
 		0 & i\\
